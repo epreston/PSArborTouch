@@ -23,6 +23,8 @@
 		4FA224A91426D0910078EFB6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4FA224A71426D0910078EFB6 /* InfoPlist.strings */; };
 		4FA224AB1426D0910078EFB6 /* PSArborTouchTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 4FA224AA1426D0910078EFB6 /* PSArborTouchTests.h */; };
 		4FA224AD1426D0910078EFB6 /* PSArborTouchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA224AC1426D0910078EFB6 /* PSArborTouchTests.m */; };
+		4FA224C41426DB850078EFB6 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FA224C31426DB850078EFB6 /* Icon-72.png */; };
+		4FA224C61426DCBA0078EFB6 /* Doxyfile in Resources */ = {isa = PBXBuildFile; fileRef = 4FA224C51426DCBA0078EFB6 /* Doxyfile */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		4FA224A81426D0910078EFB6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4FA224AA1426D0910078EFB6 /* PSArborTouchTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSArborTouchTests.h; sourceTree = "<group>"; };
 		4FA224AC1426D0910078EFB6 /* PSArborTouchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSArborTouchTests.m; sourceTree = "<group>"; };
+		4FA224C31426DB850078EFB6 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		4FA224C51426DCBA0078EFB6 /* Doxyfile */ = {isa = PBXFileReference; explicitFileType = text.script; fileEncoding = 4; path = Doxyfile; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +90,8 @@
 		4FA2246D1426D0900078EFB6 = {
 			isa = PBXGroup;
 			children = (
-				4FA224821426D0900078EFB6 /* PSArborTouch */,
+				4FA224821426D0900078EFB6 /* Example 1 */,
+				4FA224C21426D9A70078EFB6 /* PSArborTouch */,
 				4FA224A41426D0910078EFB6 /* PSArborTouchTests */,
 				4FA2247B1426D0900078EFB6 /* Frameworks */,
 				4FA224791426D0900078EFB6 /* Products */,
@@ -113,23 +118,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		4FA224821426D0900078EFB6 /* PSArborTouch */ = {
+		4FA224821426D0900078EFB6 /* Example 1 */ = {
 			isa = PBXGroup;
 			children = (
-				4FA2248B1426D0910078EFB6 /* PSArborTouchAppDelegate.h */,
-				4FA2248C1426D0910078EFB6 /* PSArborTouchAppDelegate.m */,
-				4FA2248E1426D0910078EFB6 /* MainWindow.xib */,
-				4FA224911426D0910078EFB6 /* PSArborTouchViewController.h */,
-				4FA224921426D0910078EFB6 /* PSArborTouchViewController.m */,
-				4FA224941426D0910078EFB6 /* PSArborTouchViewController.xib */,
+				4FA224C11426D9350078EFB6 /* Controller */,
+				4FA224C01426D92F0078EFB6 /* View */,
+				4FA224BF1426D9180078EFB6 /* Model */,
 				4FA224831426D0910078EFB6 /* Supporting Files */,
 			);
-			path = PSArborTouch;
+			path = "Example 1";
 			sourceTree = "<group>";
 		};
 		4FA224831426D0910078EFB6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4FA224C51426DCBA0078EFB6 /* Doxyfile */,
+				4FA224C31426DB850078EFB6 /* Icon-72.png */,
 				4FA224841426D0910078EFB6 /* PSArborTouch-Info.plist */,
 				4FA224851426D0910078EFB6 /* InfoPlist.strings */,
 				4FA224881426D0910078EFB6 /* main.m */,
@@ -157,7 +161,58 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		4FA224BF1426D9180078EFB6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		4FA224C01426D92F0078EFB6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		4FA224C11426D9350078EFB6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4FA2248B1426D0910078EFB6 /* PSArborTouchAppDelegate.h */,
+				4FA2248C1426D0910078EFB6 /* PSArborTouchAppDelegate.m */,
+				4FA2248E1426D0910078EFB6 /* MainWindow.xib */,
+				4FA224911426D0910078EFB6 /* PSArborTouchViewController.h */,
+				4FA224921426D0910078EFB6 /* PSArborTouchViewController.m */,
+				4FA224941426D0910078EFB6 /* PSArborTouchViewController.xib */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		4FA224C21426D9A70078EFB6 /* PSArborTouch */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PSArborTouch;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		4FA224BB1426D7CA0078EFB6 /* Documentation */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "";
+			buildConfigurationList = 4FA224BC1426D7CA0078EFB6 /* Build configuration list for PBXLegacyTarget "Documentation" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/local/bin/doxygen;
+			buildWorkingDirectory = "";
+			dependencies = (
+			);
+			name = Documentation;
+			passBuildSettingsInEnvironment = 1;
+			productName = Documentation;
+		};
+/* End PBXLegacyTarget section */
 
 /* Begin PBXNativeTarget section */
 		4FA224771426D0900078EFB6 /* PSArborTouch */ = {
@@ -218,6 +273,7 @@
 			targets = (
 				4FA224771426D0900078EFB6 /* PSArborTouch */,
 				4FA2249B1426D0910078EFB6 /* PSArborTouchTests */,
+				4FA224BB1426D7CA0078EFB6 /* Documentation */,
 			);
 		};
 /* End PBXProject section */
@@ -230,6 +286,8 @@
 				4FA224871426D0910078EFB6 /* InfoPlist.strings in Resources */,
 				4FA224901426D0910078EFB6 /* MainWindow.xib in Resources */,
 				4FA224961426D0910078EFB6 /* PSArborTouchViewController.xib in Resources */,
+				4FA224C41426DB850078EFB6 /* Icon-72.png in Resources */,
+				4FA224C61426DCBA0078EFB6 /* Doxyfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,7 +398,7 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -358,7 +416,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -374,8 +432,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PSArborTouch/PSArborTouch-Prefix.pch";
-				INFOPLIST_FILE = "PSArborTouch/PSArborTouch-Info.plist";
+				GCC_PREFIX_HEADER = "Example 1/PSArborTouch-Prefix.pch";
+				INFOPLIST_FILE = "Example 1/PSArborTouch-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -385,8 +443,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PSArborTouch/PSArborTouch-Prefix.pch";
-				INFOPLIST_FILE = "PSArborTouch/PSArborTouch-Info.plist";
+				GCC_PREFIX_HEADER = "Example 1/PSArborTouch-Prefix.pch";
+				INFOPLIST_FILE = "Example 1/PSArborTouch-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -395,14 +453,14 @@
 		4FA224B41426D0910078EFB6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PSArborTouch.app/PSArborTouch";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PSArborTouch/PSArborTouch-Prefix.pch";
+				GCC_PREFIX_HEADER = "Example 1/PSArborTouch-Prefix.pch";
 				INFOPLIST_FILE = "PSArborTouchTests/PSArborTouchTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -413,18 +471,32 @@
 		4FA224B51426D0910078EFB6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PSArborTouch.app/PSArborTouch";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PSArborTouch/PSArborTouch-Prefix.pch";
+				GCC_PREFIX_HEADER = "Example 1/PSArborTouch-Prefix.pch";
 				INFOPLIST_FILE = "PSArborTouchTests/PSArborTouchTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+		4FA224BD1426D7CA0078EFB6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4FA224BE1426D7CA0078EFB6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -447,12 +519,22 @@
 				4FA224B21426D0910078EFB6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4FA224B31426D0910078EFB6 /* Build configuration list for PBXNativeTarget "PSArborTouchTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4FA224B41426D0910078EFB6 /* Debug */,
 				4FA224B51426D0910078EFB6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4FA224BC1426D7CA0078EFB6 /* Build configuration list for PBXLegacyTarget "Documentation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FA224BD1426D7CA0078EFB6 /* Debug */,
+				4FA224BE1426D7CA0078EFB6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
