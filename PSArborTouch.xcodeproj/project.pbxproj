@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F98C72D1426F73C00EA18F3 /* ATSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F98C72C1426F73C00EA18F3 /* ATSystem.m */; };
+		4F98C7381427040300EA18F3 /* ATNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F98C7371427040300EA18F3 /* ATNode.m */; };
+		4F98C73C1427041700EA18F3 /* ATEdge.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F98C73B1427041700EA18F3 /* ATEdge.m */; };
+		4F98C73F1427045300EA18F3 /* ATParticle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F98C73E1427045300EA18F3 /* ATParticle.m */; };
+		4F98C742142705C700EA18F3 /* ATSpring.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F98C741142705C700EA18F3 /* ATSpring.m */; };
+		4F98C75014271AEA00EA18F3 /* ATBarnesHutTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F98C74F14271AEA00EA18F3 /* ATBarnesHutTree.m */; };
+		4F98C75414271B0600EA18F3 /* ATBarnesHutBranch.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F98C75314271B0600EA18F3 /* ATBarnesHutBranch.m */; };
+		4F98C757142725E700EA18F3 /* NSMutableArray+QueueAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F98C756142725E700EA18F3 /* NSMutableArray+QueueAdditions.m */; };
+		4F98C75A142730B500EA18F3 /* ATPhysics.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F98C759142730B500EA18F3 /* ATPhysics.m */; };
+		4F98C75D14274FDE00EA18F3 /* ATSystemEnergy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F98C75C14274FDE00EA18F3 /* ATSystemEnergy.m */; };
 		4FA2247D1426D0900078EFB6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FA2247C1426D0900078EFB6 /* UIKit.framework */; };
 		4FA2247F1426D0900078EFB6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FA2247E1426D0900078EFB6 /* Foundation.framework */; };
 		4FA224811426D0900078EFB6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FA224801426D0900078EFB6 /* CoreGraphics.framework */; };
@@ -38,6 +48,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4F98C72B1426F73C00EA18F3 /* ATSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATSystem.h; sourceTree = "<group>"; };
+		4F98C72C1426F73C00EA18F3 /* ATSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATSystem.m; sourceTree = "<group>"; };
+		4F98C7361427040300EA18F3 /* ATNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATNode.h; sourceTree = "<group>"; };
+		4F98C7371427040300EA18F3 /* ATNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATNode.m; sourceTree = "<group>"; };
+		4F98C73A1427041700EA18F3 /* ATEdge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATEdge.h; sourceTree = "<group>"; };
+		4F98C73B1427041700EA18F3 /* ATEdge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATEdge.m; sourceTree = "<group>"; };
+		4F98C73D1427045300EA18F3 /* ATParticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATParticle.h; sourceTree = "<group>"; };
+		4F98C73E1427045300EA18F3 /* ATParticle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATParticle.m; sourceTree = "<group>"; };
+		4F98C740142705C700EA18F3 /* ATSpring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATSpring.h; sourceTree = "<group>"; };
+		4F98C741142705C700EA18F3 /* ATSpring.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATSpring.m; sourceTree = "<group>"; };
+		4F98C7491427163800EA18F3 /* ATGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATGeometry.h; sourceTree = "<group>"; };
+		4F98C74E14271AEA00EA18F3 /* ATBarnesHutTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATBarnesHutTree.h; sourceTree = "<group>"; };
+		4F98C74F14271AEA00EA18F3 /* ATBarnesHutTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATBarnesHutTree.m; sourceTree = "<group>"; };
+		4F98C75214271B0600EA18F3 /* ATBarnesHutBranch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATBarnesHutBranch.h; sourceTree = "<group>"; };
+		4F98C75314271B0600EA18F3 /* ATBarnesHutBranch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATBarnesHutBranch.m; sourceTree = "<group>"; };
+		4F98C755142725E700EA18F3 /* NSMutableArray+QueueAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+QueueAdditions.h"; sourceTree = "<group>"; };
+		4F98C756142725E700EA18F3 /* NSMutableArray+QueueAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+QueueAdditions.m"; sourceTree = "<group>"; };
+		4F98C758142730B500EA18F3 /* ATPhysics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATPhysics.h; sourceTree = "<group>"; };
+		4F98C759142730B500EA18F3 /* ATPhysics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATPhysics.m; sourceTree = "<group>"; };
+		4F98C75B14274FDE00EA18F3 /* ATSystemEnergy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATSystemEnergy.h; sourceTree = "<group>"; };
+		4F98C75C14274FDE00EA18F3 /* ATSystemEnergy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATSystemEnergy.m; sourceTree = "<group>"; };
 		4FA224781426D0900078EFB6 /* PSArborTouch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PSArborTouch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FA2247C1426D0900078EFB6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4FA2247E1426D0900078EFB6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -87,6 +118,69 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F98C7261426F61600EA18F3 /* Atoms */ = {
+			isa = PBXGroup;
+			children = (
+				4F98C7361427040300EA18F3 /* ATNode.h */,
+				4F98C7371427040300EA18F3 /* ATNode.m */,
+				4F98C73A1427041700EA18F3 /* ATEdge.h */,
+				4F98C73B1427041700EA18F3 /* ATEdge.m */,
+			);
+			path = Atoms;
+			sourceTree = "<group>";
+		};
+		4F98C7281426F62200EA18F3 /* Barnes-Hut */ = {
+			isa = PBXGroup;
+			children = (
+				4F98C74E14271AEA00EA18F3 /* ATBarnesHutTree.h */,
+				4F98C74F14271AEA00EA18F3 /* ATBarnesHutTree.m */,
+				4F98C75214271B0600EA18F3 /* ATBarnesHutBranch.h */,
+				4F98C75314271B0600EA18F3 /* ATBarnesHutBranch.m */,
+			);
+			path = "Barnes-Hut";
+			sourceTree = "<group>";
+		};
+		4F98C7291426F62A00EA18F3 /* Physics */ = {
+			isa = PBXGroup;
+			children = (
+				4F98C73D1427045300EA18F3 /* ATParticle.h */,
+				4F98C73E1427045300EA18F3 /* ATParticle.m */,
+				4F98C740142705C700EA18F3 /* ATSpring.h */,
+				4F98C741142705C700EA18F3 /* ATSpring.m */,
+				4F98C758142730B500EA18F3 /* ATPhysics.h */,
+				4F98C759142730B500EA18F3 /* ATPhysics.m */,
+			);
+			path = Physics;
+			sourceTree = "<group>";
+		};
+		4F98C72A1426F63500EA18F3 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				4F98C72B1426F73C00EA18F3 /* ATSystem.h */,
+				4F98C72C1426F73C00EA18F3 /* ATSystem.m */,
+				4F98C75B14274FDE00EA18F3 /* ATSystemEnergy.h */,
+				4F98C75C14274FDE00EA18F3 /* ATSystemEnergy.m */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+		4F98C74714270B9F00EA18F3 /* Kernel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Kernel;
+			sourceTree = "<group>";
+		};
+		4F98C74814270BAF00EA18F3 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				4F98C7491427163800EA18F3 /* ATGeometry.h */,
+				4F98C755142725E700EA18F3 /* NSMutableArray+QueueAdditions.h */,
+				4F98C756142725E700EA18F3 /* NSMutableArray+QueueAdditions.m */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
 		4FA2246D1426D0900078EFB6 = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +285,12 @@
 		4FA224C21426D9A70078EFB6 /* PSArborTouch */ = {
 			isa = PBXGroup;
 			children = (
+				4F98C7261426F61600EA18F3 /* Atoms */,
+				4F98C7281426F62200EA18F3 /* Barnes-Hut */,
+				4F98C74714270B9F00EA18F3 /* Kernel */,
+				4F98C7291426F62A00EA18F3 /* Physics */,
+				4F98C72A1426F63500EA18F3 /* System */,
+				4F98C74814270BAF00EA18F3 /* Support */,
 			);
 			path = PSArborTouch;
 			sourceTree = "<group>";
@@ -326,6 +426,16 @@
 				4FA224891426D0910078EFB6 /* main.m in Sources */,
 				4FA2248D1426D0910078EFB6 /* PSArborTouchAppDelegate.m in Sources */,
 				4FA224931426D0910078EFB6 /* PSArborTouchViewController.m in Sources */,
+				4F98C72D1426F73C00EA18F3 /* ATSystem.m in Sources */,
+				4F98C7381427040300EA18F3 /* ATNode.m in Sources */,
+				4F98C73C1427041700EA18F3 /* ATEdge.m in Sources */,
+				4F98C73F1427045300EA18F3 /* ATParticle.m in Sources */,
+				4F98C742142705C700EA18F3 /* ATSpring.m in Sources */,
+				4F98C75014271AEA00EA18F3 /* ATBarnesHutTree.m in Sources */,
+				4F98C75414271B0600EA18F3 /* ATBarnesHutBranch.m in Sources */,
+				4F98C757142725E700EA18F3 /* NSMutableArray+QueueAdditions.m in Sources */,
+				4F98C75A142730B500EA18F3 /* ATPhysics.m in Sources */,
+				4F98C75D14274FDE00EA18F3 /* ATSystemEnergy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,6 +647,7 @@
 				4FA224BE1426D7CA0078EFB6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
