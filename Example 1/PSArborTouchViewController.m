@@ -7,6 +7,7 @@
 //
 
 #import "PSArborTouchViewController.h"
+#import "ATPhysicsDebugView.h"
 
 #import "ATPhysics.h"
 #import "ATSystemEnergy.h"
@@ -41,6 +42,7 @@
 @synthesize particleView4 = _particleView4;
 @synthesize statusLabel = _statusLabel;
 @synthesize counterLabel = _counterLabel;
+@synthesize barnesHutSwitch = _barnesHutSwitch;
 
 - (void) didReceiveMemoryWarning
 {
@@ -62,6 +64,9 @@
                                               stiffness:1000.0 
                                               repulsion:600.0 
                                                friction:0.5] retain];
+    
+    _viewPort.physics = _integrator;
+    _viewPort.debugDrawing = YES;
     
     _integrator.gravity = NO;
     
@@ -102,6 +107,12 @@
     [self addGestureRecognizersToPiece:_particleView3];
     [self addGestureRecognizersToPiece:_particleView4];
     
+    
+    _particle1.position = [self fromScreen:self.particleView1.center];
+    _particle2.position = [self fromScreen:self.particleView2.center];
+    _particle3.position = [self fromScreen:self.particleView3.center];
+    _particle4.position = [self fromScreen:self.particleView4.center];
+    
     _running = NO;
 }
 
@@ -135,6 +146,7 @@
     [self setStatusLabel:nil];
     [self setCounterLabel:nil];
     [self setParticleView4:nil];
+    [self setBarnesHutSwitch:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -178,6 +190,7 @@
     [_statusLabel release];
     [_counterLabel release];
     [_particleView4 release];
+    [_barnesHutSwitch release];
     [super dealloc];
 }
 
@@ -186,7 +199,7 @@
 
 - (IBAction) start:(id)sender 
 {
-    NSLog(@"Start button pressed.");
+//    NSLog(@"Start button pressed.");
     
     BOOL timerNotInitialized = !_timer;
     if ( timerNotInitialized ) {
@@ -235,7 +248,7 @@
 
 - (IBAction) stop:(id)sender 
 {
-    NSLog(@"Stop button pressed.");
+//    NSLog(@"Stop button pressed.");
     
     self.statusLabel.text = @"STOPPED";
     
@@ -249,7 +262,7 @@
 
 - (IBAction) reset:(id)sender
 {
-    NSLog(@"Reset button pressed.");
+//    NSLog(@"Reset button pressed.");
     
     CGPoint pos = CGPointMake(0.3, 0.3);
     _particle1.position = pos;
@@ -259,6 +272,22 @@
     
     pos = CGPointMake(0.4, -0.5);
     _particle3.position = pos;
+    
+    pos = CGPointMake(-1.0, -1.0);
+    _particle4.position = pos;
+}
+
+- (IBAction)changeIntegrationMode:(id)sender 
+{
+    if (self.barnesHutSwitch.isOn) {
+        _integrator.theta = 0.4;
+        _viewPort.debugDrawing = YES;
+    } else {
+        _integrator.theta = 0.0;
+        _viewPort.debugDrawing = NO;
+    }
+    
+    [self start:nil];
 }
 
 
@@ -301,6 +330,8 @@
     
     _counter++;
     self.counterLabel.text = [NSString stringWithFormat:@"%d", _counter];
+    
+    [_viewPort setNeedsDisplay];
 }
 
 

@@ -45,6 +45,8 @@
 @synthesize friction    = _friction;
 @synthesize gravity     = _gravity;
 @synthesize theta       = _theta;
+@synthesize bhTree      = _bhTree;
+
 
 - (id)init
 {
@@ -57,7 +59,7 @@
         _springs    = [[NSMutableArray arrayWithCapacity:32] retain];
         _epoch      = 0.00;
         _energy     = [[[ATSystemEnergy alloc] init] retain];
-        _bounds     = CGRectMake(-1.0, -1.0, 1.0, 1.0);
+        _bounds     = CGRectMake(-1.0, -1.0, 2.0, 2.0);
         _speedLimit = 1000;
         _deltaTime  = 0.02;
         _stiffness  = 1000;
@@ -130,8 +132,6 @@
 
 - (void) removeSpring:(ATSpring *)spring
 {
-    [[self springs] removeObject:spring];
-    
     spring.point1.connections--;
     spring.point2.connections--;
     
@@ -153,7 +153,7 @@
     CGFloat motion = (self.energy.max - self.energy.mean) / 2;
     
     if (motion < 0.05) { // 0.05
-        NSLog(@"We would stop now.");
+//        NSLog(@"We would stop now.");
         return NO;
     } else {
         return YES;
@@ -162,6 +162,13 @@
 
 - (void) tendParticles 
 {
+    // Barnes-Hut requires accurate bounds.  If a particle has been modified from one
+    // run to the next, detect it here to ensure the bounds are correct.
+    
+    CGPoint bottomright = CGPointZero;
+    CGPoint topleft     = CGPointZero;
+    BOOL firstParticle  = YES;
+    
     for (ATParticle *particle in _activeParticles) {
         
         // decay down any of the temporary mass increases that were passed along
@@ -179,7 +186,23 @@
         
         // zero out the velocity from one tick to the next
         particle.velocity = CGPointZero;
-    }    
+        
+        // update the bounds
+        CGPoint pt = particle.position;
+        
+        if (firstParticle) {
+            bottomright     = pt;
+            topleft         = pt;
+            firstParticle   = NO;
+        }
+        
+        if (pt.x > bottomright.x) bottomright.x = pt.x;
+        if (pt.y > bottomright.y) bottomright.y = pt.y;          
+        if   (pt.x < topleft.x)   topleft.x = pt.x;
+        if   (pt.y < topleft.y)   topleft.y = pt.y;
+    }
+    
+    self.bounds = CGRectMake(topleft.x, topleft.y, bottomright.x - topleft.x, bottomright.y - topleft.y);
 }
 
 - (void) eulerIntegrator:(CGFloat)deltaTime 
@@ -209,7 +232,7 @@
             if (point1 != point2){
                 CGPoint d = CGPointSubtract(point1.position, point2.position);
                 CGFloat distance = MAX( 1.0, magnitude(d) );
-                CGPoint direction = (magnitude(d) > 0.0f) ? d : CGPointNormalize(CGPointRandom(1.0f));
+                CGPoint direction = (magnitude(d) > 0.0) ? d : CGPointNormalize( CGPointRandom(1.0) );
                 
                 // apply force to each end point
                 // (consult the cached `real' mass value if the mass is being poked to allow
@@ -218,16 +241,16 @@
                 
                 CGPoint force = CGPointDivideFloat( 
                                                    CGPointMultiplyFloat(direction, 
-                                                                        (self.repulsion * point2.mass * 0.5f) ), 
-                                                   (distance * distance * 0.5f) );
+                                                                        (self.repulsion * point2.mass * 0.5) ), 
+                                                   (distance * distance * 0.5) );
                 
                 [point1 applyForce:force];
                 
                 
                 force = CGPointDivideFloat(
                                            CGPointMultiplyFloat(direction, 
-                                                                (self.repulsion * point1.mass * 0.5f) ),
-                                           (distance * distance * -0.5f) );
+                                                                (self.repulsion * point1.mass * 0.5) ),
+                                           (distance * distance * -0.5) );
                 
                 [point2 applyForce:force];
             }
@@ -257,7 +280,7 @@
         
         CGFloat displacement = spring.length - magnitude(d);
         
-        CGPoint direction = CGPointNormalize( (magnitude(d) > 0.0f) ? d : CGPointRandom(1) );
+        CGPoint direction = CGPointNormalize( (magnitude(d) > 0.0) ? d : CGPointRandom(1.0) );
         
         // BUG:
         // since things oscillate wildly for hub nodes, should probably normalize spring
@@ -265,8 +288,8 @@
         // doesn't work very well though. what's the `right' way to do it?
         
         // apply force to each end point
-        [spring.point1 applyForce:CGPointMultiplyFloat(direction, spring.stiffness * displacement * -0.5f) ];
-        [spring.point2 applyForce:CGPointMultiplyFloat(direction, spring.stiffness * displacement * 0.5f) ];
+        [spring.point1 applyForce:CGPointMultiplyFloat(direction, spring.stiffness * displacement * -0.5) ];
+        [spring.point2 applyForce:CGPointMultiplyFloat(direction, spring.stiffness * displacement * 0.5) ];
     }    
 }
 
@@ -294,7 +317,7 @@
 {
     // attract each node to the origin
     for (ATParticle *particle in _activeParticles) {
-        CGPoint direction = CGPointMultiplyFloat(particle.position, -1.0f);
+        CGPoint direction = CGPointMultiplyFloat(particle.position, -1.0);
         [particle applyForce:CGPointMultiplyFloat(direction, (self.repulsion / 100.0))];
     }
 }
@@ -313,7 +336,9 @@
         //        CGFloat was = magnitude(particle.v);
         
         // DEBUG: This is probley incorrectly translated. Check in debugger.
-        particle.velocity = CGPointMultiplyFloat( CGPointAdd(particle.velocity, CGPointMultiplyFloat( particle.force, timestep)), (1 - self.friction));
+        particle.velocity = CGPointMultiplyFloat( CGPointAdd(particle.velocity, 
+                                                             CGPointMultiplyFloat( particle.force, timestep)), 
+                                                 (1.0 - self.friction));
         
         particle.force = CGPointZero;
         
@@ -327,9 +352,10 @@
 - (void) updatePosition:(CGFloat)timestep 
 {
     // translate velocity to a position delta
-    CGFloat sum = 0.0f, max = 0.0f, n = 0.0f;
+    CGFloat sum = 0.0, max = 0.0, n = 0.0;
     CGPoint bottomright = CGPointZero;
     CGPoint topleft     = CGPointZero;
+    BOOL firstParticle  = YES;
     
     for (ATParticle *particle in _activeParticles) {
         // move the node to its new position
@@ -345,6 +371,12 @@
         // update the bounds
         CGPoint pt = particle.position;
         
+        if (firstParticle) {
+            bottomright     = pt;
+            topleft         = pt;
+            firstParticle   = NO;
+        }
+        
         if (pt.x > bottomright.x) bottomright.x = pt.x;
         if (pt.y > bottomright.y) bottomright.y = pt.y;          
         if   (pt.x < topleft.x)   topleft.x = pt.x;
@@ -356,7 +388,7 @@
     _energy.mean    = sum/n;
     _energy.count   = n;
     
-    self.bounds = CGRectMake(topleft.x, topleft.y, bottomright.x, bottomright.y);
+    self.bounds = CGRectMake(topleft.x, topleft.y, bottomright.x - topleft.x, bottomright.y - topleft.y);
 }
 
 

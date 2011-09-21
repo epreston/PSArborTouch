@@ -42,6 +42,8 @@
     CGFloat     _theta;
 }
 
+@property (nonatomic, retain) ATBarnesHutTree *bhTree;
+
 @property (nonatomic, retain) NSMutableArray *particles;
 - (void)addParticle:(ATParticle *)particle;
 - (void)removeParticle:(ATParticle *)particle;

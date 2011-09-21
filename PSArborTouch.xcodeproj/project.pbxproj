@@ -35,6 +35,7 @@
 		4FA224AD1426D0910078EFB6 /* PSArborTouchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA224AC1426D0910078EFB6 /* PSArborTouchTests.m */; };
 		4FA224C41426DB850078EFB6 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FA224C31426DB850078EFB6 /* Icon-72.png */; };
 		4FA224C61426DCBA0078EFB6 /* Doxyfile in Resources */ = {isa = PBXBuildFile; fileRef = 4FA224C51426DCBA0078EFB6 /* Doxyfile */; };
+		4FB1DCA6142971F8007F2487 /* ATPhysicsDebugView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FB1DCA5142971F8007F2487 /* ATPhysicsDebugView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,8 @@
 		4FA224AC1426D0910078EFB6 /* PSArborTouchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSArborTouchTests.m; sourceTree = "<group>"; };
 		4FA224C31426DB850078EFB6 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
 		4FA224C51426DCBA0078EFB6 /* Doxyfile */ = {isa = PBXFileReference; explicitFileType = text.script; fileEncoding = 4; path = Doxyfile; sourceTree = SOURCE_ROOT; };
+		4FB1DCA4142971F8007F2487 /* ATPhysicsDebugView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATPhysicsDebugView.h; sourceTree = "<group>"; };
+		4FB1DCA5142971F8007F2487 /* ATPhysicsDebugView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATPhysicsDebugView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,6 +268,8 @@
 		4FA224C01426D92F0078EFB6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4FB1DCA4142971F8007F2487 /* ATPhysicsDebugView.h */,
+				4FB1DCA5142971F8007F2487 /* ATPhysicsDebugView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -436,6 +441,7 @@
 				4F98C757142725E700EA18F3 /* NSMutableArray+QueueAdditions.m in Sources */,
 				4F98C75A142730B500EA18F3 /* ATPhysics.m in Sources */,
 				4F98C75D14274FDE00EA18F3 /* ATSystemEnergy.m in Sources */,
+				4FB1DCA6142971F8007F2487 /* ATPhysicsDebugView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

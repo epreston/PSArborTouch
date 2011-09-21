@@ -51,7 +51,7 @@ typedef enum {
         _branchCtr = 0;
         _root = nil;
         _bounds = CGRectZero;
-        _theta = 0.5;
+        _theta = 0.4;
     }
     return self;
 }
@@ -79,8 +79,9 @@ typedef enum {
 
 - (void) insertParticle:(ATParticle *)newParticle 
 {
-    // add a particle to the tree, starting at the current _root and working down
+    NSParameterAssert(newParticle != nil);
     
+    // add a particle to the tree, starting at the current _root and working down
     ATBarnesHutBranch *node = _root;
     
     NSMutableArray* queue = [NSMutableArray arrayWithCapacity:32];
@@ -92,15 +93,20 @@ typedef enum {
         BHLocation p_quad = [self _whichQuad:particle andNode:node];
         id objectAtQuad = [self _getQuad:p_quad andNode:node];
         
+        
         if ( objectAtQuad == nil ) {
-            // slot is empty, just drop this node in and update the mass/c.o.m. 
             
+            // slot is empty, just drop this node in and update the mass/c.o.m. 
             [self _setQuad:p_quad andNode:node andObject:particle];
             
             node.mass += p_mass;
             node.position = CGPointAdd( node.position, CGPointMultiplyFloat(particle.position, p_mass) );
             
-        } else if ( [objectAtQuad isKindOfClass:ATBarnesHutBranch.class] == YES ) {
+            // process next object in queue.
+            continue;
+        }
+            
+        if ( [objectAtQuad isKindOfClass:ATBarnesHutBranch.class] == YES ) {
             // slot conatins a branch node, keep iterating with the branch
             // as our new root
             
@@ -110,42 +116,56 @@ typedef enum {
             node = objectAtQuad;
             [queue insertObject:particle atIndex:0];
             
-        } else {
+            // process next object in queue.
+            continue;
+        }
+        
+        if ( [objectAtQuad isKindOfClass:ATParticle.class] == YES ) {
+
             // slot contains a particle, create a new branch and recurse with
             // both points in the queue now
             
-            CGPoint branch_size = { .x = node.bounds.size.width / 2.0, .y = node.bounds.size.height / 2.0 };
-            CGPoint branch_origin = node.bounds.origin;
+            if ( node.bounds.size.height == 0.0  || node.bounds.size.width == 0.0 ) {
+                NSLog(@"Should not be zero?");
+            }
             
-//            if (p_quad == BHLocationSE || p_quad == BHLocationSW) return;
+            CGSize branch_size;
+            CGPoint branch_origin;
             
-            if (p_quad == BHLocationSE || p_quad == BHLocationSW) branch_origin.y += branch_size.y;
-            if (p_quad == BHLocationSE || p_quad == BHLocationNE) branch_origin.x += branch_size.x;
+            branch_size = CGSizeMake(node.bounds.size.width / 2.0, node.bounds.size.height / 2.0);
+            branch_origin = node.bounds.origin;
+            
+            
+            // if (p_quad == BHLocationSE || p_quad == BHLocationSW) return;
+            
+            if (p_quad == BHLocationSE || p_quad == BHLocationSW) branch_origin.y += branch_size.height;
+            if (p_quad == BHLocationSE || p_quad == BHLocationNE) branch_origin.x += branch_size.width;
             
             // replace the previously particle-occupied quad with a new internal branch node
             ATParticle *oldParticle = objectAtQuad;
+            
             ATBarnesHutBranch *newBranch = [self _newBranch];
             [self _setQuad:p_quad andNode:node andObject:newBranch];
-            newBranch.bounds = CGRectMake(branch_origin.x, branch_origin.y, branch_size.x, branch_size.y);
+            newBranch.bounds = CGRectMake(branch_origin.x, branch_origin.y, branch_size.width, branch_size.height);
             node.mass = p_mass;
             node.position = CGPointMultiplyFloat(particle.position, p_mass);
             node = newBranch;
             
-            if (oldParticle.position.x == particle.position.x && oldParticle.position.y == particle.position.y) {
+            if ( (oldParticle.position.x == particle.position.x) && (oldParticle.position.y == particle.position.y) ) {
                 // prevent infinite bisection in the case where two particles
                 // have identical coordinates by jostling one of them slightly
                 
-                CGFloat x_spread = branch_size.x * 0.08;
-                CGFloat y_spread = branch_size.y * 0.08;
+                CGFloat x_spread = branch_size.width * 0.08;
+                CGFloat y_spread = branch_size.height * 0.08;
                 
                 CGPoint newPos = CGPointZero;
                 
-                newPos.x = MIN(branch_origin.x + branch_size.x, 
+                newPos.x = MIN(branch_origin.x + branch_size.width, 
                                MAX(branch_origin.x, 
                                    oldParticle.position.x - x_spread/2 + 
                                    RANDOM_0_1 * x_spread));
                 
-                newPos.y = MIN(branch_origin.y + branch_size.y,  
+                newPos.y = MIN(branch_origin.y + branch_size.height,  
                                MAX(branch_origin.y,  
                                    oldParticle.position.y - y_spread/2 + 
                                    RANDOM_0_1 * y_spread));
@@ -157,7 +177,14 @@ typedef enum {
             // one we just replaced with the branch node
             [queue enqueue:oldParticle];
             [queue insertObject:particle atIndex:0];
+            
+            
+            // process next object in queue.
+            continue;
         }
+        
+        NSLog(@"We should not make it here.");
+        
     }
 }
 
@@ -312,7 +339,7 @@ typedef enum {
     
     _branchCtr++;
     
-    if (_branchCtr > 8) {
+    if (_branchCtr > 6) {
         NSLog(@"Somethings going wrong here.");
     }
     return branch;

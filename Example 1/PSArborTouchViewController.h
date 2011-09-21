@@ -15,6 +15,9 @@
 @class ATParticle;
 @class ATSpring;
 
+@class ATPhysicsDebugView;
+
+
 @interface PSArborTouchViewController : UIViewController <UIGestureRecognizerDelegate>
 {
 
@@ -47,13 +50,14 @@
     UILabel *_p2Mass;
     UILabel *_p2Position;
     UILabel *_p2Fixed;
-    UIView *_viewPort;
+    ATPhysicsDebugView *_viewPort;
     UIView *_particleView1;
     UIView *_particleView2;
     UIView *_particleView3;
     UIView *_particleView4;
     UILabel *_statusLabel;
     UILabel *_counterLabel;
+    UISwitch *_barnesHutSwitch;
     UILabel *_maxLabel;
     UILabel *_meanLabel;
     UILabel *_countLabel;
@@ -74,7 +78,7 @@
 @property (nonatomic, retain) IBOutlet UILabel *p2Position;
 @property (nonatomic, retain) IBOutlet UILabel *p2Fixed;
 
-@property (nonatomic, retain) IBOutlet UIView *viewPort;
+@property (nonatomic, retain) IBOutlet ATPhysicsDebugView *viewPort;
 @property (nonatomic, retain) IBOutlet UIView *particleView1;
 @property (nonatomic, retain) IBOutlet UIView *particleView2;
 @property (nonatomic, retain) IBOutlet UIView *particleView3;
@@ -84,10 +88,12 @@
 @property (nonatomic, retain) IBOutlet UILabel *statusLabel;
 @property (nonatomic, retain) IBOutlet UILabel *counterLabel;
 
+@property (nonatomic, retain) IBOutlet UISwitch *barnesHutSwitch;
 
 - (IBAction) start:(id)sender;
 - (IBAction) stop:(id)sender;
 - (IBAction) reset:(id)sender;
+- (IBAction) changeIntegrationMode:(id)sender;
 
 - (void) stepPhysics;
 - (IBAction) doPhysicsUpdate:(id)sender;
