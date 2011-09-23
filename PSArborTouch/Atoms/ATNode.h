@@ -27,6 +27,4 @@
 - (id)initWithName:(NSString *)name mass:(CGFloat)mass position:(CGPoint)position fixed:(BOOL)fixed;
 
 
-
-
 @end

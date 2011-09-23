@@ -27,7 +27,6 @@
     return self;
 }
 
-
 - (id)initWithName:(NSString*)name mass:(CGFloat)mass position:(CGPoint)position fixed:(BOOL)fixed 
 {
     self = [self init];
@@ -39,7 +38,6 @@
     }
     return self;
 }
-
 
 - (void)dealloc
 {

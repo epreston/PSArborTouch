@@ -26,7 +26,6 @@
     return self;
 }
 
-
 - (id)initWithSource:(ATNode*)source target:(ATNode*)target length:(CGFloat)length 
 {
     self = [self init];
@@ -37,7 +36,6 @@
     }
     return self;
 }
-
 
 - (void)dealloc
 {

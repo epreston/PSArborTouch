@@ -1,17 +1,15 @@
 //
-//  PSArborTouchAppDelegate.m
-//  PSArborTouch - Physics Test / Debug Rig
+//  KernelRigAppDelegate.m
+//  KernelRig - Kernel Test / Debug Rig
 //
-//  Created by Ed Preston on 19/09/11.
+//  Created by Ed Preston on 22/09/11.
 //  Copyright 2011 Preston Software. All rights reserved.
 //
 
+#import "KernelRigAppDelegate.h"
+#import "KernelRigViewController.h"
 
-#import "PSArborTouchAppDelegate.h"
-#import "PSArborTouchViewController.h"
-
-
-@implementation PSArborTouchAppDelegate
+@implementation KernelRigAppDelegate
 
 @synthesize window = _window;
 @synthesize viewController = _viewController;

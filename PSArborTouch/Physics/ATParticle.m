@@ -28,7 +28,6 @@
     return self;
 }
 
-
 - (id)initWithVelocity:(CGPoint)velocity force:(CGPoint)force tempMass:(CGFloat)tempMass 
 {
     self = [self init];
@@ -40,18 +39,16 @@
     return self;
 }
 
-
 - (void)dealloc
 {
     
     [super dealloc];
 }
 
-
-
 - (void) applyForce:(CGPoint)force 
 {
     self.force = CGPointAdd(self.force, CGPointDivideFloat(force, self.mass));
 }
+
 
 @end

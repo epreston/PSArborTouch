@@ -14,7 +14,6 @@
 #import "NSMutableArray+QueueAdditions.h"
 
 
-
 @interface ATBarnesHutTree ()
 
 typedef enum {

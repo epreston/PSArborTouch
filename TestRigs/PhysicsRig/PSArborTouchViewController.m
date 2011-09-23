@@ -1,6 +1,6 @@
 //
 //  PSArborTouchViewController.m
-//  PSArborTouch
+//  PSArborTouch - Physics Test / Debug Rig
 //
 //  Created by Ed Preston on 19/09/11.
 //  Copyright 2011 Preston Software. All rights reserved.
@@ -8,17 +8,32 @@
 
 #import "PSArborTouchViewController.h"
 #import "ATPhysicsDebugView.h"
-
 #import "ATPhysics.h"
 #import "ATSystemEnergy.h"
 #import "ATSpring.h"
 #import "ATParticle.h"
 
-
 #import <QuartzCore/QuartzCore.h>
 
 // Interval in seconds: make sure this is more than 0
 #define kTimerInterval 0.05
+
+
+@interface PSArborTouchViewController ()
+
+- (IBAction) start:(id)sender;
+- (IBAction) stop:(id)sender;
+- (IBAction) reset:(id)sender;
+- (IBAction) changeIntegrationMode:(id)sender;
+
+- (void) stepPhysics;
+- (IBAction) doPhysicsUpdate:(id)sender;
+- (CGPoint) fromScreen:(CGPoint)p;
+- (CGPoint) toScreen:(CGPoint)p;
+
+- (void)addGestureRecognizersToPiece:(UIView *)piece;
+
+@end
 
 
 @implementation PSArborTouchViewController
@@ -43,16 +58,6 @@
 @synthesize statusLabel = _statusLabel;
 @synthesize counterLabel = _counterLabel;
 @synthesize barnesHutSwitch = _barnesHutSwitch;
-
-- (void) didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
-}
-
-#pragma mark - View Lifecycle
 
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
@@ -163,14 +168,9 @@
     [_integrator release];
 }
 
-- (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    return YES;
-}
 
 - (void)dealloc {
-
+    
     [_sumLabel release];
     [_maxLabel release];
     [_meanLabel release];
@@ -195,6 +195,20 @@
 }
 
 
+- (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    // Return YES for supported orientations
+    return YES;
+}
+
+
+- (void) didReceiveMemoryWarning
+{
+    // Releases the view if it doesn't have a superview.
+    [super didReceiveMemoryWarning];
+    
+    // Release any cached data, images, etc that aren't in use.
+}
 
 
 - (IBAction) start:(id)sender 
@@ -246,6 +260,7 @@
     }
 }
 
+
 - (IBAction) stop:(id)sender 
 {
 //    NSLog(@"Stop button pressed.");
@@ -277,7 +292,8 @@
     _particle4.position = pos;
 }
 
-- (IBAction)changeIntegrationMode:(id)sender 
+
+- (IBAction) changeIntegrationMode:(id)sender 
 {
     if (self.barnesHutSwitch.isOn) {
         _integrator.theta = 0.4;
@@ -291,8 +307,7 @@
 }
 
 
-
-- (IBAction)doPhysicsUpdate:(id)sender 
+- (IBAction) doPhysicsUpdate:(id)sender 
 {
     self.statusLabel.text = @"STEPPING";
     
@@ -350,6 +365,7 @@
     return CGPointMake(sx, sy);
 }
 
+
 - (CGPoint) toScreen:(CGPoint)p 
 {
     CGSize size = self.viewPort.bounds.size;
@@ -369,17 +385,12 @@
 
 
 
-
-
-
-
-
-#pragma mark -
+#pragma mark -         ZOMG SAMPLE CODE        -
 #pragma mark === Setting up and tearing down ===
 #pragma mark
 
 // adds a set of gesture recognizers to one of our piece subviews
-- (void)addGestureRecognizersToPiece:(UIView *)piece
+- (void) addGestureRecognizersToPiece:(UIView *)piece
 {
     UIRotationGestureRecognizer *rotationGesture = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(rotatePiece:)];
     [piece addGestureRecognizer:rotationGesture];
@@ -402,14 +413,13 @@
 }
 
 
-
 #pragma mark -
 #pragma mark === Utility methods  ===
 #pragma mark
 
 // scale and rotation transforms are applied relative to the layer's anchor point
 // this method moves a gesture recognizer's view's anchor point between the user's fingers
-- (void)adjustAnchorPointForGestureRecognizer:(UIGestureRecognizer *)gestureRecognizer {
+- (void) adjustAnchorPointForGestureRecognizer:(UIGestureRecognizer *)gestureRecognizer {
     if (gestureRecognizer.state == UIGestureRecognizerStateBegan) {
         UIView *piece = gestureRecognizer.view;
         CGPoint locationInView = [gestureRecognizer locationInView:piece];
@@ -421,7 +431,7 @@
 }
 
 // display a menu with a single item to allow the piece's transform to be reset
-- (void)showResetMenu:(UILongPressGestureRecognizer *)gestureRecognizer
+- (void) showResetMenu:(UILongPressGestureRecognizer *)gestureRecognizer
 {
     if ([gestureRecognizer state] == UIGestureRecognizerStateBegan) {
         UIMenuController *menuController = [UIMenuController sharedMenuController];
@@ -440,7 +450,7 @@
 }
 
 // animate back to the default anchor point and transform
-- (void)resetPiece:(UIMenuController *)controller
+- (void) resetPiece:(UIMenuController *)controller
 {
     CGPoint locationInSuperview = [pieceForReset convertPoint:CGPointMake(CGRectGetMidX(pieceForReset.bounds), CGRectGetMidY(pieceForReset.bounds)) toView:[pieceForReset superview]];
     
@@ -453,10 +463,11 @@
 }
 
 // UIMenuController requires that we can become first responder or it won't display
-- (BOOL)canBecomeFirstResponder
+- (BOOL) canBecomeFirstResponder
 {
     return YES;
 }
+
 
 #pragma mark -
 #pragma mark === Touch handling  ===
@@ -464,7 +475,7 @@
 
 // shift the piece's center by the pan amount
 // reset the gesture recognizer's translation to {0, 0} after applying so the next callback is a delta from the current position
-- (void)panPiece:(UIPanGestureRecognizer *)gestureRecognizer
+- (void) panPiece:(UIPanGestureRecognizer *)gestureRecognizer
 {
     UIView *piece = [gestureRecognizer view];
     
@@ -482,7 +493,7 @@
 
 // rotate the piece by the current rotation
 // reset the gesture recognizer's rotation to 0 after applying so the next callback is a delta from the current rotation
-- (void)rotatePiece:(UIRotationGestureRecognizer *)gestureRecognizer
+- (void) rotatePiece:(UIRotationGestureRecognizer *)gestureRecognizer
 {
     [self adjustAnchorPointForGestureRecognizer:gestureRecognizer];
     
@@ -494,7 +505,7 @@
 
 // scale the piece by the current scale
 // reset the gesture recognizer's rotation to 0 after applying so the next callback is a delta from the current scale
-- (void)scalePiece:(UIPinchGestureRecognizer *)gestureRecognizer
+- (void) scalePiece:(UIPinchGestureRecognizer *)gestureRecognizer
 {
     [self adjustAnchorPointForGestureRecognizer:gestureRecognizer];
     
@@ -506,7 +517,7 @@
 
 // ensure that the pinch, pan and rotate gesture recognizers on a particular view can all recognize simultaneously
 // prevent other gesture recognizers from recognizing simultaneously
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+- (BOOL) gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
 {
     // if the gesture recognizers's view isn't one of our pieces, don't allow simultaneous recognition
     if (gestureRecognizer.view != _particleView1 && 

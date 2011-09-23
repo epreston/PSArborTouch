@@ -1,6 +1,6 @@
 //
 //  PSArborTouchViewController.h
-//  PSArborTouch - Example 1
+//  PSArborTouch - Physics Test / Debug Rig
 //
 //  Created by Ed Preston on 19/09/11.
 //  Copyright 2011 Preston Software. All rights reserved.
@@ -78,27 +78,16 @@
 @property (nonatomic, retain) IBOutlet UILabel *p2Position;
 @property (nonatomic, retain) IBOutlet UILabel *p2Fixed;
 
-@property (nonatomic, retain) IBOutlet ATPhysicsDebugView *viewPort;
 @property (nonatomic, retain) IBOutlet UIView *particleView1;
 @property (nonatomic, retain) IBOutlet UIView *particleView2;
 @property (nonatomic, retain) IBOutlet UIView *particleView3;
 @property (nonatomic, retain) IBOutlet UIView *particleView4;
-
 
 @property (nonatomic, retain) IBOutlet UILabel *statusLabel;
 @property (nonatomic, retain) IBOutlet UILabel *counterLabel;
 
 @property (nonatomic, retain) IBOutlet UISwitch *barnesHutSwitch;
 
-- (IBAction) start:(id)sender;
-- (IBAction) stop:(id)sender;
-- (IBAction) reset:(id)sender;
-- (IBAction) changeIntegrationMode:(id)sender;
+@property (nonatomic, retain) IBOutlet ATPhysicsDebugView *viewPort;
 
-- (void) stepPhysics;
-- (IBAction) doPhysicsUpdate:(id)sender;
-- (CGPoint) fromScreen:(CGPoint)p;
-- (CGPoint) toScreen:(CGPoint)p;
-
-- (void)addGestureRecognizersToPiece:(UIView *)piece;
 @end
