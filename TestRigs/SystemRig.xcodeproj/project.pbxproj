@@ -1,0 +1,502 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4FA4D6C114302355003958B3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FA4D6C014302355003958B3 /* UIKit.framework */; };
+		4FA4D6C314302355003958B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FA4D6C214302355003958B3 /* Foundation.framework */; };
+		4FA4D6C514302355003958B3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FA4D6C414302355003958B3 /* CoreGraphics.framework */; };
+		4FA4D6CB14302355003958B3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4FA4D6C914302355003958B3 /* InfoPlist.strings */; };
+		4FA4D6CD14302355003958B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA4D6CC14302355003958B3 /* main.m */; };
+		4FA4D6D114302355003958B3 /* SystemRigAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA4D6D014302355003958B3 /* SystemRigAppDelegate.m */; };
+		4FA4D6D414302355003958B3 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FA4D6D214302355003958B3 /* MainWindow.xib */; };
+		4FA4D6D714302355003958B3 /* SystemRigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA4D6D614302355003958B3 /* SystemRigViewController.m */; };
+		4FA4D6DA14302355003958B3 /* SystemRigViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FA4D6D814302355003958B3 /* SystemRigViewController.xib */; };
+		4FA4D6E914302491003958B3 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FA4D6E814302491003958B3 /* Icon-72.png */; };
+		4FA4D71B14302969003958B3 /* ATEdge.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA4D70014302969003958B3 /* ATEdge.m */; };
+		4FA4D71C14302969003958B3 /* ATNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA4D70214302969003958B3 /* ATNode.m */; };
+		4FA4D71D14302969003958B3 /* ATBarnesHutBranch.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA4D70514302969003958B3 /* ATBarnesHutBranch.m */; };
+		4FA4D71E14302969003958B3 /* ATBarnesHutTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA4D70714302969003958B3 /* ATBarnesHutTree.m */; };
+		4FA4D71F14302969003958B3 /* ATKernel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA4D70A14302969003958B3 /* ATKernel.m */; };
+		4FA4D72014302969003958B3 /* ATParticle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA4D70D14302969003958B3 /* ATParticle.m */; };
+		4FA4D72114302969003958B3 /* ATPhysics.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA4D70F14302969003958B3 /* ATPhysics.m */; };
+		4FA4D72214302969003958B3 /* ATSpring.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA4D71114302969003958B3 /* ATSpring.m */; };
+		4FA4D72314302969003958B3 /* NSMutableArray+QueueAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA4D71514302969003958B3 /* NSMutableArray+QueueAdditions.m */; };
+		4FA4D72414302969003958B3 /* ATSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA4D71814302969003958B3 /* ATSystem.m */; };
+		4FA4D72514302969003958B3 /* ATSystemEnergy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA4D71A14302969003958B3 /* ATSystemEnergy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4FA4D6BC14302355003958B3 /* SystemRig.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SystemRig.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FA4D6C014302355003958B3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4FA4D6C214302355003958B3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4FA4D6C414302355003958B3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4FA4D6C814302355003958B3 /* SystemRig-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SystemRig-Info.plist"; sourceTree = "<group>"; };
+		4FA4D6CA14302355003958B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4FA4D6CC14302355003958B3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4FA4D6CE14302355003958B3 /* SystemRig-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SystemRig-Prefix.pch"; sourceTree = "<group>"; };
+		4FA4D6CF14302355003958B3 /* SystemRigAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SystemRigAppDelegate.h; sourceTree = "<group>"; };
+		4FA4D6D014302355003958B3 /* SystemRigAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SystemRigAppDelegate.m; sourceTree = "<group>"; };
+		4FA4D6D314302355003958B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		4FA4D6D514302355003958B3 /* SystemRigViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SystemRigViewController.h; sourceTree = "<group>"; };
+		4FA4D6D614302355003958B3 /* SystemRigViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SystemRigViewController.m; sourceTree = "<group>"; };
+		4FA4D6D914302355003958B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SystemRigViewController.xib; sourceTree = "<group>"; };
+		4FA4D6E814302491003958B3 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "../Icon-72.png"; sourceTree = "<group>"; };
+		4FA4D6EA143024EE003958B3 /* Doxyfile */ = {isa = PBXFileReference; explicitFileType = text.script; name = Doxyfile; path = ../../Doxyfile; sourceTree = "<group>"; };
+		4FA4D6FF14302969003958B3 /* ATEdge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATEdge.h; sourceTree = "<group>"; };
+		4FA4D70014302969003958B3 /* ATEdge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATEdge.m; sourceTree = "<group>"; };
+		4FA4D70114302969003958B3 /* ATNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATNode.h; sourceTree = "<group>"; };
+		4FA4D70214302969003958B3 /* ATNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATNode.m; sourceTree = "<group>"; };
+		4FA4D70414302969003958B3 /* ATBarnesHutBranch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATBarnesHutBranch.h; sourceTree = "<group>"; };
+		4FA4D70514302969003958B3 /* ATBarnesHutBranch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATBarnesHutBranch.m; sourceTree = "<group>"; };
+		4FA4D70614302969003958B3 /* ATBarnesHutTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATBarnesHutTree.h; sourceTree = "<group>"; };
+		4FA4D70714302969003958B3 /* ATBarnesHutTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATBarnesHutTree.m; sourceTree = "<group>"; };
+		4FA4D70914302969003958B3 /* ATKernel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATKernel.h; sourceTree = "<group>"; };
+		4FA4D70A14302969003958B3 /* ATKernel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATKernel.m; sourceTree = "<group>"; };
+		4FA4D70C14302969003958B3 /* ATParticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATParticle.h; sourceTree = "<group>"; };
+		4FA4D70D14302969003958B3 /* ATParticle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATParticle.m; sourceTree = "<group>"; };
+		4FA4D70E14302969003958B3 /* ATPhysics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATPhysics.h; sourceTree = "<group>"; };
+		4FA4D70F14302969003958B3 /* ATPhysics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATPhysics.m; sourceTree = "<group>"; };
+		4FA4D71014302969003958B3 /* ATSpring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATSpring.h; sourceTree = "<group>"; };
+		4FA4D71114302969003958B3 /* ATSpring.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATSpring.m; sourceTree = "<group>"; };
+		4FA4D71314302969003958B3 /* ATGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATGeometry.h; sourceTree = "<group>"; };
+		4FA4D71414302969003958B3 /* NSMutableArray+QueueAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+QueueAdditions.h"; sourceTree = "<group>"; };
+		4FA4D71514302969003958B3 /* NSMutableArray+QueueAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+QueueAdditions.m"; sourceTree = "<group>"; };
+		4FA4D71714302969003958B3 /* ATSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATSystem.h; sourceTree = "<group>"; };
+		4FA4D71814302969003958B3 /* ATSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATSystem.m; sourceTree = "<group>"; };
+		4FA4D71914302969003958B3 /* ATSystemEnergy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATSystemEnergy.h; sourceTree = "<group>"; };
+		4FA4D71A14302969003958B3 /* ATSystemEnergy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATSystemEnergy.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4FA4D6B914302355003958B3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FA4D6C114302355003958B3 /* UIKit.framework in Frameworks */,
+				4FA4D6C314302355003958B3 /* Foundation.framework in Frameworks */,
+				4FA4D6C514302355003958B3 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4FA4D6B114302355003958B3 = {
+			isa = PBXGroup;
+			children = (
+				4FA4D6C614302355003958B3 /* SystemRig */,
+				4FA4D6FD14302968003958B3 /* PSArborTouch */,
+				4FA4D6BF14302355003958B3 /* Frameworks */,
+				4FA4D6BD14302355003958B3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4FA4D6BD14302355003958B3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4FA4D6BC14302355003958B3 /* SystemRig.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4FA4D6BF14302355003958B3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4FA4D6C014302355003958B3 /* UIKit.framework */,
+				4FA4D6C214302355003958B3 /* Foundation.framework */,
+				4FA4D6C414302355003958B3 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4FA4D6C614302355003958B3 /* SystemRig */ = {
+			isa = PBXGroup;
+			children = (
+				4FA4D6E41430236D003958B3 /* Controller */,
+				4FA4D6E514302376003958B3 /* View */,
+				4FA4D6E61430237A003958B3 /* Model */,
+				4FA4D6C714302355003958B3 /* Supporting Files */,
+			);
+			path = SystemRig;
+			sourceTree = "<group>";
+		};
+		4FA4D6C714302355003958B3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4FA4D6EA143024EE003958B3 /* Doxyfile */,
+				4FA4D6E814302491003958B3 /* Icon-72.png */,
+				4FA4D6C814302355003958B3 /* SystemRig-Info.plist */,
+				4FA4D6C914302355003958B3 /* InfoPlist.strings */,
+				4FA4D6CC14302355003958B3 /* main.m */,
+				4FA4D6CE14302355003958B3 /* SystemRig-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4FA4D6E41430236D003958B3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4FA4D6E71430239B003958B3 /* AppDelegate */,
+				4FA4D6D514302355003958B3 /* SystemRigViewController.h */,
+				4FA4D6D614302355003958B3 /* SystemRigViewController.m */,
+				4FA4D6D814302355003958B3 /* SystemRigViewController.xib */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		4FA4D6E514302376003958B3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		4FA4D6E61430237A003958B3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		4FA4D6E71430239B003958B3 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				4FA4D6CF14302355003958B3 /* SystemRigAppDelegate.h */,
+				4FA4D6D014302355003958B3 /* SystemRigAppDelegate.m */,
+				4FA4D6D214302355003958B3 /* MainWindow.xib */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		4FA4D6FD14302968003958B3 /* PSArborTouch */ = {
+			isa = PBXGroup;
+			children = (
+				4FA4D6FE14302969003958B3 /* Atoms */,
+				4FA4D70314302969003958B3 /* Barnes-Hut */,
+				4FA4D70B14302969003958B3 /* Physics */,
+				4FA4D70814302969003958B3 /* Kernel */,
+				4FA4D71614302969003958B3 /* System */,
+				4FA4D71214302969003958B3 /* Support */,
+			);
+			name = PSArborTouch;
+			path = ../PSArborTouch;
+			sourceTree = "<group>";
+		};
+		4FA4D6FE14302969003958B3 /* Atoms */ = {
+			isa = PBXGroup;
+			children = (
+				4FA4D6FF14302969003958B3 /* ATEdge.h */,
+				4FA4D70014302969003958B3 /* ATEdge.m */,
+				4FA4D70114302969003958B3 /* ATNode.h */,
+				4FA4D70214302969003958B3 /* ATNode.m */,
+			);
+			path = Atoms;
+			sourceTree = "<group>";
+		};
+		4FA4D70314302969003958B3 /* Barnes-Hut */ = {
+			isa = PBXGroup;
+			children = (
+				4FA4D70414302969003958B3 /* ATBarnesHutBranch.h */,
+				4FA4D70514302969003958B3 /* ATBarnesHutBranch.m */,
+				4FA4D70614302969003958B3 /* ATBarnesHutTree.h */,
+				4FA4D70714302969003958B3 /* ATBarnesHutTree.m */,
+			);
+			path = "Barnes-Hut";
+			sourceTree = "<group>";
+		};
+		4FA4D70814302969003958B3 /* Kernel */ = {
+			isa = PBXGroup;
+			children = (
+				4FA4D70914302969003958B3 /* ATKernel.h */,
+				4FA4D70A14302969003958B3 /* ATKernel.m */,
+			);
+			path = Kernel;
+			sourceTree = "<group>";
+		};
+		4FA4D70B14302969003958B3 /* Physics */ = {
+			isa = PBXGroup;
+			children = (
+				4FA4D70C14302969003958B3 /* ATParticle.h */,
+				4FA4D70D14302969003958B3 /* ATParticle.m */,
+				4FA4D70E14302969003958B3 /* ATPhysics.h */,
+				4FA4D70F14302969003958B3 /* ATPhysics.m */,
+				4FA4D71014302969003958B3 /* ATSpring.h */,
+				4FA4D71114302969003958B3 /* ATSpring.m */,
+			);
+			path = Physics;
+			sourceTree = "<group>";
+		};
+		4FA4D71214302969003958B3 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				4FA4D71314302969003958B3 /* ATGeometry.h */,
+				4FA4D71414302969003958B3 /* NSMutableArray+QueueAdditions.h */,
+				4FA4D71514302969003958B3 /* NSMutableArray+QueueAdditions.m */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		4FA4D71614302969003958B3 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				4FA4D71714302969003958B3 /* ATSystem.h */,
+				4FA4D71814302969003958B3 /* ATSystem.m */,
+				4FA4D71914302969003958B3 /* ATSystemEnergy.h */,
+				4FA4D71A14302969003958B3 /* ATSystemEnergy.m */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		4FA4D6F914302824003958B3 /* Documentation */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "";
+			buildConfigurationList = 4FA4D6FA14302824003958B3 /* Build configuration list for PBXLegacyTarget "Documentation" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/local/bin/doxygen;
+			buildWorkingDirectory = ../;
+			dependencies = (
+			);
+			name = Documentation;
+			passBuildSettingsInEnvironment = 1;
+			productName = Documentation;
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXNativeTarget section */
+		4FA4D6BB14302355003958B3 /* SystemRig */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4FA4D6DD14302355003958B3 /* Build configuration list for PBXNativeTarget "SystemRig" */;
+			buildPhases = (
+				4FA4D6B814302355003958B3 /* Sources */,
+				4FA4D6B914302355003958B3 /* Frameworks */,
+				4FA4D6BA14302355003958B3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SystemRig;
+			productName = SystemRig;
+			productReference = 4FA4D6BC14302355003958B3 /* SystemRig.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4FA4D6B314302355003958B3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Preston Software";
+			};
+			buildConfigurationList = 4FA4D6B614302355003958B3 /* Build configuration list for PBXProject "SystemRig" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4FA4D6B114302355003958B3;
+			productRefGroup = 4FA4D6BD14302355003958B3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4FA4D6BB14302355003958B3 /* SystemRig */,
+				4FA4D6F914302824003958B3 /* Documentation */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4FA4D6BA14302355003958B3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FA4D6CB14302355003958B3 /* InfoPlist.strings in Resources */,
+				4FA4D6D414302355003958B3 /* MainWindow.xib in Resources */,
+				4FA4D6DA14302355003958B3 /* SystemRigViewController.xib in Resources */,
+				4FA4D6E914302491003958B3 /* Icon-72.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4FA4D6B814302355003958B3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FA4D6CD14302355003958B3 /* main.m in Sources */,
+				4FA4D6D114302355003958B3 /* SystemRigAppDelegate.m in Sources */,
+				4FA4D6D714302355003958B3 /* SystemRigViewController.m in Sources */,
+				4FA4D71B14302969003958B3 /* ATEdge.m in Sources */,
+				4FA4D71C14302969003958B3 /* ATNode.m in Sources */,
+				4FA4D71D14302969003958B3 /* ATBarnesHutBranch.m in Sources */,
+				4FA4D71E14302969003958B3 /* ATBarnesHutTree.m in Sources */,
+				4FA4D71F14302969003958B3 /* ATKernel.m in Sources */,
+				4FA4D72014302969003958B3 /* ATParticle.m in Sources */,
+				4FA4D72114302969003958B3 /* ATPhysics.m in Sources */,
+				4FA4D72214302969003958B3 /* ATSpring.m in Sources */,
+				4FA4D72314302969003958B3 /* NSMutableArray+QueueAdditions.m in Sources */,
+				4FA4D72414302969003958B3 /* ATSystem.m in Sources */,
+				4FA4D72514302969003958B3 /* ATSystemEnergy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4FA4D6C914302355003958B3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4FA4D6CA14302355003958B3 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4FA4D6D214302355003958B3 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4FA4D6D314302355003958B3 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		4FA4D6D814302355003958B3 /* SystemRigViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4FA4D6D914302355003958B3 /* en */,
+			);
+			name = SystemRigViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4FA4D6DB14302355003958B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		4FA4D6DC14302355003958B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4FA4D6DE14302355003958B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SystemRig/SystemRig-Prefix.pch";
+				INFOPLIST_FILE = "SystemRig/SystemRig-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4FA4D6DF14302355003958B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SystemRig/SystemRig-Prefix.pch";
+				INFOPLIST_FILE = "SystemRig/SystemRig-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		4FA4D6FB14302824003958B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4FA4D6FC14302824003958B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4FA4D6B614302355003958B3 /* Build configuration list for PBXProject "SystemRig" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FA4D6DB14302355003958B3 /* Debug */,
+				4FA4D6DC14302355003958B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4FA4D6DD14302355003958B3 /* Build configuration list for PBXNativeTarget "SystemRig" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FA4D6DE14302355003958B3 /* Debug */,
+				4FA4D6DF14302355003958B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4FA4D6FA14302824003958B3 /* Build configuration list for PBXLegacyTarget "Documentation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FA4D6FB14302824003958B3 /* Debug */,
+				4FA4D6FC14302824003958B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4FA4D6B314302355003958B3 /* Project object */;
+}

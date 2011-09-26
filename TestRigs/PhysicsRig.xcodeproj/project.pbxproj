@@ -28,7 +28,6 @@
 		4FA224931426D0910078EFB6 /* PSArborTouchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA224921426D0910078EFB6 /* PSArborTouchViewController.m */; };
 		4FA224961426D0910078EFB6 /* PSArborTouchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FA224941426D0910078EFB6 /* PSArborTouchViewController.xib */; };
 		4FA224C41426DB850078EFB6 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FA224C31426DB850078EFB6 /* Icon-72.png */; };
-		4FA224C61426DCBA0078EFB6 /* Doxyfile in Resources */ = {isa = PBXBuildFile; fileRef = 4FA224C51426DCBA0078EFB6 /* Doxyfile */; };
 		4FB1DCA6142971F8007F2487 /* ATPhysicsDebugView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FB1DCA5142971F8007F2487 /* ATPhysicsDebugView.m */; };
 /* End PBXBuildFile section */
 
@@ -332,7 +331,6 @@
 				4FA224901426D0910078EFB6 /* MainWindow.xib in Resources */,
 				4FA224961426D0910078EFB6 /* PSArborTouchViewController.xib in Resources */,
 				4FA224C41426DB850078EFB6 /* Icon-72.png in Resources */,
-				4FA224C61426DCBA0078EFB6 /* Doxyfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

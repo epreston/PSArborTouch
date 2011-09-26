@@ -72,6 +72,7 @@
 		4F9FB637142ABA1B0032AF67 /* ATKernel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATKernel.m; sourceTree = "<group>"; };
 		4FA4D68A142CD4BD003958B3 /* ATPhysicsDebugView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATPhysicsDebugView.h; sourceTree = "<group>"; };
 		4FA4D68B142CD4BD003958B3 /* ATPhysicsDebugView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATPhysicsDebugView.m; sourceTree = "<group>"; };
+		4FA4D6F214302705003958B3 /* Doxyfile */ = {isa = PBXFileReference; explicitFileType = text.script; name = Doxyfile; path = ../../Doxyfile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +131,7 @@
 		4F9FB5CE142AB0480032AF67 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4FA4D6F214302705003958B3 /* Doxyfile */,
 				4F9FB61E142AB13A0032AF67 /* Icon-72.png */,
 				4F9FB5CF142AB0480032AF67 /* KernelRig-Info.plist */,
 				4F9FB5D0142AB0480032AF67 /* InfoPlist.strings */,
