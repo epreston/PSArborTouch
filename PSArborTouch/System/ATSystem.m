@@ -20,19 +20,15 @@
     return self;
 }
 
-
-
-
-- (void) start 
+- (CGFloat) fps
 {
-    // start kernel
-//    [state.kernel start:NO];
+    return 0.0;
 }
 
-- (void) stop 
+
+- (void) setFps:(CGFloat)fps
 {
-    // stop kernel
-//    [state.kernel stop];
+    // 
 }
 
 @end

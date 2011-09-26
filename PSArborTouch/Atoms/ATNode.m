@@ -15,7 +15,7 @@
 @synthesize position = _position;
 @synthesize fixed = _fixed;
 
-- (id)init
+- (id) init
 {
     self = [super init];
     if (self) {
@@ -27,7 +27,7 @@
     return self;
 }
 
-- (id)initWithName:(NSString*)name mass:(CGFloat)mass position:(CGPoint)position fixed:(BOOL)fixed 
+- (id) initWithName:(NSString*)name mass:(CGFloat)mass position:(CGPoint)position fixed:(BOOL)fixed 
 {
     self = [self init];
     if (self) {
@@ -39,7 +39,7 @@
     return self;
 }
 
-- (void)dealloc
+- (void) dealloc
 {
     [_name release];
     

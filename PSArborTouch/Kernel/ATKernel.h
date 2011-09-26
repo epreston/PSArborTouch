@@ -11,7 +11,9 @@
 #import <dispatch/dispatch.h>
 
 @class ATPhysics;
-
+@class ATParticle;
+@class ATSpring;
+@class ATSystemEnergy;
 
 @interface ATKernel : NSObject
 {
@@ -24,21 +26,35 @@
     BOOL                _running;
     
     ATPhysics          *_physics;
+    ATSystemEnergy     *_lastEnergy;
 }
-
-// Keep track of current fps, only work as hard as requested fps
-// Manage all the GCD stuff for physics
-// Queue requests
-// Cache state of physics to respond to requests while its busy working
 
 
 // ? Know when results are ready and call the render code ?
 
-@property (nonatomic, readonly, assign) dispatch_queue_t physicsQueue;
-@property (nonatomic, assign) CGFloat fps;
+
+#pragma mark - Simulation Control
 
 - (void) physicsUpdate;
 - (void) start:(BOOL)unpause;
 - (void) stop;
+
+
+#pragma mark - Cached Physics Properties
+
+@property (nonatomic, readonly, copy) ATSystemEnergy *energy;
+
+
+#pragma mark - Protected Physics Interface
+
+// Physics methods protected by a GCD queue to ensure serial execution.
+// TODO: Move into protocol / interface definition
+
+- (void)addParticle:(ATParticle *)particle;
+- (void)removeParticle:(ATParticle *)particle;
+
+- (void)addSpring:(ATSpring *)spring;
+- (void)removeSpring:(ATSpring *)spring;
+
 
 @end

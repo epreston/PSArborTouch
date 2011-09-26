@@ -30,7 +30,7 @@
 @property (nonatomic, retain) ATBarnesHutBranch *root;
 @property (nonatomic, assign) CGRect bounds;
 @property (nonatomic, assign) CGFloat theta;
-- (id)init;
+- (id) init;
 
 
 - (void) updateWithBounds:(CGRect)bounds theta:(CGFloat)theta;

@@ -23,7 +23,9 @@
 @property (nonatomic, retain) ATNode *target;
 @property (nonatomic, assign) CGFloat length;
 
-- (id)init;
-- (id)initWithSource:(ATNode *)source target:(ATNode *)target length:(CGFloat)length;
+- (id) init;
+- (id) initWithSource:(ATNode *)source 
+               target:(ATNode *)target 
+               length:(CGFloat)length;
 
 @end

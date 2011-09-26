@@ -42,7 +42,7 @@ typedef enum {
 @synthesize theta = _theta;
 
 
-- (id)init
+- (id) init
 {
     self = [super init];
     if (self) {
@@ -55,7 +55,7 @@ typedef enum {
     return self;
 }
 
-- (void)dealloc
+- (void) dealloc
 {
     [_branches release];
     [_root release];
@@ -66,7 +66,7 @@ typedef enum {
 
 #pragma mark - Public Methods
 
-- (void)updateWithBounds:(CGRect)bounds theta:(CGFloat)theta 
+- (void) updateWithBounds:(CGRect)bounds theta:(CGFloat)theta 
 {
     self.theta = theta;
     self.bounds = bounds;
@@ -74,6 +74,9 @@ typedef enum {
     self.root = [self _newBranch];
     self.root.bounds = bounds;
 }
+
+
+// TODO: Defensive programming !! 
 
 
 - (void) insertParticle:(ATParticle *)newParticle 
@@ -130,6 +133,11 @@ typedef enum {
             
             CGSize branch_size;
             CGPoint branch_origin;
+            
+
+            
+            // CHECK IF POINT IN RECT TO AVOID RECURSIVELY MAKING THE RECT INFINIATELY
+            // SMALLER FOR SOME POINTS OUT OF BOUNDS.
             
             branch_size = CGSizeMake(node.bounds.size.width / 2.0, node.bounds.size.height / 2.0);
             branch_origin = node.bounds.origin;

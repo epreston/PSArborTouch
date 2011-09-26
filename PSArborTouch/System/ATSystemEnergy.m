@@ -15,7 +15,7 @@
 @synthesize mean = _mean;
 @synthesize count = _count;
 
-- (id)init
+- (id) init
 {
     self = [super init];
     if (self) {

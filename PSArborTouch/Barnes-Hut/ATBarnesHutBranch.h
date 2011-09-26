@@ -31,8 +31,10 @@
 @property (nonatomic, retain) id nw;
 @property (nonatomic, retain) id se;
 @property (nonatomic, retain) id sw;
-- (id)init;
-- (id)initWithBounds:(CGRect)bounds mass:(CGFloat)mass position:(CGPoint)position;
+- (id) init;
+- (id) initWithBounds:(CGRect)bounds 
+                 mass:(CGFloat)mass 
+             position:(CGPoint)position;
 
 
 

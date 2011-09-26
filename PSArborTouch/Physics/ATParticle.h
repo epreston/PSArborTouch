@@ -24,8 +24,10 @@
 @property (nonatomic, assign) CGFloat tempMass;
 @property (nonatomic, assign) CGFloat connections;
 
-- (id)init;
-- (id)initWithVelocity:(CGPoint)velocity force:(CGPoint)force tempMass:(CGFloat)tempMass;
+- (id) init;
+- (id) initWithVelocity:(CGPoint)velocity 
+                  force:(CGPoint)force 
+               tempMass:(CGFloat)tempMass;
 
 
 - (void) applyForce:(CGPoint)force;

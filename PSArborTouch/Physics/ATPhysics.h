@@ -45,15 +45,15 @@
 @property (nonatomic, retain) ATBarnesHutTree *bhTree;
 
 @property (nonatomic, retain) NSMutableArray *particles;
-- (void)addParticle:(ATParticle *)particle;
-- (void)removeParticle:(ATParticle *)particle;
+- (void) addParticle:(ATParticle *)particle;
+- (void) removeParticle:(ATParticle *)particle;
 
 @property (nonatomic, retain) NSMutableArray *springs;
-- (void)addSpring:(ATSpring *)spring;
-- (void)removeSpring:(ATSpring *)spring;
+- (void) addSpring:(ATSpring *)spring;
+- (void) removeSpring:(ATSpring *)spring;
 
 @property (nonatomic, assign) CGFloat epoch;
-@property (nonatomic, retain) ATSystemEnergy *energy;
+@property (nonatomic, readonly, copy) ATSystemEnergy *energy;
 @property (nonatomic, assign) CGRect bounds;
 
 @property (nonatomic, assign) CGFloat speedLimit;

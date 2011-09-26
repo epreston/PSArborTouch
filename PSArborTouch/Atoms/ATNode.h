@@ -23,8 +23,11 @@
 @property (nonatomic, assign) CGPoint position;
 @property (nonatomic, assign, getter=isFixed) BOOL fixed;
 
-- (id)init;
-- (id)initWithName:(NSString *)name mass:(CGFloat)mass position:(CGPoint)position fixed:(BOOL)fixed;
+- (id) init;
+- (id) initWithName:(NSString *)name 
+               mass:(CGFloat)mass 
+           position:(CGPoint)position 
+              fixed:(BOOL)fixed;
 
 
 @end

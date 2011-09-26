@@ -6,7 +6,7 @@
 //  Copyright 2011 Preston Software. All rights reserved.
 //
 
-#import "ATEdge.h"
+// #import "ATEdge.h"
 
 
 @class ATParticle;
@@ -26,11 +26,11 @@
 @property (nonatomic, retain) ATParticle *point2;
 @property (nonatomic, assign) CGFloat length;
 @property (nonatomic, assign) CGFloat stiffness;
-- (id)init;
-- (id)initWithPoint1:(ATParticle *)point1 
-              point2:(ATParticle *)point2 
-              length:(CGFloat)length 
-           stiffness:(CGFloat)stiffness;
+- (id) init;
+- (id) initWithPoint1:(ATParticle *)point1 
+               point2:(ATParticle *)point2 
+               length:(CGFloat)length 
+            stiffness:(CGFloat)stiffness;
 
 
 - (CGFloat) distanceToParticle:(ATParticle *)particle;

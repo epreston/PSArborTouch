@@ -18,7 +18,7 @@
 @synthesize se = _se;
 @synthesize sw = _sw;
 
-- (id)init
+- (id) init
 {
     self = [super init];
     if (self) {
@@ -34,7 +34,7 @@
 }
 
 
-- (id)initWithBounds:(CGRect)bounds mass:(CGFloat)mass position:(CGPoint)position 
+- (id) initWithBounds:(CGRect)bounds mass:(CGFloat)mass position:(CGPoint)position 
 {
     self = [self init];
     if (self) {
@@ -47,7 +47,7 @@
 
 
 
-- (void)dealloc
+- (void) dealloc
 {
     [_ne release];
     [_nw release];

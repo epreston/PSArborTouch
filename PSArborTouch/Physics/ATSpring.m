@@ -17,7 +17,7 @@
 @synthesize length = _length;
 @synthesize stiffness = _stiffness;
 
-- (id)init
+- (id) init
 {
     self = [super init];
     if (self) {
@@ -30,7 +30,10 @@
 }
 
 
-- (id)initWithPoint1:(ATParticle*)point1 point2:(ATParticle*)point2 length:(CGFloat)length stiffness:(CGFloat)stiffness 
+- (id) initWithPoint1:(ATParticle*)point1 
+               point2:(ATParticle*)point2 
+               length:(CGFloat)length 
+            stiffness:(CGFloat)stiffness 
 {
     self = [self init];
     if (self) {

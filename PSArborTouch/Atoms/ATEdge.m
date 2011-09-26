@@ -15,7 +15,7 @@
 @synthesize target = _target;
 @synthesize length = _length;
 
-- (id)init
+- (id) init
 {
     self = [super init];
     if (self) {
@@ -26,7 +26,7 @@
     return self;
 }
 
-- (id)initWithSource:(ATNode*)source target:(ATNode*)target length:(CGFloat)length 
+- (id) initWithSource:(ATNode*)source target:(ATNode*)target length:(CGFloat)length 
 {
     self = [self init];
     if (self) {
@@ -37,7 +37,7 @@
     return self;
 }
 
-- (void)dealloc
+- (void) dealloc
 {
     [_source release];
     [_target release];

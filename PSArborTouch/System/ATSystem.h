@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ATSystem : NSObject
+#import "ATKernel.h"
+
+@interface ATSystem : ATKernel
 {
     
 @private
@@ -16,19 +18,10 @@
     
 }
 
-- (id)init;
 
+// Keep track of current fps, only work as hard as requested fps
 
-
-
-
-
-
-#pragma mark - Start/Stop Simulation
-
-- (void) start;
-- (void) stop;
-
+@property (nonatomic, assign) CGFloat fps;
 
 
 @end

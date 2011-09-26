@@ -16,7 +16,7 @@
 @synthesize tempMass    = _tempMass;
 @synthesize connections = _connections;
 
-- (id)init
+- (id) init
 {
     self = [super init];
     if (self) {
@@ -28,7 +28,9 @@
     return self;
 }
 
-- (id)initWithVelocity:(CGPoint)velocity force:(CGPoint)force tempMass:(CGFloat)tempMass 
+- (id) initWithVelocity:(CGPoint)velocity 
+                  force:(CGPoint)force 
+               tempMass:(CGFloat)tempMass 
 {
     self = [self init];
     if (self) {
@@ -39,7 +41,7 @@
     return self;
 }
 
-- (void)dealloc
+- (void) dealloc
 {
     
     [super dealloc];

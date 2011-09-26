@@ -21,6 +21,6 @@
 @property (nonatomic, assign) CGFloat mean;
 @property (nonatomic, assign) CGFloat count;
 
-- (id)init;
+- (id) init;
 
 @end

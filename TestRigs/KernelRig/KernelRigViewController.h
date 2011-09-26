@@ -12,6 +12,8 @@
 
 @interface KernelRigViewController : UIViewController
 {
+    
+@private
     ATKernel    *_kernel;
 }
 

@@ -48,35 +48,35 @@
 @synthesize bhTree      = _bhTree;
 
 
-- (id)init
+- (id) init
 {
     self = [super init];
     if (self) {
         _activeParticles = [[NSMutableArray arrayWithCapacity:32] retain];
-        _activeSprings = [[NSMutableArray arrayWithCapacity:32] retain];
-        _freeParticles = [[NSMutableArray arrayWithCapacity:32] retain];
-        _particles  = [[NSMutableArray arrayWithCapacity:32] retain];
-        _springs    = [[NSMutableArray arrayWithCapacity:32] retain];
-        _epoch      = 0.00;
-        _energy     = [[[ATSystemEnergy alloc] init] retain];
-        _bounds     = CGRectMake(-1.0, -1.0, 2.0, 2.0);
-        _speedLimit = 1000;
-        _deltaTime  = 0.02;
-        _stiffness  = 1000;
-        _repulsion  = 600;
-        _friction   = 0.3;
-        _gravity    = NO;
-        _theta      = 0.4;
-        _bhTree     = [[[ATBarnesHutTree alloc] init] retain];
+        _activeSprings  = [[NSMutableArray arrayWithCapacity:32] retain];
+        _freeParticles  = [[NSMutableArray arrayWithCapacity:32] retain];
+        _particles      = [[NSMutableArray arrayWithCapacity:32] retain];
+        _springs        = [[NSMutableArray arrayWithCapacity:32] retain];
+        _epoch          = 0.00;
+        _energy         = [[[ATSystemEnergy alloc] init] retain];
+        _bounds         = CGRectMake(-1.0, -1.0, 2.0, 2.0);
+        _speedLimit     = 1000;
+        _deltaTime      = 0.02;
+        _stiffness      = 1000;
+        _repulsion      = 600;
+        _friction       = 0.3;
+        _gravity        = NO;
+        _theta          = 0.4;
+        _bhTree         = [[[ATBarnesHutTree alloc] init] retain];
     }
     return self;
 }
 
 
-- (id)initWithDeltaTime:(CGFloat)deltaTime 
-              stiffness:(CGFloat)stiffness 
-              repulsion:(CGFloat)repulsion 
-               friction:(CGFloat)friction 
+- (id) initWithDeltaTime:(CGFloat)deltaTime 
+               stiffness:(CGFloat)stiffness 
+               repulsion:(CGFloat)repulsion 
+                friction:(CGFloat)friction 
 {
     self = [self init];
     if (self) {
@@ -89,7 +89,7 @@
 }
 
 
-- (void)dealloc
+- (void) dealloc
 {
     [_bhTree release];
     [_activeParticles release];
