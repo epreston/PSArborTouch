@@ -32,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F2115241431964F00B2F51F /* ATSystemRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATSystemRenderer.h; sourceTree = "<group>"; };
 		4F9FB5C3142AB0480032AF67 /* KernelRig.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KernelRig.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F9FB5C7142AB0480032AF67 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4F9FB5C9142AB0480032AF67 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -216,6 +217,7 @@
 				4F9FB60C142AB0D50032AF67 /* ATSystem.m */,
 				4F9FB60D142AB0D50032AF67 /* ATSystemEnergy.h */,
 				4F9FB60E142AB0D50032AF67 /* ATSystemEnergy.m */,
+				4F2115241431964F00B2F51F /* ATSystemRenderer.h */,
 			);
 			path = System;
 			sourceTree = "<group>";

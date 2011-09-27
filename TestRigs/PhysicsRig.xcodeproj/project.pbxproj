@@ -32,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F2115301431983A00B2F51F /* ATSystemRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATSystemRenderer.h; sourceTree = "<group>"; };
 		4F30BDAC142AD84800B52956 /* ATKernel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATKernel.h; sourceTree = "<group>"; };
 		4F30BDAD142AD84800B52956 /* ATKernel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATKernel.m; sourceTree = "<group>"; };
 		4F98C72B1426F73C00EA18F3 /* ATSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATSystem.h; sourceTree = "<group>"; };
@@ -142,6 +143,7 @@
 				4F98C72C1426F73C00EA18F3 /* ATSystem.m */,
 				4F98C75B14274FDE00EA18F3 /* ATSystemEnergy.h */,
 				4F98C75C14274FDE00EA18F3 /* ATSystemEnergy.m */,
+				4F2115301431983A00B2F51F /* ATSystemRenderer.h */,
 			);
 			path = System;
 			sourceTree = "<group>";

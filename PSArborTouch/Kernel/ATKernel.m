@@ -22,6 +22,7 @@
 // Private interface for ATKernel
 
 @property (nonatomic, readonly, assign) dispatch_queue_t physicsQueue;
+@property (nonatomic, readonly, assign) dispatch_source_t physicsTimer;
 
 @end
 
@@ -78,30 +79,47 @@
 - (void) physicsUpdate
 {
     // step physics
-    
-    //    if (running_ == false) {
-    //        running_ = true;
-    //        dispatch_async(queue_, ^{
-    //            [self drawFrame];
-    //            running_ = false;
-    //        });
-    //    } else {
-    //        frame_drop_counter_++;
-    //        VerboseLog(@"Dropped a frame!");
-    //    }
-
-    
+        
     dispatch_async( [self physicsQueue] , ^{
         
         // Run physics loop.  Stop timer if it returns NO on update.
-        
         if ([_physics update] == NO) {
             [self stop];
         }
         
-    });  
-    
-    
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            // Update cached properties
+            //
+            //      - Energy in the simulation
+            //      - Bounds of the simulation
+            
+            ATSystemEnergy *currentEnergy = _physics.energy;
+            
+            _lastEnergy.sum     = currentEnergy.sum;
+            _lastEnergy.max     = currentEnergy.max;
+            _lastEnergy.mean    = currentEnergy.mean;
+            _lastEnergy.count   = currentEnergy.count;
+            
+        });
+        
+        // Call back to main thread (UI Thread) to update the text
+        // Dispatch SYNC or ASYNC here?  Could we queue too many updates?
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            // Call back into the main thread
+            //
+            //      - Update the debug barnes-hut display
+            //      - Update the debug bounds display
+            //      - Update the debug viewport display
+            //      - Update the edge display
+            //      - Update the node display
+            
+        });
+        
+    });
 }
 
 
@@ -114,51 +132,30 @@
     
     // start the simulation
     
-    
-//    BOOL timerNotInitialized = !_timer;
-//    if ( timerNotInitialized ) {
-//        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-//        
-//        // create our timer source
-//        _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
-//        
-//        // set the time to fire
-//        dispatch_source_set_timer(_timer,
-//                                  dispatch_time(DISPATCH_TIME_NOW, kTimerInterval * NSEC_PER_SEC),
-//                                  kTimerInterval * NSEC_PER_SEC, (kTimerInterval * NSEC_PER_SEC) / 2.0);
-//        
-//        // Hey, let's actually do something when the timer fires!
-//        dispatch_source_set_event_handler(_timer, ^{
-//            //            NSLog(@"WATCHDOG: task took longer than %f seconds",
-//            //                  kTimerInterval);
-//            
-//            // Call back to main thread (UI Thread) to update the text
-//            dispatch_async(dispatch_get_main_queue(), ^{
-//                [self physicsUpdate];
-//            });
-//            
-//            // ensure we never fire again
-//            // dispatch_source_cancel(_timer);
-//            
-//            // pause the timer
-//            // dispatch_suspend(_timer);
-//        });
-//    }
-//    
-//    if (_running == NO) {
-//        _running = YES;
-//        
-//        // now that our timer is all set to go, start it
-//        dispatch_resume(_timer);  
-//    }
+    if (_running == NO) {
+        _running = YES;
+        
+        // Configure handler when it fires
+        dispatch_source_set_event_handler( [self physicsTimer], ^{
+            
+            // Call back to main thread (UI Thread) to update the text
+            //            dispatch_async(dispatch_get_main_queue(), ^{
+            [self physicsUpdate];
+            //            });
+            
+        });
+        
+        // Start the timer
+        dispatch_resume( [self physicsTimer] );  
+    }
     
 }
 
 - (void) stop 
 {
-    _paused = YES;
-    
     // stop the simulation
+    
+    _paused = YES;
     
     BOOL timerInitialized = (_timer != nil);
     if ( timerInitialized && _running ) {
@@ -176,6 +173,27 @@
         _queue = dispatch_queue_create("com.prestonsoft.psarbortouch", DISPATCH_QUEUE_SERIAL);
     }
     return _queue;
+}
+
+- (dispatch_source_t) physicsTimer
+{
+    BOOL timerNotInitialized = (_timer == nil);
+    if ( timerNotInitialized ) {
+        
+//        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+        
+        // create our timer source
+//        _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
+        
+        _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, [self physicsQueue]);
+        
+        // set the time to fire
+        dispatch_source_set_timer(_timer,
+                                  dispatch_time(DISPATCH_TIME_NOW, kTimerInterval * NSEC_PER_SEC),
+                                  kTimerInterval * NSEC_PER_SEC, (kTimerInterval * NSEC_PER_SEC) / 2.0);
+    }
+    
+    return _timer;
 }
 
 

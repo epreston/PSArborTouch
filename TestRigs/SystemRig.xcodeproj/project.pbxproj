@@ -31,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F21152A143197B600B2F51F /* ATSystemRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATSystemRenderer.h; sourceTree = "<group>"; };
 		4FA4D6BC14302355003958B3 /* SystemRig.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SystemRig.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FA4D6C014302355003958B3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4FA4D6C214302355003958B3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -248,6 +249,7 @@
 				4FA4D71814302969003958B3 /* ATSystem.m */,
 				4FA4D71914302969003958B3 /* ATSystemEnergy.h */,
 				4FA4D71A14302969003958B3 /* ATSystemEnergy.m */,
+				4F21152A143197B600B2F51F /* ATSystemRenderer.h */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -495,6 +497,7 @@
 				4FA4D6FC14302824003958B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
