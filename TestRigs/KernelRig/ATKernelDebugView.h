@@ -1,8 +1,8 @@
 //
-//  ATPhysicsDebugView.h
+//  ATKernelDebugView.h
 //  PSArborTouch - Kernel Test / Debug Rig
 //
-//  Created by Ed Preston on 21/09/11.
+//  Created by Ed Preston on 29/09/11.
 //  Copyright 2011 Preston Software. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 @class ATPhysics;
 
-@interface ATPhysicsDebugView : UIView
+@interface ATKernelDebugView : UIView
 {
 
 @private

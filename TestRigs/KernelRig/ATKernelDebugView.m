@@ -1,19 +1,19 @@
 //
-//  ATPhysicsDebugView.m
+//  ATKernelDebugView.m
 //  PSArborTouch - Kernel Test / Debug Rig
 //
-//  Created by Ed Preston on 21/09/11.
+//  Created by Ed Preston on 29/09/11.
 //  Copyright 2011 Preston Software. All rights reserved.
-//
+//  
 
-#import "ATPhysicsDebugView.h"
+#import "ATKernelDebugView.h"
 #import "ATPhysics.h"
 #import "ATBarnesHutTree.h"
 #import "ATBarnesHutBranch.h"
 #import "ATSpring.h"
 #import "ATParticle.h"
 
-@implementation ATPhysicsDebugView
+@implementation ATKernelDebugView
 
 @synthesize physics = _physics;
 @synthesize debugDrawing = _debugDrawing;
@@ -143,6 +143,21 @@
     
 }
 
+- (void) drawParticle:(ATParticle *)particle inContext:(CGContextRef)context
+{
+    // Translate the particle position to screen coordinates
+    CGPoint pOrigin = [self pointToScreen:particle.position];
+    
+    // Create an empty rect at particle center
+    CGRect strokeRect = CGRectMake(pOrigin.x, pOrigin.y, 0.0, 0.0);
+    
+    // Expand the rect around the center
+    strokeRect = CGRectInset(strokeRect, -5.0, -5.0);
+    
+    // Draw the rect    
+    CGContextStrokeRect(context, strokeRect);
+}
+
 
 - (void) drawRect:(CGRect)rect
 {
@@ -152,20 +167,33 @@
         
         if (self.isDebugDrawing) {
             CGContextSetRGBStrokeColor(context, 1.0, 1.0, 0.0, 1.0); // yellow line
-            CGContextSetLineWidth(context, 3.0);
+            CGContextSetLineWidth(context, 1.0);
             
             // Drawing code for the barnes-hut trees
             ATBarnesHutBranch *root = self.physics.bhTree.root;
-            [self recursiveDrawBranches:root inContext:context];
+            
+            if ( root ) {
+                [self recursiveDrawBranches:root inContext:context];
+            }
         }
         
-        CGContextSetRGBStrokeColor(context, 0.0, 0.0, 0.0, 0.5); // black line
+        CGContextSetRGBStrokeColor(context, 0.0, 0.0, 0.0, 0.5); // black line with alpha
         CGContextSetLineWidth(context, 2.0);
         
         // Drawing code for springs
         for (ATSpring *spring in self.physics.springs) {
             [self drawSpring:spring inContext:context];            
         }
+        
+        
+        CGContextSetRGBStrokeColor(context, 1.0, 0.0, 0.0, 1.0); // red line
+        CGContextSetLineWidth(context, 2.0);
+        
+        // Drawing code for particle centers
+        for (ATParticle *particle in self.physics.particles) {
+            [self drawParticle:particle inContext:context];            
+        }
+        
     }
 }
 
