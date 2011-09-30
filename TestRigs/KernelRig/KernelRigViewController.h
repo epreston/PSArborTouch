@@ -8,13 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
-@class ATKernel;
 
-@interface KernelRigViewController : UIViewController
+#import "ATSystemRenderer.h"
+
+@class ATKernel;
+@class ATKernelDebugView;
+
+@interface KernelRigViewController : UIViewController <ATDebugRendering>
 {
     
 @private
-    ATKernel    *_kernel;
+    ATKernel        *_kernel;
+    
+    NSMutableArray  *_nodes;
+    ATKernelDebugView *_debugView;
 }
+
+@property (nonatomic, retain) IBOutlet ATKernelDebugView *debugView;
 
 @end

@@ -202,10 +202,10 @@
 		4FA4D70314302969003958B3 /* Barnes-Hut */ = {
 			isa = PBXGroup;
 			children = (
-				4FA4D70414302969003958B3 /* ATBarnesHutBranch.h */,
-				4FA4D70514302969003958B3 /* ATBarnesHutBranch.m */,
 				4FA4D70614302969003958B3 /* ATBarnesHutTree.h */,
 				4FA4D70714302969003958B3 /* ATBarnesHutTree.m */,
+				4FA4D70414302969003958B3 /* ATBarnesHutBranch.h */,
+				4FA4D70514302969003958B3 /* ATBarnesHutBranch.m */,
 			);
 			path = "Barnes-Hut";
 			sourceTree = "<group>";

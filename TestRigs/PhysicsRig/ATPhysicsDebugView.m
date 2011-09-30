@@ -54,6 +54,7 @@
 - (CGPoint) pointToScreen:(CGPoint)p 
 {
     CGSize size = self.bounds.size;
+    
     CGFloat midX = size.width / 2;
     CGFloat midY = size.height / 2;
     

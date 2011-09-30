@@ -15,13 +15,19 @@
     
 @private
     
+    UIEdgeInsets    _screenPadding;
+    CGFloat         _screenStep;
+    CGRect          _screenBounds;
     
+    CGRect          _viewBoundsCurrent;
+    CGRect          _viewBoundsTarget;
 }
 
 
-// Keep track of current fps, only work as hard as requested fps
-
 @property (nonatomic, assign) CGFloat fps;
 
+
+- (CGPoint) toScreen:(CGPoint)physicsPoint;
+- (CGPoint) fromScreen:(CGPoint)screenPoint;
 
 @end

@@ -29,3 +29,9 @@
 // Debug Rendering
 //      - Barnes-Hut trees
 //      - Bounds (physics and viewport)
+
+@protocol ATDebugRendering <NSObject>
+
+- (void) redraw;
+
+@end

@@ -139,6 +139,8 @@ typedef enum {
             // CHECK IF POINT IN RECT TO AVOID RECURSIVELY MAKING THE RECT INFINIATELY
             // SMALLER FOR SOME POINTS OUT OF BOUNDS.
             
+            // CGRectContainsPoint
+            
             branch_size = CGSizeMake(node.bounds.size.width / 2.0, node.bounds.size.height / 2.0);
             branch_origin = node.bounds.origin;
             
@@ -237,7 +239,7 @@ typedef enum {
             } else {
                 // treat the quad as a single body
                 CGPoint d = CGPointSubtract(particle.position, CGPointDivideFloat(nodeBranch.position, nodeBranch.mass));
-                CGFloat distance = MAX(1.0f, magnitude(d));
+                CGFloat distance = MAX(1.0, magnitude(d));
                 CGPoint direction = ( magnitude(d) > 0.0 ) ? d : CGPointNormalize( CGPointRandom(1.0) );
                 CGPoint force = CGPointDivideFloat( CGPointMultiplyFloat(direction, (repulsion * nodeBranch.mass) ), (distance * distance) );
                 
@@ -338,7 +340,7 @@ typedef enum {
         branch.se = nil;
         branch.sw = nil;
         branch.bounds = CGRectZero;
-        branch.mass = 0.0f;
+        branch.mass = 0.0;
         branch.position = CGPointZero;
     }
     

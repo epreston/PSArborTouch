@@ -8,10 +8,12 @@
 
 #import "ATKernel.h"
 #import "ATPhysics.h"
-#import "ATParticle.h" // ??
+#import "ATParticle.h"
 #import "ATSpring.h"
 
 #import "ATSystemEnergy.h"
+
+#import "ATSystemRenderer.h"
 
 
 // Interval in seconds: make sure this is more than 0
@@ -19,8 +21,8 @@
 
 
 @interface ATKernel ()
-// Private interface for ATKernel
 
+// Private interface for ATKernel
 @property (nonatomic, readonly, assign) dispatch_queue_t physicsQueue;
 @property (nonatomic, readonly, assign) dispatch_source_t physicsTimer;
 
@@ -28,6 +30,9 @@
 
 
 @implementation ATKernel
+
+@synthesize physics = _physics;
+@synthesize delegate = _delegate;
 
 
 - (id)init
@@ -43,6 +48,7 @@
                                                repulsion:600.0 
                                                 friction:0.5] retain];
         _lastEnergy = [[[ATSystemEnergy alloc] init] retain];
+        _lastBounds = CGRectMake(-1.0, -1.0, 2.0, 2.0);
     }
     return self;
 }
@@ -50,6 +56,8 @@
 
 - (void) dealloc
 {
+    _delegate = nil;
+    
     // stop the simulation
     [self stop];
     
@@ -102,6 +110,8 @@
             _lastEnergy.mean    = currentEnergy.mean;
             _lastEnergy.count   = currentEnergy.count;
             
+            _lastBounds         = _physics.bounds;
+            
         });
         
         // Call back to main thread (UI Thread) to update the text
@@ -117,6 +127,11 @@
             //      - Update the edge display
             //      - Update the node display
             
+            if ( self.delegate ) {
+                if ( self.delegate && [self.delegate conformsToProtocol:@protocol(ATDebugRendering) ]) {
+                    [(NSObject<ATDebugRendering> *)self.delegate redraw];
+                }
+            }
         });
         
     });
@@ -202,7 +217,8 @@
 // We cache certain properties to provide information while the physics simulation 
 // is running.
 
-@synthesize energy = _lastEnergy;
+@synthesize simulationEnergy = _lastEnergy;
+@synthesize simulationBounds = _lastBounds;
 
 
 #pragma mark - Protected Physics Interface

@@ -28,7 +28,7 @@
 		4F9FB618142AB0D50032AF67 /* ATSystemEnergy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9FB60E142AB0D50032AF67 /* ATSystemEnergy.m */; };
 		4F9FB61F142AB13A0032AF67 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F9FB61E142AB13A0032AF67 /* Icon-72.png */; };
 		4F9FB638142ABA1B0032AF67 /* ATKernel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9FB637142ABA1B0032AF67 /* ATKernel.m */; };
-		4FA4D68C142CD4BD003958B3 /* ATPhysicsDebugView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA4D68B142CD4BD003958B3 /* ATPhysicsDebugView.m */; };
+		4FA4D68C142CD4BD003958B3 /* ATKernelDebugView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA4D68B142CD4BD003958B3 /* ATKernelDebugView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,8 +71,8 @@
 		4F9FB61E142AB13A0032AF67 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "../Icon-72.png"; sourceTree = "<group>"; };
 		4F9FB636142ABA1B0032AF67 /* ATKernel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATKernel.h; sourceTree = "<group>"; };
 		4F9FB637142ABA1B0032AF67 /* ATKernel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATKernel.m; sourceTree = "<group>"; };
-		4FA4D68A142CD4BD003958B3 /* ATPhysicsDebugView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATPhysicsDebugView.h; sourceTree = "<group>"; };
-		4FA4D68B142CD4BD003958B3 /* ATPhysicsDebugView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATPhysicsDebugView.m; sourceTree = "<group>"; };
+		4FA4D68A142CD4BD003958B3 /* ATKernelDebugView.h */ = {isa = PBXFileReference; fileEncoding = 4; path = ATKernelDebugView.h; sourceTree = "<group>"; };
+		4FA4D68B142CD4BD003958B3 /* ATKernelDebugView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATKernelDebugView.m; sourceTree = "<group>"; };
 		4FA4D6F214302705003958B3 /* Doxyfile */ = {isa = PBXFileReference; explicitFileType = text.script; name = Doxyfile; path = ../../Doxyfile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -170,10 +170,10 @@
 		4F9FB5F9142AB0D50032AF67 /* Barnes-Hut */ = {
 			isa = PBXGroup;
 			children = (
-				4F9FB5FA142AB0D50032AF67 /* ATBarnesHutBranch.h */,
-				4F9FB5FB142AB0D50032AF67 /* ATBarnesHutBranch.m */,
 				4F9FB5FC142AB0D50032AF67 /* ATBarnesHutTree.h */,
 				4F9FB5FD142AB0D50032AF67 /* ATBarnesHutTree.m */,
+				4F9FB5FA142AB0D50032AF67 /* ATBarnesHutBranch.h */,
+				4F9FB5FB142AB0D50032AF67 /* ATBarnesHutBranch.m */,
 			);
 			path = "Barnes-Hut";
 			sourceTree = "<group>";
@@ -243,8 +243,8 @@
 		4F9FB628142AB23D0032AF67 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4FA4D68A142CD4BD003958B3 /* ATPhysicsDebugView.h */,
-				4FA4D68B142CD4BD003958B3 /* ATPhysicsDebugView.m */,
+				4FA4D68A142CD4BD003958B3 /* ATKernelDebugView.h */,
+				4FA4D68B142CD4BD003958B3 /* ATKernelDebugView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -355,7 +355,7 @@
 				4F9FB617142AB0D50032AF67 /* ATSystem.m in Sources */,
 				4F9FB618142AB0D50032AF67 /* ATSystemEnergy.m in Sources */,
 				4F9FB638142ABA1B0032AF67 /* ATKernel.m in Sources */,
-				4FA4D68C142CD4BD003958B3 /* ATPhysicsDebugView.m in Sources */,
+				4FA4D68C142CD4BD003958B3 /* ATKernelDebugView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

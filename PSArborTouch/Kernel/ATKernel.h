@@ -26,12 +26,15 @@
     BOOL                _running;
     
     ATPhysics          *_physics;
+    
     ATSystemEnergy     *_lastEnergy;
+    CGRect              _lastBounds;
+    
+    id                 _delegate;
 }
 
 
-// ? Know when results are ready and call the render code ?
-
+@property (nonatomic, assign) id delegate;
 
 #pragma mark - Simulation Control
 
@@ -39,11 +42,14 @@
 - (void) start:(BOOL)unpause;
 - (void) stop;
 
+#pragma mark - Debug Physics Properties
+
+@property (nonatomic, readonly, retain) ATPhysics *physics;
 
 #pragma mark - Cached Physics Properties
 
-@property (nonatomic, readonly, copy) ATSystemEnergy *energy;
-
+@property (nonatomic, readonly, copy) ATSystemEnergy *simulationEnergy;
+@property (nonatomic, readonly, assign) CGRect simulationBounds;
 
 #pragma mark - Protected Physics Interface
 

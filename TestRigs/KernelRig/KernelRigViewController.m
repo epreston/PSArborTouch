@@ -7,11 +7,15 @@
 //
 
 #import "KernelRigViewController.h"
-#import "ATPhysicsDebugView.h"
+#import "ATKernelDebugView.h"
 #import "ATKernel.h"
+#import "ATSpring.h"
+#import "ATParticle.h"
 
 
 @implementation KernelRigViewController
+
+@synthesize debugView = _debugView;
 
 - (void)didReceiveMemoryWarning
 {
@@ -28,11 +32,59 @@
     
     _kernel = [[[ATKernel alloc] init] retain];
     
+    _kernel.delegate = self;
+    
+    self.debugView.physics = _kernel.physics;
+    self.debugView.debugDrawing = YES;
+    
+    
+    ATParticle  *_particle1;
+    ATParticle  *_particle2;
+    ATParticle  *_particle3;
+    ATParticle  *_particle4;
+    ATSpring    *_spring1;
+    ATSpring    *_spring2;
+    ATSpring    *_spring3;
+    ATSpring    *_spring4;
+    ATSpring    *_spring5;
+    
+    CGPoint pos = CGPointMake(0.3, 0.3);
+    _particle1 = [[ATParticle alloc] initWithName:@"Node 1" mass:1.0 position:pos fixed:NO];
+    [_kernel addParticle:_particle1];
+    
+    pos = CGPointMake(-0.7, -0.5);
+    _particle2 = [[ATParticle alloc] initWithName:@"Node 2" mass:1.0 position:pos fixed:NO];
+    [_kernel addParticle:_particle2];
+    
+    pos = CGPointMake(0.4, -0.5);
+    _particle3 = [[ATParticle alloc] initWithName:@"Node 3" mass:1.0 position:pos fixed:NO];
+    [_kernel addParticle:_particle3];
+    
+    pos = CGPointMake(-1.0, -1.0);
+    _particle4 = [[ATParticle alloc] initWithName:@"Node 4" mass:1.0 position:pos fixed:YES];
+    [_kernel addParticle:_particle4];
+    
+    
+    _spring1 = [[ATSpring alloc] initWithPoint1:_particle1 point2:_particle2 length:1.0 stiffness:1000.0];
+    [_kernel addSpring:_spring1];
+    
+    _spring2 = [[ATSpring alloc] initWithPoint1:_particle2 point2:_particle3 length:1.0 stiffness:1000.0];
+    [_kernel addSpring:_spring2];
+    
+    _spring3 = [[ATSpring alloc] initWithPoint1:_particle3 point2:_particle1 length:1.0 stiffness:1000.0];
+    [_kernel addSpring:_spring3];
+    
+    _spring4 = [[ATSpring alloc] initWithPoint1:_particle4 point2:_particle1 length:1.0 stiffness:1000.0];
+    [_kernel addSpring:_spring4];
+    
+    _spring5 = [[ATSpring alloc] initWithPoint1:_particle2 point2:_particle4 length:1.0 stiffness:1000.0];
+    [_kernel addSpring:_spring5];
 }
 
 
 - (void)viewDidUnload
 {
+    [self setDebugView:nil];
     [super viewDidUnload];
 
     
@@ -45,5 +97,28 @@
     // Return YES for supported orientations
     return YES;
 }
+
+- (void)dealloc {
+    [_debugView release];
+    [super dealloc];
+}
+
+
+#pragma mark - Interface Actions
+
+- (IBAction)go:(id)sender
+{
+    [_kernel start:YES];
+}
+
+
+
+#pragma mark - ATDebugRendering Protocol
+
+- (void) redraw
+{
+    [self.debugView setNeedsDisplay];
+}
+
 
 @end
