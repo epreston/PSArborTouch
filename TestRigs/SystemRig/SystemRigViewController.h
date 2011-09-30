@@ -8,6 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SystemRigViewController : UIViewController
+#import "ATSystemRenderer.h"
+
+@class ATSystem;
+@class ATSystemDebugView;
+
+@interface SystemRigViewController : UIViewController <UIGestureRecognizerDelegate, ATDebugRendering>
+{
+    
+@private
+    ATSystem *system;
+    ATSystemDebugView *debugView;
+}
+
+@property (nonatomic, retain) IBOutlet ATSystemDebugView *debugView;
 
 @end

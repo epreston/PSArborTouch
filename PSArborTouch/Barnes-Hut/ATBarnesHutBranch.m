@@ -8,55 +8,62 @@
 
 #import "ATBarnesHutBranch.h"
 
+
+@interface ATBarnesHutBranch ()
+// reserved
+@end
+
+
 @implementation ATBarnesHutBranch
 
-@synthesize bounds = _bounds;
-@synthesize mass = _mass;
-@synthesize position = _position;
-@synthesize ne = _ne;
-@synthesize nw = _nw;
-@synthesize se = _se;
-@synthesize sw = _sw;
+@synthesize bounds      = bounds_;
+@synthesize mass        = mass_;
+@synthesize position    = position_;
+
+@synthesize ne = ne_;
+@synthesize nw = nw_;
+@synthesize se = se_;
+@synthesize sw = sw_;
 
 - (id) init
 {
     self = [super init];
     if (self) {
-        _bounds = CGRectZero;
-        _mass = 0.0;
-        _position = CGPointZero;
-        _ne = nil;
-        _nw = nil;
-        _se = nil;
-        _sw = nil;
+        bounds_     = CGRectZero;
+        mass_       = 0.0;
+        position_   = CGPointZero;
+        
+        ne_ = nil;
+        nw_ = nil;
+        se_ = nil;
+        sw_ = nil;
     }
     return self;
 }
-
 
 - (id) initWithBounds:(CGRect)bounds mass:(CGFloat)mass position:(CGPoint)position 
 {
     self = [self init];
     if (self) {
-        _bounds = bounds;
-        _mass = mass;
-        _position = position;
+        bounds_     = bounds;
+        mass_       = mass;
+        position_   = position;
     }
     return self;
 }
 
-
-
 - (void) dealloc
 {
-    [_ne release];
-    [_nw release];
-    [_se release];
-    [_sw release];
+    [ne_ release];
+    [nw_ release];
+    [se_ release];
+    [sw_ release];
     
     [super dealloc];
 }
 
+
+#pragma mark - Internal Interface
 
 
 @end

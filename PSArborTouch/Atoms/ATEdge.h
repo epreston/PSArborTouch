@@ -10,22 +10,37 @@
 
 @class ATNode;
 
-@interface ATEdge : NSObject
+@interface ATEdge : NSObject <NSCoding>
 {
     
 @private
-    ATNode     *_source;
-    ATNode     *_target;
-    CGFloat     _length;
+    ATNode     *source_;
+    ATNode     *target_;
+    CGFloat     length_;
+    
+    NSNumber   *index_;
+    
+    NSMutableDictionary *data_;
 }
 
-@property (nonatomic, retain) ATNode *source;
-@property (nonatomic, retain) ATNode *target;
+@property (nonatomic, readonly, retain) ATNode *source;
+@property (nonatomic, readonly, retain) ATNode *target;
 @property (nonatomic, assign) CGFloat length;
 
+@property (nonatomic, readonly, retain) NSNumber *index;
+
+@property (nonatomic, retain) NSMutableDictionary *userData;
+
 - (id) init;
+
 - (id) initWithSource:(ATNode *)source 
                target:(ATNode *)target 
                length:(CGFloat)length;
+
+- (id) initWithSource:(ATNode *)source
+               target:(ATNode *)target
+             userData:(NSMutableDictionary *)data;
+
+- (CGFloat) distanceToNode:(ATNode *)node;
 
 @end

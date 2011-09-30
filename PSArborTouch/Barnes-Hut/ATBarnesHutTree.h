@@ -8,30 +8,26 @@
 
 #import <Foundation/Foundation.h>
 
-
 @class ATBarnesHutBranch;
 @class ATParticle;
-
 
 @interface ATBarnesHutTree : NSObject
 {
     
 @private
-    NSMutableArray     *_branches;
-    NSUInteger          _branchCtr;
-    ATBarnesHutBranch  *_root;
+    NSMutableArray     *branches_;
+    NSUInteger          branchCounter_;
     
-    CGRect              _bounds;
-    CGFloat             _theta;
+    ATBarnesHutBranch  *root_;
+    CGRect              bounds_;
+    CGFloat             theta_;
 }
 
-@property (nonatomic, retain) NSMutableArray *branches;
-@property (nonatomic, assign) NSUInteger branchCtr;
-@property (nonatomic, retain) ATBarnesHutBranch *root;
-@property (nonatomic, assign) CGRect bounds;
-@property (nonatomic, assign) CGFloat theta;
-- (id) init;
+@property (nonatomic, readonly, retain) ATBarnesHutBranch *root;
+@property (nonatomic, readonly, assign) CGRect bounds;
+@property (nonatomic, readonly, assign) CGFloat theta;
 
+- (id) init;
 
 - (void) updateWithBounds:(CGRect)bounds theta:(CGFloat)theta;
 - (void) insertParticle:(ATParticle *)newParticle;

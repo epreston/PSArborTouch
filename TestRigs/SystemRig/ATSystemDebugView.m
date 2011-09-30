@@ -1,12 +1,14 @@
 //
-//  ATKernelDebugView.m
-//  PSArborTouch - Kernel Test / Debug Rig
+//  ATSystemDebugView.m
+//  SystemRig
 //
-//  Created by Ed Preston on 29/09/11.
+//  Created by Ed Preston on 1/10/11.
 //  Copyright 2011 Preston Software. All rights reserved.
-//  
+//
 
-#import "ATKernelDebugView.h"
+#import "ATSystemDebugView.h"
+
+#import "ATSystem.h"
 #import "ATPhysics.h"
 #import "ATBarnesHutTree.h"
 #import "ATBarnesHutBranch.h"
@@ -14,7 +16,7 @@
 #import "ATParticle.h"
 
 
-@interface ATKernelDebugView ()
+@interface ATSystemDebugView ()
 
 - (CGSize) sizeToScreen:(CGSize)s;
 - (CGPoint) pointToScreen:(CGPoint)p;
@@ -28,9 +30,9 @@
 @end
 
 
-@implementation ATKernelDebugView
+@implementation ATSystemDebugView
 
-@synthesize physics = physics_;
+@synthesize system = system_;
 @synthesize debugDrawing = debugDrawing_;
 
 
@@ -43,16 +45,22 @@
     return self;
 }
 
+
 - (void) dealloc
 {
-    [physics_ release];
+    [system_ release];
     
     [super dealloc];
 }
 
+- (void) layoutSubviews
+{
+    self.system.viewBounds = self.bounds;
+}
+
 - (void) drawRect:(CGRect)rect
 {
-    if ( self.physics ) {
+    if ( self.system ) {
         
         CGContextRef context = UIGraphicsGetCurrentContext(); 
         
@@ -61,18 +69,30 @@
             CGContextSetLineWidth(context, 1.0);
             
             // Drawing code for the barnes-hut trees
-            ATBarnesHutBranch *root = self.physics.bhTree.root;
+            ATBarnesHutBranch *root = self.system.physics.bhTree.root;
             
             if ( root ) {
                 [self recursiveDrawBranches:root inContext:context];
             }
+            
+            
+            CGContextSetRGBStrokeColor(context, 0.0, 1.0, 0.0, 1.0); // green line
+            CGContextSetLineWidth(context, 1.0);
+            
+            [self drawOutlineWithContext:context andRect:[self scaleRect:self.system.tweenBoundsTarget]];
+            
+            
+            CGContextSetRGBStrokeColor(context, 0.0, 0.0, 1.0, 1.0); // blue line
+            CGContextSetLineWidth(context, 1.0);
+            
+            [self drawOutlineWithContext:context andRect:[self scaleRect:self.system.tweenBoundsCurrent]];
         }
         
         CGContextSetRGBStrokeColor(context, 0.0, 0.0, 0.0, 0.5); // black line with alpha
         CGContextSetLineWidth(context, 2.0);
         
         // Drawing code for springs
-        for (ATSpring *spring in self.physics.springs) {
+        for (ATSpring *spring in self.system.physics.springs) {
             [self drawSpring:spring inContext:context];            
         }
         
@@ -81,7 +101,7 @@
         CGContextSetLineWidth(context, 2.0);
         
         // Drawing code for particle centers
-        for (ATParticle *particle in self.physics.particles) {
+        for (ATParticle *particle in self.system.physics.particles) {
             [self drawParticle:particle inContext:context];            
         }
         
@@ -93,10 +113,12 @@
 
 - (CGSize) sizeToScreen:(CGSize)s 
 {
+//    return [self.system toViewSize:s];
+    
     CGSize size = self.bounds.size;
-
-    CGFloat scaleX = size.width / 10;
-    CGFloat scaleY = size.height / 10;
+    
+    CGFloat scaleX = size.width / 20;
+    CGFloat scaleY = size.height / 20;
     
     CGFloat sx  = (s.width * scaleX);
     CGFloat sy  = (s.height * scaleY);
@@ -104,20 +126,24 @@
     return CGSizeMake(sx, sy);
 }
 
+
 - (CGPoint) pointToScreen:(CGPoint)p 
 {
+//    return [self.system toViewPoint:p];
+    
     CGSize size = self.bounds.size;
     CGFloat midX = size.width / 2;
     CGFloat midY = size.height / 2;
     
-    CGFloat scaleX = size.width / 10;
-    CGFloat scaleY = size.height / 10;
+    CGFloat scaleX = size.width / 20;
+    CGFloat scaleY = size.height / 20;
     
     CGFloat sx  = (p.x * scaleX) + midX;
     CGFloat sy  = (p.y * scaleY) + midY;
     
     return CGPointMake(sx, sy);
 }
+
 
 - (CGRect) scaleRect:(CGRect)rect
 {
@@ -128,6 +154,7 @@
     
     return ret;
 }
+
 
 - (void) drawLineWithContext:(CGContextRef)context from:(CGPoint)from to:(CGPoint)to
 {
@@ -140,6 +167,7 @@
     CGContextStrokePath(context); // do actual stroking
 }
 
+
 - (void) drawOutlineWithContext:(CGContextRef)context andRect:(CGRect)rect
 {
     CGContextBeginPath(context);
@@ -149,19 +177,11 @@
     CGContextStrokePath(context); // do actual stroking
 }
 
+
 - (void) recursiveDrawBranches:(ATBarnesHutBranch *)branch inContext:(CGContextRef)context
-{
-    // Translate bounds by position
-    CGRect rect;
-    
-//    rect.origin = CGPointMake(branch.bounds.origin.x + branch.position.x,
-//                              branch.bounds.origin.y + branch.position.y);
-    
-    rect.origin = branch.bounds.origin;
-    rect.size   = branch.bounds.size;
-    
+{    
     // Draw the rect
-    [self drawOutlineWithContext:context andRect:[self scaleRect:rect]];
+    [self drawOutlineWithContext:context andRect:[self scaleRect:branch.bounds]];
     
     // Draw any sub branches
     if (branch.se != nil && [branch.se isKindOfClass:ATBarnesHutBranch.class] == YES) {
@@ -171,16 +191,17 @@
     if (branch.sw != nil && [branch.sw isKindOfClass:ATBarnesHutBranch.class] == YES ) {
         [self recursiveDrawBranches:branch.sw inContext:context];
     }
-
+    
     if (branch.ne != nil && [branch.ne isKindOfClass:ATBarnesHutBranch.class] == YES ) {
         [self recursiveDrawBranches:branch.ne inContext:context];
     }
-
+    
     if (branch.nw != nil && [branch.nw isKindOfClass:ATBarnesHutBranch.class] == YES ) {
         [self recursiveDrawBranches:branch.nw inContext:context];
     }
     
 }
+
 
 - (void) drawSpring:(ATSpring *)spring inContext:(CGContextRef)context
 {

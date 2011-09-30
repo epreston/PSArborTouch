@@ -8,10 +8,9 @@
 
 #import "ATKernel.h"
 #import "ATPhysics.h"
-#import "ATParticle.h"
 #import "ATSpring.h"
-
-#import "ATSystemEnergy.h"
+#import "ATParticle.h"
+#import "ATEnergy.h"
 
 #import "ATSystemRenderer.h"
 
@@ -22,7 +21,6 @@
 
 @interface ATKernel ()
 
-// Private interface for ATKernel
 @property (nonatomic, readonly, assign) dispatch_queue_t physicsQueue;
 @property (nonatomic, readonly, assign) dispatch_source_t physicsTimer;
 
@@ -33,7 +31,6 @@
 
 @synthesize physics = _physics;
 @synthesize delegate = _delegate;
-
 
 - (id)init
 {
@@ -47,12 +44,11 @@
                                                stiffness:1000.0 
                                                repulsion:600.0 
                                                 friction:0.5] retain];
-        _lastEnergy = [[[ATSystemEnergy alloc] init] retain];
+        _lastEnergy = [[[ATEnergy alloc] init] retain];
         _lastBounds = CGRectMake(-1.0, -1.0, 2.0, 2.0);
     }
     return self;
 }
-
 
 - (void) dealloc
 {
@@ -82,6 +78,14 @@
 }
 
 
+#pragma mark - Rendering
+
+- (BOOL) updateViewport
+{
+    return NO;
+}
+
+
 #pragma mark - Simulation Control
 
 - (void) physicsUpdate
@@ -90,11 +94,19 @@
         
     dispatch_async( [self physicsQueue] , ^{
         
-        // Run physics loop.  Stop timer if it returns NO on update.
-        if ([_physics update] == NO) {
-            [self stop];
+        // Run physics loop.  
+        BOOL stillActive = [_physics update];
+        
+        // Update the viewport
+        if ([self updateViewport]) {
+            stillActive = YES;
         }
         
+        // Stop timer if not stillActive.
+        if (!stillActive) {
+            [self stop];
+            
+        }
         
         dispatch_async(dispatch_get_main_queue(), ^{
             
@@ -103,7 +115,7 @@
             //      - Energy in the simulation
             //      - Bounds of the simulation
             
-            ATSystemEnergy *currentEnergy = _physics.energy;
+            ATEnergy *currentEnergy = _physics.energy;
             
             _lastEnergy.sum     = currentEnergy.sum;
             _lastEnergy.max     = currentEnergy.max;
@@ -137,7 +149,6 @@
     });
 }
 
-
 - (void) start:(BOOL)unpause
 {
     
@@ -164,6 +175,7 @@
         dispatch_resume( [self physicsTimer] );  
     }
     
+    NSLog(@"Kernel started.");
 }
 
 - (void) stop 
@@ -177,38 +189,8 @@
         _running = NO;
         dispatch_suspend(_timer);
     }
-}
-
-
-#pragma mark - Internal Interface
-
-- (dispatch_queue_t) physicsQueue
-{
-    if (_queue == nil) {
-        _queue = dispatch_queue_create("com.prestonsoft.psarbortouch", DISPATCH_QUEUE_SERIAL);
-    }
-    return _queue;
-}
-
-- (dispatch_source_t) physicsTimer
-{
-    BOOL timerNotInitialized = (_timer == nil);
-    if ( timerNotInitialized ) {
-        
-//        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-        
-        // create our timer source
-//        _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
-        
-        _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, [self physicsQueue]);
-        
-        // set the time to fire
-        dispatch_source_set_timer(_timer,
-                                  dispatch_time(DISPATCH_TIME_NOW, kTimerInterval * NSEC_PER_SEC),
-                                  kTimerInterval * NSEC_PER_SEC, (kTimerInterval * NSEC_PER_SEC) / 2.0);
-    }
     
-    return _timer;
+    NSLog(@"Kernel stopped.");
 }
 
 
@@ -266,5 +248,36 @@
     });
 }
 
+
+#pragma mark - Internal Interface
+
+- (dispatch_queue_t) physicsQueue
+{
+    if (_queue == nil) {
+        _queue = dispatch_queue_create("com.prestonsoft.psarbortouch", DISPATCH_QUEUE_SERIAL);
+    }
+    return _queue;
+}
+
+- (dispatch_source_t) physicsTimer
+{
+    BOOL timerNotInitialized = (_timer == nil);
+    if ( timerNotInitialized ) {
+        
+        //        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+        
+        // create our timer source
+        //        _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
+        
+        _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, [self physicsQueue]);
+        
+        // set the time to fire
+        dispatch_source_set_timer(_timer,
+                                  dispatch_time(DISPATCH_TIME_NOW, kTimerInterval * NSEC_PER_SEC),
+                                  kTimerInterval * NSEC_PER_SEC, (kTimerInterval * NSEC_PER_SEC) / 2.0);
+    }
+    
+    return _timer;
+}
 
 @end

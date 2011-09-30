@@ -8,9 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-
 @class ATBarnesHutTree;
-@class ATSystemEnergy;
+@class ATEnergy;
 @class ATParticle;
 @class ATSpring;
 
@@ -18,7 +17,6 @@
 {
     
 @private
-    
     ATBarnesHutTree *_bhTree;
     NSMutableArray  *_activeParticles;
     NSMutableArray  *_activeSprings;
@@ -27,33 +25,31 @@
     NSMutableArray  *_particles;
     NSMutableArray  *_springs;
     
-    CGFloat          _epoch;
-    ATSystemEnergy  *_energy;
-    CGRect           _bounds;
+    ATEnergy        *energy_;
+    CGRect           bounds_;
     
-    CGFloat     _speedLimit;
+    CGFloat     speedLimit_;
     
-    CGFloat     _deltaTime;
-    CGFloat     _stiffness;
-    CGFloat     _repulsion;
-    CGFloat     _friction;
+    CGFloat     deltaTime_;
+    CGFloat     stiffness_;
+    CGFloat     repulsion_;
+    CGFloat     friction_;
     
-    BOOL        _gravity;
-    CGFloat     _theta;
+    BOOL        gravity_;
+    CGFloat     theta_;
 }
 
-@property (nonatomic, retain) ATBarnesHutTree *bhTree;
+@property (nonatomic, readonly, retain) ATBarnesHutTree *bhTree;
 
-@property (nonatomic, retain) NSMutableArray *particles;
+@property (nonatomic, readonly, retain) NSArray *particles;
 - (void) addParticle:(ATParticle *)particle;
 - (void) removeParticle:(ATParticle *)particle;
 
-@property (nonatomic, retain) NSMutableArray *springs;
+@property (nonatomic, readonly, retain) NSArray *springs;
 - (void) addSpring:(ATSpring *)spring;
 - (void) removeSpring:(ATSpring *)spring;
 
-@property (nonatomic, assign) CGFloat epoch;
-@property (nonatomic, readonly, copy) ATSystemEnergy *energy;
+@property (nonatomic, readonly, copy) ATEnergy *energy;
 @property (nonatomic, assign) CGRect bounds;
 
 @property (nonatomic, assign) CGFloat speedLimit;
@@ -74,8 +70,6 @@
               repulsion:(CGFloat)repulsion 
                friction:(CGFloat)friction;
 
-
 - (BOOL) update;
-
 
 @end

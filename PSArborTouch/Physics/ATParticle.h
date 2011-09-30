@@ -12,23 +12,23 @@
 {
     
 @private
-    CGPoint _velocity;
-    CGPoint _force;
-    CGFloat _tempMass;
+    CGPoint     _velocity;
+    CGPoint     _force;
+    CGFloat     _tempMass;
     
-    CGFloat _connections;
+    NSUInteger  _connections;
 }
 
 @property (nonatomic, assign) CGPoint velocity;
 @property (nonatomic, assign) CGPoint force;
 @property (nonatomic, assign) CGFloat tempMass;
-@property (nonatomic, assign) CGFloat connections;
+@property (nonatomic, assign) NSUInteger connections;
 
 - (id) init;
+
 - (id) initWithVelocity:(CGPoint)velocity 
                   force:(CGPoint)force 
                tempMass:(CGFloat)tempMass;
-
 
 - (void) applyForce:(CGPoint)force;
 

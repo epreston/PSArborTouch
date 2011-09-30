@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F320C431435AA1E004783DB /* ATSystemParams.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F320C401435AA1E004783DB /* ATSystemParams.m */; };
+		4F320C441435AA1E004783DB /* ATSystemState.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F320C421435AA1E004783DB /* ATSystemState.m */; };
+		4F320C521435BC13004783DB /* ATEnergy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F320C511435BC13004783DB /* ATEnergy.m */; };
 		4F9FB5C8142AB0480032AF67 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F9FB5C7142AB0480032AF67 /* UIKit.framework */; };
 		4F9FB5CA142AB0480032AF67 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F9FB5C9142AB0480032AF67 /* Foundation.framework */; };
 		4F9FB5CC142AB0480032AF67 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F9FB5CB142AB0480032AF67 /* CoreGraphics.framework */; };
@@ -25,7 +28,6 @@
 		4F9FB615142AB0D50032AF67 /* ATSpring.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9FB605142AB0D50032AF67 /* ATSpring.m */; };
 		4F9FB616142AB0D50032AF67 /* NSMutableArray+QueueAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9FB609142AB0D50032AF67 /* NSMutableArray+QueueAdditions.m */; };
 		4F9FB617142AB0D50032AF67 /* ATSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9FB60C142AB0D50032AF67 /* ATSystem.m */; };
-		4F9FB618142AB0D50032AF67 /* ATSystemEnergy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9FB60E142AB0D50032AF67 /* ATSystemEnergy.m */; };
 		4F9FB61F142AB13A0032AF67 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F9FB61E142AB13A0032AF67 /* Icon-72.png */; };
 		4F9FB638142ABA1B0032AF67 /* ATKernel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9FB637142ABA1B0032AF67 /* ATKernel.m */; };
 		4FA4D68C142CD4BD003958B3 /* ATKernelDebugView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA4D68B142CD4BD003958B3 /* ATKernelDebugView.m */; };
@@ -33,6 +35,12 @@
 
 /* Begin PBXFileReference section */
 		4F2115241431964F00B2F51F /* ATSystemRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATSystemRenderer.h; sourceTree = "<group>"; };
+		4F320C3F1435AA1E004783DB /* ATSystemParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATSystemParams.h; sourceTree = "<group>"; };
+		4F320C401435AA1E004783DB /* ATSystemParams.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATSystemParams.m; sourceTree = "<group>"; };
+		4F320C411435AA1E004783DB /* ATSystemState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATSystemState.h; sourceTree = "<group>"; };
+		4F320C421435AA1E004783DB /* ATSystemState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATSystemState.m; sourceTree = "<group>"; };
+		4F320C501435BC13004783DB /* ATEnergy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATEnergy.h; sourceTree = "<group>"; };
+		4F320C511435BC13004783DB /* ATEnergy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATEnergy.m; sourceTree = "<group>"; };
 		4F9FB5C3142AB0480032AF67 /* KernelRig.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KernelRig.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F9FB5C7142AB0480032AF67 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4F9FB5C9142AB0480032AF67 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -66,12 +74,10 @@
 		4F9FB609142AB0D50032AF67 /* NSMutableArray+QueueAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+QueueAdditions.m"; sourceTree = "<group>"; };
 		4F9FB60B142AB0D50032AF67 /* ATSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATSystem.h; sourceTree = "<group>"; };
 		4F9FB60C142AB0D50032AF67 /* ATSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATSystem.m; sourceTree = "<group>"; };
-		4F9FB60D142AB0D50032AF67 /* ATSystemEnergy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATSystemEnergy.h; sourceTree = "<group>"; };
-		4F9FB60E142AB0D50032AF67 /* ATSystemEnergy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATSystemEnergy.m; sourceTree = "<group>"; };
 		4F9FB61E142AB13A0032AF67 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "../Icon-72.png"; sourceTree = "<group>"; };
 		4F9FB636142ABA1B0032AF67 /* ATKernel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATKernel.h; sourceTree = "<group>"; };
 		4F9FB637142ABA1B0032AF67 /* ATKernel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATKernel.m; sourceTree = "<group>"; };
-		4FA4D68A142CD4BD003958B3 /* ATKernelDebugView.h */ = {isa = PBXFileReference; fileEncoding = 4; path = ATKernelDebugView.h; sourceTree = "<group>"; };
+		4FA4D68A142CD4BD003958B3 /* ATKernelDebugView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATKernelDebugView.h; sourceTree = "<group>"; };
 		4FA4D68B142CD4BD003958B3 /* ATKernelDebugView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATKernelDebugView.m; sourceTree = "<group>"; };
 		4FA4D6F214302705003958B3 /* Doxyfile */ = {isa = PBXFileReference; explicitFileType = text.script; name = Doxyfile; path = ../../Doxyfile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -159,10 +165,10 @@
 		4F9FB5F4142AB0D50032AF67 /* Atoms */ = {
 			isa = PBXGroup;
 			children = (
-				4F9FB5F5142AB0D50032AF67 /* ATEdge.h */,
-				4F9FB5F6142AB0D50032AF67 /* ATEdge.m */,
 				4F9FB5F7142AB0D50032AF67 /* ATNode.h */,
 				4F9FB5F8142AB0D50032AF67 /* ATNode.m */,
+				4F9FB5F5142AB0D50032AF67 /* ATEdge.h */,
+				4F9FB5F6142AB0D50032AF67 /* ATEdge.m */,
 			);
 			path = Atoms;
 			sourceTree = "<group>";
@@ -190,12 +196,14 @@
 		4F9FB5FF142AB0D50032AF67 /* Physics */ = {
 			isa = PBXGroup;
 			children = (
+				4F320C501435BC13004783DB /* ATEnergy.h */,
+				4F320C511435BC13004783DB /* ATEnergy.m */,
 				4F9FB600142AB0D50032AF67 /* ATParticle.h */,
 				4F9FB601142AB0D50032AF67 /* ATParticle.m */,
-				4F9FB602142AB0D50032AF67 /* ATPhysics.h */,
-				4F9FB603142AB0D50032AF67 /* ATPhysics.m */,
 				4F9FB604142AB0D50032AF67 /* ATSpring.h */,
 				4F9FB605142AB0D50032AF67 /* ATSpring.m */,
+				4F9FB602142AB0D50032AF67 /* ATPhysics.h */,
+				4F9FB603142AB0D50032AF67 /* ATPhysics.m */,
 			);
 			path = Physics;
 			sourceTree = "<group>";
@@ -213,10 +221,12 @@
 		4F9FB60A142AB0D50032AF67 /* System */ = {
 			isa = PBXGroup;
 			children = (
+				4F320C3F1435AA1E004783DB /* ATSystemParams.h */,
+				4F320C401435AA1E004783DB /* ATSystemParams.m */,
+				4F320C411435AA1E004783DB /* ATSystemState.h */,
+				4F320C421435AA1E004783DB /* ATSystemState.m */,
 				4F9FB60B142AB0D50032AF67 /* ATSystem.h */,
 				4F9FB60C142AB0D50032AF67 /* ATSystem.m */,
-				4F9FB60D142AB0D50032AF67 /* ATSystemEnergy.h */,
-				4F9FB60E142AB0D50032AF67 /* ATSystemEnergy.m */,
 				4F2115241431964F00B2F51F /* ATSystemRenderer.h */,
 			);
 			path = System;
@@ -353,9 +363,11 @@
 				4F9FB615142AB0D50032AF67 /* ATSpring.m in Sources */,
 				4F9FB616142AB0D50032AF67 /* NSMutableArray+QueueAdditions.m in Sources */,
 				4F9FB617142AB0D50032AF67 /* ATSystem.m in Sources */,
-				4F9FB618142AB0D50032AF67 /* ATSystemEnergy.m in Sources */,
 				4F9FB638142ABA1B0032AF67 /* ATKernel.m in Sources */,
 				4FA4D68C142CD4BD003958B3 /* ATKernelDebugView.m in Sources */,
+				4F320C431435AA1E004783DB /* ATSystemParams.m in Sources */,
+				4F320C441435AA1E004783DB /* ATSystemState.m in Sources */,
+				4F320C521435BC13004783DB /* ATEnergy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

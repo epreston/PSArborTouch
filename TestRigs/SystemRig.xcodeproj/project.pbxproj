@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F320C6214360B46004783DB /* ATSystemDebugView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F320C6114360B46004783DB /* ATSystemDebugView.m */; };
+		4F80D48414354ADF00D9332C /* ATSystemState.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F80D48314354ADF00D9332C /* ATSystemState.m */; };
+		4F80D488143561AC00D9332C /* ATSystemParams.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F80D487143561AC00D9332C /* ATSystemParams.m */; };
 		4FA4D6C114302355003958B3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FA4D6C014302355003958B3 /* UIKit.framework */; };
 		4FA4D6C314302355003958B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FA4D6C214302355003958B3 /* Foundation.framework */; };
 		4FA4D6C514302355003958B3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FA4D6C414302355003958B3 /* CoreGraphics.framework */; };
@@ -27,11 +30,17 @@
 		4FA4D72214302969003958B3 /* ATSpring.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA4D71114302969003958B3 /* ATSpring.m */; };
 		4FA4D72314302969003958B3 /* NSMutableArray+QueueAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA4D71514302969003958B3 /* NSMutableArray+QueueAdditions.m */; };
 		4FA4D72414302969003958B3 /* ATSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA4D71814302969003958B3 /* ATSystem.m */; };
-		4FA4D72514302969003958B3 /* ATSystemEnergy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA4D71A14302969003958B3 /* ATSystemEnergy.m */; };
+		4FA4D72514302969003958B3 /* ATEnergy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA4D71A14302969003958B3 /* ATEnergy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4F21152A143197B600B2F51F /* ATSystemRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATSystemRenderer.h; sourceTree = "<group>"; };
+		4F320C6014360B46004783DB /* ATSystemDebugView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATSystemDebugView.h; sourceTree = "<group>"; };
+		4F320C6114360B46004783DB /* ATSystemDebugView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATSystemDebugView.m; sourceTree = "<group>"; };
+		4F80D48214354ADF00D9332C /* ATSystemState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATSystemState.h; sourceTree = "<group>"; };
+		4F80D48314354ADF00D9332C /* ATSystemState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATSystemState.m; sourceTree = "<group>"; };
+		4F80D486143561AC00D9332C /* ATSystemParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATSystemParams.h; sourceTree = "<group>"; };
+		4F80D487143561AC00D9332C /* ATSystemParams.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATSystemParams.m; sourceTree = "<group>"; };
 		4FA4D6BC14302355003958B3 /* SystemRig.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SystemRig.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FA4D6C014302355003958B3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4FA4D6C214302355003958B3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -69,8 +78,8 @@
 		4FA4D71514302969003958B3 /* NSMutableArray+QueueAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+QueueAdditions.m"; sourceTree = "<group>"; };
 		4FA4D71714302969003958B3 /* ATSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATSystem.h; sourceTree = "<group>"; };
 		4FA4D71814302969003958B3 /* ATSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATSystem.m; sourceTree = "<group>"; };
-		4FA4D71914302969003958B3 /* ATSystemEnergy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATSystemEnergy.h; sourceTree = "<group>"; };
-		4FA4D71A14302969003958B3 /* ATSystemEnergy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATSystemEnergy.m; sourceTree = "<group>"; };
+		4FA4D71914302969003958B3 /* ATEnergy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATEnergy.h; sourceTree = "<group>"; };
+		4FA4D71A14302969003958B3 /* ATEnergy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATEnergy.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +162,8 @@
 		4FA4D6E514302376003958B3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4F320C6014360B46004783DB /* ATSystemDebugView.h */,
+				4F320C6114360B46004783DB /* ATSystemDebugView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -191,10 +202,10 @@
 		4FA4D6FE14302969003958B3 /* Atoms */ = {
 			isa = PBXGroup;
 			children = (
-				4FA4D6FF14302969003958B3 /* ATEdge.h */,
-				4FA4D70014302969003958B3 /* ATEdge.m */,
 				4FA4D70114302969003958B3 /* ATNode.h */,
 				4FA4D70214302969003958B3 /* ATNode.m */,
+				4FA4D6FF14302969003958B3 /* ATEdge.h */,
+				4FA4D70014302969003958B3 /* ATEdge.m */,
 			);
 			path = Atoms;
 			sourceTree = "<group>";
@@ -222,12 +233,14 @@
 		4FA4D70B14302969003958B3 /* Physics */ = {
 			isa = PBXGroup;
 			children = (
+				4FA4D71914302969003958B3 /* ATEnergy.h */,
+				4FA4D71A14302969003958B3 /* ATEnergy.m */,
 				4FA4D70C14302969003958B3 /* ATParticle.h */,
 				4FA4D70D14302969003958B3 /* ATParticle.m */,
-				4FA4D70E14302969003958B3 /* ATPhysics.h */,
-				4FA4D70F14302969003958B3 /* ATPhysics.m */,
 				4FA4D71014302969003958B3 /* ATSpring.h */,
 				4FA4D71114302969003958B3 /* ATSpring.m */,
+				4FA4D70E14302969003958B3 /* ATPhysics.h */,
+				4FA4D70F14302969003958B3 /* ATPhysics.m */,
 			);
 			path = Physics;
 			sourceTree = "<group>";
@@ -247,8 +260,10 @@
 			children = (
 				4FA4D71714302969003958B3 /* ATSystem.h */,
 				4FA4D71814302969003958B3 /* ATSystem.m */,
-				4FA4D71914302969003958B3 /* ATSystemEnergy.h */,
-				4FA4D71A14302969003958B3 /* ATSystemEnergy.m */,
+				4F80D486143561AC00D9332C /* ATSystemParams.h */,
+				4F80D487143561AC00D9332C /* ATSystemParams.m */,
+				4F80D48214354ADF00D9332C /* ATSystemState.h */,
+				4F80D48314354ADF00D9332C /* ATSystemState.m */,
 				4F21152A143197B600B2F51F /* ATSystemRenderer.h */,
 			);
 			path = System;
@@ -349,7 +364,10 @@
 				4FA4D72214302969003958B3 /* ATSpring.m in Sources */,
 				4FA4D72314302969003958B3 /* NSMutableArray+QueueAdditions.m in Sources */,
 				4FA4D72414302969003958B3 /* ATSystem.m in Sources */,
-				4FA4D72514302969003958B3 /* ATSystemEnergy.m in Sources */,
+				4FA4D72514302969003958B3 /* ATEnergy.m in Sources */,
+				4F80D48414354ADF00D9332C /* ATSystemState.m in Sources */,
+				4F80D488143561AC00D9332C /* ATSystemParams.m in Sources */,
+				4F320C6214360B46004783DB /* ATSystemDebugView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

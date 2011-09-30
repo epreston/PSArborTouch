@@ -8,10 +8,11 @@
 
 #import "PSArborTouchViewController.h"
 #import "ATPhysicsDebugView.h"
+
 #import "ATPhysics.h"
-#import "ATSystemEnergy.h"
 #import "ATSpring.h"
 #import "ATParticle.h"
+#import "ATEnergy.h"
 
 #import <QuartzCore/QuartzCore.h>
 
@@ -92,19 +93,19 @@
     [_integrator addParticle:_particle4];
     
     
-    _spring1 = [[[ATSpring alloc] initWithPoint1:_particle1 point2:_particle2 length:1.0 stiffness:1000.0] retain];
+    _spring1 = [[[ATSpring alloc] initWithSource:_particle1 target:_particle2 length:1.0] retain];
     [_integrator addSpring:_spring1];
     
-    _spring2 = [[[ATSpring alloc] initWithPoint1:_particle2 point2:_particle3 length:1.0 stiffness:1000.0] retain];
+    _spring2 = [[[ATSpring alloc] initWithSource:_particle2 target:_particle3 length:1.0] retain];
     [_integrator addSpring:_spring2];
     
-    _spring3 = [[[ATSpring alloc] initWithPoint1:_particle3 point2:_particle1 length:1.0 stiffness:1000.0] retain];
+    _spring3 = [[[ATSpring alloc] initWithSource:_particle3 target:_particle1 length:1.0] retain];
     [_integrator addSpring:_spring3];
     
-    _spring4 = [[[ATSpring alloc] initWithPoint1:_particle4 point2:_particle1 length:1.0 stiffness:1000.0] retain];
+    _spring4 = [[[ATSpring alloc] initWithSource:_particle4 target:_particle1 length:1.0] retain];
     [_integrator addSpring:_spring4];
     
-    _spring5 = [[[ATSpring alloc] initWithPoint1:_particle2 point2:_particle4 length:1.0 stiffness:1000.0] retain];
+    _spring5 = [[[ATSpring alloc] initWithSource:_particle2 target:_particle4 length:1.0] retain];
     [_integrator addSpring:_spring5];
     
     [self addGestureRecognizersToPiece:_particleView1];

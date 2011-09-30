@@ -1,5 +1,5 @@
 //
-//  ATSystemEnergy.h
+//  ATEnergy.h
 //  PSArborTouch
 //
 //  Created by Ed Preston on 19/09/11.
@@ -8,18 +8,20 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ATSystemEnergy : NSObject
+@interface ATEnergy : NSObject
 {
-    CGFloat _sum;
-    CGFloat _max;
-    CGFloat _mean;
-    CGFloat _count;
+
+@private
+    CGFloat sum_;
+    CGFloat max_;
+    CGFloat mean_;
+    NSUInteger count_;
 }
 
 @property (nonatomic, assign) CGFloat sum;
 @property (nonatomic, assign) CGFloat max;
 @property (nonatomic, assign) CGFloat mean;
-@property (nonatomic, assign) CGFloat count;
+@property (nonatomic, assign) NSUInteger count;
 
 - (id) init;
 

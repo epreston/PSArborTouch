@@ -9,6 +9,12 @@
 #import "ATParticle.h"
 #import "ATGeometry.h"
 
+
+@interface ATParticle ()
+// reserved
+@end
+
+
 @implementation ATParticle
 
 @synthesize velocity    = _velocity;
@@ -23,7 +29,7 @@
         _velocity       = CGPointZero;
         _force          = CGPointZero;
         _tempMass       = 0.0;
-        _connections    = 0.0;
+        _connections    = 0;
     }
     return self;
 }
@@ -41,16 +47,13 @@
     return self;
 }
 
-- (void) dealloc
-{
-    
-    [super dealloc];
-}
-
 - (void) applyForce:(CGPoint)force 
 {
     self.force = CGPointAdd(self.force, CGPointDivideFloat(force, self.mass));
 }
+
+
+#pragma mark - Internal Interface
 
 
 @end

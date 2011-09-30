@@ -14,9 +14,8 @@
 {
 
 @private
-    
-    ATPhysics *_physics;
-    BOOL _debugDrawing;
+    ATPhysics *physics_;
+    BOOL debugDrawing_;
 }
 
 @property (nonatomic, retain) ATPhysics *physics;

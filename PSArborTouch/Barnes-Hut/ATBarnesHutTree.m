@@ -32,33 +32,29 @@ typedef enum {
 @end
 
 
-
 @implementation ATBarnesHutTree
 
-@synthesize branches = _branches;
-@synthesize branchCtr = _branchCtr;
-@synthesize root = _root;
-@synthesize bounds = _bounds;
-@synthesize theta = _theta;
-
+@synthesize root = root_;
+@synthesize bounds = bounds_;
+@synthesize theta = theta_;
 
 - (id) init
 {
     self = [super init];
     if (self) {
-        _branches = [[NSMutableArray arrayWithCapacity:32] retain];
-        _branchCtr = 0;
-        _root = nil;
-        _bounds = CGRectZero;
-        _theta = 0.4;
+        branches_       = [[NSMutableArray arrayWithCapacity:32] retain];
+        branchCounter_  = 0;
+        root_           = nil;
+        bounds_         = CGRectZero;
+        theta_          = 0.4;
     }
     return self;
 }
 
 - (void) dealloc
 {
-    [_branches release];
-    [_root release];
+    [branches_ release];
+    [root_ release];
     
     [super dealloc];
 }
@@ -68,11 +64,12 @@ typedef enum {
 
 - (void) updateWithBounds:(CGRect)bounds theta:(CGFloat)theta 
 {
-    self.theta = theta;
-    self.bounds = bounds;
-    self.branchCtr = 0;
-    self.root = [self _newBranch];
-    self.root.bounds = bounds;
+    bounds_         = bounds;
+    theta_          = theta;
+    
+    branchCounter_  = 0;
+    root_           = [self _newBranch];
+    root_.bounds    = bounds;
 }
 
 
@@ -84,7 +81,7 @@ typedef enum {
     NSParameterAssert(newParticle != nil);
     
     // add a particle to the tree, starting at the current _root and working down
-    ATBarnesHutBranch *node = _root;
+    ATBarnesHutBranch *node = root_;
     
     NSMutableArray* queue = [NSMutableArray arrayWithCapacity:32];
     [queue enqueue:newParticle];
@@ -203,7 +200,7 @@ typedef enum {
     // the specified repulsion to the particle
     
     NSMutableArray* queue = [NSMutableArray arrayWithCapacity:32];
-    [queue addObject:_root];
+    [queue addObject:root_];
     
     while ([queue count] != 0) {
         id node = [queue dequeue];
@@ -215,8 +212,8 @@ typedef enum {
             ATParticle *nodeParticle = node;
             
             CGPoint d = CGPointSubtract(particle.position, nodeParticle.position);
-            CGFloat distance = MAX(1.0f, magnitude(d));
-            CGPoint direction = ( magnitude(d) > 0.0 ) ? d : CGPointNormalize( CGPointRandom(1.0) );
+            CGFloat distance = MAX(1.0f, CGPointMagnitude(d));
+            CGPoint direction = ( CGPointMagnitude(d) > 0.0 ) ? d : CGPointNormalize( CGPointRandom(1.0) );
             CGPoint force = CGPointDivideFloat( CGPointMultiplyFloat(direction, (repulsion * nodeParticle.mass) ), (distance * distance) );
             
             [particle applyForce:force];
@@ -227,10 +224,10 @@ typedef enum {
             // with its quadrants in turn
             ATBarnesHutBranch *nodeBranch = node;
             
-            CGFloat dist = magnitude(CGPointSubtract(particle.position, CGPointDivideFloat(nodeBranch.position, nodeBranch.mass)));
+            CGFloat dist = CGPointMagnitude(CGPointSubtract(particle.position, CGPointDivideFloat(nodeBranch.position, nodeBranch.mass)));
             CGFloat size = sqrtf(nodeBranch.bounds.size.width * nodeBranch.bounds.size.height);
             
-            if ( (size / dist) > _theta ) { // i.e., s/d > Θ
+            if ( (size / dist) > theta_ ) { // i.e., s/d > Θ
                 // open the quad and recurse
                 [queue enqueue:nodeBranch.ne];
                 [queue enqueue:nodeBranch.nw];
@@ -239,8 +236,8 @@ typedef enum {
             } else {
                 // treat the quad as a single body
                 CGPoint d = CGPointSubtract(particle.position, CGPointDivideFloat(nodeBranch.position, nodeBranch.mass));
-                CGFloat distance = MAX(1.0, magnitude(d));
-                CGPoint direction = ( magnitude(d) > 0.0 ) ? d : CGPointNormalize( CGPointRandom(1.0) );
+                CGFloat distance = MAX(1.0, CGPointMagnitude(d));
+                CGPoint direction = ( CGPointMagnitude(d) > 0.0 ) ? d : CGPointNormalize( CGPointRandom(1.0) );
                 CGPoint force = CGPointDivideFloat( CGPointMultiplyFloat(direction, (repulsion * nodeBranch.mass) ), (distance * distance) );
                 
                 [particle applyForce:force];
@@ -250,7 +247,7 @@ typedef enum {
 }
 
 
-#pragma mark - Private Methods
+#pragma mark - Internal Interface
 
 // TODO: Review - should these next 3 just be branch members ?
 
@@ -294,7 +291,9 @@ typedef enum {
             node.nw = object;
             break;
             
+        case BHLocationUD:
         default:
+            NSLog(@"Could not set quad for node!");
             break;
     }
 }
@@ -319,7 +318,9 @@ typedef enum {
             return node.nw;
             break;
             
+        case BHLocationUD:
         default:
+            NSLog(@"Could not get quad for node!");
             return nil;
             break;
     }
@@ -330,11 +331,11 @@ typedef enum {
     // Recycle the tree nodes between iterations, nodes are owned by the branches array
     ATBarnesHutBranch *branch = nil;
     
-    if ( _branches.count == 0 || _branchCtr > (_branches.count -1) ) {
+    if ( branches_.count == 0 || branchCounter_ > (branches_.count -1) ) {
         branch = [[ATBarnesHutBranch alloc] init];
-        [_branches addObject:branch];
+        [branches_ addObject:branch];
     } else {
-        branch = [_branches objectAtIndex:_branchCtr];
+        branch = [branches_ objectAtIndex:branchCounter_];
         branch.ne = nil;
         branch.nw = nil;
         branch.se = nil;
@@ -346,9 +347,9 @@ typedef enum {
     
 //    NSLog(@"Branch count:%u", _branches.count);
     
-    _branchCtr++;
+    branchCounter_++;
     
-    if (_branchCtr > 6) {
+    if (branchCounter_ > 6) {
         NSLog(@"Somethings going wrong here.");
     }
     return branch;

@@ -32,6 +32,7 @@
 
 @protocol ATDebugRendering <NSObject>
 
+@required
 - (void) redraw;
 
 @end

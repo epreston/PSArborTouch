@@ -12,7 +12,7 @@
 #import "ATParticle.h"
 #import "ATGeometry.h"
 
-#import "ATSystemEnergy.h"
+#import "ATEnergy.h"
 
 
 @interface ATPhysics ()
@@ -30,23 +30,20 @@
 @end
 
 
-
 @implementation ATPhysics
 
 @synthesize particles   = _particles;
 @synthesize springs     = _springs;
-@synthesize epoch       = _epoch;
-@synthesize energy      = _energy;
-@synthesize bounds      = _bounds;
-@synthesize speedLimit  = _speedLimit;
-@synthesize deltaTime   = _deltaTime;
-@synthesize stiffness   = _stiffness;
-@synthesize repulsion   = _repulsion;
-@synthesize friction    = _friction;
-@synthesize gravity     = _gravity;
-@synthesize theta       = _theta;
+@synthesize energy      = energy_;
+@synthesize bounds      = bounds_;
+@synthesize speedLimit  = speedLimit_;
+@synthesize deltaTime   = deltaTime_;
+@synthesize stiffness   = stiffness_;
+@synthesize repulsion   = repulsion_;
+@synthesize friction    = friction_;
+@synthesize gravity     = gravity_;
+@synthesize theta       = theta_;
 @synthesize bhTree      = _bhTree;
-
 
 - (id) init
 {
@@ -57,21 +54,19 @@
         _freeParticles  = [[NSMutableArray arrayWithCapacity:32] retain];
         _particles      = [[NSMutableArray arrayWithCapacity:32] retain];
         _springs        = [[NSMutableArray arrayWithCapacity:32] retain];
-        _epoch          = 0.00;
-        _energy         = [[[ATSystemEnergy alloc] init] retain];
-        _bounds         = CGRectMake(-1.0, -1.0, 2.0, 2.0);
-        _speedLimit     = 1000;
-        _deltaTime      = 0.02;
-        _stiffness      = 1000;
-        _repulsion      = 600;
-        _friction       = 0.3;
-        _gravity        = NO;
-        _theta          = 0.4;
+        energy_         = [[[ATEnergy alloc] init] retain];
+        bounds_         = CGRectMake(-1.0, -1.0, 2.0, 2.0);
+        speedLimit_     = 1000;
+        deltaTime_      = 0.02;
+        stiffness_      = 1000;
+        repulsion_      = 600;
+        friction_       = 0.3;
+        gravity_        = NO;
+        theta_          = 0.4;
         _bhTree         = [[[ATBarnesHutTree alloc] init] retain];
     }
     return self;
 }
-
 
 - (id) initWithDeltaTime:(CGFloat)deltaTime 
                stiffness:(CGFloat)stiffness 
@@ -80,14 +75,13 @@
 {
     self = [self init];
     if (self) {
-        _deltaTime  = deltaTime;
-        _stiffness  = stiffness;
-        _repulsion  = repulsion;
-        _friction   = friction;
+        deltaTime_  = deltaTime;
+        stiffness_  = stiffness;
+        repulsion_  = repulsion;
+        friction_   = friction;
     }
     return self;
 }
-
 
 - (void) dealloc
 {
@@ -97,7 +91,7 @@
     [_freeParticles release];
     [_particles release];
     [_springs release];
-    [_energy release];
+    [energy_ release];
     
     [super dealloc];
 }
@@ -108,12 +102,12 @@
     particle.connections = 0.0;
     [_activeParticles addObject:particle];
     [_freeParticles addObject:particle];
-    [[self particles] addObject:particle];
+    [_particles addObject:particle];
 }
 
 - (void) removeParticle:(ATParticle *)particle
 {
-    [[self particles] removeObjectIdenticalTo:particle];
+    [_particles removeObjectIdenticalTo:particle];
     [_activeParticles removeObjectIdenticalTo:particle];
     [_freeParticles removeObjectIdenticalTo:particle];
 }
@@ -121,7 +115,7 @@
 - (void) addSpring:(ATSpring *)spring
 {
     [_activeSprings addObject:spring];
-    [[self springs] addObject:spring];
+    [_springs addObject:spring];
 
     spring.point1.connections++;
     spring.point2.connections++;
@@ -135,7 +129,7 @@
     spring.point1.connections--;
     spring.point2.connections--;
     
-    [[self springs] removeObjectIdenticalTo:spring];
+    [_springs removeObjectIdenticalTo:spring];
     [_activeSprings removeObjectIdenticalTo:spring];
 }
 
@@ -147,7 +141,7 @@
 - (BOOL) update; 
 {
     [self tendParticles];
-    [self eulerIntegrator:_deltaTime];
+    [self eulerIntegrator:deltaTime_];
     
 //    CGFloat motion = (self.energy.mean + self.energy.max) / 2; 
     CGFloat motion = (self.energy.max - self.energy.mean) / 2;
@@ -159,6 +153,9 @@
         return YES;
     }
 }
+
+
+#pragma mark - Internal Interface
 
 - (void) tendParticles 
 {
@@ -227,12 +224,12 @@
 
 - (void) applyBruteForceRepulsion 
 {
-    for (ATParticle *point1 in _activeParticles) {
-        for (ATParticle *point2 in _activeParticles) {
-            if (point1 != point2){
-                CGPoint d = CGPointSubtract(point1.position, point2.position);
-                CGFloat distance = MAX( 1.0, magnitude(d) );
-                CGPoint direction = (magnitude(d) > 0.0) ? d : CGPointNormalize( CGPointRandom(1.0) );
+    for (ATParticle *subject in _activeParticles) {
+        for (ATParticle *object in _activeParticles) {
+            if (subject != object){
+                CGPoint d = CGPointSubtract(subject.position, object.position);
+                CGFloat distance = MAX( 1.0, CGPointMagnitude(d) );
+                CGPoint direction = (CGPointMagnitude(d) > 0.0) ? d : CGPointNormalize( CGPointRandom(1.0) );
                 
                 // apply force to each end point
                 // (consult the cached `real' mass value if the mass is being poked to allow
@@ -241,18 +238,18 @@
                 
                 CGPoint force = CGPointDivideFloat( 
                                                    CGPointMultiplyFloat(direction, 
-                                                                        (self.repulsion * point2.mass * 0.5) ), 
+                                                                        (self.repulsion * object.mass * 0.5) ), 
                                                    (distance * distance * 0.5) );
                 
-                [point1 applyForce:force];
+                [subject applyForce:force];
                 
                 
                 force = CGPointDivideFloat(
                                            CGPointMultiplyFloat(direction, 
-                                                                (self.repulsion * point1.mass * 0.5) ),
+                                                                (self.repulsion * subject.mass * 0.5) ),
                                            (distance * distance * -0.5) );
                 
-                [point2 applyForce:force];
+                [object applyForce:force];
             }
         }
     }
@@ -276,11 +273,11 @@
 - (void) applySprings 
 {
     for (ATSpring *spring in _activeSprings) {
-        CGPoint d = CGPointSubtract(spring.point2.position, spring.point1.position); // the direction of the spring
+        CGPoint d = CGPointSubtract(spring.target.position, spring.source.position); // the direction of the spring
         
-        CGFloat displacement = spring.length - magnitude(d);
+        CGFloat displacement = spring.length - CGPointMagnitude(d);
         
-        CGPoint direction = CGPointNormalize( (magnitude(d) > 0.0) ? d : CGPointRandom(1.0) );
+        CGPoint direction = CGPointNormalize( (CGPointMagnitude(d) > 0.0) ? d : CGPointRandom(1.0) );
         
         // BUG:
         // since things oscillate wildly for hub nodes, should probably normalize spring
@@ -342,7 +339,7 @@
         
         particle.force = CGPointZero;
         
-        CGFloat speed = magnitude(particle.velocity);
+        CGFloat speed = CGPointMagnitude(particle.velocity);
         if (speed > self.speedLimit) {
             particle.velocity = CGPointDivideFloat(particle.velocity, speed * speed);   
         }
@@ -362,7 +359,7 @@
         particle.position = CGPointAdd(particle.position, CGPointMultiplyFloat(particle.velocity, timestep) );
         
         // keep stats to report in systemEnergy
-        CGFloat speed = magnitude(particle.velocity);
+        CGFloat speed = CGPointMagnitude(particle.velocity);
         CGFloat e = speed * speed;
         sum += e;
         max = MAX(e, max);
@@ -383,10 +380,10 @@
         if   (pt.y < topleft.y)   topleft.y = pt.y;
     }
     
-    _energy.sum     = sum;
-    _energy.max     = max;
-    _energy.mean    = sum/n;
-    _energy.count   = n;
+    energy_.sum     = sum;
+    energy_.max     = max;
+    energy_.mean    = sum/n;
+    energy_.count   = n;
     
     self.bounds = CGRectMake(topleft.x, topleft.y, bottomright.x - topleft.x, bottomright.y - topleft.y);
 }

@@ -13,7 +13,7 @@
 @class ATPhysics;
 @class ATParticle;
 @class ATSpring;
-@class ATSystemEnergy;
+@class ATEnergy;
 
 @interface ATKernel : NSObject
 {
@@ -27,14 +27,16 @@
     
     ATPhysics          *_physics;
     
-    ATSystemEnergy     *_lastEnergy;
+    ATEnergy           *_lastEnergy;
     CGRect              _lastBounds;
     
-    id                 _delegate;
+    id                  _delegate;
 }
 
+#pragma mark - Rendering
 
 @property (nonatomic, assign) id delegate;
+- (BOOL) updateViewport;
 
 #pragma mark - Simulation Control
 
@@ -48,7 +50,7 @@
 
 #pragma mark - Cached Physics Properties
 
-@property (nonatomic, readonly, copy) ATSystemEnergy *simulationEnergy;
+@property (nonatomic, readonly, copy) ATEnergy *simulationEnergy;
 @property (nonatomic, readonly, assign) CGRect simulationBounds;
 
 #pragma mark - Protected Physics Interface
@@ -56,11 +58,11 @@
 // Physics methods protected by a GCD queue to ensure serial execution.
 // TODO: Move into protocol / interface definition
 
-- (void)addParticle:(ATParticle *)particle;
-- (void)removeParticle:(ATParticle *)particle;
+- (void) addParticle:(ATParticle *)particle;
+- (void) removeParticle:(ATParticle *)particle;
 
-- (void)addSpring:(ATSpring *)spring;
-- (void)removeSpring:(ATSpring *)spring;
+- (void) addSpring:(ATSpring *)spring;
+- (void) removeSpring:(ATSpring *)spring;
 
 
 @end
