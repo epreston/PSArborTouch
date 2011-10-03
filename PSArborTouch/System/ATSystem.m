@@ -186,7 +186,7 @@
     return closestNode;
 }
 
-- (ATNode *) nearestNodeToPoint:(CGPoint)viewPoint within:(CGFloat)viewRadius;
+- (ATNode *) nearestNodeToPoint:(CGPoint)viewPoint withinRadius:(CGFloat)viewRadius;
 {
     ATNode *closestNode = [self nearestNodeToPoint:viewPoint];
     if (closestNode) {
@@ -242,7 +242,7 @@
     }
 }
 
-- (void) pruneNode:(NSString *)nodeName 
+- (void) removeNode:(NSString *)nodeName 
 {      
     // remove a node and its associated edges from the graph
     ATNode *node = [self getNode:nodeName];
@@ -253,7 +253,7 @@
         
         for (ATEdge *edge in [self.state.edges allValues]) {
             if (edge.source.index == node.index || edge.target.index == node.index) {
-                [self pruneEdge:edge];
+                [self removeEdge:edge];
             }
         }
         
@@ -270,7 +270,7 @@
 
 #pragma mark - Edge Management
 
-- (ATEdge *) addEdge:(NSString *)source toTarget:(NSString *)target andData:(NSMutableDictionary*)data 
+- (ATEdge *) addEdgeFromNode:(NSString *)source toNode:(NSString *)target withData:(NSMutableDictionary*)data 
 {
     ATNode *sourceNode = [self getNode:source];
     if (sourceNode == nil) {
@@ -315,7 +315,7 @@
     return edge;
 }
 
-- (void) pruneEdge:(ATEdge *)edge 
+- (void) removeEdge:(ATEdge *)edge 
 {    
     [self.state removeEdgesObjectForKey:edge.index];
     
@@ -331,10 +331,10 @@
     [self removeSpring:(ATSpring *)edge];  // Note: Upcast
 }
 
-- (NSSet *) getEdgesFrom:(NSString *)node1 toNode:(NSString *)node2 
+- (NSSet *) getEdgesFromNode:(NSString *)source toNode:(NSString *)target 
 {    
-    ATNode *aNode1 = [self getNode:node1];
-    ATNode *aNode2 = [self getNode:node2];
+    ATNode *aNode1 = [self getNode:source];
+    ATNode *aNode2 = [self getNode:target];
     
     if (aNode1 == nil || aNode2 == nil) return [NSSet set];
     
@@ -354,7 +354,7 @@
     return [NSSet setWithObject:to];
 }
 
-- (NSSet *) getEdgesFrom:(NSString *)node 
+- (NSSet *) getEdgesFromNode:(NSString *)node 
 {    
     ATNode *aNode = [self getNode:node];
     if (aNode == nil) return [NSSet set];
@@ -369,7 +369,7 @@
     return [NSSet set];
 }
 
-- (NSSet *) getEdgesTo:(NSString *)node 
+- (NSSet *) getEdgesToNode:(NSString *)node 
 {    
     ATNode *aNode = [self getNode:node];
     if (aNode == nil) return [NSSet set];

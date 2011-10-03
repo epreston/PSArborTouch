@@ -1,0 +1,15 @@
+//
+// PSArborTouch Example
+// Prefix header for all source files of the 'Control' target in the 'Control' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_4_0
+#warning "This project uses features only available in iPhone SDK 4.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif

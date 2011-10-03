@@ -39,10 +39,10 @@
     self.debugView.debugDrawing = YES;
     
     // add some nodes to the graph and watch it go...
-    [system_ addEdge:@"a" toTarget:@"b" andData:nil];
-    [system_ addEdge:@"a" toTarget:@"c" andData:nil];
-    [system_ addEdge:@"a" toTarget:@"d" andData:nil];
-    [system_ addEdge:@"a" toTarget:@"e" andData:nil];
+    [system_ addEdgeFromNode:@"a" toNode:@"b" withData:nil];
+    [system_ addEdgeFromNode:@"a" toNode:@"c" withData:nil];
+    [system_ addEdgeFromNode:@"a" toNode:@"d" withData:nil];
+    [system_ addEdgeFromNode:@"a" toNode:@"e" withData:nil];
     
 //    [system addEdge:@"e" toTarget:@"f" andData:nil];
 //    [system addEdge:@"e" toTarget:@"g" andData:nil];
@@ -95,12 +95,12 @@
 
 - (IBAction)add:(id)sender
 {
-    [system_ addEdge:@"a" toTarget:@"e" andData:nil];
+    [system_ addEdgeFromNode:@"a" toNode:@"e" withData:nil];
 }
 
 - (IBAction)remove:(id)sender
 {
-    [system_ pruneNode:@"e"];
+    [system_ removeNode:@"e"];
 }
 
 #pragma mark - Touch Handling 
@@ -134,7 +134,7 @@
         
         CGPoint translation = [gestureRecognizer translationInView:piece];
         
-        ATNode *node = [system_ nearestNodeToPoint:translation within:500.0];
+        ATNode *node = [system_ nearestNodeToPoint:translation withinRadius:500.0];
         
 //        translation = [self fromScreen:translation];
         

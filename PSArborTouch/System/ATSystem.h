@@ -55,22 +55,22 @@
 - (CGPoint) toViewPoint:(CGPoint)physicsPoint;
 - (CGPoint) fromViewPoint:(CGPoint)viewPoint;
 - (ATNode *) nearestNodeToPoint:(CGPoint)viewPoint;
-- (ATNode *) nearestNodeToPoint:(CGPoint)viewPoint within:(CGFloat)viewRadius;
+- (ATNode *) nearestNodeToPoint:(CGPoint)viewPoint withinRadius:(CGFloat)viewRadius;
 
 #pragma mark - Node Management
 
 - (ATNode *) addNode:(NSString *)name withData:(NSMutableDictionary *)data;
-- (void) pruneNode:(NSString *)nodeName;
+- (void) removeNode:(NSString *)nodeName;
 - (ATNode *) getNode:(NSString *)nodeName;
 
 
 #pragma mark - Edge Management
 
-- (ATEdge *) addEdge:(NSString *)source toTarget:(NSString *)target andData:(NSMutableDictionary *)data;
-- (void) pruneEdge:(ATEdge *)edge;
-- (NSSet *) getEdgesFrom:(NSString *)node1 toNode:(NSString *)node2;
-- (NSSet *) getEdgesFrom:(NSString *)node;
-- (NSSet *) getEdgesTo:(NSString *)node;
+- (ATEdge *) addEdgeFromNode:(NSString *)source toNode:(NSString *)target withData:(NSMutableDictionary *)data;
+- (void) removeEdge:(ATEdge *)edge;
+- (NSSet *) getEdgesFromNode:(NSString *)source toNode:(NSString *)target;
+- (NSSet *) getEdgesFromNode:(NSString *)node;
+- (NSSet *) getEdgesToNode:(NSString *)node;
 
 // Graft ?
 // Merge ?

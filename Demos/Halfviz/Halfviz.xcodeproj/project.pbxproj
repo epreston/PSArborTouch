@@ -1,0 +1,577 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4F4D9FEF1439DCBC00AAB205 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F4D9FEE1439DCBC00AAB205 /* UIKit.framework */; };
+		4F4D9FF11439DCBC00AAB205 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F4D9FF01439DCBC00AAB205 /* Foundation.framework */; };
+		4F4D9FF31439DCBC00AAB205 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F4D9FF21439DCBC00AAB205 /* CoreGraphics.framework */; };
+		4F4D9FF91439DCBC00AAB205 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4F4D9FF71439DCBC00AAB205 /* InfoPlist.strings */; };
+		4F4D9FFB1439DCBC00AAB205 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4D9FFA1439DCBC00AAB205 /* main.m */; };
+		4F4D9FFF1439DCBC00AAB205 /* HalfvizAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4D9FFE1439DCBC00AAB205 /* HalfvizAppDelegate.m */; };
+		4F4DA0021439DCBC00AAB205 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F4DA0001439DCBC00AAB205 /* MainWindow.xib */; };
+		4F4DA0051439DCBC00AAB205 /* HalfvizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4DA0041439DCBC00AAB205 /* HalfvizViewController.m */; };
+		4F4DA0081439DCBC00AAB205 /* HalfvizViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F4DA0061439DCBC00AAB205 /* HalfvizViewController.xib */; };
+		4F4DA0331439DD4200AAB205 /* ATEdge.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4DA0131439DD4200AAB205 /* ATEdge.m */; };
+		4F4DA0341439DD4200AAB205 /* ATNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4DA0151439DD4200AAB205 /* ATNode.m */; };
+		4F4DA0351439DD4200AAB205 /* ATBarnesHutBranch.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4DA0181439DD4200AAB205 /* ATBarnesHutBranch.m */; };
+		4F4DA0361439DD4200AAB205 /* ATBarnesHutTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4DA01A1439DD4200AAB205 /* ATBarnesHutTree.m */; };
+		4F4DA0371439DD4200AAB205 /* ATKernel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4DA01D1439DD4200AAB205 /* ATKernel.m */; };
+		4F4DA0381439DD4200AAB205 /* ATEnergy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4DA0201439DD4200AAB205 /* ATEnergy.m */; };
+		4F4DA0391439DD4200AAB205 /* ATParticle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4DA0221439DD4200AAB205 /* ATParticle.m */; };
+		4F4DA03A1439DD4200AAB205 /* ATPhysics.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4DA0241439DD4200AAB205 /* ATPhysics.m */; };
+		4F4DA03B1439DD4200AAB205 /* ATSpring.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4DA0261439DD4200AAB205 /* ATSpring.m */; };
+		4F4DA03C1439DD4200AAB205 /* NSMutableArray+QueueAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4DA02A1439DD4200AAB205 /* NSMutableArray+QueueAdditions.m */; };
+		4F4DA03D1439DD4200AAB205 /* ATSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4DA02D1439DD4200AAB205 /* ATSystem.m */; };
+		4F4DA03E1439DD4200AAB205 /* ATSystemParams.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4DA02F1439DD4200AAB205 /* ATSystemParams.m */; };
+		4F4DA03F1439DD4200AAB205 /* ATSystemState.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4DA0321439DD4200AAB205 /* ATSystemState.m */; };
+		4F4DA0B31439E19F00AAB205 /* halfviz.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F4DA0B01439E19F00AAB205 /* halfviz.png */; };
+		4F4DA0B41439E19F00AAB205 /* help-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F4DA0B11439E19F00AAB205 /* help-button.png */; };
+		4F4DA0B51439E19F00AAB205 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F4DA0B21439E19F00AAB205 /* logo.png */; };
+		4F4DA0B91439E1B300AAB205 /* back-button-light.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F4DA0B61439E1B300AAB205 /* back-button-light.png */; };
+		4F4DA0BA1439E1B300AAB205 /* down-up-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F4DA0B71439E1B300AAB205 /* down-up-arrow.png */; };
+		4F4DA0BB1439E1B300AAB205 /* nub.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F4DA0B81439E1B300AAB205 /* nub.png */; };
+		4F4DA0CE1439E1D300AAB205 /* a-new-hope.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F4DA0BD1439E1D300AAB205 /* a-new-hope.json */; };
+		4F4DA0CF1439E1D300AAB205 /* case-of-the-silk-king.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F4DA0BE1439E1D300AAB205 /* case-of-the-silk-king.json */; };
+		4F4DA0D01439E1D300AAB205 /* cube.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F4DA0BF1439E1D300AAB205 /* cube.json */; };
+		4F4DA0D11439E1D300AAB205 /* date-with-destiny.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F4DA0C01439E1D300AAB205 /* date-with-destiny.json */; };
+		4F4DA0D21439E1D300AAB205 /* house-of-danger.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F4DA0C11439E1D300AAB205 /* house-of-danger.json */; };
+		4F4DA0D31439E1D300AAB205 /* inside-ufo-54-40.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F4DA0C21439E1D300AAB205 /* inside-ufo-54-40.json */; };
+		4F4DA0D41439E1D300AAB205 /* journey-under-the-sea.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F4DA0C31439E1D300AAB205 /* journey-under-the-sea.json */; };
+		4F4DA0D51439E1D300AAB205 /* mystery-of-the-secret-room.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F4DA0C41439E1D300AAB205 /* mystery-of-the-secret-room.json */; };
+		4F4DA0D61439E1D300AAB205 /* python-grammar.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F4DA0C51439E1D300AAB205 /* python-grammar.json */; };
+		4F4DA0D71439E1D300AAB205 /* snowflake.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F4DA0C61439E1D300AAB205 /* snowflake.json */; };
+		4F4DA0D81439E1D300AAB205 /* the-abominable-snowman.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F4DA0C71439E1D300AAB205 /* the-abominable-snowman.json */; };
+		4F4DA0D91439E1D300AAB205 /* the-cave-of-time.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F4DA0C81439E1D300AAB205 /* the-cave-of-time.json */; };
+		4F4DA0DA1439E1D300AAB205 /* the-cavern-of-doom.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F4DA0C91439E1D300AAB205 /* the-cavern-of-doom.json */; };
+		4F4DA0DB1439E1D300AAB205 /* the-mystery-of-chimney-rock.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F4DA0CA1439E1D300AAB205 /* the-mystery-of-chimney-rock.json */; };
+		4F4DA0DC1439E1D300AAB205 /* the-mystery-of-ura-senke.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F4DA0CB1439E1D300AAB205 /* the-mystery-of-ura-senke.json */; };
+		4F4DA0DD1439E1D300AAB205 /* third-planet-from-altair.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F4DA0CC1439E1D300AAB205 /* third-planet-from-altair.json */; };
+		4F4DA0DE1439E1D300AAB205 /* toc.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F4DA0CD1439E1D300AAB205 /* toc.json */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4F4D9FEA1439DCBC00AAB205 /* Halfviz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Halfviz.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F4D9FEE1439DCBC00AAB205 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4F4D9FF01439DCBC00AAB205 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4F4D9FF21439DCBC00AAB205 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4F4D9FF61439DCBC00AAB205 /* Halfviz-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Halfviz-Info.plist"; sourceTree = "<group>"; };
+		4F4D9FF81439DCBC00AAB205 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4F4D9FFA1439DCBC00AAB205 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4F4D9FFC1439DCBC00AAB205 /* Halfviz-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Halfviz-Prefix.pch"; sourceTree = "<group>"; };
+		4F4D9FFD1439DCBC00AAB205 /* HalfvizAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HalfvizAppDelegate.h; sourceTree = "<group>"; };
+		4F4D9FFE1439DCBC00AAB205 /* HalfvizAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HalfvizAppDelegate.m; sourceTree = "<group>"; };
+		4F4DA0011439DCBC00AAB205 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		4F4DA0031439DCBC00AAB205 /* HalfvizViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HalfvizViewController.h; sourceTree = "<group>"; };
+		4F4DA0041439DCBC00AAB205 /* HalfvizViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HalfvizViewController.m; sourceTree = "<group>"; };
+		4F4DA0071439DCBC00AAB205 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HalfvizViewController.xib; sourceTree = "<group>"; };
+		4F4DA0121439DD4100AAB205 /* ATEdge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATEdge.h; sourceTree = "<group>"; };
+		4F4DA0131439DD4200AAB205 /* ATEdge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATEdge.m; sourceTree = "<group>"; };
+		4F4DA0141439DD4200AAB205 /* ATNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATNode.h; sourceTree = "<group>"; };
+		4F4DA0151439DD4200AAB205 /* ATNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATNode.m; sourceTree = "<group>"; };
+		4F4DA0171439DD4200AAB205 /* ATBarnesHutBranch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATBarnesHutBranch.h; sourceTree = "<group>"; };
+		4F4DA0181439DD4200AAB205 /* ATBarnesHutBranch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATBarnesHutBranch.m; sourceTree = "<group>"; };
+		4F4DA0191439DD4200AAB205 /* ATBarnesHutTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATBarnesHutTree.h; sourceTree = "<group>"; };
+		4F4DA01A1439DD4200AAB205 /* ATBarnesHutTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATBarnesHutTree.m; sourceTree = "<group>"; };
+		4F4DA01C1439DD4200AAB205 /* ATKernel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATKernel.h; sourceTree = "<group>"; };
+		4F4DA01D1439DD4200AAB205 /* ATKernel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATKernel.m; sourceTree = "<group>"; };
+		4F4DA01F1439DD4200AAB205 /* ATEnergy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATEnergy.h; sourceTree = "<group>"; };
+		4F4DA0201439DD4200AAB205 /* ATEnergy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATEnergy.m; sourceTree = "<group>"; };
+		4F4DA0211439DD4200AAB205 /* ATParticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATParticle.h; sourceTree = "<group>"; };
+		4F4DA0221439DD4200AAB205 /* ATParticle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATParticle.m; sourceTree = "<group>"; };
+		4F4DA0231439DD4200AAB205 /* ATPhysics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATPhysics.h; sourceTree = "<group>"; };
+		4F4DA0241439DD4200AAB205 /* ATPhysics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATPhysics.m; sourceTree = "<group>"; };
+		4F4DA0251439DD4200AAB205 /* ATSpring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATSpring.h; sourceTree = "<group>"; };
+		4F4DA0261439DD4200AAB205 /* ATSpring.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATSpring.m; sourceTree = "<group>"; };
+		4F4DA0281439DD4200AAB205 /* ATGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATGeometry.h; sourceTree = "<group>"; };
+		4F4DA0291439DD4200AAB205 /* NSMutableArray+QueueAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+QueueAdditions.h"; sourceTree = "<group>"; };
+		4F4DA02A1439DD4200AAB205 /* NSMutableArray+QueueAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+QueueAdditions.m"; sourceTree = "<group>"; };
+		4F4DA02C1439DD4200AAB205 /* ATSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATSystem.h; sourceTree = "<group>"; };
+		4F4DA02D1439DD4200AAB205 /* ATSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATSystem.m; sourceTree = "<group>"; };
+		4F4DA02E1439DD4200AAB205 /* ATSystemParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATSystemParams.h; sourceTree = "<group>"; };
+		4F4DA02F1439DD4200AAB205 /* ATSystemParams.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATSystemParams.m; sourceTree = "<group>"; };
+		4F4DA0301439DD4200AAB205 /* ATSystemRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATSystemRenderer.h; sourceTree = "<group>"; };
+		4F4DA0311439DD4200AAB205 /* ATSystemState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATSystemState.h; sourceTree = "<group>"; };
+		4F4DA0321439DD4200AAB205 /* ATSystemState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATSystemState.m; sourceTree = "<group>"; };
+		4F4DA0B01439E19F00AAB205 /* halfviz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = halfviz.png; path = style/halfviz.png; sourceTree = SOURCE_ROOT; };
+		4F4DA0B11439E19F00AAB205 /* help-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "help-button.png"; path = "style/help-button.png"; sourceTree = SOURCE_ROOT; };
+		4F4DA0B21439E19F00AAB205 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = style/logo.png; sourceTree = SOURCE_ROOT; };
+		4F4DA0B61439E1B300AAB205 /* back-button-light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "back-button-light.png"; path = "style/back-button-light.png"; sourceTree = SOURCE_ROOT; };
+		4F4DA0B71439E1B300AAB205 /* down-up-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "down-up-arrow.png"; path = "style/down-up-arrow.png"; sourceTree = SOURCE_ROOT; };
+		4F4DA0B81439E1B300AAB205 /* nub.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nub.png; path = style/nub.png; sourceTree = SOURCE_ROOT; };
+		4F4DA0BD1439E1D300AAB205 /* a-new-hope.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "a-new-hope.json"; sourceTree = "<group>"; };
+		4F4DA0BE1439E1D300AAB205 /* case-of-the-silk-king.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "case-of-the-silk-king.json"; sourceTree = "<group>"; };
+		4F4DA0BF1439E1D300AAB205 /* cube.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cube.json; sourceTree = "<group>"; };
+		4F4DA0C01439E1D300AAB205 /* date-with-destiny.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "date-with-destiny.json"; sourceTree = "<group>"; };
+		4F4DA0C11439E1D300AAB205 /* house-of-danger.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "house-of-danger.json"; sourceTree = "<group>"; };
+		4F4DA0C21439E1D300AAB205 /* inside-ufo-54-40.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "inside-ufo-54-40.json"; sourceTree = "<group>"; };
+		4F4DA0C31439E1D300AAB205 /* journey-under-the-sea.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "journey-under-the-sea.json"; sourceTree = "<group>"; };
+		4F4DA0C41439E1D300AAB205 /* mystery-of-the-secret-room.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "mystery-of-the-secret-room.json"; sourceTree = "<group>"; };
+		4F4DA0C51439E1D300AAB205 /* python-grammar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "python-grammar.json"; sourceTree = "<group>"; };
+		4F4DA0C61439E1D300AAB205 /* snowflake.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = snowflake.json; sourceTree = "<group>"; };
+		4F4DA0C71439E1D300AAB205 /* the-abominable-snowman.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "the-abominable-snowman.json"; sourceTree = "<group>"; };
+		4F4DA0C81439E1D300AAB205 /* the-cave-of-time.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "the-cave-of-time.json"; sourceTree = "<group>"; };
+		4F4DA0C91439E1D300AAB205 /* the-cavern-of-doom.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "the-cavern-of-doom.json"; sourceTree = "<group>"; };
+		4F4DA0CA1439E1D300AAB205 /* the-mystery-of-chimney-rock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "the-mystery-of-chimney-rock.json"; sourceTree = "<group>"; };
+		4F4DA0CB1439E1D300AAB205 /* the-mystery-of-ura-senke.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "the-mystery-of-ura-senke.json"; sourceTree = "<group>"; };
+		4F4DA0CC1439E1D300AAB205 /* third-planet-from-altair.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "third-planet-from-altair.json"; sourceTree = "<group>"; };
+		4F4DA0CD1439E1D300AAB205 /* toc.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = toc.json; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4F4D9FE71439DCBC00AAB205 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F4D9FEF1439DCBC00AAB205 /* UIKit.framework in Frameworks */,
+				4F4D9FF11439DCBC00AAB205 /* Foundation.framework in Frameworks */,
+				4F4D9FF31439DCBC00AAB205 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4F4D9FDF1439DCBC00AAB205 = {
+			isa = PBXGroup;
+			children = (
+				4F4D9FF41439DCBC00AAB205 /* Halfviz */,
+				4F4DA0101439DD4100AAB205 /* PSArborTouch */,
+				4F4D9FED1439DCBC00AAB205 /* Frameworks */,
+				4F4D9FEB1439DCBC00AAB205 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4F4D9FEB1439DCBC00AAB205 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4F4D9FEA1439DCBC00AAB205 /* Halfviz.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4F4D9FED1439DCBC00AAB205 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4F4D9FEE1439DCBC00AAB205 /* UIKit.framework */,
+				4F4D9FF01439DCBC00AAB205 /* Foundation.framework */,
+				4F4D9FF21439DCBC00AAB205 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4F4D9FF41439DCBC00AAB205 /* Halfviz */ = {
+			isa = PBXGroup;
+			children = (
+				4F4DA00E1439DCC300AAB205 /* Controller */,
+				4F4DA0AD1439E15100AAB205 /* View */,
+				4F4DA0AE1439E15900AAB205 /* Model */,
+				4F4D9FF51439DCBC00AAB205 /* Supporting Files */,
+			);
+			path = Halfviz;
+			sourceTree = "<group>";
+		};
+		4F4D9FF51439DCBC00AAB205 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4F4DA0AF1439E17600AAB205 /* Images */,
+				4F4D9FF61439DCBC00AAB205 /* Halfviz-Info.plist */,
+				4F4D9FF71439DCBC00AAB205 /* InfoPlist.strings */,
+				4F4D9FFA1439DCBC00AAB205 /* main.m */,
+				4F4D9FFC1439DCBC00AAB205 /* Halfviz-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4F4DA00E1439DCC300AAB205 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4F4DA00F1439DCCD00AAB205 /* AppDelegate */,
+				4F4DA0031439DCBC00AAB205 /* HalfvizViewController.h */,
+				4F4DA0041439DCBC00AAB205 /* HalfvizViewController.m */,
+				4F4DA0061439DCBC00AAB205 /* HalfvizViewController.xib */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		4F4DA00F1439DCCD00AAB205 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				4F4D9FFD1439DCBC00AAB205 /* HalfvizAppDelegate.h */,
+				4F4D9FFE1439DCBC00AAB205 /* HalfvizAppDelegate.m */,
+				4F4DA0001439DCBC00AAB205 /* MainWindow.xib */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		4F4DA0101439DD4100AAB205 /* PSArborTouch */ = {
+			isa = PBXGroup;
+			children = (
+				4F4DA0111439DD4100AAB205 /* Atoms */,
+				4F4DA0161439DD4200AAB205 /* Barnes-Hut */,
+				4F4DA01B1439DD4200AAB205 /* Kernel */,
+				4F4DA01E1439DD4200AAB205 /* Physics */,
+				4F4DA0271439DD4200AAB205 /* Support */,
+				4F4DA02B1439DD4200AAB205 /* System */,
+			);
+			name = PSArborTouch;
+			path = ../../PSArborTouch;
+			sourceTree = "<group>";
+		};
+		4F4DA0111439DD4100AAB205 /* Atoms */ = {
+			isa = PBXGroup;
+			children = (
+				4F4DA0121439DD4100AAB205 /* ATEdge.h */,
+				4F4DA0131439DD4200AAB205 /* ATEdge.m */,
+				4F4DA0141439DD4200AAB205 /* ATNode.h */,
+				4F4DA0151439DD4200AAB205 /* ATNode.m */,
+			);
+			path = Atoms;
+			sourceTree = "<group>";
+		};
+		4F4DA0161439DD4200AAB205 /* Barnes-Hut */ = {
+			isa = PBXGroup;
+			children = (
+				4F4DA0171439DD4200AAB205 /* ATBarnesHutBranch.h */,
+				4F4DA0181439DD4200AAB205 /* ATBarnesHutBranch.m */,
+				4F4DA0191439DD4200AAB205 /* ATBarnesHutTree.h */,
+				4F4DA01A1439DD4200AAB205 /* ATBarnesHutTree.m */,
+			);
+			path = "Barnes-Hut";
+			sourceTree = "<group>";
+		};
+		4F4DA01B1439DD4200AAB205 /* Kernel */ = {
+			isa = PBXGroup;
+			children = (
+				4F4DA01C1439DD4200AAB205 /* ATKernel.h */,
+				4F4DA01D1439DD4200AAB205 /* ATKernel.m */,
+			);
+			path = Kernel;
+			sourceTree = "<group>";
+		};
+		4F4DA01E1439DD4200AAB205 /* Physics */ = {
+			isa = PBXGroup;
+			children = (
+				4F4DA01F1439DD4200AAB205 /* ATEnergy.h */,
+				4F4DA0201439DD4200AAB205 /* ATEnergy.m */,
+				4F4DA0211439DD4200AAB205 /* ATParticle.h */,
+				4F4DA0221439DD4200AAB205 /* ATParticle.m */,
+				4F4DA0231439DD4200AAB205 /* ATPhysics.h */,
+				4F4DA0241439DD4200AAB205 /* ATPhysics.m */,
+				4F4DA0251439DD4200AAB205 /* ATSpring.h */,
+				4F4DA0261439DD4200AAB205 /* ATSpring.m */,
+			);
+			path = Physics;
+			sourceTree = "<group>";
+		};
+		4F4DA0271439DD4200AAB205 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				4F4DA0281439DD4200AAB205 /* ATGeometry.h */,
+				4F4DA0291439DD4200AAB205 /* NSMutableArray+QueueAdditions.h */,
+				4F4DA02A1439DD4200AAB205 /* NSMutableArray+QueueAdditions.m */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		4F4DA02B1439DD4200AAB205 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				4F4DA02C1439DD4200AAB205 /* ATSystem.h */,
+				4F4DA02D1439DD4200AAB205 /* ATSystem.m */,
+				4F4DA02E1439DD4200AAB205 /* ATSystemParams.h */,
+				4F4DA02F1439DD4200AAB205 /* ATSystemParams.m */,
+				4F4DA0301439DD4200AAB205 /* ATSystemRenderer.h */,
+				4F4DA0311439DD4200AAB205 /* ATSystemState.h */,
+				4F4DA0321439DD4200AAB205 /* ATSystemState.m */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+		4F4DA0AD1439E15100AAB205 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		4F4DA0AE1439E15900AAB205 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4F4DA0BC1439E1D300AAB205 /* Library */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		4F4DA0AF1439E17600AAB205 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				4F4DA0B61439E1B300AAB205 /* back-button-light.png */,
+				4F4DA0B71439E1B300AAB205 /* down-up-arrow.png */,
+				4F4DA0B81439E1B300AAB205 /* nub.png */,
+				4F4DA0B01439E19F00AAB205 /* halfviz.png */,
+				4F4DA0B11439E19F00AAB205 /* help-button.png */,
+				4F4DA0B21439E19F00AAB205 /* logo.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		4F4DA0BC1439E1D300AAB205 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				4F4DA0BD1439E1D300AAB205 /* a-new-hope.json */,
+				4F4DA0BE1439E1D300AAB205 /* case-of-the-silk-king.json */,
+				4F4DA0BF1439E1D300AAB205 /* cube.json */,
+				4F4DA0C01439E1D300AAB205 /* date-with-destiny.json */,
+				4F4DA0C11439E1D300AAB205 /* house-of-danger.json */,
+				4F4DA0C21439E1D300AAB205 /* inside-ufo-54-40.json */,
+				4F4DA0C31439E1D300AAB205 /* journey-under-the-sea.json */,
+				4F4DA0C41439E1D300AAB205 /* mystery-of-the-secret-room.json */,
+				4F4DA0C51439E1D300AAB205 /* python-grammar.json */,
+				4F4DA0C61439E1D300AAB205 /* snowflake.json */,
+				4F4DA0C71439E1D300AAB205 /* the-abominable-snowman.json */,
+				4F4DA0C81439E1D300AAB205 /* the-cave-of-time.json */,
+				4F4DA0C91439E1D300AAB205 /* the-cavern-of-doom.json */,
+				4F4DA0CA1439E1D300AAB205 /* the-mystery-of-chimney-rock.json */,
+				4F4DA0CB1439E1D300AAB205 /* the-mystery-of-ura-senke.json */,
+				4F4DA0CC1439E1D300AAB205 /* third-planet-from-altair.json */,
+				4F4DA0CD1439E1D300AAB205 /* toc.json */,
+			);
+			name = Library;
+			path = library;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4F4D9FE91439DCBC00AAB205 /* Halfviz */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F4DA00B1439DCBC00AAB205 /* Build configuration list for PBXNativeTarget "Halfviz" */;
+			buildPhases = (
+				4F4D9FE61439DCBC00AAB205 /* Sources */,
+				4F4D9FE71439DCBC00AAB205 /* Frameworks */,
+				4F4D9FE81439DCBC00AAB205 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Halfviz;
+			productName = Halfviz;
+			productReference = 4F4D9FEA1439DCBC00AAB205 /* Halfviz.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4F4D9FE11439DCBC00AAB205 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Preston Software";
+			};
+			buildConfigurationList = 4F4D9FE41439DCBC00AAB205 /* Build configuration list for PBXProject "Halfviz" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4F4D9FDF1439DCBC00AAB205;
+			productRefGroup = 4F4D9FEB1439DCBC00AAB205 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4F4D9FE91439DCBC00AAB205 /* Halfviz */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4F4D9FE81439DCBC00AAB205 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F4D9FF91439DCBC00AAB205 /* InfoPlist.strings in Resources */,
+				4F4DA0021439DCBC00AAB205 /* MainWindow.xib in Resources */,
+				4F4DA0081439DCBC00AAB205 /* HalfvizViewController.xib in Resources */,
+				4F4DA0B31439E19F00AAB205 /* halfviz.png in Resources */,
+				4F4DA0B41439E19F00AAB205 /* help-button.png in Resources */,
+				4F4DA0B51439E19F00AAB205 /* logo.png in Resources */,
+				4F4DA0B91439E1B300AAB205 /* back-button-light.png in Resources */,
+				4F4DA0BA1439E1B300AAB205 /* down-up-arrow.png in Resources */,
+				4F4DA0BB1439E1B300AAB205 /* nub.png in Resources */,
+				4F4DA0CE1439E1D300AAB205 /* a-new-hope.json in Resources */,
+				4F4DA0CF1439E1D300AAB205 /* case-of-the-silk-king.json in Resources */,
+				4F4DA0D01439E1D300AAB205 /* cube.json in Resources */,
+				4F4DA0D11439E1D300AAB205 /* date-with-destiny.json in Resources */,
+				4F4DA0D21439E1D300AAB205 /* house-of-danger.json in Resources */,
+				4F4DA0D31439E1D300AAB205 /* inside-ufo-54-40.json in Resources */,
+				4F4DA0D41439E1D300AAB205 /* journey-under-the-sea.json in Resources */,
+				4F4DA0D51439E1D300AAB205 /* mystery-of-the-secret-room.json in Resources */,
+				4F4DA0D61439E1D300AAB205 /* python-grammar.json in Resources */,
+				4F4DA0D71439E1D300AAB205 /* snowflake.json in Resources */,
+				4F4DA0D81439E1D300AAB205 /* the-abominable-snowman.json in Resources */,
+				4F4DA0D91439E1D300AAB205 /* the-cave-of-time.json in Resources */,
+				4F4DA0DA1439E1D300AAB205 /* the-cavern-of-doom.json in Resources */,
+				4F4DA0DB1439E1D300AAB205 /* the-mystery-of-chimney-rock.json in Resources */,
+				4F4DA0DC1439E1D300AAB205 /* the-mystery-of-ura-senke.json in Resources */,
+				4F4DA0DD1439E1D300AAB205 /* third-planet-from-altair.json in Resources */,
+				4F4DA0DE1439E1D300AAB205 /* toc.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4F4D9FE61439DCBC00AAB205 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F4D9FFB1439DCBC00AAB205 /* main.m in Sources */,
+				4F4D9FFF1439DCBC00AAB205 /* HalfvizAppDelegate.m in Sources */,
+				4F4DA0051439DCBC00AAB205 /* HalfvizViewController.m in Sources */,
+				4F4DA0331439DD4200AAB205 /* ATEdge.m in Sources */,
+				4F4DA0341439DD4200AAB205 /* ATNode.m in Sources */,
+				4F4DA0351439DD4200AAB205 /* ATBarnesHutBranch.m in Sources */,
+				4F4DA0361439DD4200AAB205 /* ATBarnesHutTree.m in Sources */,
+				4F4DA0371439DD4200AAB205 /* ATKernel.m in Sources */,
+				4F4DA0381439DD4200AAB205 /* ATEnergy.m in Sources */,
+				4F4DA0391439DD4200AAB205 /* ATParticle.m in Sources */,
+				4F4DA03A1439DD4200AAB205 /* ATPhysics.m in Sources */,
+				4F4DA03B1439DD4200AAB205 /* ATSpring.m in Sources */,
+				4F4DA03C1439DD4200AAB205 /* NSMutableArray+QueueAdditions.m in Sources */,
+				4F4DA03D1439DD4200AAB205 /* ATSystem.m in Sources */,
+				4F4DA03E1439DD4200AAB205 /* ATSystemParams.m in Sources */,
+				4F4DA03F1439DD4200AAB205 /* ATSystemState.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4F4D9FF71439DCBC00AAB205 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4F4D9FF81439DCBC00AAB205 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4F4DA0001439DCBC00AAB205 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4F4DA0011439DCBC00AAB205 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		4F4DA0061439DCBC00AAB205 /* HalfvizViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4F4DA0071439DCBC00AAB205 /* en */,
+			);
+			name = HalfvizViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4F4DA0091439DCBC00AAB205 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		4F4DA00A1439DCBC00AAB205 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4F4DA00C1439DCBC00AAB205 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Halfviz/Halfviz-Prefix.pch";
+				INFOPLIST_FILE = "Halfviz/Halfviz-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4F4DA00D1439DCBC00AAB205 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Halfviz/Halfviz-Prefix.pch";
+				INFOPLIST_FILE = "Halfviz/Halfviz-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4F4D9FE41439DCBC00AAB205 /* Build configuration list for PBXProject "Halfviz" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F4DA0091439DCBC00AAB205 /* Debug */,
+				4F4DA00A1439DCBC00AAB205 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F4DA00B1439DCBC00AAB205 /* Build configuration list for PBXNativeTarget "Halfviz" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F4DA00C1439DCBC00AAB205 /* Debug */,
+				4F4DA00D1439DCBC00AAB205 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4F4D9FE11439DCBC00AAB205 /* Project object */;
+}

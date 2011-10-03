@@ -1,0 +1,529 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4F4D9F871439DAFD00AAB205 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F4D9F861439DAFD00AAB205 /* UIKit.framework */; };
+		4F4D9F891439DAFD00AAB205 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F4D9F881439DAFD00AAB205 /* Foundation.framework */; };
+		4F4D9F8B1439DAFD00AAB205 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F4D9F8A1439DAFD00AAB205 /* CoreGraphics.framework */; };
+		4F4D9F911439DAFD00AAB205 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4F4D9F8F1439DAFD00AAB205 /* InfoPlist.strings */; };
+		4F4D9F931439DAFD00AAB205 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4D9F921439DAFD00AAB205 /* main.m */; };
+		4F4D9F971439DAFD00AAB205 /* AtlasAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4D9F961439DAFD00AAB205 /* AtlasAppDelegate.m */; };
+		4F4D9F9A1439DAFD00AAB205 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F4D9F981439DAFD00AAB205 /* MainWindow.xib */; };
+		4F4D9F9D1439DAFD00AAB205 /* AtlasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4D9F9C1439DAFD00AAB205 /* AtlasViewController.m */; };
+		4F4D9FA01439DAFD00AAB205 /* AtlasViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F4D9F9E1439DAFD00AAB205 /* AtlasViewController.xib */; };
+		4F4D9FCD1439DBB200AAB205 /* ATEdge.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4D9FAD1439DBB200AAB205 /* ATEdge.m */; };
+		4F4D9FCE1439DBB200AAB205 /* ATNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4D9FAF1439DBB200AAB205 /* ATNode.m */; };
+		4F4D9FCF1439DBB200AAB205 /* ATBarnesHutBranch.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4D9FB21439DBB200AAB205 /* ATBarnesHutBranch.m */; };
+		4F4D9FD01439DBB200AAB205 /* ATBarnesHutTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4D9FB41439DBB200AAB205 /* ATBarnesHutTree.m */; };
+		4F4D9FD11439DBB200AAB205 /* ATKernel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4D9FB71439DBB200AAB205 /* ATKernel.m */; };
+		4F4D9FD21439DBB200AAB205 /* ATEnergy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4D9FBA1439DBB200AAB205 /* ATEnergy.m */; };
+		4F4D9FD31439DBB200AAB205 /* ATParticle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4D9FBC1439DBB200AAB205 /* ATParticle.m */; };
+		4F4D9FD41439DBB200AAB205 /* ATPhysics.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4D9FBE1439DBB200AAB205 /* ATPhysics.m */; };
+		4F4D9FD51439DBB200AAB205 /* ATSpring.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4D9FC01439DBB200AAB205 /* ATSpring.m */; };
+		4F4D9FD61439DBB200AAB205 /* NSMutableArray+QueueAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4D9FC41439DBB200AAB205 /* NSMutableArray+QueueAdditions.m */; };
+		4F4D9FD71439DBB200AAB205 /* ATSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4D9FC71439DBB200AAB205 /* ATSystem.m */; };
+		4F4D9FD81439DBB200AAB205 /* ATSystemParams.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4D9FC91439DBB200AAB205 /* ATSystemParams.m */; };
+		4F4D9FD91439DBB200AAB205 /* ATSystemState.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4D9FCC1439DBB200AAB205 /* ATSystemState.m */; };
+		4F4DA0EB1439E2BF00AAB205 /* africa.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F4DA0E41439E2BF00AAB205 /* africa.json */; };
+		4F4DA0EC1439E2BF00AAB205 /* america.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F4DA0E51439E2BF00AAB205 /* america.json */; };
+		4F4DA0ED1439E2BF00AAB205 /* asia.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F4DA0E61439E2BF00AAB205 /* asia.json */; };
+		4F4DA0EE1439E2BF00AAB205 /* europe.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F4DA0E71439E2BF00AAB205 /* europe.json */; };
+		4F4DA0EF1439E2BF00AAB205 /* mideast.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F4DA0E81439E2BF00AAB205 /* mideast.json */; };
+		4F4DA0F01439E2BF00AAB205 /* risk.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F4DA0E91439E2BF00AAB205 /* risk.json */; };
+		4F4DA0F11439E2BF00AAB205 /* usofa.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F4DA0EA1439E2BF00AAB205 /* usofa.json */; };
+		4F4DA0F81439E2E300AAB205 /* atlas.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F4DA0F41439E2E300AAB205 /* atlas.png */; };
+		4F4DA0F91439E2E300AAB205 /* back-button-light.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F4DA0F51439E2E300AAB205 /* back-button-light.png */; };
+		4F4DA0FA1439E2E300AAB205 /* home-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F4DA0F61439E2E300AAB205 /* home-arrow.png */; };
+		4F4DA0FB1439E2E300AAB205 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F4DA0F71439E2E300AAB205 /* logo.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4F4D9F821439DAFD00AAB205 /* Atlas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Atlas.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F4D9F861439DAFD00AAB205 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4F4D9F881439DAFD00AAB205 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4F4D9F8A1439DAFD00AAB205 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4F4D9F8E1439DAFD00AAB205 /* Atlas-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Atlas-Info.plist"; sourceTree = "<group>"; };
+		4F4D9F901439DAFD00AAB205 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4F4D9F921439DAFD00AAB205 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4F4D9F941439DAFD00AAB205 /* Atlas-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Atlas-Prefix.pch"; sourceTree = "<group>"; };
+		4F4D9F951439DAFD00AAB205 /* AtlasAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AtlasAppDelegate.h; sourceTree = "<group>"; };
+		4F4D9F961439DAFD00AAB205 /* AtlasAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AtlasAppDelegate.m; sourceTree = "<group>"; };
+		4F4D9F991439DAFD00AAB205 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		4F4D9F9B1439DAFD00AAB205 /* AtlasViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AtlasViewController.h; sourceTree = "<group>"; };
+		4F4D9F9C1439DAFD00AAB205 /* AtlasViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AtlasViewController.m; sourceTree = "<group>"; };
+		4F4D9F9F1439DAFD00AAB205 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/AtlasViewController.xib; sourceTree = "<group>"; };
+		4F4D9FAC1439DBB200AAB205 /* ATEdge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATEdge.h; sourceTree = "<group>"; };
+		4F4D9FAD1439DBB200AAB205 /* ATEdge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATEdge.m; sourceTree = "<group>"; };
+		4F4D9FAE1439DBB200AAB205 /* ATNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATNode.h; sourceTree = "<group>"; };
+		4F4D9FAF1439DBB200AAB205 /* ATNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATNode.m; sourceTree = "<group>"; };
+		4F4D9FB11439DBB200AAB205 /* ATBarnesHutBranch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATBarnesHutBranch.h; sourceTree = "<group>"; };
+		4F4D9FB21439DBB200AAB205 /* ATBarnesHutBranch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATBarnesHutBranch.m; sourceTree = "<group>"; };
+		4F4D9FB31439DBB200AAB205 /* ATBarnesHutTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATBarnesHutTree.h; sourceTree = "<group>"; };
+		4F4D9FB41439DBB200AAB205 /* ATBarnesHutTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATBarnesHutTree.m; sourceTree = "<group>"; };
+		4F4D9FB61439DBB200AAB205 /* ATKernel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATKernel.h; sourceTree = "<group>"; };
+		4F4D9FB71439DBB200AAB205 /* ATKernel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATKernel.m; sourceTree = "<group>"; };
+		4F4D9FB91439DBB200AAB205 /* ATEnergy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATEnergy.h; sourceTree = "<group>"; };
+		4F4D9FBA1439DBB200AAB205 /* ATEnergy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATEnergy.m; sourceTree = "<group>"; };
+		4F4D9FBB1439DBB200AAB205 /* ATParticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATParticle.h; sourceTree = "<group>"; };
+		4F4D9FBC1439DBB200AAB205 /* ATParticle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATParticle.m; sourceTree = "<group>"; };
+		4F4D9FBD1439DBB200AAB205 /* ATPhysics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATPhysics.h; sourceTree = "<group>"; };
+		4F4D9FBE1439DBB200AAB205 /* ATPhysics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATPhysics.m; sourceTree = "<group>"; };
+		4F4D9FBF1439DBB200AAB205 /* ATSpring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATSpring.h; sourceTree = "<group>"; };
+		4F4D9FC01439DBB200AAB205 /* ATSpring.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATSpring.m; sourceTree = "<group>"; };
+		4F4D9FC21439DBB200AAB205 /* ATGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATGeometry.h; sourceTree = "<group>"; };
+		4F4D9FC31439DBB200AAB205 /* NSMutableArray+QueueAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+QueueAdditions.h"; sourceTree = "<group>"; };
+		4F4D9FC41439DBB200AAB205 /* NSMutableArray+QueueAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+QueueAdditions.m"; sourceTree = "<group>"; };
+		4F4D9FC61439DBB200AAB205 /* ATSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATSystem.h; sourceTree = "<group>"; };
+		4F4D9FC71439DBB200AAB205 /* ATSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATSystem.m; sourceTree = "<group>"; };
+		4F4D9FC81439DBB200AAB205 /* ATSystemParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATSystemParams.h; sourceTree = "<group>"; };
+		4F4D9FC91439DBB200AAB205 /* ATSystemParams.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATSystemParams.m; sourceTree = "<group>"; };
+		4F4D9FCA1439DBB200AAB205 /* ATSystemRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATSystemRenderer.h; sourceTree = "<group>"; };
+		4F4D9FCB1439DBB200AAB205 /* ATSystemState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATSystemState.h; sourceTree = "<group>"; };
+		4F4D9FCC1439DBB200AAB205 /* ATSystemState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATSystemState.m; sourceTree = "<group>"; };
+		4F4DA0E41439E2BF00AAB205 /* africa.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = africa.json; sourceTree = "<group>"; };
+		4F4DA0E51439E2BF00AAB205 /* america.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = america.json; sourceTree = "<group>"; };
+		4F4DA0E61439E2BF00AAB205 /* asia.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = asia.json; sourceTree = "<group>"; };
+		4F4DA0E71439E2BF00AAB205 /* europe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = europe.json; sourceTree = "<group>"; };
+		4F4DA0E81439E2BF00AAB205 /* mideast.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mideast.json; sourceTree = "<group>"; };
+		4F4DA0E91439E2BF00AAB205 /* risk.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = risk.json; sourceTree = "<group>"; };
+		4F4DA0EA1439E2BF00AAB205 /* usofa.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = usofa.json; sourceTree = "<group>"; };
+		4F4DA0F41439E2E300AAB205 /* atlas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = atlas.png; path = style/atlas.png; sourceTree = SOURCE_ROOT; };
+		4F4DA0F51439E2E300AAB205 /* back-button-light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "back-button-light.png"; path = "style/back-button-light.png"; sourceTree = SOURCE_ROOT; };
+		4F4DA0F61439E2E300AAB205 /* home-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "home-arrow.png"; path = "style/home-arrow.png"; sourceTree = SOURCE_ROOT; };
+		4F4DA0F71439E2E300AAB205 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = style/logo.png; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4F4D9F7F1439DAFD00AAB205 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F4D9F871439DAFD00AAB205 /* UIKit.framework in Frameworks */,
+				4F4D9F891439DAFD00AAB205 /* Foundation.framework in Frameworks */,
+				4F4D9F8B1439DAFD00AAB205 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4F4D9F771439DAFD00AAB205 = {
+			isa = PBXGroup;
+			children = (
+				4F4D9F8C1439DAFD00AAB205 /* Atlas */,
+				4F4D9FAA1439DBB200AAB205 /* PSArborTouch */,
+				4F4D9F851439DAFD00AAB205 /* Frameworks */,
+				4F4D9F831439DAFD00AAB205 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4F4D9F831439DAFD00AAB205 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4F4D9F821439DAFD00AAB205 /* Atlas.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4F4D9F851439DAFD00AAB205 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4F4D9F861439DAFD00AAB205 /* UIKit.framework */,
+				4F4D9F881439DAFD00AAB205 /* Foundation.framework */,
+				4F4D9F8A1439DAFD00AAB205 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4F4D9F8C1439DAFD00AAB205 /* Atlas */ = {
+			isa = PBXGroup;
+			children = (
+				4F4D9FA81439DB5200AAB205 /* Controller */,
+				4F4D9FA71439DB4F00AAB205 /* View */,
+				4F4D9FA61439DB4B00AAB205 /* Model */,
+				4F4D9F8D1439DAFD00AAB205 /* Supporting Files */,
+			);
+			path = Atlas;
+			sourceTree = "<group>";
+		};
+		4F4D9F8D1439DAFD00AAB205 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4F4DA0F31439E2CB00AAB205 /* Images */,
+				4F4D9F8E1439DAFD00AAB205 /* Atlas-Info.plist */,
+				4F4D9F8F1439DAFD00AAB205 /* InfoPlist.strings */,
+				4F4D9F921439DAFD00AAB205 /* main.m */,
+				4F4D9F941439DAFD00AAB205 /* Atlas-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4F4D9FA61439DB4B00AAB205 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4F4DA0E31439E2BF00AAB205 /* Maps */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		4F4D9FA71439DB4F00AAB205 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		4F4D9FA81439DB5200AAB205 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4F4D9FA91439DB5500AAB205 /* AppDelegate */,
+				4F4D9F9B1439DAFD00AAB205 /* AtlasViewController.h */,
+				4F4D9F9C1439DAFD00AAB205 /* AtlasViewController.m */,
+				4F4D9F9E1439DAFD00AAB205 /* AtlasViewController.xib */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		4F4D9FA91439DB5500AAB205 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				4F4D9F951439DAFD00AAB205 /* AtlasAppDelegate.h */,
+				4F4D9F961439DAFD00AAB205 /* AtlasAppDelegate.m */,
+				4F4D9F981439DAFD00AAB205 /* MainWindow.xib */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		4F4D9FAA1439DBB200AAB205 /* PSArborTouch */ = {
+			isa = PBXGroup;
+			children = (
+				4F4D9FAB1439DBB200AAB205 /* Atoms */,
+				4F4D9FB01439DBB200AAB205 /* Barnes-Hut */,
+				4F4D9FB51439DBB200AAB205 /* Kernel */,
+				4F4D9FB81439DBB200AAB205 /* Physics */,
+				4F4D9FC11439DBB200AAB205 /* Support */,
+				4F4D9FC51439DBB200AAB205 /* System */,
+			);
+			name = PSArborTouch;
+			path = ../../PSArborTouch;
+			sourceTree = "<group>";
+		};
+		4F4D9FAB1439DBB200AAB205 /* Atoms */ = {
+			isa = PBXGroup;
+			children = (
+				4F4D9FAC1439DBB200AAB205 /* ATEdge.h */,
+				4F4D9FAD1439DBB200AAB205 /* ATEdge.m */,
+				4F4D9FAE1439DBB200AAB205 /* ATNode.h */,
+				4F4D9FAF1439DBB200AAB205 /* ATNode.m */,
+			);
+			path = Atoms;
+			sourceTree = "<group>";
+		};
+		4F4D9FB01439DBB200AAB205 /* Barnes-Hut */ = {
+			isa = PBXGroup;
+			children = (
+				4F4D9FB11439DBB200AAB205 /* ATBarnesHutBranch.h */,
+				4F4D9FB21439DBB200AAB205 /* ATBarnesHutBranch.m */,
+				4F4D9FB31439DBB200AAB205 /* ATBarnesHutTree.h */,
+				4F4D9FB41439DBB200AAB205 /* ATBarnesHutTree.m */,
+			);
+			path = "Barnes-Hut";
+			sourceTree = "<group>";
+		};
+		4F4D9FB51439DBB200AAB205 /* Kernel */ = {
+			isa = PBXGroup;
+			children = (
+				4F4D9FB61439DBB200AAB205 /* ATKernel.h */,
+				4F4D9FB71439DBB200AAB205 /* ATKernel.m */,
+			);
+			path = Kernel;
+			sourceTree = "<group>";
+		};
+		4F4D9FB81439DBB200AAB205 /* Physics */ = {
+			isa = PBXGroup;
+			children = (
+				4F4D9FB91439DBB200AAB205 /* ATEnergy.h */,
+				4F4D9FBA1439DBB200AAB205 /* ATEnergy.m */,
+				4F4D9FBB1439DBB200AAB205 /* ATParticle.h */,
+				4F4D9FBC1439DBB200AAB205 /* ATParticle.m */,
+				4F4D9FBD1439DBB200AAB205 /* ATPhysics.h */,
+				4F4D9FBE1439DBB200AAB205 /* ATPhysics.m */,
+				4F4D9FBF1439DBB200AAB205 /* ATSpring.h */,
+				4F4D9FC01439DBB200AAB205 /* ATSpring.m */,
+			);
+			path = Physics;
+			sourceTree = "<group>";
+		};
+		4F4D9FC11439DBB200AAB205 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				4F4D9FC21439DBB200AAB205 /* ATGeometry.h */,
+				4F4D9FC31439DBB200AAB205 /* NSMutableArray+QueueAdditions.h */,
+				4F4D9FC41439DBB200AAB205 /* NSMutableArray+QueueAdditions.m */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		4F4D9FC51439DBB200AAB205 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				4F4D9FC61439DBB200AAB205 /* ATSystem.h */,
+				4F4D9FC71439DBB200AAB205 /* ATSystem.m */,
+				4F4D9FC81439DBB200AAB205 /* ATSystemParams.h */,
+				4F4D9FC91439DBB200AAB205 /* ATSystemParams.m */,
+				4F4D9FCA1439DBB200AAB205 /* ATSystemRenderer.h */,
+				4F4D9FCB1439DBB200AAB205 /* ATSystemState.h */,
+				4F4D9FCC1439DBB200AAB205 /* ATSystemState.m */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+		4F4DA0E31439E2BF00AAB205 /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+				4F4DA0E41439E2BF00AAB205 /* africa.json */,
+				4F4DA0E51439E2BF00AAB205 /* america.json */,
+				4F4DA0E61439E2BF00AAB205 /* asia.json */,
+				4F4DA0E71439E2BF00AAB205 /* europe.json */,
+				4F4DA0E81439E2BF00AAB205 /* mideast.json */,
+				4F4DA0E91439E2BF00AAB205 /* risk.json */,
+				4F4DA0EA1439E2BF00AAB205 /* usofa.json */,
+			);
+			name = Maps;
+			path = maps;
+			sourceTree = SOURCE_ROOT;
+		};
+		4F4DA0F31439E2CB00AAB205 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				4F4DA0F41439E2E300AAB205 /* atlas.png */,
+				4F4DA0F51439E2E300AAB205 /* back-button-light.png */,
+				4F4DA0F61439E2E300AAB205 /* home-arrow.png */,
+				4F4DA0F71439E2E300AAB205 /* logo.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4F4D9F811439DAFD00AAB205 /* Atlas */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F4D9FA31439DAFD00AAB205 /* Build configuration list for PBXNativeTarget "Atlas" */;
+			buildPhases = (
+				4F4D9F7E1439DAFD00AAB205 /* Sources */,
+				4F4D9F7F1439DAFD00AAB205 /* Frameworks */,
+				4F4D9F801439DAFD00AAB205 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Atlas;
+			productName = Atlas;
+			productReference = 4F4D9F821439DAFD00AAB205 /* Atlas.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4F4D9F791439DAFD00AAB205 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Preston Software";
+			};
+			buildConfigurationList = 4F4D9F7C1439DAFD00AAB205 /* Build configuration list for PBXProject "Atlas" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4F4D9F771439DAFD00AAB205;
+			productRefGroup = 4F4D9F831439DAFD00AAB205 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4F4D9F811439DAFD00AAB205 /* Atlas */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4F4D9F801439DAFD00AAB205 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F4D9F911439DAFD00AAB205 /* InfoPlist.strings in Resources */,
+				4F4D9F9A1439DAFD00AAB205 /* MainWindow.xib in Resources */,
+				4F4D9FA01439DAFD00AAB205 /* AtlasViewController.xib in Resources */,
+				4F4DA0EB1439E2BF00AAB205 /* africa.json in Resources */,
+				4F4DA0EC1439E2BF00AAB205 /* america.json in Resources */,
+				4F4DA0ED1439E2BF00AAB205 /* asia.json in Resources */,
+				4F4DA0EE1439E2BF00AAB205 /* europe.json in Resources */,
+				4F4DA0EF1439E2BF00AAB205 /* mideast.json in Resources */,
+				4F4DA0F01439E2BF00AAB205 /* risk.json in Resources */,
+				4F4DA0F11439E2BF00AAB205 /* usofa.json in Resources */,
+				4F4DA0F81439E2E300AAB205 /* atlas.png in Resources */,
+				4F4DA0F91439E2E300AAB205 /* back-button-light.png in Resources */,
+				4F4DA0FA1439E2E300AAB205 /* home-arrow.png in Resources */,
+				4F4DA0FB1439E2E300AAB205 /* logo.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4F4D9F7E1439DAFD00AAB205 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F4D9F931439DAFD00AAB205 /* main.m in Sources */,
+				4F4D9F971439DAFD00AAB205 /* AtlasAppDelegate.m in Sources */,
+				4F4D9F9D1439DAFD00AAB205 /* AtlasViewController.m in Sources */,
+				4F4D9FCD1439DBB200AAB205 /* ATEdge.m in Sources */,
+				4F4D9FCE1439DBB200AAB205 /* ATNode.m in Sources */,
+				4F4D9FCF1439DBB200AAB205 /* ATBarnesHutBranch.m in Sources */,
+				4F4D9FD01439DBB200AAB205 /* ATBarnesHutTree.m in Sources */,
+				4F4D9FD11439DBB200AAB205 /* ATKernel.m in Sources */,
+				4F4D9FD21439DBB200AAB205 /* ATEnergy.m in Sources */,
+				4F4D9FD31439DBB200AAB205 /* ATParticle.m in Sources */,
+				4F4D9FD41439DBB200AAB205 /* ATPhysics.m in Sources */,
+				4F4D9FD51439DBB200AAB205 /* ATSpring.m in Sources */,
+				4F4D9FD61439DBB200AAB205 /* NSMutableArray+QueueAdditions.m in Sources */,
+				4F4D9FD71439DBB200AAB205 /* ATSystem.m in Sources */,
+				4F4D9FD81439DBB200AAB205 /* ATSystemParams.m in Sources */,
+				4F4D9FD91439DBB200AAB205 /* ATSystemState.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4F4D9F8F1439DAFD00AAB205 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4F4D9F901439DAFD00AAB205 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4F4D9F981439DAFD00AAB205 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4F4D9F991439DAFD00AAB205 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		4F4D9F9E1439DAFD00AAB205 /* AtlasViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4F4D9F9F1439DAFD00AAB205 /* en */,
+			);
+			name = AtlasViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4F4D9FA11439DAFD00AAB205 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		4F4D9FA21439DAFD00AAB205 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4F4D9FA41439DAFD00AAB205 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Atlas/Atlas-Prefix.pch";
+				INFOPLIST_FILE = "Atlas/Atlas-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4F4D9FA51439DAFD00AAB205 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Atlas/Atlas-Prefix.pch";
+				INFOPLIST_FILE = "Atlas/Atlas-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4F4D9F7C1439DAFD00AAB205 /* Build configuration list for PBXProject "Atlas" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F4D9FA11439DAFD00AAB205 /* Debug */,
+				4F4D9FA21439DAFD00AAB205 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F4D9FA31439DAFD00AAB205 /* Build configuration list for PBXNativeTarget "Atlas" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F4D9FA41439DAFD00AAB205 /* Debug */,
+				4F4D9FA51439DAFD00AAB205 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4F4D9F791439DAFD00AAB205 /* Project object */;
+}

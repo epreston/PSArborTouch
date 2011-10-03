@@ -1,0 +1,310 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4F4DA16B1439E40600AAB205 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F4DA16A1439E40600AAB205 /* UIKit.framework */; };
+		4F4DA16D1439E40600AAB205 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F4DA16C1439E40600AAB205 /* Foundation.framework */; };
+		4F4DA16F1439E40600AAB205 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F4DA16E1439E40600AAB205 /* CoreGraphics.framework */; };
+		4F4DA1751439E40600AAB205 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4F4DA1731439E40600AAB205 /* InfoPlist.strings */; };
+		4F4DA1771439E40600AAB205 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4DA1761439E40600AAB205 /* main.m */; };
+		4F4DA17B1439E40600AAB205 /* SerializeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4DA17A1439E40600AAB205 /* SerializeAppDelegate.m */; };
+		4F4DA17E1439E40600AAB205 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F4DA17C1439E40600AAB205 /* MainWindow.xib */; };
+		4F4DA1811439E40600AAB205 /* SerializeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4DA1801439E40600AAB205 /* SerializeViewController.m */; };
+		4F4DA1841439E40600AAB205 /* SerializeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F4DA1821439E40600AAB205 /* SerializeViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4F4DA1661439E40600AAB205 /* Serialize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Serialize.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F4DA16A1439E40600AAB205 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4F4DA16C1439E40600AAB205 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4F4DA16E1439E40600AAB205 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4F4DA1721439E40600AAB205 /* Serialize-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Serialize-Info.plist"; sourceTree = "<group>"; };
+		4F4DA1741439E40600AAB205 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4F4DA1761439E40600AAB205 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4F4DA1781439E40600AAB205 /* Serialize-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Serialize-Prefix.pch"; sourceTree = "<group>"; };
+		4F4DA1791439E40600AAB205 /* SerializeAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SerializeAppDelegate.h; sourceTree = "<group>"; };
+		4F4DA17A1439E40600AAB205 /* SerializeAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SerializeAppDelegate.m; sourceTree = "<group>"; };
+		4F4DA17D1439E40600AAB205 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		4F4DA17F1439E40600AAB205 /* SerializeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SerializeViewController.h; sourceTree = "<group>"; };
+		4F4DA1801439E40600AAB205 /* SerializeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SerializeViewController.m; sourceTree = "<group>"; };
+		4F4DA1831439E40600AAB205 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SerializeViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4F4DA1631439E40600AAB205 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F4DA16B1439E40600AAB205 /* UIKit.framework in Frameworks */,
+				4F4DA16D1439E40600AAB205 /* Foundation.framework in Frameworks */,
+				4F4DA16F1439E40600AAB205 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4F4DA15B1439E40600AAB205 = {
+			isa = PBXGroup;
+			children = (
+				4F4DA1701439E40600AAB205 /* Serialize */,
+				4F4DA1691439E40600AAB205 /* Frameworks */,
+				4F4DA1671439E40600AAB205 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4F4DA1671439E40600AAB205 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4F4DA1661439E40600AAB205 /* Serialize.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4F4DA1691439E40600AAB205 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4F4DA16A1439E40600AAB205 /* UIKit.framework */,
+				4F4DA16C1439E40600AAB205 /* Foundation.framework */,
+				4F4DA16E1439E40600AAB205 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4F4DA1701439E40600AAB205 /* Serialize */ = {
+			isa = PBXGroup;
+			children = (
+				4F4DA1F41439E69300AAB205 /* Controller */,
+				4F4DA1711439E40600AAB205 /* Supporting Files */,
+			);
+			path = Serialize;
+			sourceTree = "<group>";
+		};
+		4F4DA1711439E40600AAB205 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4F4DA1721439E40600AAB205 /* Serialize-Info.plist */,
+				4F4DA1731439E40600AAB205 /* InfoPlist.strings */,
+				4F4DA1761439E40600AAB205 /* main.m */,
+				4F4DA1781439E40600AAB205 /* Serialize-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4F4DA1F41439E69300AAB205 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4F4DA1F51439E69B00AAB205 /* AppDelegate */,
+				4F4DA17F1439E40600AAB205 /* SerializeViewController.h */,
+				4F4DA1801439E40600AAB205 /* SerializeViewController.m */,
+				4F4DA1821439E40600AAB205 /* SerializeViewController.xib */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		4F4DA1F51439E69B00AAB205 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				4F4DA1791439E40600AAB205 /* SerializeAppDelegate.h */,
+				4F4DA17A1439E40600AAB205 /* SerializeAppDelegate.m */,
+				4F4DA17C1439E40600AAB205 /* MainWindow.xib */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4F4DA1651439E40600AAB205 /* Serialize */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F4DA1871439E40600AAB205 /* Build configuration list for PBXNativeTarget "Serialize" */;
+			buildPhases = (
+				4F4DA1621439E40600AAB205 /* Sources */,
+				4F4DA1631439E40600AAB205 /* Frameworks */,
+				4F4DA1641439E40600AAB205 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Serialize;
+			productName = Serialize;
+			productReference = 4F4DA1661439E40600AAB205 /* Serialize.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4F4DA15D1439E40600AAB205 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Preston Software";
+			};
+			buildConfigurationList = 4F4DA1601439E40600AAB205 /* Build configuration list for PBXProject "Serialize" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4F4DA15B1439E40600AAB205;
+			productRefGroup = 4F4DA1671439E40600AAB205 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4F4DA1651439E40600AAB205 /* Serialize */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4F4DA1641439E40600AAB205 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F4DA1751439E40600AAB205 /* InfoPlist.strings in Resources */,
+				4F4DA17E1439E40600AAB205 /* MainWindow.xib in Resources */,
+				4F4DA1841439E40600AAB205 /* SerializeViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4F4DA1621439E40600AAB205 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F4DA1771439E40600AAB205 /* main.m in Sources */,
+				4F4DA17B1439E40600AAB205 /* SerializeAppDelegate.m in Sources */,
+				4F4DA1811439E40600AAB205 /* SerializeViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4F4DA1731439E40600AAB205 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4F4DA1741439E40600AAB205 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4F4DA17C1439E40600AAB205 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4F4DA17D1439E40600AAB205 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		4F4DA1821439E40600AAB205 /* SerializeViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4F4DA1831439E40600AAB205 /* en */,
+			);
+			name = SerializeViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4F4DA1851439E40600AAB205 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		4F4DA1861439E40600AAB205 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4F4DA1881439E40600AAB205 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Serialize/Serialize-Prefix.pch";
+				INFOPLIST_FILE = "Serialize/Serialize-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4F4DA1891439E40600AAB205 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Serialize/Serialize-Prefix.pch";
+				INFOPLIST_FILE = "Serialize/Serialize-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4F4DA1601439E40600AAB205 /* Build configuration list for PBXProject "Serialize" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F4DA1851439E40600AAB205 /* Debug */,
+				4F4DA1861439E40600AAB205 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F4DA1871439E40600AAB205 /* Build configuration list for PBXNativeTarget "Serialize" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F4DA1881439E40600AAB205 /* Debug */,
+				4F4DA1891439E40600AAB205 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4F4DA15D1439E40600AAB205 /* Project object */;
+}
