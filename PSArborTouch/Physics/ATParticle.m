@@ -17,19 +17,19 @@
 
 @implementation ATParticle
 
-@synthesize velocity    = _velocity;
-@synthesize force       = _force;
-@synthesize tempMass    = _tempMass;
-@synthesize connections = _connections;
+@synthesize velocity    = velocity_;
+@synthesize force       = force_;
+@synthesize tempMass    = tempMass_;
+@synthesize connections = connections_;
 
 - (id) init
 {
     self = [super init];
     if (self) {
-        _velocity       = CGPointZero;
-        _force          = CGPointZero;
-        _tempMass       = 0.0;
-        _connections    = 0;
+        velocity_       = CGPointZero;
+        force_          = CGPointZero;
+        tempMass_       = 0.0;
+        connections_    = 0;
     }
     return self;
 }
@@ -40,9 +40,9 @@
 {
     self = [self init];
     if (self) {
-        _velocity   = velocity;
-        _force      = force;
-        _tempMass   = tempMass;
+        velocity_   = velocity;
+        force_      = force;
+        tempMass_   = tempMass;
     }
     return self;
 }

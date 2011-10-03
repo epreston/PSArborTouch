@@ -251,7 +251,7 @@
         [self.state removeNodesObjectForKey:node.index];
         [self.state removeNamesObjectForKey:node.name];
         
-        for (ATEdge *edge in self.state.edges) {
+        for (ATEdge *edge in [self.state.edges allValues]) {
             if (edge.source.index == node.index || edge.target.index == node.index) {
                 [self pruneEdge:edge];
             }
@@ -375,7 +375,7 @@
     if (aNode == nil) return [NSSet set];
     
     NSMutableSet *nodeEdges = [NSMutableSet set];
-    for (ATEdge *edge in self.state.edges) {
+    for (ATEdge *edge in [self.state.edges allValues]) {
         if (edge.target == aNode) {
             [nodeEdges addObject:edge];
         }
@@ -428,7 +428,6 @@
     // step the renderer's current bounding box closer to the true box containing all
     // the nodes. if _screenStep is set to 1 there will be no lag. if _screenStep is
     // set to 0 the bounding box will remain stationary after being initially set 
-    
     
     // Return NO if we dont have a screen size.
     if ( CGRectIsEmpty(viewBounds_) ) {

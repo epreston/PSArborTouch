@@ -11,8 +11,8 @@
 
 @implementation SystemRigAppDelegate
 
-@synthesize window = _window;
-@synthesize viewController = _viewController;
+@synthesize window = window_;
+@synthesize viewController = viewController_;
 
 - (BOOL) application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -25,8 +25,8 @@
 
 - (void) dealloc
 {
-    [_window release];
-    [_viewController release];
+    [window_ release];
+    [viewController_ release];
     [super dealloc];
 }
 

@@ -19,18 +19,18 @@
 {
 
 @private
-    dispatch_source_t   _timer;
-    dispatch_queue_t    _queue;
+    dispatch_source_t   timer_;
+    dispatch_queue_t    queue_;
     
-    BOOL                _paused;
-    BOOL                _running;
+    BOOL                paused_;
+    BOOL                running_;
     
-    ATPhysics          *_physics;
+    ATPhysics          *physics_;
     
-    ATEnergy           *_lastEnergy;
-    CGRect              _lastBounds;
+    ATEnergy           *lastEnergy_;
+    CGRect              lastBounds_;
     
-    id                  _delegate;
+    id                  delegate_;
 }
 
 #pragma mark - Rendering

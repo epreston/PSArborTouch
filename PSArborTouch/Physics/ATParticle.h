@@ -12,11 +12,11 @@
 {
     
 @private
-    CGPoint     _velocity;
-    CGPoint     _force;
-    CGFloat     _tempMass;
+    CGPoint     velocity_;
+    CGPoint     force_;
+    CGFloat     tempMass_;
     
-    NSUInteger  _connections;
+    NSUInteger  connections_;
 }
 
 @property (nonatomic, assign) CGPoint velocity;

@@ -1,6 +1,6 @@
 //
 //  ATSystemDebugView.m
-//  SystemRig
+//  SystemRig - System Test / Debug Rig
 //
 //  Created by Ed Preston on 1/10/11.
 //  Copyright 2011 Preston Software. All rights reserved.

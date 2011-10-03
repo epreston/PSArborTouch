@@ -17,8 +17,8 @@
 {
     
 @private
-    ATSystem *system;
-    ATSystemDebugView *debugView;
+    ATSystem *system_;
+    ATSystemDebugView *debugView_;
 }
 
 @property (nonatomic, retain) IBOutlet ATSystemDebugView *debugView;

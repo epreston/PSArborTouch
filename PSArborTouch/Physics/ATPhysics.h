@@ -17,13 +17,13 @@
 {
     
 @private
-    ATBarnesHutTree *_bhTree;
-    NSMutableArray  *_activeParticles;
-    NSMutableArray  *_activeSprings;
-    NSMutableArray  *_freeParticles;
+    ATBarnesHutTree *bhTree_;
+    NSMutableArray  *activeParticles_;
+    NSMutableArray  *activeSprings_;
+    NSMutableArray  *freeParticles_;
     
-    NSMutableArray  *_particles;
-    NSMutableArray  *_springs;
+    NSMutableArray  *particles_;
+    NSMutableArray  *springs_;
     
     ATEnergy        *energy_;
     CGRect           bounds_;

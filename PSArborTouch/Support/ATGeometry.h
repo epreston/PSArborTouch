@@ -5,7 +5,7 @@
 //  Created by Ed Preston on 5/09/11.
 //  Copyright 2011 Preston Software. All rights reserved.
 //
-//  particle system- or physics-related datatypes
+//  general geometric functions for CGPoint's
 
 
 #import <Foundation/Foundation.h>
@@ -52,16 +52,16 @@ static inline CGPoint CGPointDivideFloat(const CGPoint a, const CGFloat n)
     return(r);
 }
 
-//static inline CGFloat distance(CGPoint start, CGPoint finish)
+//static inline CGFloat CGPointDistance(const CGPoint start, const CGPoint finish)
 //{
-//    CGFloat theDistance = sqrtf(powf( (start.x - finish.x), 2.0f) + powf( (start.y - finish.y), 2.0f));
-//    return(theDistance);
+//    CGFloat d = sqrtf(powf( (start.x - finish.x), 2.0f) + powf( (start.y - finish.y), 2.0f));
+//    return(d);
 //}
 
 static inline CGFloat CGPointMagnitude(const CGPoint point)
 {
-    CGFloat theMagnitude = sqrt( (point.x * point.x) + (point.y * point.y) );
-    return(theMagnitude);
+    CGFloat m = sqrt( (point.x * point.x) + (point.y * point.y) );
+    return(m);
 }
 
 static inline CGPoint CGPointNormal(const CGPoint a)
@@ -79,7 +79,7 @@ static inline CGPoint CGPointNormalize(const CGPoint a)
 static inline CGPoint CGPointRandom(const CGFloat radius)
 {
     CGFloat targetRadius = (radius > 0.0) ? radius : 5.0;
-    CGPoint r = { .x = 2*targetRadius * (RANDOM_0_1 - 0.5), .y = 2*targetRadius* (RANDOM_0_1 - 0.5) };
+    CGPoint r = { .x = 2 * targetRadius * (RANDOM_0_1 - 0.5), .y = 2 * targetRadius * (RANDOM_0_1 - 0.5) };
     return(r);
 }
 

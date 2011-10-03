@@ -9,10 +9,11 @@
 #import "SystemRigViewController.h"
 #import "ATSystemDebugView.h"
 #import "ATSystem.h"
+#import "ATPhysics.h"
 #import "ATNode.h"
 
 @implementation SystemRigViewController
-@synthesize debugView;
+@synthesize debugView = debugView_;
 
 - (void)didReceiveMemoryWarning
 {
@@ -27,20 +28,34 @@
 {
     [super viewDidLoad];
     
-    system = [[ATSystem alloc] init];
+    system_ = [[ATSystem alloc] init];
     
-    system.viewBounds = self.view.bounds;
-    system.viewPadding = UIEdgeInsetsMake(20.0, 20.0, 20.0, 20.0);
-    system.delegate = self;
+    system_.viewBounds = self.view.bounds;
+    system_.viewPadding = UIEdgeInsetsMake(20.0, 20.0, 20.0, 20.0);
+    system_.delegate = self;
+//    system.physics.theta = 0.0;
     
-    self.debugView.system = system;
+    self.debugView.system = system_;
     self.debugView.debugDrawing = YES;
     
     // add some nodes to the graph and watch it go...
-    [system addEdge:@"a" toTarget:@"b" andData:nil];
-    [system addEdge:@"a" toTarget:@"c" andData:nil];
-    [system addEdge:@"a" toTarget:@"d" andData:nil];
-    [system addEdge:@"a" toTarget:@"e" andData:nil];
+    [system_ addEdge:@"a" toTarget:@"b" andData:nil];
+    [system_ addEdge:@"a" toTarget:@"c" andData:nil];
+    [system_ addEdge:@"a" toTarget:@"d" andData:nil];
+    [system_ addEdge:@"a" toTarget:@"e" andData:nil];
+    
+//    [system addEdge:@"e" toTarget:@"f" andData:nil];
+//    [system addEdge:@"e" toTarget:@"g" andData:nil];
+//    [system addEdge:@"e" toTarget:@"h" andData:nil];
+//    
+//    [system addEdge:@"h" toTarget:@"j" andData:nil];
+//    [system addEdge:@"h" toTarget:@"k" andData:nil];
+//    [system addEdge:@"h" toTarget:@"l" andData:nil];
+    
+    
+//    [system addEdge:@"x" toTarget:@"y" andData:nil];
+//    [system addEdge:@"y" toTarget:@"z" andData:nil];
+    
     
     UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panPiece:)];
     [panGesture setMaximumNumberOfTouches:2];
@@ -56,11 +71,11 @@
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
     
-    [system release];
+    [system_ release];
 }
 
 - (void)dealloc {
-    [debugView release];
+    [debugView_ release];
     [super dealloc];
 }
 
@@ -75,7 +90,17 @@
 
 - (IBAction)go:(id)sender
 {
-    [system start:YES];
+    [system_ start:YES];
+}
+
+- (IBAction)add:(id)sender
+{
+    [system_ addEdge:@"a" toTarget:@"e" andData:nil];
+}
+
+- (IBAction)remove:(id)sender
+{
+    [system_ pruneNode:@"e"];
 }
 
 #pragma mark - Touch Handling 
@@ -109,14 +134,14 @@
         
         CGPoint translation = [gestureRecognizer translationInView:piece];
         
-        ATNode *node = [system nearestNodeToPoint:translation within:500.0];
+        ATNode *node = [system_ nearestNodeToPoint:translation within:500.0];
         
 //        translation = [self fromScreen:translation];
         
         if (node) {
             node.position = CGPointMake(node.position.x + translation.x, node.position.y + translation.y);
             
-            [system start:YES];
+            [system_ start:YES];
         }
         
 //        [piece setCenter:CGPointMake([piece center].x + translation.x, [piece center].y + translation.y)];

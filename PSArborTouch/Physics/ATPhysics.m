@@ -32,8 +32,8 @@
 
 @implementation ATPhysics
 
-@synthesize particles   = _particles;
-@synthesize springs     = _springs;
+@synthesize particles   = particles_;
+@synthesize springs     = springs_;
 @synthesize energy      = energy_;
 @synthesize bounds      = bounds_;
 @synthesize speedLimit  = speedLimit_;
@@ -43,17 +43,17 @@
 @synthesize friction    = friction_;
 @synthesize gravity     = gravity_;
 @synthesize theta       = theta_;
-@synthesize bhTree      = _bhTree;
+@synthesize bhTree      = bhTree_;
 
 - (id) init
 {
     self = [super init];
     if (self) {
-        _activeParticles = [[NSMutableArray arrayWithCapacity:32] retain];
-        _activeSprings  = [[NSMutableArray arrayWithCapacity:32] retain];
-        _freeParticles  = [[NSMutableArray arrayWithCapacity:32] retain];
-        _particles      = [[NSMutableArray arrayWithCapacity:32] retain];
-        _springs        = [[NSMutableArray arrayWithCapacity:32] retain];
+        activeParticles_ = [[NSMutableArray arrayWithCapacity:32] retain];
+        activeSprings_  = [[NSMutableArray arrayWithCapacity:32] retain];
+        freeParticles_  = [[NSMutableArray arrayWithCapacity:32] retain];
+        particles_      = [[NSMutableArray arrayWithCapacity:32] retain];
+        springs_        = [[NSMutableArray arrayWithCapacity:32] retain];
         energy_         = [[[ATEnergy alloc] init] retain];
         bounds_         = CGRectMake(-1.0, -1.0, 2.0, 2.0);
         speedLimit_     = 1000;
@@ -63,7 +63,7 @@
         friction_       = 0.3;
         gravity_        = NO;
         theta_          = 0.4;
-        _bhTree         = [[[ATBarnesHutTree alloc] init] retain];
+        bhTree_         = [[[ATBarnesHutTree alloc] init] retain];
     }
     return self;
 }
@@ -85,12 +85,12 @@
 
 - (void) dealloc
 {
-    [_bhTree release];
-    [_activeParticles release];
-    [_activeSprings release];
-    [_freeParticles release];
-    [_particles release];
-    [_springs release];
+    [bhTree_ release];
+    [activeParticles_ release];
+    [activeSprings_ release];
+    [freeParticles_ release];
+    [particles_ release];
+    [springs_ release];
     [energy_ release];
     
     [super dealloc];
@@ -100,28 +100,28 @@
 - (void) addParticle:(ATParticle *)particle
 {
     particle.connections = 0.0;
-    [_activeParticles addObject:particle];
-    [_freeParticles addObject:particle];
-    [_particles addObject:particle];
+    [activeParticles_ addObject:particle];
+    [freeParticles_ addObject:particle];
+    [particles_ addObject:particle];
 }
 
 - (void) removeParticle:(ATParticle *)particle
 {
-    [_particles removeObjectIdenticalTo:particle];
-    [_activeParticles removeObjectIdenticalTo:particle];
-    [_freeParticles removeObjectIdenticalTo:particle];
+    [particles_ removeObjectIdenticalTo:particle];
+    [activeParticles_ removeObjectIdenticalTo:particle];
+    [freeParticles_ removeObjectIdenticalTo:particle];
 }
 
 - (void) addSpring:(ATSpring *)spring
 {
-    [_activeSprings addObject:spring];
-    [_springs addObject:spring];
+    [activeSprings_ addObject:spring];
+    [springs_ addObject:spring];
 
     spring.point1.connections++;
     spring.point2.connections++;
 
-    [_freeParticles removeObjectIdenticalTo:spring.point1];
-    [_freeParticles removeObjectIdenticalTo:spring.point2];
+    [freeParticles_ removeObjectIdenticalTo:spring.point1];
+    [freeParticles_ removeObjectIdenticalTo:spring.point2];
 }
 
 - (void) removeSpring:(ATSpring *)spring
@@ -129,8 +129,8 @@
     spring.point1.connections--;
     spring.point2.connections--;
     
-    [_springs removeObjectIdenticalTo:spring];
-    [_activeSprings removeObjectIdenticalTo:spring];
+    [springs_ removeObjectIdenticalTo:spring];
+    [activeSprings_ removeObjectIdenticalTo:spring];
 }
 
 
@@ -166,7 +166,7 @@
     CGPoint topleft     = CGPointZero;
     BOOL firstParticle  = YES;
     
-    for (ATParticle *particle in _activeParticles) {
+    for (ATParticle *particle in activeParticles_) {
         
         // decay down any of the temporary mass increases that were passed along
         // by using an {_m:} instead of an {m:} (which is to say via a Node having
@@ -224,8 +224,8 @@
 
 - (void) applyBruteForceRepulsion 
 {
-    for (ATParticle *subject in _activeParticles) {
-        for (ATParticle *object in _activeParticles) {
+    for (ATParticle *subject in activeParticles_) {
+        for (ATParticle *object in activeParticles_) {
             if (subject != object){
                 CGPoint d = CGPointSubtract(subject.position, object.position);
                 CGFloat distance = MAX( 1.0, CGPointMagnitude(d) );
@@ -258,21 +258,21 @@
 - (void) applyBarnesHutRepulsion 
 {
     // build a barnes-hut tree...
-    [_bhTree updateWithBounds:self.bounds theta:self.theta];
+    [bhTree_ updateWithBounds:self.bounds theta:self.theta];
     
-    for (ATParticle *particle in _activeParticles) {
-        [_bhTree insertParticle:particle];
+    for (ATParticle *particle in activeParticles_) {
+        [bhTree_ insertParticle:particle];
     }
     
     // ...and use it to approximate the repulsion forces
-    for (ATParticle *particle in _activeParticles) {
-        [_bhTree applyForces:particle andRepulsion:self.repulsion];
+    for (ATParticle *particle in activeParticles_) {
+        [bhTree_ applyForces:particle andRepulsion:self.repulsion];
     }
 }
 
 - (void) applySprings 
 {
-    for (ATSpring *spring in _activeSprings) {
+    for (ATSpring *spring in activeSprings_) {
         CGPoint d = CGPointSubtract(spring.target.position, spring.source.position); // the direction of the spring
         
         CGFloat displacement = spring.length - CGPointMagnitude(d);
@@ -297,7 +297,7 @@
     
     NSUInteger numParticles = 0;
     CGPoint centroid = CGPointZero;
-    for (ATParticle *particle in _activeParticles) {
+    for (ATParticle *particle in activeParticles_) {
         centroid = CGPointAdd(centroid, particle.position);
         numParticles++;
     }
@@ -305,7 +305,7 @@
     if (numParticles == 0) return;
     
     CGPoint correction = CGPointDivideFloat(centroid, -numParticles);
-    for (ATParticle *particle in _activeParticles) {
+    for (ATParticle *particle in activeParticles_) {
         [particle applyForce:correction];
     }
 }
@@ -313,7 +313,7 @@
 - (void) applyCenterGravity 
 {
     // attract each node to the origin
-    for (ATParticle *particle in _activeParticles) {
+    for (ATParticle *particle in activeParticles_) {
         CGPoint direction = CGPointMultiplyFloat(particle.position, -1.0);
         [particle applyForce:CGPointMultiplyFloat(direction, (self.repulsion / 100.0))];
     }
@@ -322,7 +322,7 @@
 - (void) updateVelocity:(CGFloat)timestep 
 {
     // translate forces to a new velocity for this particle
-    for (ATParticle *particle in _activeParticles) {
+    for (ATParticle *particle in activeParticles_) {
         if (particle.fixed){
             particle.velocity = CGPointZero;
             particle.force = CGPointZero;
@@ -354,7 +354,7 @@
     CGPoint topleft     = CGPointZero;
     BOOL firstParticle  = YES;
     
-    for (ATParticle *particle in _activeParticles) {
+    for (ATParticle *particle in activeParticles_) {
         // move the node to its new position
         particle.position = CGPointAdd(particle.position, CGPointMultiplyFloat(particle.velocity, timestep) );
         

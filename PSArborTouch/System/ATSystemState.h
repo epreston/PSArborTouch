@@ -1,6 +1,6 @@
 //
 //  ATSystemState.h
-//  SystemRig
+//  PSArborTouch
 //
 //  Created by Ed Preston on 30/09/11.
 //  Copyright 2011 Preston Software. All rights reserved.
