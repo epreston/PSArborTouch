@@ -15,10 +15,10 @@
 #define RANDOM_0_1          ((CGFloat)arc4random()/(CGFloat)ARC4RANDOM_MAX)
 
 
-static inline BOOL CGPointExploded(const CGPoint a)
+static inline BOOL CGPointExploded(const CGPoint point)
 {
     // Not safe for some math optimization flags
-    return( isnan(a.x) || isnan(a.y) );
+    return( isnan(point.x) || isnan(point.y) );
 }
 
 static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
@@ -38,41 +38,42 @@ static inline CGPoint CGPointMultiply(const CGPoint a, const CGPoint b)
     return(r);
 }
 
-static inline CGPoint CGPointMultiplyFloat(const CGPoint a, const CGFloat n)
+static inline CGPoint CGPointScale(const CGPoint point, const CGFloat scale)
 {
-    CGPoint r = { .x = a.x * n, .y = a.y * n };
+    CGPoint r = { .x = point.x * scale, .y = point.y * scale };
     return(r);
 }
 
-static inline CGPoint CGPointDivideFloat(const CGPoint a, const CGFloat n)
+static inline CGPoint CGPointDivideFloat(const CGPoint point, const CGFloat n)
 {
     //    NSParameterAssert( n > 0);
     
-    CGPoint r = { .x = a.x / n, .y = a.y / n };
+    CGPoint r = { .x = point.x / n, .y = point.y / n };
     return(r);
 }
 
-//static inline CGFloat CGPointDistance(const CGPoint start, const CGPoint finish)
-//{
-//    CGFloat d = sqrtf(powf( (start.x - finish.x), 2.0f) + powf( (start.y - finish.y), 2.0f));
-//    return(d);
-//}
+static inline CGFloat CGPointDistance(const CGPoint start, const CGPoint finish)
+{
+    CGFloat xDelta = finish.x - start.x;
+    CGFloat yDelta = finish.y - start.y;
+    return sqrtf(xDelta * xDelta + yDelta * yDelta);
+}
 
 static inline CGFloat CGPointMagnitude(const CGPoint point)
 {
-    CGFloat m = sqrt( (point.x * point.x) + (point.y * point.y) );
+    CGFloat m = sqrtf( (point.x * point.x) + (point.y * point.y) );
     return(m);
 }
 
-static inline CGPoint CGPointNormal(const CGPoint a)
+static inline CGPoint CGPointNormal(const CGPoint point)
 {
-    CGPoint r = { .x = a.x, .y = -a.y };
+    CGPoint r = { .x = point.x, .y = -point.y };
     return(r);
 }
 
-static inline CGPoint CGPointNormalize(const CGPoint a)
+static inline CGPoint CGPointNormalize(const CGPoint point)
 {    
-    CGPoint r = CGPointDivideFloat(a, CGPointMagnitude(a));
+    CGPoint r = CGPointDivideFloat(point, CGPointMagnitude(point));
     return(r);
 }
 

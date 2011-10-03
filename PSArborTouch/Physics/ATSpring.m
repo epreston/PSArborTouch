@@ -43,6 +43,8 @@
 
 - (CGFloat) distanceToParticle:(ATParticle *)particle 
 {
+    NSParameterAssert(particle != nil);
+    
     return [self distanceToNode:particle];
 }
 

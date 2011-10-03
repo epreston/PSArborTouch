@@ -51,16 +51,26 @@
 
 - (void) setNodesObject:(ATNode *)NodesObject forKey:(NSNumber *)Key
 {
+    NSParameterAssert(Key != nil);
+    NSParameterAssert(NodesObject != nil);
+    
+    if (NodesObject == nil || Key == nil) return;
     [nodes_ setObject:NodesObject forKey:Key];
 }
 
 - (void) removeNodesObjectForKey:(NSNumber *)Key
 {
+    NSParameterAssert(Key != nil);
+    
+    if (Key == nil) return;
     [nodes_ removeObjectForKey:Key];
 }
 
 - (ATNode *) getNodesObjectForKey:(NSNumber *)Key
 {
+    NSParameterAssert(Key != nil);
+    
+    if (Key == nil) return nil;
     return [[self nodes] objectForKey:Key];
 }
 
@@ -68,16 +78,26 @@
 
 - (void) setEdgesObject:(ATEdge *)EdgesObject forKey:(NSNumber *)Key
 {
+    NSParameterAssert(Key != nil);
+    NSParameterAssert(EdgesObject != nil);
+    
+    if (EdgesObject == nil || Key == nil) return;
     [edges_ setObject:EdgesObject forKey:Key];
 }
 
 - (void) removeEdgesObjectForKey:(NSNumber *)Key
 {
+    NSParameterAssert(Key != nil);
+    
+    if (Key == nil) return;
     [edges_ removeObjectForKey:Key];
 }
 
 - (ATEdge *) getEdgesObjectForKey:(NSNumber *)Key
 {
+    NSParameterAssert(Key != nil);
+    
+    if (Key == nil) return nil;
     return [edges_ objectForKey:Key];
 }
 
@@ -86,16 +106,26 @@
 
 - (void) setAdjacencyObject:(NSMutableDictionary *)AdjacencyObject forKey:(NSNumber *)Key
 {
+    NSParameterAssert(Key != nil);
+    NSParameterAssert(AdjacencyObject != nil);
+    
+    if (AdjacencyObject == nil || Key == nil) return;
     [adjacency_ setObject:AdjacencyObject forKey:Key];
 }
 
 - (void) removeAdjacencyObjectForKey:(NSNumber *)Key
 {
+    NSParameterAssert(Key != nil);
+    
+    if (Key == nil) return;
     [adjacency_ removeObjectForKey:Key];
 }
 
 - (NSMutableDictionary *) getAdjacencyObjectForKey:(NSNumber *)Key
 {
+    NSParameterAssert(Key != nil);
+    
+    if (Key == nil) return nil;
     return [[self adjacency] objectForKey:Key];
 }
 
@@ -104,16 +134,26 @@
 
 - (void) setNamesObject:(ATNode *)NamesObject forKey:(NSString *)Key
 {
+    NSParameterAssert(Key != nil);
+    NSParameterAssert(NamesObject != nil);
+    
+    if (NamesObject == nil || Key == nil) return;
     [names_ setObject:NamesObject forKey:Key];
 }
 
 - (void) removeNamesObjectForKey:(NSString *)Key
 {
+    NSParameterAssert(Key != nil);
+    
+    if (Key == nil) return;
     [names_ removeObjectForKey:Key];
 }
 
 - (ATNode *) getNamesObjectForKey:(NSString *)Key
 {
+    NSParameterAssert(Key != nil);
+    
+    if (Key == nil) return nil;
     return [names_ objectForKey:Key];
 }
 

@@ -36,7 +36,6 @@
         precision_   = 0.6;
         timeout_     = 1000 / 50;
     }
-    
     return self;
 }
 

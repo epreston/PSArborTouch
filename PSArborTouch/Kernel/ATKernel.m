@@ -78,7 +78,16 @@
 }
 
 
-#pragma mark - Rendering
+#pragma mark - Cached Physics Properties
+
+// We cache certain properties to provide information while the physics simulation 
+// is running.
+
+@synthesize simulationEnergy = lastEnergy_;
+@synthesize simulationBounds = lastBounds_;
+
+
+#pragma mark - Rendering (override in subclass)
 
 - (BOOL) updateViewport
 {
@@ -147,7 +156,6 @@
 
 - (void) start:(BOOL)unpause
 {
-    
     if (running_) return;               // already running
     if (paused_ && !unpause) return;    // we've been stopped before, wait for unpause
     paused_ = NO;
@@ -190,15 +198,6 @@
 }
 
 
-#pragma mark - Cached Physics Properties
-
-// We cache certain properties to provide information while the physics simulation 
-// is running.
-
-@synthesize simulationEnergy = lastEnergy_;
-@synthesize simulationBounds = lastBounds_;
-
-
 #pragma mark - Protected Physics Interface
 
 // Physics methods protected by a GCD queue to ensure serial execution.  We do
@@ -206,6 +205,9 @@
 
 - (void) addParticle:(ATParticle *)particle
 {
+    NSParameterAssert(particle != nil);
+    if (particle == nil) return;
+    
     dispatch_async( [self physicsQueue] , ^{
         
         [physics_ addParticle:particle];
@@ -216,6 +218,9 @@
 
 - (void) removeParticle:(ATParticle *)particle
 {
+    NSParameterAssert(particle != nil);
+    if (particle == nil) return;
+    
     dispatch_async( [self physicsQueue] , ^{
         
         [physics_ removeParticle:particle];
@@ -226,6 +231,9 @@
 
 - (void) addSpring:(ATSpring *)spring
 {
+    NSParameterAssert(spring != nil);
+    if (spring == nil) return;
+    
     dispatch_async( [self physicsQueue] , ^{
         
         [physics_ addSpring:spring];
@@ -236,6 +244,9 @@
 
 - (void) removeSpring:(ATSpring *)spring
 {
+    NSParameterAssert(spring != nil);
+    if (spring == nil) return;
+    
     dispatch_async( [self physicsQueue] , ^{
         
         [physics_ removeSpring:spring];

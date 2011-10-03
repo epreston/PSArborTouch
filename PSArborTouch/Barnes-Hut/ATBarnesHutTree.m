@@ -24,9 +24,9 @@ typedef enum {
     BHLocationSW,
 } BHLocation;
 
-- (BHLocation) _whichQuad:(ATParticle *)particle andNode:(ATBarnesHutBranch *)node;
-- (void) _setQuad:(BHLocation)location andNode:(ATBarnesHutBranch *)node andObject:(id)object;
-- (id) _getQuad:(BHLocation)location andNode:(ATBarnesHutBranch *)node;
+- (BHLocation) _whichQuad:(ATParticle *)particle ofBranch:(ATBarnesHutBranch *)branch;
+- (void) _setQuad:(BHLocation)location ofBranch:(ATBarnesHutBranch *)branch withObject:(id)object;
+- (id) _getQuad:(BHLocation)location ofBranch:(ATBarnesHutBranch *)branch;
 - (ATBarnesHutBranch *) _newBranch;
 
 @end
@@ -72,10 +72,6 @@ typedef enum {
     root_.bounds    = bounds;
 }
 
-
-// TODO: Defensive programming !! 
-
-
 - (void) insertParticle:(ATParticle *)newParticle 
 {
     NSParameterAssert(newParticle != nil);
@@ -89,17 +85,17 @@ typedef enum {
     while ([queue count] != 0) {
         ATParticle *particle = [queue dequeue];
         CGFloat p_mass = particle.mass;
-        BHLocation p_quad = [self _whichQuad:particle andNode:node];
-        id objectAtQuad = [self _getQuad:p_quad andNode:node];
+        BHLocation p_quad = [self _whichQuad:particle ofBranch:node];
+        id objectAtQuad = [self _getQuad:p_quad ofBranch:node];
         
         
         if ( objectAtQuad == nil ) {
             
             // slot is empty, just drop this node in and update the mass/c.o.m. 
-            [self _setQuad:p_quad andNode:node andObject:particle];
+            [self _setQuad:p_quad ofBranch:node withObject:particle];
             
             node.mass += p_mass;
-            node.position = CGPointAdd( node.position, CGPointMultiplyFloat(particle.position, p_mass) );
+            node.position = CGPointAdd( node.position, CGPointScale(particle.position, p_mass) );
             
             // process next object in queue.
             continue;
@@ -110,7 +106,7 @@ typedef enum {
             // as our new root
             
             node.mass += p_mass;
-            node.position = CGPointAdd( node.position, CGPointMultiplyFloat(particle.position, p_mass) );
+            node.position = CGPointAdd( node.position, CGPointScale(particle.position, p_mass) );
             
             node = objectAtQuad;
             [queue insertObject:particle atIndex:0];
@@ -124,7 +120,7 @@ typedef enum {
             // slot contains a particle, create a new branch and recurse with
             // both points in the queue now
             
-            if ( node.bounds.size.height == 0.0  || node.bounds.size.width == 0.0 ) {
+            if ( CGRectGetHeight(node.bounds) == 0.0 || CGRectGetWidth(node.bounds) == 0.0 ) {
                 NSLog(@"Should not be zero?");
             }
             
@@ -138,7 +134,7 @@ typedef enum {
             
             // CGRectContainsPoint
             
-            branch_size = CGSizeMake(node.bounds.size.width / 2.0, node.bounds.size.height / 2.0);
+            branch_size = CGSizeMake( CGRectGetWidth(node.bounds) / 2.0, CGRectGetHeight(node.bounds) / 2.0);
             branch_origin = node.bounds.origin;
             
             
@@ -151,10 +147,10 @@ typedef enum {
             ATParticle *oldParticle = objectAtQuad;
             
             ATBarnesHutBranch *newBranch = [self _newBranch];
-            [self _setQuad:p_quad andNode:node andObject:newBranch];
+            [self _setQuad:p_quad ofBranch:node withObject:newBranch];
             newBranch.bounds = CGRectMake(branch_origin.x, branch_origin.y, branch_size.width, branch_size.height);
             node.mass = p_mass;
-            node.position = CGPointMultiplyFloat(particle.position, p_mass);
+            node.position = CGPointScale(particle.position, p_mass);
             node = newBranch;
             
             if ( (oldParticle.position.x == particle.position.x) && (oldParticle.position.y == particle.position.y) ) {
@@ -195,7 +191,9 @@ typedef enum {
 }
 
 - (void) applyForces:(ATParticle *)particle andRepulsion:(CGFloat)repulsion 
-{    
+{
+    NSParameterAssert(particle != nil);
+    
     // find all particles/branch nodes this particle interacts with and apply
     // the specified repulsion to the particle
     
@@ -214,7 +212,7 @@ typedef enum {
             CGPoint d = CGPointSubtract(particle.position, nodeParticle.position);
             CGFloat distance = MAX(1.0f, CGPointMagnitude(d));
             CGPoint direction = ( CGPointMagnitude(d) > 0.0 ) ? d : CGPointNormalize( CGPointRandom(1.0) );
-            CGPoint force = CGPointDivideFloat( CGPointMultiplyFloat(direction, (repulsion * nodeParticle.mass) ), (distance * distance) );
+            CGPoint force = CGPointDivideFloat( CGPointScale(direction, (repulsion * nodeParticle.mass) ), (distance * distance) );
             
             [particle applyForce:force];
             
@@ -225,7 +223,7 @@ typedef enum {
             ATBarnesHutBranch *nodeBranch = node;
             
             CGFloat dist = CGPointMagnitude(CGPointSubtract(particle.position, CGPointDivideFloat(nodeBranch.position, nodeBranch.mass)));
-            CGFloat size = sqrtf(nodeBranch.bounds.size.width * nodeBranch.bounds.size.height);
+            CGFloat size = sqrtf( CGRectGetWidth(nodeBranch.bounds) * CGRectGetHeight(nodeBranch.bounds) );
             
             if ( (size / dist) > theta_ ) { // i.e., s/d > Θ
                 // open the quad and recurse
@@ -238,7 +236,7 @@ typedef enum {
                 CGPoint d = CGPointSubtract(particle.position, CGPointDivideFloat(nodeBranch.position, nodeBranch.mass));
                 CGFloat distance = MAX(1.0, CGPointMagnitude(d));
                 CGPoint direction = ( CGPointMagnitude(d) > 0.0 ) ? d : CGPointNormalize( CGPointRandom(1.0) );
-                CGPoint force = CGPointDivideFloat( CGPointMultiplyFloat(direction, (repulsion * nodeBranch.mass) ), (distance * distance) );
+                CGPoint force = CGPointDivideFloat( CGPointScale(direction, (repulsion * nodeBranch.mass) ), (distance * distance) );
                 
                 [particle applyForce:force];
             }
@@ -251,16 +249,19 @@ typedef enum {
 
 // TODO: Review - should these next 3 just be branch members ?
 
-- (BHLocation) _whichQuad:(ATParticle *)particle andNode:(ATBarnesHutBranch *)node 
-{    
+- (BHLocation) _whichQuad:(ATParticle *)particle ofBranch:(ATBarnesHutBranch *)branch 
+{
+    NSParameterAssert(particle != nil);
+    NSParameterAssert(branch != nil);
+    
     // sort the particle into one of the quadrants of this node
     if ( CGPointExploded(particle.position) ) {
         return BHLocationUD;
     }
     
-    CGPoint particle_p = CGPointSubtract(particle.position, node.bounds.origin);
-    CGSize halfsize = CGSizeMake(node.bounds.size.width / 2.0, 
-                                  node.bounds.size.height / 2.0);
+    CGPoint particle_p = CGPointSubtract(particle.position, branch.bounds.origin);
+    CGSize halfsize = CGSizeMake(CGRectGetWidth(branch.bounds)  / 2.0, 
+                                 CGRectGetHeight(branch.bounds) / 2.0);
     
     if ( particle_p.y < halfsize.height ) {
         if ( particle_p.x < halfsize.width ) return BHLocationNW;
@@ -271,24 +272,26 @@ typedef enum {
     }
 }
 
-- (void) _setQuad:(BHLocation)location andNode:(ATBarnesHutBranch *)node andObject:(id)object
+- (void) _setQuad:(BHLocation)location ofBranch:(ATBarnesHutBranch *)branch withObject:(id)object
 {
+    NSParameterAssert(branch != nil);
+    
     switch (location) {
             
         case BHLocationNE:
-            node.ne = object;
+            branch.ne = object;
             break;
             
         case BHLocationSE:
-            node.se = object;
+            branch.se = object;
             break;
             
         case BHLocationSW:
-            node.sw = object;
+            branch.sw = object;
             break;
             
         case BHLocationNW:
-            node.nw = object;
+            branch.nw = object;
             break;
             
         case BHLocationUD:
@@ -298,24 +301,26 @@ typedef enum {
     }
 }
 
-- (id) _getQuad:(BHLocation)location andNode:(ATBarnesHutBranch *)node 
-{    
+- (id) _getQuad:(BHLocation)location ofBranch:(ATBarnesHutBranch *)branch 
+{
+    NSParameterAssert(branch != nil);
+    
     switch (location) {
             
         case BHLocationNE:
-            return node.ne;
+            return branch.ne;
             break;
             
         case BHLocationSE:
-            return node.se;
+            return branch.se;
             break;
             
         case BHLocationSW:
-            return node.sw;
+            return branch.sw;
             break;
             
         case BHLocationNW:
-            return node.nw;
+            return branch.nw;
             break;
             
         case BHLocationUD:

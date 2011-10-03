@@ -99,6 +99,10 @@
 
 - (void) addParticle:(ATParticle *)particle
 {
+    NSParameterAssert(particle != nil);
+    
+    if (particle == nil) return;
+    
     particle.connections = 0.0;
     [activeParticles_ addObject:particle];
     [freeParticles_ addObject:particle];
@@ -107,6 +111,10 @@
 
 - (void) removeParticle:(ATParticle *)particle
 {
+    NSParameterAssert(particle != nil);
+    
+    if (particle == nil) return;
+    
     [particles_ removeObjectIdenticalTo:particle];
     [activeParticles_ removeObjectIdenticalTo:particle];
     [freeParticles_ removeObjectIdenticalTo:particle];
@@ -114,6 +122,10 @@
 
 - (void) addSpring:(ATSpring *)spring
 {
+    NSParameterAssert(spring != nil);
+    
+    if (spring == nil) return;
+    
     [activeSprings_ addObject:spring];
     [springs_ addObject:spring];
 
@@ -126,6 +138,10 @@
 
 - (void) removeSpring:(ATSpring *)spring
 {
+    NSParameterAssert(spring != nil);
+    
+    if (spring == nil) return;
+    
     spring.point1.connections--;
     spring.point2.connections--;
     
@@ -204,6 +220,10 @@
 
 - (void) eulerIntegrator:(CGFloat)deltaTime 
 {
+    NSParameterAssert(deltaTime > 0.0);
+    
+    // Without advancement of time, does the simulation have meaning?
+    if (deltaTime <= 0.0) return;
     
     if (self.repulsion > 0.0) {
         
@@ -237,16 +257,16 @@
                 // all should be well)
                 
                 CGPoint force = CGPointDivideFloat( 
-                                                   CGPointMultiplyFloat(direction, 
-                                                                        (self.repulsion * object.mass * 0.5) ), 
+                                                   CGPointScale(direction, 
+                                                                (self.repulsion * object.mass * 0.5) ), 
                                                    (distance * distance * 0.5) );
                 
                 [subject applyForce:force];
                 
                 
                 force = CGPointDivideFloat(
-                                           CGPointMultiplyFloat(direction, 
-                                                                (self.repulsion * subject.mass * 0.5) ),
+                                           CGPointScale(direction, 
+                                                        (self.repulsion * subject.mass * 0.5) ),
                                            (distance * distance * -0.5) );
                 
                 [object applyForce:force];
@@ -285,8 +305,8 @@
         // doesn't work very well though. what's the `right' way to do it?
         
         // apply force to each end point
-        [spring.point1 applyForce:CGPointMultiplyFloat(direction, spring.stiffness * displacement * -0.5) ];
-        [spring.point2 applyForce:CGPointMultiplyFloat(direction, spring.stiffness * displacement * 0.5) ];
+        [spring.point1 applyForce:CGPointScale(direction, spring.stiffness * displacement * -0.5) ];
+        [spring.point2 applyForce:CGPointScale(direction, spring.stiffness * displacement * 0.5) ];
     }    
 }
 
@@ -314,13 +334,18 @@
 {
     // attract each node to the origin
     for (ATParticle *particle in activeParticles_) {
-        CGPoint direction = CGPointMultiplyFloat(particle.position, -1.0);
-        [particle applyForce:CGPointMultiplyFloat(direction, (self.repulsion / 100.0))];
+        CGPoint direction = CGPointScale(particle.position, -1.0);
+        [particle applyForce:CGPointScale(direction, (self.repulsion / 100.0))];
     }
 }
 
 - (void) updateVelocity:(CGFloat)timestep 
 {
+    NSParameterAssert(timestep > 0.0);
+    
+    // Without advancement of time, does the simulation have meaning?
+    if (timestep <= 0.0) return;
+    
     // translate forces to a new velocity for this particle
     for (ATParticle *particle in activeParticles_) {
         if (particle.fixed){
@@ -333,9 +358,9 @@
         //        CGFloat was = magnitude(particle.v);
         
         // DEBUG: This is probley incorrectly translated. Check in debugger.
-        particle.velocity = CGPointMultiplyFloat( CGPointAdd(particle.velocity, 
-                                                             CGPointMultiplyFloat( particle.force, timestep)), 
-                                                 (1.0 - self.friction));
+        particle.velocity = CGPointScale(CGPointAdd(particle.velocity, 
+                                                    CGPointScale( particle.force, timestep)), 
+                                         (1.0 - self.friction));
         
         particle.force = CGPointZero;
         
@@ -348,6 +373,11 @@
 
 - (void) updatePosition:(CGFloat)timestep 
 {
+    NSParameterAssert(timestep > 0.0);
+    
+    // Without advancement of time, does the simulation have meaning?
+    if (timestep <= 0.0) return;
+    
     // translate velocity to a position delta
     CGFloat sum = 0.0, max = 0.0, n = 0.0;
     CGPoint bottomright = CGPointZero;
@@ -356,7 +386,7 @@
     
     for (ATParticle *particle in activeParticles_) {
         // move the node to its new position
-        particle.position = CGPointAdd(particle.position, CGPointMultiplyFloat(particle.velocity, timestep) );
+        particle.position = CGPointAdd(particle.position, CGPointScale(particle.velocity, timestep) );
         
         // keep stats to report in systemEnergy
         CGFloat speed = CGPointMagnitude(particle.velocity);
