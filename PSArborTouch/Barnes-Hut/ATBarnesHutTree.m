@@ -11,8 +11,6 @@
 #import "ATParticle.h"
 #import "ATGeometry.h"
 
-#import "NSMutableArray+QueueAdditions.h"
-
 
 @interface ATBarnesHutTree ()
 
@@ -76,14 +74,23 @@ typedef enum {
 {
     NSParameterAssert(newParticle != nil);
     
+    if (newParticle == nil) return;
+    
     // add a particle to the tree, starting at the current _root and working down
     ATBarnesHutBranch *node = root_;
     
     NSMutableArray* queue = [NSMutableArray arrayWithCapacity:32];
-    [queue enqueue:newParticle];
+        
+    // Add particle to the end of the queue
+    [queue addObject:newParticle];
+    
     
     while ([queue count] != 0) {
-        ATParticle *particle = [queue dequeue];
+        
+        // dequeue
+        ATParticle *particle = [queue objectAtIndex:0];
+        [queue removeObjectAtIndex:0];
+        
         CGFloat p_mass = particle.mass;
         BHLocation p_quad = [self _whichQuad:particle ofBranch:node];
         id objectAtQuad = [self _getQuad:p_quad ofBranch:node];
@@ -92,10 +99,10 @@ typedef enum {
         if ( objectAtQuad == nil ) {
             
             // slot is empty, just drop this node in and update the mass/c.o.m. 
-            [self _setQuad:p_quad ofBranch:node withObject:particle];
-            
             node.mass += p_mass;
             node.position = CGPointAdd( node.position, CGPointScale(particle.position, p_mass) );
+            
+            [self _setQuad:p_quad ofBranch:node withObject:particle];
             
             // process next object in queue.
             continue;
@@ -109,6 +116,8 @@ typedef enum {
             node.position = CGPointAdd( node.position, CGPointScale(particle.position, p_mass) );
             
             node = objectAtQuad;
+            
+            // add the particle to the front of the queue
             [queue insertObject:particle atIndex:0];
             
             // process next object in queue.
@@ -128,7 +137,6 @@ typedef enum {
             CGPoint branch_origin;
             
 
-            
             // CHECK IF POINT IN RECT TO AVOID RECURSIVELY MAKING THE RECT INFINIATELY
             // SMALLER FOR SOME POINTS OUT OF BOUNDS.
             
@@ -177,7 +185,11 @@ typedef enum {
             
             // keep iterating but now having to place both the current particle and the
             // one we just replaced with the branch node
-            [queue enqueue:oldParticle];
+            
+            // Add old particle to the end of the array
+            [queue addObject:oldParticle];
+            
+            // Add new particle to the start of the array
             [queue insertObject:particle atIndex:0];
             
             
@@ -194,6 +206,8 @@ typedef enum {
 {
     NSParameterAssert(particle != nil);
     
+    if (particle == nil) return;
+    
     // find all particles/branch nodes this particle interacts with and apply
     // the specified repulsion to the particle
     
@@ -201,7 +215,11 @@ typedef enum {
     [queue addObject:root_];
     
     while ([queue count] != 0) {
-        id node = [queue dequeue];
+        
+        // dequeue
+        id node = [queue objectAtIndex:0];
+        [queue removeObjectAtIndex:0];
+        
         if (node == nil) continue;
         if (particle == node) continue;
         
@@ -227,10 +245,10 @@ typedef enum {
             
             if ( (size / dist) > theta_ ) { // i.e., s/d > Θ
                 // open the quad and recurse
-                [queue enqueue:nodeBranch.ne];
-                [queue enqueue:nodeBranch.nw];
-                [queue enqueue:nodeBranch.se];
-                [queue enqueue:nodeBranch.sw];
+                if (nodeBranch.ne != nil) [queue addObject:nodeBranch.ne];
+                if (nodeBranch.nw != nil) [queue addObject:nodeBranch.nw];
+                if (nodeBranch.se != nil) [queue addObject:nodeBranch.se];
+                if (nodeBranch.sw != nil) [queue addObject:nodeBranch.sw];
             } else {
                 // treat the quad as a single body
                 CGPoint d = CGPointSubtract(particle.position, CGPointDivideFloat(nodeBranch.position, nodeBranch.mass));

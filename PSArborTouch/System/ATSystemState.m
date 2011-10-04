@@ -162,7 +162,7 @@
 #pragma mark - Keyed Archiving
 
 
-- (void)encodeWithCoder:(NSCoder *)encoder 
+- (void) encodeWithCoder:(NSCoder *)encoder 
 {
     [encoder encodeObject:nodes_ forKey:@"nodes"];
     [encoder encodeObject:edges_ forKey:@"edges"];
@@ -170,7 +170,7 @@
     [encoder encodeObject:names_ forKey:@"names"];
 }
 
-- (id)initWithCoder:(NSCoder *)decoder 
+- (id) initWithCoder:(NSCoder *)decoder 
 {
     self = [super init];
     if (self) {

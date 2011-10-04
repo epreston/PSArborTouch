@@ -16,6 +16,18 @@
 		4F4DA1AD1439E41700AAB205 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F4DA1AB1439E41700AAB205 /* MainWindow.xib */; };
 		4F4DA1B01439E41700AAB205 /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4DA1AF1439E41700AAB205 /* WelcomeViewController.m */; };
 		4F4DA1B31439E41700AAB205 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F4DA1B11439E41700AAB205 /* WelcomeViewController.xib */; };
+		4FCC70AC143AA8040093EC7D /* ATEdge.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCC708C143AA8040093EC7D /* ATEdge.m */; };
+		4FCC70AD143AA8040093EC7D /* ATNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCC708E143AA8040093EC7D /* ATNode.m */; };
+		4FCC70AE143AA8040093EC7D /* ATBarnesHutBranch.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCC7091143AA8040093EC7D /* ATBarnesHutBranch.m */; };
+		4FCC70AF143AA8040093EC7D /* ATBarnesHutTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCC7093143AA8040093EC7D /* ATBarnesHutTree.m */; };
+		4FCC70B0143AA8040093EC7D /* ATKernel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCC7096143AA8040093EC7D /* ATKernel.m */; };
+		4FCC70B1143AA8040093EC7D /* ATEnergy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCC7099143AA8040093EC7D /* ATEnergy.m */; };
+		4FCC70B2143AA8040093EC7D /* ATParticle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCC709B143AA8040093EC7D /* ATParticle.m */; };
+		4FCC70B3143AA8040093EC7D /* ATPhysics.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCC709D143AA8040093EC7D /* ATPhysics.m */; };
+		4FCC70B4143AA8040093EC7D /* ATSpring.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCC709F143AA8040093EC7D /* ATSpring.m */; };
+		4FCC70B6143AA8040093EC7D /* ATSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCC70A6143AA8040093EC7D /* ATSystem.m */; };
+		4FCC70B7143AA8040093EC7D /* ATSystemParams.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCC70A8143AA8040093EC7D /* ATSystemParams.m */; };
+		4FCC70B8143AA8040093EC7D /* ATSystemState.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCC70AB143AA8040093EC7D /* ATSystemState.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +45,32 @@
 		4F4DA1AE1439E41700AAB205 /* WelcomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
 		4F4DA1AF1439E41700AAB205 /* WelcomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
 		4F4DA1B21439E41700AAB205 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/WelcomeViewController.xib; sourceTree = "<group>"; };
+		4FCC708B143AA8040093EC7D /* ATEdge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATEdge.h; sourceTree = "<group>"; };
+		4FCC708C143AA8040093EC7D /* ATEdge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATEdge.m; sourceTree = "<group>"; };
+		4FCC708D143AA8040093EC7D /* ATNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATNode.h; sourceTree = "<group>"; };
+		4FCC708E143AA8040093EC7D /* ATNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATNode.m; sourceTree = "<group>"; };
+		4FCC7090143AA8040093EC7D /* ATBarnesHutBranch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATBarnesHutBranch.h; sourceTree = "<group>"; };
+		4FCC7091143AA8040093EC7D /* ATBarnesHutBranch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATBarnesHutBranch.m; sourceTree = "<group>"; };
+		4FCC7092143AA8040093EC7D /* ATBarnesHutTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATBarnesHutTree.h; sourceTree = "<group>"; };
+		4FCC7093143AA8040093EC7D /* ATBarnesHutTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATBarnesHutTree.m; sourceTree = "<group>"; };
+		4FCC7095143AA8040093EC7D /* ATKernel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATKernel.h; sourceTree = "<group>"; };
+		4FCC7096143AA8040093EC7D /* ATKernel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATKernel.m; sourceTree = "<group>"; };
+		4FCC7098143AA8040093EC7D /* ATEnergy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATEnergy.h; sourceTree = "<group>"; };
+		4FCC7099143AA8040093EC7D /* ATEnergy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATEnergy.m; sourceTree = "<group>"; };
+		4FCC709A143AA8040093EC7D /* ATParticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATParticle.h; sourceTree = "<group>"; };
+		4FCC709B143AA8040093EC7D /* ATParticle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATParticle.m; sourceTree = "<group>"; };
+		4FCC709C143AA8040093EC7D /* ATPhysics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATPhysics.h; sourceTree = "<group>"; };
+		4FCC709D143AA8040093EC7D /* ATPhysics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATPhysics.m; sourceTree = "<group>"; };
+		4FCC709E143AA8040093EC7D /* ATSpring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATSpring.h; sourceTree = "<group>"; };
+		4FCC709F143AA8040093EC7D /* ATSpring.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATSpring.m; sourceTree = "<group>"; };
+		4FCC70A1143AA8040093EC7D /* ATGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATGeometry.h; sourceTree = "<group>"; };
+		4FCC70A5143AA8040093EC7D /* ATSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATSystem.h; sourceTree = "<group>"; };
+		4FCC70A6143AA8040093EC7D /* ATSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATSystem.m; sourceTree = "<group>"; };
+		4FCC70A7143AA8040093EC7D /* ATSystemParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATSystemParams.h; sourceTree = "<group>"; };
+		4FCC70A8143AA8040093EC7D /* ATSystemParams.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATSystemParams.m; sourceTree = "<group>"; };
+		4FCC70A9143AA8040093EC7D /* ATSystemRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATSystemRenderer.h; sourceTree = "<group>"; };
+		4FCC70AA143AA8040093EC7D /* ATSystemState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATSystemState.h; sourceTree = "<group>"; };
+		4FCC70AB143AA8040093EC7D /* ATSystemState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATSystemState.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				4F4DA19F1439E41700AAB205 /* Welcome */,
+				4FCC7089143AA8040093EC7D /* PSArborTouch */,
 				4F4DA1981439E41700AAB205 /* Frameworks */,
 				4F4DA1961439E41700AAB205 /* Products */,
 			);
@@ -133,6 +172,88 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		4FCC7089143AA8040093EC7D /* PSArborTouch */ = {
+			isa = PBXGroup;
+			children = (
+				4FCC708A143AA8040093EC7D /* Atoms */,
+				4FCC708F143AA8040093EC7D /* Barnes-Hut */,
+				4FCC7094143AA8040093EC7D /* Kernel */,
+				4FCC7097143AA8040093EC7D /* Physics */,
+				4FCC70A0143AA8040093EC7D /* Support */,
+				4FCC70A4143AA8040093EC7D /* System */,
+			);
+			name = PSArborTouch;
+			path = ../../PSArborTouch;
+			sourceTree = "<group>";
+		};
+		4FCC708A143AA8040093EC7D /* Atoms */ = {
+			isa = PBXGroup;
+			children = (
+				4FCC708B143AA8040093EC7D /* ATEdge.h */,
+				4FCC708C143AA8040093EC7D /* ATEdge.m */,
+				4FCC708D143AA8040093EC7D /* ATNode.h */,
+				4FCC708E143AA8040093EC7D /* ATNode.m */,
+			);
+			path = Atoms;
+			sourceTree = "<group>";
+		};
+		4FCC708F143AA8040093EC7D /* Barnes-Hut */ = {
+			isa = PBXGroup;
+			children = (
+				4FCC7090143AA8040093EC7D /* ATBarnesHutBranch.h */,
+				4FCC7091143AA8040093EC7D /* ATBarnesHutBranch.m */,
+				4FCC7092143AA8040093EC7D /* ATBarnesHutTree.h */,
+				4FCC7093143AA8040093EC7D /* ATBarnesHutTree.m */,
+			);
+			path = "Barnes-Hut";
+			sourceTree = "<group>";
+		};
+		4FCC7094143AA8040093EC7D /* Kernel */ = {
+			isa = PBXGroup;
+			children = (
+				4FCC7095143AA8040093EC7D /* ATKernel.h */,
+				4FCC7096143AA8040093EC7D /* ATKernel.m */,
+			);
+			path = Kernel;
+			sourceTree = "<group>";
+		};
+		4FCC7097143AA8040093EC7D /* Physics */ = {
+			isa = PBXGroup;
+			children = (
+				4FCC7098143AA8040093EC7D /* ATEnergy.h */,
+				4FCC7099143AA8040093EC7D /* ATEnergy.m */,
+				4FCC709A143AA8040093EC7D /* ATParticle.h */,
+				4FCC709B143AA8040093EC7D /* ATParticle.m */,
+				4FCC709C143AA8040093EC7D /* ATPhysics.h */,
+				4FCC709D143AA8040093EC7D /* ATPhysics.m */,
+				4FCC709E143AA8040093EC7D /* ATSpring.h */,
+				4FCC709F143AA8040093EC7D /* ATSpring.m */,
+			);
+			path = Physics;
+			sourceTree = "<group>";
+		};
+		4FCC70A0143AA8040093EC7D /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				4FCC70A1143AA8040093EC7D /* ATGeometry.h */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		4FCC70A4143AA8040093EC7D /* System */ = {
+			isa = PBXGroup;
+			children = (
+				4FCC70A5143AA8040093EC7D /* ATSystem.h */,
+				4FCC70A6143AA8040093EC7D /* ATSystem.m */,
+				4FCC70A7143AA8040093EC7D /* ATSystemParams.h */,
+				4FCC70A8143AA8040093EC7D /* ATSystemParams.m */,
+				4FCC70A9143AA8040093EC7D /* ATSystemRenderer.h */,
+				4FCC70AA143AA8040093EC7D /* ATSystemState.h */,
+				4FCC70AB143AA8040093EC7D /* ATSystemState.m */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -199,6 +320,18 @@
 				4F4DA1A61439E41700AAB205 /* main.m in Sources */,
 				4F4DA1AA1439E41700AAB205 /* WelcomeAppDelegate.m in Sources */,
 				4F4DA1B01439E41700AAB205 /* WelcomeViewController.m in Sources */,
+				4FCC70AC143AA8040093EC7D /* ATEdge.m in Sources */,
+				4FCC70AD143AA8040093EC7D /* ATNode.m in Sources */,
+				4FCC70AE143AA8040093EC7D /* ATBarnesHutBranch.m in Sources */,
+				4FCC70AF143AA8040093EC7D /* ATBarnesHutTree.m in Sources */,
+				4FCC70B0143AA8040093EC7D /* ATKernel.m in Sources */,
+				4FCC70B1143AA8040093EC7D /* ATEnergy.m in Sources */,
+				4FCC70B2143AA8040093EC7D /* ATParticle.m in Sources */,
+				4FCC70B3143AA8040093EC7D /* ATPhysics.m in Sources */,
+				4FCC70B4143AA8040093EC7D /* ATSpring.m in Sources */,
+				4FCC70B6143AA8040093EC7D /* ATSystem.m in Sources */,
+				4FCC70B7143AA8040093EC7D /* ATSystemParams.m in Sources */,
+				4FCC70B8143AA8040093EC7D /* ATSystemState.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +454,7 @@
 				4F4DA1B81439E41700AAB205 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

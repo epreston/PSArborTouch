@@ -25,7 +25,6 @@
 		4F4DA0391439DD4200AAB205 /* ATParticle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4DA0221439DD4200AAB205 /* ATParticle.m */; };
 		4F4DA03A1439DD4200AAB205 /* ATPhysics.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4DA0241439DD4200AAB205 /* ATPhysics.m */; };
 		4F4DA03B1439DD4200AAB205 /* ATSpring.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4DA0261439DD4200AAB205 /* ATSpring.m */; };
-		4F4DA03C1439DD4200AAB205 /* NSMutableArray+QueueAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4DA02A1439DD4200AAB205 /* NSMutableArray+QueueAdditions.m */; };
 		4F4DA03D1439DD4200AAB205 /* ATSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4DA02D1439DD4200AAB205 /* ATSystem.m */; };
 		4F4DA03E1439DD4200AAB205 /* ATSystemParams.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4DA02F1439DD4200AAB205 /* ATSystemParams.m */; };
 		4F4DA03F1439DD4200AAB205 /* ATSystemState.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4DA0321439DD4200AAB205 /* ATSystemState.m */; };
@@ -88,8 +87,6 @@
 		4F4DA0251439DD4200AAB205 /* ATSpring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATSpring.h; sourceTree = "<group>"; };
 		4F4DA0261439DD4200AAB205 /* ATSpring.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATSpring.m; sourceTree = "<group>"; };
 		4F4DA0281439DD4200AAB205 /* ATGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATGeometry.h; sourceTree = "<group>"; };
-		4F4DA0291439DD4200AAB205 /* NSMutableArray+QueueAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+QueueAdditions.h"; sourceTree = "<group>"; };
-		4F4DA02A1439DD4200AAB205 /* NSMutableArray+QueueAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+QueueAdditions.m"; sourceTree = "<group>"; };
 		4F4DA02C1439DD4200AAB205 /* ATSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATSystem.h; sourceTree = "<group>"; };
 		4F4DA02D1439DD4200AAB205 /* ATSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATSystem.m; sourceTree = "<group>"; };
 		4F4DA02E1439DD4200AAB205 /* ATSystemParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATSystemParams.h; sourceTree = "<group>"; };
@@ -272,8 +269,6 @@
 			isa = PBXGroup;
 			children = (
 				4F4DA0281439DD4200AAB205 /* ATGeometry.h */,
-				4F4DA0291439DD4200AAB205 /* NSMutableArray+QueueAdditions.h */,
-				4F4DA02A1439DD4200AAB205 /* NSMutableArray+QueueAdditions.m */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -443,7 +438,6 @@
 				4F4DA0391439DD4200AAB205 /* ATParticle.m in Sources */,
 				4F4DA03A1439DD4200AAB205 /* ATPhysics.m in Sources */,
 				4F4DA03B1439DD4200AAB205 /* ATSpring.m in Sources */,
-				4F4DA03C1439DD4200AAB205 /* NSMutableArray+QueueAdditions.m in Sources */,
 				4F4DA03D1439DD4200AAB205 /* ATSystem.m in Sources */,
 				4F4DA03E1439DD4200AAB205 /* ATSystemParams.m in Sources */,
 				4F4DA03F1439DD4200AAB205 /* ATSystemState.m in Sources */,

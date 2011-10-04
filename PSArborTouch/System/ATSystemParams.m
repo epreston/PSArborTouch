@@ -24,7 +24,7 @@
 @synthesize precision   = precision_;
 @synthesize timeout     = timeout_;
 
-- (id)init
+- (id) init
 {
     self = [super init];
     if (self) {        
@@ -42,7 +42,7 @@
 
 #pragma mark - Keyed Archiving
 
-- (void)encodeWithCoder:(NSCoder *)encoder 
+- (void) encodeWithCoder:(NSCoder *)encoder 
 {
     [encoder encodeFloat:repulsion_ forKey:@"repulsion"];
     [encoder encodeFloat:stiffness_ forKey:@"stiffness"];
@@ -53,7 +53,7 @@
     [encoder encodeFloat:timeout_ forKey:@"timeout"];
 }
 
-- (id)initWithCoder:(NSCoder *)decoder 
+- (id) initWithCoder:(NSCoder *)decoder 
 {
     self = [super init];
     if (self) {
