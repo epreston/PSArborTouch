@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F46F56C143ADA270051A67A /* AtlasCanvasView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F46F56B143ADA270051A67A /* AtlasCanvasView.m */; };
 		4F4D9F871439DAFD00AAB205 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F4D9F861439DAFD00AAB205 /* UIKit.framework */; };
 		4F4D9F891439DAFD00AAB205 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F4D9F881439DAFD00AAB205 /* Foundation.framework */; };
 		4F4D9F8B1439DAFD00AAB205 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F4D9F8A1439DAFD00AAB205 /* CoreGraphics.framework */; };
@@ -42,6 +43,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F46F560143AC7DD0051A67A /* PSArborTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSArborTouch.h; sourceTree = "<group>"; };
+		4F46F56A143ADA270051A67A /* AtlasCanvasView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AtlasCanvasView.h; sourceTree = "<group>"; };
+		4F46F56B143ADA270051A67A /* AtlasCanvasView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AtlasCanvasView.m; sourceTree = "<group>"; };
 		4F4D9F821439DAFD00AAB205 /* Atlas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Atlas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F4D9F861439DAFD00AAB205 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4F4D9F881439DAFD00AAB205 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -171,6 +175,8 @@
 		4F4D9FA71439DB4F00AAB205 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4F46F56A143ADA270051A67A /* AtlasCanvasView.h */,
+				4F46F56B143ADA270051A67A /* AtlasCanvasView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -199,6 +205,7 @@
 		4F4D9FAA1439DBB200AAB205 /* PSArborTouch */ = {
 			isa = PBXGroup;
 			children = (
+				4F46F560143AC7DD0051A67A /* PSArborTouch.h */,
 				4F4D9FAB1439DBB200AAB205 /* Atoms */,
 				4F4D9FB01439DBB200AAB205 /* Barnes-Hut */,
 				4F4D9FB51439DBB200AAB205 /* Kernel */,
@@ -271,9 +278,9 @@
 				4F4D9FC71439DBB200AAB205 /* ATSystem.m */,
 				4F4D9FC81439DBB200AAB205 /* ATSystemParams.h */,
 				4F4D9FC91439DBB200AAB205 /* ATSystemParams.m */,
-				4F4D9FCA1439DBB200AAB205 /* ATSystemRenderer.h */,
 				4F4D9FCB1439DBB200AAB205 /* ATSystemState.h */,
 				4F4D9FCC1439DBB200AAB205 /* ATSystemState.m */,
+				4F4D9FCA1439DBB200AAB205 /* ATSystemRenderer.h */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -393,6 +400,7 @@
 				4F4D9FD71439DBB200AAB205 /* ATSystem.m in Sources */,
 				4F4D9FD81439DBB200AAB205 /* ATSystemParams.m in Sources */,
 				4F4D9FD91439DBB200AAB205 /* ATSystemState.m in Sources */,
+				4F46F56C143ADA270051A67A /* AtlasCanvasView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

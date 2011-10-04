@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ATSystemParams : NSObject <NSCoding>
+@interface ATSystemParams : NSObject <NSCoding, NSCopying>
 {
     
 @private

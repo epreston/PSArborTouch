@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AtlasViewController : UIViewController
+#import "ATSystemRenderer.h"
 
+@class ATSystem;
+
+@interface AtlasViewController : UIViewController <ATDebugRendering>
+{
+
+@private
+    ATSystem    *system_;
+}
 @end

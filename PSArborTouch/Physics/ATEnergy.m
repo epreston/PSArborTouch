@@ -34,6 +34,21 @@
 }
 
 
+#pragma mark - NSCopying
+
+- (id)copyWithZone:(NSZone *)zone
+{
+    id theCopy = [[[self class] allocWithZone:zone] init];  // use designated initializer
+    
+    [theCopy setSum:sum_];
+    [theCopy setMax:max_];
+    [theCopy setMean:mean_];
+    [theCopy setCount:count_];
+    
+    return theCopy;
+}
+
+
 #pragma mark - Internal Interface
 
 

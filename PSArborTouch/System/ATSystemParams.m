@@ -39,6 +39,23 @@
     return self;
 }
 
+#pragma mark - NSCopying
+
+- (id)copyWithZone:(NSZone *)zone
+{
+    id theCopy = [[[self class] allocWithZone:zone] init];  // use designated initializer
+    
+    [theCopy setRepulsion:repulsion_];
+    [theCopy setStiffness:stiffness_];
+    [theCopy setFriction:friction_];
+    [theCopy setDeltaTime:deltaTime_];
+    [theCopy setGravity:gravity_];
+    [theCopy setPrecision:precision_];
+    [theCopy setTimeout:timeout_];
+    
+    return theCopy;
+}
+
 
 #pragma mark - Keyed Archiving
 

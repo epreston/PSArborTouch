@@ -15,6 +15,8 @@
 @class ATSpring;
 @class ATEnergy;
 
+@class ATSystemParams;
+
 @interface ATKernel : NSObject
 {
 
@@ -30,7 +32,7 @@
     ATEnergy           *lastEnergy_;
     CGRect              lastBounds_;
     
-    id                  delegate_;
+    id                  delegate_;      // UPDATE THIS ! = id <protocol> delegate_;
 }
 
 #pragma mark - Rendering
@@ -40,7 +42,7 @@
 
 #pragma mark - Simulation Control
 
-- (void) physicsUpdate;
+- (void) stepSimulation;
 - (void) start:(BOOL)unpause;
 - (void) stop;
 
@@ -57,6 +59,8 @@
 
 // Physics methods protected by a GCD queue to ensure serial execution.
 // TODO: Move into protocol / interface definition
+
+- (void) updateSimulation:(ATSystemParams *)params;
 
 - (void) addParticle:(ATParticle *)particle;
 - (void) removeParticle:(ATParticle *)particle;

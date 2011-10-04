@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ATEnergy : NSObject
+@interface ATEnergy : NSObject <NSCopying>
 {
 
 @private

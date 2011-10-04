@@ -12,6 +12,7 @@
 #import "ATParticle.h"
 #import "ATEnergy.h"
 
+#import "ATSystemParams.h"
 #import "ATSystemRenderer.h"
 
 
@@ -97,7 +98,7 @@
 
 #pragma mark - Simulation Control
 
-- (void) physicsUpdate
+- (void) stepSimulation
 {
     // step physics
         
@@ -170,7 +171,7 @@
             
             // Call back to main thread (UI Thread) to update the text
             //            dispatch_async(dispatch_get_main_queue(), ^{
-            [self physicsUpdate];
+            [self stepSimulation];
             //            });
             
         });
@@ -201,7 +202,27 @@
 #pragma mark - Protected Physics Interface
 
 // Physics methods protected by a GCD queue to ensure serial execution.  We do
-// not what to do things like add and remove items from a simulation mid-calculation.
+// not want to do things like add and remove items from a simulation mid-calculation.
+
+- (void) updateSimulation:(ATSystemParams *)params
+{
+    NSParameterAssert(params != nil);
+    if (params == nil) return;
+    
+    dispatch_async( [self physicsQueue] , ^{
+        
+        physics_.repulsion  = params.repulsion;
+        physics_.stiffness  = params.stiffness;
+        physics_.friction   = params.friction;
+        physics_.deltaTime  = params.deltaTime;
+        physics_.gravity    = params.gravity;
+        physics_.theta      = params.precision;
+        
+        // params.timeout;  // Used by kernel to control update cycle
+        
+        // start, unpaused NO
+    });
+}
 
 - (void) addParticle:(ATParticle *)particle
 {

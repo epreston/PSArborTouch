@@ -39,7 +39,9 @@
 #pragma mark - System State Management
 
 @property (nonatomic, retain) ATSystemState *state;
-@property (nonatomic, retain) ATSystemParams *parameters;
+
+// Changes to your copy do not take effect on the system until you pass them back
+@property (nonatomic, copy) ATSystemParams *parameters;
 
 - (id)init;
 - (id)initWithState:(ATSystemState *)state parameters:(ATSystemParams *)parameters;
