@@ -13,7 +13,7 @@ This distribution contains several examples that demonstrate the features of PSA
 
 # Status
 
-_Currently a work in progress_
+_Currently a work in progress, see [issues](https://github.com/epreston/PSArborTouch/issues) and [milestones](https://github.com/epreston/PSArborTouch/issues/milestones)_
 
 PSArborTouch is a drop in solution that uses a GCD to keep the main application loop free and responsive.
 
