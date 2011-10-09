@@ -3,7 +3,8 @@
 
 PSArborTouch is a particle / spring physics engine optimised for 2D content layout and eye-catching visual effects.
 
-The goal of PSArborTouch is to build a high-quality physics based graph layout engine designed specifically for the iOS.  The inspiration / structure comes from Arbor, a dynamic and well structured javascript engine for the same purpose.
+The goal of PSArborTouch is to build a high-quality physics based graph layout engine designed specifically for the iOS.  The inspiration / structure comes from [arbor] (https://github.com/samizdatco/arbor), a dynamic and well structured javascript engine for the same purpose.
+
 
 # Example Projects
 
@@ -12,7 +13,9 @@ This distribution contains several examples that demonstrate the features of PSA
 
 # Status
 
-PSArborTouch is a drop in solution that uses a separate thread to keep the main application loop free and responsive.
+_Currently a work in progress_
+
+PSArborTouch is a drop in solution that uses a GCD to keep the main application loop free and responsive.
 
 This project follows the [SemVer](http://semver.org/) standard. The API may change in backwards-incompatible ways before the 1.0 release.
 
