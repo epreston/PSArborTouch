@@ -8,6 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EcholaliaViewController : UIViewController
+#import "ATSystemRenderer.h"
+
+@class ATSystem;
+@class EcholaliaCanvasView;
+
+@interface EcholaliaViewController : UIViewController <ATDebugRendering, UIGestureRecognizerDelegate>
+{
+    
+@private
+    ATSystem    *system_;
+    EcholaliaCanvasView *canvas_;
+}
+
+@property (nonatomic, retain) IBOutlet EcholaliaCanvasView *canvas;
 
 @end
