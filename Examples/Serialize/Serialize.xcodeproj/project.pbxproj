@@ -45,6 +45,7 @@
 		4F4DA17F1439E40600AAB205 /* SerializeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SerializeViewController.h; sourceTree = "<group>"; };
 		4F4DA1801439E40600AAB205 /* SerializeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SerializeViewController.m; sourceTree = "<group>"; };
 		4F4DA1831439E40600AAB205 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SerializeViewController.xib; sourceTree = "<group>"; };
+		4F54699B1441D086006A260F /* PSArborTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSArborTouch.h; sourceTree = "<group>"; };
 		4FCC7051143AA7BF0093EC7D /* ATEdge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATEdge.h; sourceTree = "<group>"; };
 		4FCC7052143AA7BF0093EC7D /* ATEdge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATEdge.m; sourceTree = "<group>"; };
 		4FCC7053143AA7BF0093EC7D /* ATNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATNode.h; sourceTree = "<group>"; };
@@ -119,6 +120,8 @@
 			isa = PBXGroup;
 			children = (
 				4F4DA1F41439E69300AAB205 /* Controller */,
+				4F54699A1441CFFF006A260F /* View */,
+				4F54699C1441D0CF006A260F /* Model */,
 				4F4DA1711439E40600AAB205 /* Supporting Files */,
 			);
 			path = Serialize;
@@ -156,15 +159,30 @@
 			name = AppDelegate;
 			sourceTree = "<group>";
 		};
+		4F54699A1441CFFF006A260F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		4F54699C1441D0CF006A260F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		4FCC704F143AA7BF0093EC7D /* PSArborTouch */ = {
 			isa = PBXGroup;
 			children = (
+				4F54699B1441D086006A260F /* PSArborTouch.h */,
 				4FCC7050143AA7BF0093EC7D /* Atoms */,
 				4FCC7055143AA7BF0093EC7D /* Barnes-Hut */,
-				4FCC705A143AA7BF0093EC7D /* Kernel */,
 				4FCC705D143AA7BF0093EC7D /* Physics */,
-				4FCC7066143AA7BF0093EC7D /* Support */,
+				4FCC705A143AA7BF0093EC7D /* Kernel */,
 				4FCC706A143AA7BF0093EC7D /* System */,
+				4FCC7066143AA7BF0093EC7D /* Support */,
 			);
 			name = PSArborTouch;
 			path = ../../PSArborTouch;
@@ -184,10 +202,10 @@
 		4FCC7055143AA7BF0093EC7D /* Barnes-Hut */ = {
 			isa = PBXGroup;
 			children = (
-				4FCC7056143AA7BF0093EC7D /* ATBarnesHutBranch.h */,
-				4FCC7057143AA7BF0093EC7D /* ATBarnesHutBranch.m */,
 				4FCC7058143AA7BF0093EC7D /* ATBarnesHutTree.h */,
 				4FCC7059143AA7BF0093EC7D /* ATBarnesHutTree.m */,
+				4FCC7056143AA7BF0093EC7D /* ATBarnesHutBranch.h */,
+				4FCC7057143AA7BF0093EC7D /* ATBarnesHutBranch.m */,
 			);
 			path = "Barnes-Hut";
 			sourceTree = "<group>";
@@ -208,10 +226,10 @@
 				4FCC705F143AA7BF0093EC7D /* ATEnergy.m */,
 				4FCC7060143AA7BF0093EC7D /* ATParticle.h */,
 				4FCC7061143AA7BF0093EC7D /* ATParticle.m */,
-				4FCC7062143AA7BF0093EC7D /* ATPhysics.h */,
-				4FCC7063143AA7BF0093EC7D /* ATPhysics.m */,
 				4FCC7064143AA7BF0093EC7D /* ATSpring.h */,
 				4FCC7065143AA7BF0093EC7D /* ATSpring.m */,
+				4FCC7062143AA7BF0093EC7D /* ATPhysics.h */,
+				4FCC7063143AA7BF0093EC7D /* ATPhysics.m */,
 			);
 			path = Physics;
 			sourceTree = "<group>";
@@ -231,9 +249,9 @@
 				4FCC706C143AA7BF0093EC7D /* ATSystem.m */,
 				4FCC706D143AA7BF0093EC7D /* ATSystemParams.h */,
 				4FCC706E143AA7BF0093EC7D /* ATSystemParams.m */,
-				4FCC706F143AA7BF0093EC7D /* ATSystemRenderer.h */,
 				4FCC7070143AA7BF0093EC7D /* ATSystemState.h */,
 				4FCC7071143AA7BF0093EC7D /* ATSystemState.m */,
+				4FCC706F143AA7BF0093EC7D /* ATSystemRenderer.h */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -364,7 +382,7 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -383,7 +401,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;

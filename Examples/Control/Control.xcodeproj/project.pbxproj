@@ -45,6 +45,7 @@
 		4F4DA1DD1439E42800AAB205 /* ControlViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ControlViewController.h; sourceTree = "<group>"; };
 		4F4DA1DE1439E42800AAB205 /* ControlViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ControlViewController.m; sourceTree = "<group>"; };
 		4F4DA1E11439E42800AAB205 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ControlViewController.xib; sourceTree = "<group>"; };
+		4F5469AA1441D26F006A260F /* PSArborTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSArborTouch.h; sourceTree = "<group>"; };
 		4FCC7012143AA7590093EC7D /* ATEdge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATEdge.h; sourceTree = "<group>"; };
 		4FCC7013143AA7590093EC7D /* ATEdge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATEdge.m; sourceTree = "<group>"; };
 		4FCC7014143AA7590093EC7D /* ATNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATNode.h; sourceTree = "<group>"; };
@@ -175,12 +176,13 @@
 		4FCC7010143AA7590093EC7D /* PSArborTouch */ = {
 			isa = PBXGroup;
 			children = (
+				4F5469AA1441D26F006A260F /* PSArborTouch.h */,
 				4FCC7011143AA7590093EC7D /* Atoms */,
 				4FCC7016143AA7590093EC7D /* Barnes-Hut */,
-				4FCC701B143AA7590093EC7D /* Kernel */,
 				4FCC701E143AA7590093EC7D /* Physics */,
-				4FCC7027143AA7590093EC7D /* Support */,
+				4FCC701B143AA7590093EC7D /* Kernel */,
 				4FCC702B143AA7590093EC7D /* System */,
+				4FCC7027143AA7590093EC7D /* Support */,
 			);
 			name = PSArborTouch;
 			path = ../../PSArborTouch;
@@ -200,10 +202,10 @@
 		4FCC7016143AA7590093EC7D /* Barnes-Hut */ = {
 			isa = PBXGroup;
 			children = (
-				4FCC7017143AA7590093EC7D /* ATBarnesHutBranch.h */,
-				4FCC7018143AA7590093EC7D /* ATBarnesHutBranch.m */,
 				4FCC7019143AA7590093EC7D /* ATBarnesHutTree.h */,
 				4FCC701A143AA7590093EC7D /* ATBarnesHutTree.m */,
+				4FCC7017143AA7590093EC7D /* ATBarnesHutBranch.h */,
+				4FCC7018143AA7590093EC7D /* ATBarnesHutBranch.m */,
 			);
 			path = "Barnes-Hut";
 			sourceTree = "<group>";
@@ -220,12 +222,12 @@
 		4FCC701E143AA7590093EC7D /* Physics */ = {
 			isa = PBXGroup;
 			children = (
+				4FCC7023143AA7590093EC7D /* ATPhysics.h */,
+				4FCC7024143AA7590093EC7D /* ATPhysics.m */,
 				4FCC701F143AA7590093EC7D /* ATEnergy.h */,
 				4FCC7020143AA7590093EC7D /* ATEnergy.m */,
 				4FCC7021143AA7590093EC7D /* ATParticle.h */,
 				4FCC7022143AA7590093EC7D /* ATParticle.m */,
-				4FCC7023143AA7590093EC7D /* ATPhysics.h */,
-				4FCC7024143AA7590093EC7D /* ATPhysics.m */,
 				4FCC7025143AA7590093EC7D /* ATSpring.h */,
 				4FCC7026143AA7590093EC7D /* ATSpring.m */,
 			);
@@ -380,7 +382,7 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -399,7 +401,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;

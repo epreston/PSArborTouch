@@ -96,11 +96,15 @@
 - (IBAction)add:(id)sender
 {
     [system_ addEdgeFromNode:@"a" toNode:@"e" withData:nil];
+    
+    [self go:nil];
 }
 
 - (IBAction)remove:(id)sender
 {
     [system_ removeNode:@"e"];
+    
+    [self go:nil];
 }
 
 #pragma mark - Touch Handling 

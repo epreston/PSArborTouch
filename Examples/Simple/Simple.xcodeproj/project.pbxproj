@@ -28,6 +28,7 @@
 		4F4D9F741439D9F900AAB205 /* ATSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4D9F641439D9F900AAB205 /* ATSystem.m */; };
 		4F4D9F751439D9F900AAB205 /* ATSystemParams.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4D9F661439D9F900AAB205 /* ATSystemParams.m */; };
 		4F4D9F761439D9F900AAB205 /* ATSystemState.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4D9F691439D9F900AAB205 /* ATSystemState.m */; };
+		4F5469A51441D220006A260F /* SimpleGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5469A41441D220006A260F /* SimpleGraphView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,9 @@
 		4F4D9F671439D9F900AAB205 /* ATSystemRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATSystemRenderer.h; sourceTree = "<group>"; };
 		4F4D9F681439D9F900AAB205 /* ATSystemState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATSystemState.h; sourceTree = "<group>"; };
 		4F4D9F691439D9F900AAB205 /* ATSystemState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATSystemState.m; sourceTree = "<group>"; };
+		4F5469A11441D109006A260F /* PSArborTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSArborTouch.h; sourceTree = "<group>"; };
+		4F5469A31441D220006A260F /* SimpleGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleGraphView.h; sourceTree = "<group>"; };
+		4F5469A41441D220006A260F /* SimpleGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleGraphView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +155,8 @@
 		4F4D9F441439D8F100AAB205 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4F5469A31441D220006A260F /* SimpleGraphView.h */,
+				4F5469A41441D220006A260F /* SimpleGraphView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -175,12 +181,13 @@
 		4F4D9F471439D9F900AAB205 /* PSArborTouch */ = {
 			isa = PBXGroup;
 			children = (
+				4F5469A11441D109006A260F /* PSArborTouch.h */,
 				4F4D9F481439D9F900AAB205 /* Atoms */,
 				4F4D9F4D1439D9F900AAB205 /* Barnes-Hut */,
-				4F4D9F521439D9F900AAB205 /* Kernel */,
 				4F4D9F551439D9F900AAB205 /* Physics */,
-				4F4D9F5E1439D9F900AAB205 /* Support */,
+				4F4D9F521439D9F900AAB205 /* Kernel */,
 				4F4D9F621439D9F900AAB205 /* System */,
+				4F4D9F5E1439D9F900AAB205 /* Support */,
 			);
 			name = PSArborTouch;
 			path = ../../PSArborTouch;
@@ -200,10 +207,10 @@
 		4F4D9F4D1439D9F900AAB205 /* Barnes-Hut */ = {
 			isa = PBXGroup;
 			children = (
-				4F4D9F4E1439D9F900AAB205 /* ATBarnesHutBranch.h */,
-				4F4D9F4F1439D9F900AAB205 /* ATBarnesHutBranch.m */,
 				4F4D9F501439D9F900AAB205 /* ATBarnesHutTree.h */,
 				4F4D9F511439D9F900AAB205 /* ATBarnesHutTree.m */,
+				4F4D9F4E1439D9F900AAB205 /* ATBarnesHutBranch.h */,
+				4F4D9F4F1439D9F900AAB205 /* ATBarnesHutBranch.m */,
 			);
 			path = "Barnes-Hut";
 			sourceTree = "<group>";
@@ -220,12 +227,12 @@
 		4F4D9F551439D9F900AAB205 /* Physics */ = {
 			isa = PBXGroup;
 			children = (
+				4F4D9F5A1439D9F900AAB205 /* ATPhysics.h */,
+				4F4D9F5B1439D9F900AAB205 /* ATPhysics.m */,
 				4F4D9F561439D9F900AAB205 /* ATEnergy.h */,
 				4F4D9F571439D9F900AAB205 /* ATEnergy.m */,
 				4F4D9F581439D9F900AAB205 /* ATParticle.h */,
 				4F4D9F591439D9F900AAB205 /* ATParticle.m */,
-				4F4D9F5A1439D9F900AAB205 /* ATPhysics.h */,
-				4F4D9F5B1439D9F900AAB205 /* ATPhysics.m */,
 				4F4D9F5C1439D9F900AAB205 /* ATSpring.h */,
 				4F4D9F5D1439D9F900AAB205 /* ATSpring.m */,
 			);
@@ -332,6 +339,7 @@
 				4F4D9F741439D9F900AAB205 /* ATSystem.m in Sources */,
 				4F4D9F751439D9F900AAB205 /* ATSystemParams.m in Sources */,
 				4F4D9F761439D9F900AAB205 /* ATSystemState.m in Sources */,
+				4F5469A51441D220006A260F /* SimpleGraphView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,7 +388,7 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -399,7 +407,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
