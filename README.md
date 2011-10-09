@@ -3,7 +3,7 @@
 
 PSArborTouch is a particle / spring physics engine optimised for 2D content layout and eye-catching visual effects.
 
-The goal of PSArborTouch is to build a high-quality physics based graph layout engine designed specifically for the iOS.  The inspiration / structure comes from [arbor] (https://github.com/samizdatco/arbor), a dynamic and well structured javascript engine for the same purpose.
+The goal of PSArborTouch is to build a high-quality physics based graph layout engine designed specifically for the Mac OSX and iOS.  The inspiration / structure comes from [arbor] (https://github.com/samizdatco/arbor), a dynamic and well structured javascript engine for the same purpose.
 
 
 # Example Projects
