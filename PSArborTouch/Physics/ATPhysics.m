@@ -150,8 +150,6 @@
 }
 
 
-
-
 #pragma mark - Physics Stuff
 
 - (BOOL) update; 
@@ -192,7 +190,7 @@
             if (ABS(particle.mass - particle.tempMass) < 1.0) {
                 particle.mass = particle.tempMass;
                 particle.tempMass = 0.0;
-            }else{
+            } else {
                 particle.mass *= 0.98;
             }
         }
@@ -351,19 +349,16 @@
         if (particle.fixed){
             particle.velocity = CGPointZero;
             particle.force = CGPointZero;
-            return;
+            continue;
         }
         
-        // PRESTON: 'was' is not used.  Line below not required.
-        //        CGFloat was = magnitude(particle.v);
-        
-        // DEBUG: This is probley incorrectly translated. Check in debugger.
         particle.velocity = CGPointScale(CGPointAdd(particle.velocity, 
                                                     CGPointScale( particle.force, timestep)), 
                                          (1.0 - self.friction));
         
         particle.force = CGPointZero;
         
+        // Slow down the particle if it is moving too fast.  Due to large timeStep etc.
         CGFloat speed = CGPointMagnitude(particle.velocity);
         if (speed > self.speedLimit) {
             particle.velocity = CGPointDivideFloat(particle.velocity, speed * speed);   

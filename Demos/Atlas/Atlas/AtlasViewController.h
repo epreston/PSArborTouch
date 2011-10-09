@@ -11,11 +11,16 @@
 #import "ATSystemRenderer.h"
 
 @class ATSystem;
+@class AtlasCanvasView;
 
-@interface AtlasViewController : UIViewController <ATDebugRendering>
+@interface AtlasViewController : UIViewController <ATDebugRendering, UIGestureRecognizerDelegate>
 {
 
 @private
     ATSystem    *system_;
+    AtlasCanvasView *canvas_;
 }
+
+@property (nonatomic, retain) IBOutlet AtlasCanvasView *canvas;
+
 @end

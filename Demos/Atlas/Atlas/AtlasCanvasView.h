@@ -8,6 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@class ATSystem;
+
 @interface AtlasCanvasView : UIView
+{
+@private
+    ATSystem *system_;
+    BOOL debugDrawing_;
+    UIFont *font_;
+}
+
+@property (nonatomic, retain) ATSystem *system;
+@property (nonatomic, assign, getter=isDebugDrawing) BOOL debugDrawing;
 
 @end

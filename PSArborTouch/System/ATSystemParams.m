@@ -33,7 +33,7 @@
         friction_    = 0.5;
         deltaTime_   = 0.02;
         gravity_     = YES;
-        precision_   = 0.6;
+        precision_   = 0.4;
         timeout_     = 1000 / 50;
     }
     return self;
@@ -41,7 +41,7 @@
 
 #pragma mark - NSCopying
 
-- (id)copyWithZone:(NSZone *)zone
+- (id) copyWithZone:(NSZone *)zone
 {
     id theCopy = [[[self class] allocWithZone:zone] init];  // use designated initializer
     

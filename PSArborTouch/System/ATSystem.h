@@ -10,6 +10,13 @@
 
 #import "ATKernel.h"
 
+
+typedef enum {
+    ATViewConversionStretch = 0,    // stretch the simulation coordinates to match view aspect
+    ATViewConversionScale,          // scale the simluation coordinates to best fit view
+} ATViewConversion;
+
+
 @class ATSystemState;
 @class ATSystemParams;
 @class ATNode;
@@ -19,15 +26,16 @@
 {
     
 @private
-    CGRect          viewBounds_;
-    UIEdgeInsets    viewPadding_;
+    CGRect              viewBounds_;
+    UIEdgeInsets        viewPadding_;
+    ATViewConversion    viewMode_;
     
-    CGFloat         viewTweenStep_;
-    CGRect          tweenBoundsCurrent_;
-    CGRect          tweenBoundsTarget_;
+    CGFloat             viewTweenStep_;
+    CGRect              tweenBoundsCurrent_;
+    CGRect              tweenBoundsTarget_;
     
-    ATSystemState   *state_;
-    ATSystemParams  *parameters_;
+    ATSystemState       *state_;
+    ATSystemParams      *parameters_;
 }
 
 #pragma mark - Tween Debugging
@@ -52,10 +60,14 @@
 @property (nonatomic, assign) CGRect viewBounds;
 @property (nonatomic, assign) UIEdgeInsets viewPadding;
 @property (nonatomic, assign) CGFloat viewTweenStep;
+@property (nonatomic, assign) ATViewConversion viewMode;
 
+- (CGRect) toViewRect:(CGRect)physicsRect;
 - (CGSize) toViewSize:(CGSize)physicsSize;
 - (CGPoint) toViewPoint:(CGPoint)physicsPoint;
+
 - (CGPoint) fromViewPoint:(CGPoint)viewPoint;
+
 - (ATNode *) nearestNodeToPoint:(CGPoint)viewPoint;
 - (ATNode *) nearestNodeToPoint:(CGPoint)viewPoint withinRadius:(CGFloat)viewRadius;
 

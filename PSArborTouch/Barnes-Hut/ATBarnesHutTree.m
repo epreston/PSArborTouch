@@ -371,10 +371,12 @@ typedef enum {
 //    NSLog(@"Branch count:%u", _branches.count);
     
     branchCounter_++;
+
+    // DEBUG for a graph of 4 nodes
+//    if (branchCounter_ > 6) {
+//        NSLog(@"Somethings going wrong here.");
+//    }
     
-    if (branchCounter_ > 6) {
-        NSLog(@"Somethings going wrong here.");
-    }
     return branch;
 }
 

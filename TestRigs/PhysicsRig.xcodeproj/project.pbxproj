@@ -42,6 +42,7 @@
 		4F320C3314359122004783DB /* ATSystemState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATSystemState.m; sourceTree = "<group>"; };
 		4F320C4D1435BBB3004783DB /* ATEnergy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATEnergy.h; sourceTree = "<group>"; };
 		4F320C4E1435BBB3004783DB /* ATEnergy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATEnergy.m; sourceTree = "<group>"; };
+		4F5D4F5C143E5DFE00E0A6BC /* PSArborTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSArborTouch.h; sourceTree = "<group>"; };
 		4F98C72B1426F73C00EA18F3 /* ATSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATSystem.h; sourceTree = "<group>"; };
 		4F98C72C1426F73C00EA18F3 /* ATSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATSystem.m; sourceTree = "<group>"; };
 		4F98C7361427040300EA18F3 /* ATNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATNode.h; sourceTree = "<group>"; };
@@ -255,6 +256,7 @@
 		4FA224C21426D9A70078EFB6 /* PSArborTouch */ = {
 			isa = PBXGroup;
 			children = (
+				4F5D4F5C143E5DFE00E0A6BC /* PSArborTouch.h */,
 				4F98C7261426F61600EA18F3 /* Atoms */,
 				4F98C7281426F62200EA18F3 /* Barnes-Hut */,
 				4F98C7291426F62A00EA18F3 /* Physics */,

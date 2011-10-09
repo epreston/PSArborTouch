@@ -33,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F1B5888143C746700FEAFF6 /* PSArborTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSArborTouch.h; sourceTree = "<group>"; };
 		4F21152A143197B600B2F51F /* ATSystemRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATSystemRenderer.h; sourceTree = "<group>"; };
 		4F320C6014360B46004783DB /* ATSystemDebugView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATSystemDebugView.h; sourceTree = "<group>"; };
 		4F320C6114360B46004783DB /* ATSystemDebugView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATSystemDebugView.m; sourceTree = "<group>"; };
@@ -185,6 +186,7 @@
 		4FA4D6FD14302968003958B3 /* PSArborTouch */ = {
 			isa = PBXGroup;
 			children = (
+				4F1B5888143C746700FEAFF6 /* PSArborTouch.h */,
 				4FA4D6FE14302969003958B3 /* Atoms */,
 				4FA4D70314302969003958B3 /* Barnes-Hut */,
 				4FA4D70B14302969003958B3 /* Physics */,

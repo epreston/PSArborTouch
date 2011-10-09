@@ -40,6 +40,7 @@
 		4F320C421435AA1E004783DB /* ATSystemState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATSystemState.m; sourceTree = "<group>"; };
 		4F320C501435BC13004783DB /* ATEnergy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATEnergy.h; sourceTree = "<group>"; };
 		4F320C511435BC13004783DB /* ATEnergy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATEnergy.m; sourceTree = "<group>"; };
+		4F5467F61441B31E006A260F /* PSArborTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSArborTouch.h; sourceTree = "<group>"; };
 		4F9FB5C3142AB0480032AF67 /* KernelRig.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KernelRig.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F9FB5C7142AB0480032AF67 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4F9FB5C9142AB0480032AF67 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -148,6 +149,7 @@
 		4F9FB5F3142AB0D50032AF67 /* PSArborTouch */ = {
 			isa = PBXGroup;
 			children = (
+				4F5467F61441B31E006A260F /* PSArborTouch.h */,
 				4F9FB5F4142AB0D50032AF67 /* Atoms */,
 				4F9FB5F9142AB0D50032AF67 /* Barnes-Hut */,
 				4F9FB5FF142AB0D50032AF67 /* Physics */,

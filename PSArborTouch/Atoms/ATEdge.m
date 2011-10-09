@@ -111,10 +111,11 @@ static NSInteger nextEdgeIndex_ = -1;
         length_ = [decoder decodeFloatForKey:@"length"];
         index_  = [[decoder decodeObjectForKey:@"index"] retain];
         data_   = [[decoder decodeObjectForKey:@"data"] retain];
+        
+        
+        nextEdgeIndex_  = MIN(nextEdgeIndex_, ([index_ integerValue] - 1));
     }
-    
-    nextEdgeIndex_  = MIN(nextEdgeIndex_, ([index_ integerValue] - 1));
-    
+        
     return self;
 }
 

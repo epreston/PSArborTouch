@@ -24,7 +24,7 @@
 @synthesize adjacency   = adjacency_;
 @synthesize names       = names_;
 
-- (id)init
+- (id) init
 {
     self = [super init];
     if (self) {
@@ -37,7 +37,7 @@
     return self;
 }
 
-- (void)dealloc
+- (void) dealloc
 {
     [adjacency_ release];
     [edges_ release];

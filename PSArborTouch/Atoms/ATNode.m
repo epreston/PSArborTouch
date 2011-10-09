@@ -97,9 +97,9 @@ static NSInteger nextNodeIndex_ = 1;
         fixed_      = [decoder decodeBoolForKey:@"fixed"];
         index_      = [[decoder decodeObjectForKey:@"index"] retain];
         data_       = [[decoder decodeObjectForKey:@"data"] retain];
+        
+        nextNodeIndex_  = MAX(nextNodeIndex_, ([index_ integerValue] + 1));
     }
-    
-    nextNodeIndex_  = MAX(nextNodeIndex_, ([index_ integerValue] + 1));
     
     return self;
 }
