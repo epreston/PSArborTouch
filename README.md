@@ -6,26 +6,45 @@ PSArborTouch is a particle / spring physics engine optimised for 2D content layo
 The goal of PSArborTouch is to build a high-quality physics based graph layout engine designed specifically for the Mac OSX and iOS.  The inspiration / structure comes from [arbor] (https://github.com/samizdatco/arbor), a dynamic and well structured javascript engine for the same purpose.
 
 
-# Example Projects
+## Example Projects
 
 This distribution contains several examples that demonstrate the features of PSArborTouch.  This includes those found in arbor.js and a few more that explore other uses.
 
 
-# Status
+## Status
 
-_Currently a work in progress, see [issues](https://github.com/epreston/PSArborTouch/issues) and [milestones](https://github.com/epreston/PSArborTouch/issues/milestones)_
+_The library is function but it is still a work in progress, see [issues](https://github.com/epreston/PSArborTouch/issues) and [milestones](https://github.com/epreston/PSArborTouch/issues/milestones)_
 
 PSArborTouch is a drop in solution that uses a GCD to keep the main application loop free and responsive.
 
 This project follows the [SemVer](http://semver.org/) standard. The API may change in backwards-incompatible ways before the 1.0 release.
 
 
-# Documentation
+## Documentation
 
 You can generate documentation with [doxygen](http://www.doxygen.org). The example project includes a documentation build target to do this within Xcode.    For more details, see the [Documentation](https://github.com/epreston/PSArborTouch/wiki/Documentation) page in this projects wiki.
 
 
-# Copyright and License
+## Contribute
+
+If you'd like to contribute to PSArborTouch, start by forking this repository on GitHub:
+
+http://github.com/epreston/PSArborTouch
+
+The best way to get your changes merged back into core is as follows:
+
+1. Clone down your fork
+1. Create a thoughtfully named topic branch to contain your change
+1. Hack away
+1. Add tests and make sure everything still passes
+1. If you are adding new functionality, document it in the README
+1. Do not change the version number, I will do that on my end
+1. If necessary, rebase your commits into logical chunks, without errors
+1. Push the branch up to GitHub
+1. Send a pull request to the epreston/PSArborTouch project.
+
+
+## Copyright and License
 
 Copyright 2011 Preston Software.
 
