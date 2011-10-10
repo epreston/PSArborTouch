@@ -55,17 +55,19 @@ typedef enum {
 - (id)initWithState:(ATSystemState *)state parameters:(ATSystemParams *)parameters;
 
 
-#pragma mark - Viewport Management / Translation
+#pragma mark - Viewport Management
 
 @property (nonatomic, assign) CGRect viewBounds;
 @property (nonatomic, assign) UIEdgeInsets viewPadding;
 @property (nonatomic, assign) CGFloat viewTweenStep;
 @property (nonatomic, assign) ATViewConversion viewMode;
 
+#pragma mark - Viewport Translation
+
 - (CGRect) toViewRect:(CGRect)physicsRect;
 - (CGSize) toViewSize:(CGSize)physicsSize;
-- (CGPoint) toViewPoint:(CGPoint)physicsPoint;
 
+- (CGPoint) toViewPoint:(CGPoint)physicsPoint;
 - (CGPoint) fromViewPoint:(CGPoint)viewPoint;
 
 - (ATNode *) nearestNodeToPoint:(CGPoint)viewPoint;
@@ -73,10 +75,9 @@ typedef enum {
 
 #pragma mark - Node Management
 
+- (ATNode *) getNode:(NSString *)nodeName;
 - (ATNode *) addNode:(NSString *)name withData:(NSMutableDictionary *)data;
 - (void) removeNode:(NSString *)nodeName;
-- (ATNode *) getNode:(NSString *)nodeName;
-
 
 #pragma mark - Edge Management
 

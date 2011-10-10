@@ -10,7 +10,7 @@
 
 
 @interface ATSystemParams ()
-
+// Reserved
 @end
 
 
@@ -33,7 +33,7 @@
         friction_    = 0.5;
         deltaTime_   = 0.02;
         gravity_     = YES;
-        precision_   = 0.4;
+        precision_   = 0.6;
         timeout_     = 1000 / 50;
     }
     return self;

@@ -11,6 +11,7 @@
 
 #import "ATGeometry.h"
 
+// Edges have negative indexes, Nodes have positive indexes,
 static NSInteger nextEdgeIndex_ = -1;
 
 

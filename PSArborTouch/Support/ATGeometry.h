@@ -27,9 +27,9 @@ static inline CGPoint CGPointAdd(const CGPoint a, const CGPoint b)
     return(r);
 }
 
-static inline CGPoint CGPointSubtract(const CGPoint p1, const CGPoint p2)
+static inline CGPoint CGPointSubtract(const CGPoint a, const CGPoint b)
 {
-    return(CGPointMake(p1.x - p2.x, p1.y - p2.y));
+    return(CGPointMake(a.x - b.x, a.y - b.y));
 }
 
 static inline CGPoint CGPointMultiply(const CGPoint a, const CGPoint b)
@@ -86,7 +86,7 @@ static inline CGPoint CGPointRandom(const CGFloat radius)
 
 static inline CGPoint CGPointNearPoint(const CGPoint center_pt, const CGFloat radius)
 {
-    CGFloat targetRadius = (radius > 0.0f) ? radius : 0.0f;
+    CGFloat targetRadius = (radius > 0.0) ? radius : 0.0;
     CGFloat x = center_pt.x;
     CGFloat y = center_pt.y;
     CGFloat d = targetRadius * 2;

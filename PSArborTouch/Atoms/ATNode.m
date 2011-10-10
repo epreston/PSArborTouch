@@ -8,6 +8,7 @@
 
 #import "ATNode.h"
 
+// Nodes have positive indexes, Edges have negative indexes
 static NSInteger nextNodeIndex_ = 1; 
 
 

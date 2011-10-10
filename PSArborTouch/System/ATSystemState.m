@@ -19,10 +19,29 @@
 
 @implementation ATSystemState
 
-@synthesize nodes       = nodes_;
-@synthesize edges       = edges_;
-@synthesize adjacency   = adjacency_;
-@synthesize names       = names_;
+//@synthesize nodes       = nodes_;
+- (NSArray *) nodes
+{
+    return [nodes_ allValues];
+}
+
+//@synthesize edges       = edges_;
+- (NSArray *) edges
+{
+    return [edges_ allValues];
+}
+
+//@synthesize adjacency   = adjacency_;
+- (NSArray *) adjacency
+{
+    return [adjacency_ allValues]; 
+}
+
+//@synthesize names       = names_;
+- (NSArray *) names
+{
+    return [names_ allValues]; 
+}
 
 - (id) init
 {
@@ -71,7 +90,7 @@
     NSParameterAssert(Key != nil);
     
     if (Key == nil) return nil;
-    return [[self nodes] objectForKey:Key];
+    return [nodes_ objectForKey:Key];
 }
 
 #pragma mark - Edges
@@ -126,7 +145,7 @@
     NSParameterAssert(Key != nil);
     
     if (Key == nil) return nil;
-    return [[self adjacency] objectForKey:Key];
+    return [adjacency_ objectForKey:Key];
 }
 
 

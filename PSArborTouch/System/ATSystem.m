@@ -239,7 +239,7 @@
     CGFloat closestDistance     = FLT_MAX;
     CGFloat distance            = 0.0;
     
-    for (ATNode *node in [self.state.nodes allValues]) {
+    for (ATNode *node in self.state.nodes) {
         
         distance = CGPointDistance(node.position, translatedPoint);
         
@@ -323,7 +323,7 @@
         [self.state removeNodesObjectForKey:node.index];
         [self.state removeNamesObjectForKey:node.name];
         
-        for (ATEdge *edge in [self.state.edges allValues]) {
+        for (ATEdge *edge in self.state.edges) {
             if (edge.source.index == node.index || edge.target.index == node.index) {
                 [self removeEdge:edge];
             }
@@ -495,7 +495,7 @@
     if (aNode == nil) return [NSSet set];
     
     NSMutableSet *nodeEdges = [NSMutableSet set];
-    for (ATEdge *edge in [self.state.edges allValues]) {
+    for (ATEdge *edge in self.state.edges) {
         if (edge.target == aNode) {
             [nodeEdges addObject:edge];
         }

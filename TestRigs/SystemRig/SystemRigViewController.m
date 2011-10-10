@@ -28,7 +28,7 @@
 {
     [super viewDidLoad];
     
-    system_ = [[ATSystem alloc] init];
+    system_ = [[[ATSystem alloc] init] retain];
     
     system_.viewBounds = self.view.bounds;
     system_.viewPadding = UIEdgeInsetsMake(20.0, 20.0, 20.0, 20.0);
