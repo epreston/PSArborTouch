@@ -1,5 +1,5 @@
-
-# PSArborTouch
+PSArborTouch
+================
 
 PSArborTouch is a particle / spring physics engine optimised for 2D content layout and eye-catching visual effects.
 
@@ -13,7 +13,7 @@ This distribution contains several examples that demonstrate the features of PSA
 
 ## Status
 
-_The library is function but it is still a work in progress, see [issues](https://github.com/epreston/PSArborTouch/issues) and [milestones](https://github.com/epreston/PSArborTouch/issues/milestones)_
+_This library is functional but it is still a work in progress, see [issues](https://github.com/epreston/PSArborTouch/issues) and [milestones](https://github.com/epreston/PSArborTouch/issues/milestones)_
 
 PSArborTouch is a drop in solution that uses a GCD to keep the main application loop free and responsive.
 
@@ -29,7 +29,7 @@ You can generate documentation with [doxygen](http://www.doxygen.org). The examp
 
 If you'd like to contribute to PSArborTouch, start by forking this repository on GitHub:
 
-http://github.com/epreston/PSArborTouch
+       http://github.com/epreston/PSArborTouch
 
 The best way to get your changes merged back into core is as follows:
 

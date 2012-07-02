@@ -1,6 +1,5 @@
 # OSX Specific System Files
 .DS_Store
-profile
 *.swp
 ehthumbs.db
 Thumbs.db
@@ -11,7 +10,7 @@ Thumbs.db
 # Generated Docs
 Documentation/*
 
-# Xcode Specific Files
+# Xcode
 build/*
 *.pbxuser
 !default.pbxuser
@@ -24,14 +23,15 @@ build/*
 *.xcworkspace
 !default.xcworkspace
 xcuserdata
+profile
 *.moved-aside
 
 # Textmate - if you build your xcode projects with it
 *.tm_build_errors
 
-# old skool
+# Old skool
 .svn
 
-#new skewl
+# New skewl
 .hgignore
 .hg
