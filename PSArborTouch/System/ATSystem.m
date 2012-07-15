@@ -30,7 +30,7 @@
 @synthesize state = state_;
 @synthesize parameters = parameters_;
 
-- (void)setParameters:(ATSystemParams *)parameters
+- (void) setParameters:(ATSystemParams *)parameters
 {
     if (parameters_ != parameters) {
         [parameters_ release];

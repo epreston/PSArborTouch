@@ -309,6 +309,7 @@
 		4F9FB5BA142AB0480032AF67 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0440;
 				ORGANIZATIONNAME = "Preston Software";
 			};
 			buildConfigurationList = 4F9FB5BD142AB0480032AF67 /* Build configuration list for PBXProject "KernelRig" */;

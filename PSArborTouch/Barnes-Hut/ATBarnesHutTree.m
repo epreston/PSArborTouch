@@ -25,7 +25,7 @@ typedef enum {
 - (BHLocation) _whichQuad:(ATParticle *)particle ofBranch:(ATBarnesHutBranch *)branch;
 - (void) _setQuad:(BHLocation)location ofBranch:(ATBarnesHutBranch *)branch withObject:(id)object;
 - (id) _getQuad:(BHLocation)location ofBranch:(ATBarnesHutBranch *)branch;
-- (ATBarnesHutBranch *) _newBranch;
+- (ATBarnesHutBranch *) _dequeueBranch;
 
 @end
 
@@ -66,7 +66,7 @@ typedef enum {
     theta_          = theta;
     
     branchCounter_  = 0;
-    root_           = [self _newBranch];
+    root_           = [self _dequeueBranch];
     root_.bounds    = bounds;
 }
 
@@ -154,7 +154,7 @@ typedef enum {
             // replace the previously particle-occupied quad with a new internal branch node
             ATParticle *oldParticle = objectAtQuad;
             
-            ATBarnesHutBranch *newBranch = [self _newBranch];
+            ATBarnesHutBranch *newBranch = [self _dequeueBranch];
             [self _setQuad:p_quad ofBranch:node withObject:newBranch];
             newBranch.bounds = CGRectMake(branch_origin.x, branch_origin.y, branch_size.width, branch_size.height);
             node.mass = p_mass;
@@ -349,13 +349,13 @@ typedef enum {
     }
 }
 
-- (ATBarnesHutBranch *) _newBranch 
+- (ATBarnesHutBranch *) _dequeueBranch 
 {    
     // Recycle the tree nodes between iterations, nodes are owned by the branches array
     ATBarnesHutBranch *branch = nil;
     
     if ( branches_.count == 0 || branchCounter_ > (branches_.count -1) ) {
-        branch = [[ATBarnesHutBranch alloc] init];
+        branch = [[[ATBarnesHutBranch alloc] init] autorelease];
         [branches_ addObject:branch];
     } else {
         branch = [branches_ objectAtIndex:branchCounter_];
@@ -377,6 +377,7 @@ typedef enum {
 //        NSLog(@"Somethings going wrong here.");
 //    }
     
+
     return branch;
 }
 

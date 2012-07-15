@@ -327,7 +327,7 @@
     self.sumLabel.text      = [NSString stringWithFormat:@"%f", _integrator.energy.sum];
     self.maxLabel.text      = [NSString stringWithFormat:@"%f", _integrator.energy.max];
     self.meanLabel.text     = [NSString stringWithFormat:@"%f", _integrator.energy.mean];
-    self.countLabel.text    = [NSString stringWithFormat:@"%f", _integrator.energy.count];
+    self.countLabel.text    = [NSString stringWithFormat:@"%u", _integrator.energy.count];
     
     self.p1Name.text        = _particle1.name;
     self.p1Mass.text        = [NSString stringWithFormat:@"%f", _particle1.mass];
