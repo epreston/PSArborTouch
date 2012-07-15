@@ -312,7 +312,7 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
         default:
             node.fixed = NO;
             
-            [node setTempMass:100.0];
+            // [node setTempMass:100.0];
             
             break;
     }
