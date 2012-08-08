@@ -1,4 +1,4 @@
-PSArborTouch								{#mainpage}
+PSArborTouch
 ============
 
 PSArborTouch is a particle / spring physics engine optimised for 2D content layout and eye-catching visual effects.
