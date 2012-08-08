@@ -17,7 +17,7 @@
 
 @synthesize debugView = _debugView;
 
-- (void)didReceiveMemoryWarning
+- (void) didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
@@ -26,7 +26,7 @@
 }
 
 
-- (void)viewDidLoad
+- (void) viewDidLoad
 {
     [super viewDidLoad];
     
@@ -82,7 +82,7 @@
 }
 
 
-- (void)viewDidUnload
+- (void) viewDidUnload
 {
     [self setDebugView:nil];
     [super viewDidUnload];
@@ -92,13 +92,13 @@
     [_kernel release];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+- (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    // Return YES for supported orientations
-    return YES;
+    // Return YES for landscape orientations
+    return UIInterfaceOrientationIsLandscape(interfaceOrientation);
 }
 
-- (void)dealloc {
+- (void) dealloc {
     [_debugView release];
     [super dealloc];
 }
@@ -106,7 +106,7 @@
 
 #pragma mark - Interface Actions
 
-- (IBAction)go:(id)sender
+- (IBAction) go:(id)sender
 {
     [_kernel start:YES];
 }

@@ -32,7 +32,7 @@ static NSInteger nextEdgeIndex_ = -1;
 {
     self = [super init];
     if (self) {
-        index_     = [[NSNumber numberWithInteger:nextEdgeIndex_--] retain];
+        index_     = [@(nextEdgeIndex_--) retain];
         source_ = nil;
         target_ = nil;
         length_ = 1.0;

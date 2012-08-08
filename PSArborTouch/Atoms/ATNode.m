@@ -30,7 +30,7 @@ static NSInteger nextNodeIndex_ = 1;
 {
     self = [super init];
     if (self) {
-        index_      = [[NSNumber numberWithInteger:nextNodeIndex_++] retain];
+        index_      = [@(nextNodeIndex_++) retain];
         name_       = nil;
         mass_       = 1.0;
         position_   = CGPointZero;

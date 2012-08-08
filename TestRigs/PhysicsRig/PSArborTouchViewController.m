@@ -170,7 +170,7 @@
 }
 
 
-- (void)dealloc {
+- (void) dealloc {
     
     [_sumLabel release];
     [_maxLabel release];
@@ -198,8 +198,8 @@
 
 - (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    // Return YES for supported orientations
-    return YES;
+    // Return YES for portrait orientations
+    return UIInterfaceOrientationIsPortrait(interfaceOrientation);
 }
 
 
@@ -440,7 +440,7 @@
         CGPoint location = [gestureRecognizer locationInView:[gestureRecognizer view]];
         
         [self becomeFirstResponder];
-        [menuController setMenuItems:[NSArray arrayWithObject:resetMenuItem]];
+        [menuController setMenuItems:@[resetMenuItem]];
         [menuController setTargetRect:CGRectMake(location.x, location.y, 0, 0) inView:[gestureRecognizer view]];
         [menuController setMenuVisible:YES animated:YES];
         
