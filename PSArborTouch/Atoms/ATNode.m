@@ -78,7 +78,7 @@ static NSInteger nextNodeIndex_ = 1;
 
 #pragma mark - Keyed Archiving
 
-- (void)encodeWithCoder:(NSCoder *)encoder 
+- (void) encodeWithCoder:(NSCoder *)encoder 
 {
     [encoder encodeObject:name_ forKey:@"name"];
     [encoder encodeFloat:mass_ forKey:@"mass"];
@@ -88,7 +88,7 @@ static NSInteger nextNodeIndex_ = 1;
     [encoder encodeObject:data_ forKey:@"data"];
 }
 
-- (id)initWithCoder:(NSCoder *)decoder 
+- (id) initWithCoder:(NSCoder *)decoder 
 {
     self = [super init];
     if (self) {

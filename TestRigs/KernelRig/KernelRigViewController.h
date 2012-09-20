@@ -20,7 +20,7 @@
 @private
     ATKernel        *_kernel;
     
-    NSMutableArray  *_nodes;
+//    NSMutableArray  *_nodes;
     ATKernelDebugView *_debugView;
 }
 
