@@ -43,10 +43,11 @@ The best way to get your changes merged back into core is as follows:
 8. Push the branch up to GitHub
 9. Send a pull request to the epreston/PSArborTouch project.
 
+Or better still, [donate] (http://epreston.github.com/PSArborTouch/) via the [project website] (http://epreston.github.com/PSArborTouch/).
 
 ## Copyright and License
 
-Copyright 2011 Preston Software.
+Copyright 2012 Preston Software.
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this work except in compliance with the License.
@@ -59,5 +60,4 @@ Copyright 2011 Preston Software.
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-
 
