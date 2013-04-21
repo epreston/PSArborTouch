@@ -10,6 +10,7 @@ The goal of PSArborTouch is to build a high-quality physics based graph layout e
 
 This distribution contains several examples that demonstrate the features of PSArborTouch.  This includes those found in arbor.js and a few more that explore other uses.
 
+![iOS Simulator Screen shot 22 04 2013 2 20 54 AM](https://f.cloud.github.com/assets/347224/406539/9421d6b8-aa9f-11e2-8033-5e6493a69c39.png)
 
 ## Status
 
