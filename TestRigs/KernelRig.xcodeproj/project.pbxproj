@@ -457,6 +457,7 @@
 		4F9FB5E5142AB0480032AF67 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KernelRig/KernelRig-Prefix.pch";
 				INFOPLIST_FILE = "KernelRig/KernelRig-Info.plist";
@@ -468,6 +469,7 @@
 		4F9FB5E6142AB0480032AF67 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KernelRig/KernelRig-Prefix.pch";
 				INFOPLIST_FILE = "KernelRig/KernelRig-Info.plist";
