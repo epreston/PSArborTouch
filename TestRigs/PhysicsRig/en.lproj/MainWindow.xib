@@ -17,7 +17,7 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
         </window>
-        <customObject id="6" userLabel="PSArborTouch App Delegate" customClass="PSArborTouchAppDelegate">
+        <customObject id="6" userLabel="PSArborTouch App Delegate" customClass="PhysicsRigAppDelegate">
             <connections>
                 <outlet property="viewController" destination="7" id="8"/>
                 <outlet property="window" destination="2" id="10"/>

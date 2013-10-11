@@ -12,7 +12,7 @@
 
 @class PSArborTouchViewController;
 
-@interface PSArborTouchAppDelegate : NSObject <UIApplicationDelegate>
+@interface PhysicsRigAppDelegate : NSObject <UIApplicationDelegate>
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet PSArborTouchViewController *viewController;

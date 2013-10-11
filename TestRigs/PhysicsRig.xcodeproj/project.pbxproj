@@ -24,7 +24,7 @@
 		4FA224811426D0900078EFB6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FA224801426D0900078EFB6 /* CoreGraphics.framework */; };
 		4FA224871426D0910078EFB6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4FA224851426D0910078EFB6 /* InfoPlist.strings */; };
 		4FA224891426D0910078EFB6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA224881426D0910078EFB6 /* main.m */; };
-		4FA2248D1426D0910078EFB6 /* PSArborTouchAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA2248C1426D0910078EFB6 /* PSArborTouchAppDelegate.m */; };
+		4FA2248D1426D0910078EFB6 /* PhysicsRigAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA2248C1426D0910078EFB6 /* PhysicsRigAppDelegate.m */; };
 		4FA224901426D0910078EFB6 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FA2248E1426D0910078EFB6 /* MainWindow.xib */; };
 		4FA224931426D0910078EFB6 /* PSArborTouchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA224921426D0910078EFB6 /* PSArborTouchViewController.m */; };
 		4FA224961426D0910078EFB6 /* PSArborTouchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FA224941426D0910078EFB6 /* PSArborTouchViewController.xib */; };
@@ -68,8 +68,8 @@
 		4FA224861426D0910078EFB6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4FA224881426D0910078EFB6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4FA2248A1426D0910078EFB6 /* PhysicsRig-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PhysicsRig-Prefix.pch"; sourceTree = "<group>"; };
-		4FA2248B1426D0910078EFB6 /* PSArborTouchAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSArborTouchAppDelegate.h; sourceTree = "<group>"; };
-		4FA2248C1426D0910078EFB6 /* PSArborTouchAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSArborTouchAppDelegate.m; sourceTree = "<group>"; };
+		4FA2248B1426D0910078EFB6 /* PhysicsRigAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhysicsRigAppDelegate.h; sourceTree = "<group>"; };
+		4FA2248C1426D0910078EFB6 /* PhysicsRigAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhysicsRigAppDelegate.m; sourceTree = "<group>"; };
 		4FA2248F1426D0910078EFB6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
 		4FA224911426D0910078EFB6 /* PSArborTouchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSArborTouchViewController.h; sourceTree = "<group>"; };
 		4FA224921426D0910078EFB6 /* PSArborTouchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSArborTouchViewController.m; sourceTree = "<group>"; };
@@ -98,8 +98,8 @@
 		4F30BDB0142AD86400B52956 /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
-				4FA2248B1426D0910078EFB6 /* PSArborTouchAppDelegate.h */,
-				4FA2248C1426D0910078EFB6 /* PSArborTouchAppDelegate.m */,
+				4FA2248B1426D0910078EFB6 /* PhysicsRigAppDelegate.h */,
+				4FA2248C1426D0910078EFB6 /* PhysicsRigAppDelegate.m */,
 				4FA2248E1426D0910078EFB6 /* MainWindow.xib */,
 			);
 			name = AppDelegate;
@@ -352,7 +352,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FA224891426D0910078EFB6 /* main.m in Sources */,
-				4FA2248D1426D0910078EFB6 /* PSArborTouchAppDelegate.m in Sources */,
+				4FA2248D1426D0910078EFB6 /* PhysicsRigAppDelegate.m in Sources */,
 				4FA224931426D0910078EFB6 /* PSArborTouchViewController.m in Sources */,
 				4F98C72D1426F73C00EA18F3 /* ATSystem.m in Sources */,
 				4F98C7381427040300EA18F3 /* ATNode.m in Sources */,

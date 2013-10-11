@@ -7,11 +7,11 @@
 //
 
 
-#import "PSArborTouchAppDelegate.h"
+#import "PhysicsRigAppDelegate.h"
 #import "PSArborTouchViewController.h"
 
 
-@implementation PSArborTouchAppDelegate
+@implementation PhysicsRigAppDelegate
 
 @synthesize window = _window;
 @synthesize viewController = _viewController;
