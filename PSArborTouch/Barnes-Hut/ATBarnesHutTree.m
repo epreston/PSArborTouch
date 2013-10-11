@@ -88,7 +88,7 @@ typedef enum {
     while ([queue count] != 0) {
         
         // dequeue
-        ATParticle *particle = [queue objectAtIndex:0];
+        ATParticle *particle = queue[0];
         [queue removeObjectAtIndex:0];
         
         CGFloat p_mass = particle.mass;
@@ -217,7 +217,7 @@ typedef enum {
     while ([queue count] != 0) {
         
         // dequeue
-        id node = [queue objectAtIndex:0];
+        id node = queue[0];
         [queue removeObjectAtIndex:0];
         
         if (node == nil) continue;
@@ -358,7 +358,7 @@ typedef enum {
         branch = [[[ATBarnesHutBranch alloc] init] autorelease];
         [branches_ addObject:branch];
     } else {
-        branch = [branches_ objectAtIndex:branchCounter_];
+        branch = branches_[branchCounter_];
         branch.ne = nil;
         branch.nw = nil;
         branch.se = nil;

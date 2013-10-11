@@ -74,7 +74,7 @@
     NSParameterAssert(NodesObject != nil);
     
     if (NodesObject == nil || Key == nil) return;
-    [nodes_ setObject:NodesObject forKey:Key];
+    nodes_[Key] = NodesObject;
 }
 
 - (void) removeNodesObjectForKey:(NSNumber *)Key
@@ -90,7 +90,7 @@
     NSParameterAssert(Key != nil);
     
     if (Key == nil) return nil;
-    return [nodes_ objectForKey:Key];
+    return nodes_[Key];
 }
 
 #pragma mark - Edges
@@ -101,7 +101,7 @@
     NSParameterAssert(EdgesObject != nil);
     
     if (EdgesObject == nil || Key == nil) return;
-    [edges_ setObject:EdgesObject forKey:Key];
+    edges_[Key] = EdgesObject;
 }
 
 - (void) removeEdgesObjectForKey:(NSNumber *)Key
@@ -117,7 +117,7 @@
     NSParameterAssert(Key != nil);
     
     if (Key == nil) return nil;
-    return [edges_ objectForKey:Key];
+    return edges_[Key];
 }
 
 
@@ -129,7 +129,7 @@
     NSParameterAssert(AdjacencyObject != nil);
     
     if (AdjacencyObject == nil || Key == nil) return;
-    [adjacency_ setObject:AdjacencyObject forKey:Key];
+    adjacency_[Key] = AdjacencyObject;
 }
 
 - (void) removeAdjacencyObjectForKey:(NSNumber *)Key
@@ -145,7 +145,7 @@
     NSParameterAssert(Key != nil);
     
     if (Key == nil) return nil;
-    return [adjacency_ objectForKey:Key];
+    return adjacency_[Key];
 }
 
 
@@ -157,7 +157,7 @@
     NSParameterAssert(NamesObject != nil);
     
     if (NamesObject == nil || Key == nil) return;
-    [names_ setObject:NamesObject forKey:Key];
+    names_[Key] = NamesObject;
 }
 
 - (void) removeNamesObjectForKey:(NSString *)Key
@@ -173,7 +173,7 @@
     NSParameterAssert(Key != nil);
     
     if (Key == nil) return nil;
-    return [names_ objectForKey:Key];
+    return names_[Key];
 }
 
 

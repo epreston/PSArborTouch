@@ -390,7 +390,7 @@
     }
     
     // Does the edge already exist?
-    ATEdge *to = [from objectForKey:dst];
+    ATEdge *to = from[dst];
     if (to != nil) {
         // probably shouldn't allow multiple edges in same direction
         // between same nodes? for now just overwriting the data...
@@ -408,7 +408,7 @@
     [self.state setEdgesObject:edge forKey:edge.index];
     
     // Update the adjacency graph
-    [from setObject:edge forKey:dst];
+    from[dst] = edge;
     
     // Add a new spring to represent the edge in the simulation
     [self addSpring:edge];
@@ -458,7 +458,7 @@
         return [NSSet set];
     }
     
-    ATEdge *to = [from objectForKey:dst];
+    ATEdge *to = from[dst];
     if (to == nil) {
         return [NSSet set];
     }
