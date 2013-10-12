@@ -460,6 +460,7 @@
 		4FA224B11426D0910078EFB6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PhysicsRig/PhysicsRig-Prefix.pch";
 				INFOPLIST_FILE = "PhysicsRig/PhysicsRig-Info.plist";
@@ -471,6 +472,7 @@
 		4FA224B21426D0910078EFB6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PhysicsRig/PhysicsRig-Prefix.pch";
 				INFOPLIST_FILE = "PhysicsRig/PhysicsRig-Info.plist";
