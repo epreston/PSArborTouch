@@ -131,7 +131,7 @@
                 // For example, node creation might be in the GCD queue but when we query if it exists, it
                 // has not made it there yet.
                 
-                NSDictionary *nodes = [theObject objectForKey:@"nodes"];
+                NSDictionary *nodes = theObject[@"nodes"];
                 
                 [nodes enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
                     
@@ -144,7 +144,7 @@
                 // the nodes when it finds they have not been previously defined.  Not the optimal way to 
                 // go about things but easy.
                 
-                NSDictionary *edges = [theObject objectForKey:@"edges"];
+                NSDictionary *edges = theObject[@"edges"];
                 
                 // Lets see how the system handles concurrent graph loading (NSEnumerationConcurrent)
                 // The simulation should handle this correctly.
@@ -269,7 +269,7 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
         CGPoint location = [gestureRecognizer locationInView:[gestureRecognizer view]];
         
         [self becomeFirstResponder];
-        [menuController setMenuItems:[NSArray arrayWithObject:debugMenuItem]];
+        [menuController setMenuItems:@[debugMenuItem]];
         [menuController setTargetRect:CGRectMake(location.x, location.y, 0, 0) inView:[gestureRecognizer view]];
         [menuController setMenuVisible:YES animated:YES];
         
