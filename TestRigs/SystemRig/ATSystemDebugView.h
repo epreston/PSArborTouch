@@ -18,7 +18,7 @@
     BOOL debugDrawing_;
 }
 
-@property (nonatomic, retain) ATSystem *system;
+@property (nonatomic, strong) ATSystem *system;
 @property (nonatomic, assign, getter=isDebugDrawing) BOOL debugDrawing;
 
 @end

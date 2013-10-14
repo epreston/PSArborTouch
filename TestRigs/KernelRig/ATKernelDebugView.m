@@ -43,12 +43,6 @@
     return self;
 }
 
-- (void) dealloc
-{
-    [physics_ release];
-    
-    [super dealloc];
-}
 
 - (void) drawRect:(CGRect)rect
 {

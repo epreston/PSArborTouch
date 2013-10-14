@@ -22,8 +22,8 @@
 
 @interface ATKernel ()
 
-@property (nonatomic, readonly, assign) dispatch_queue_t physicsQueue;
-@property (nonatomic, readonly, assign) dispatch_source_t physicsTimer;
+@property (nonatomic, readonly, weak) dispatch_queue_t physicsQueue;
+@property (nonatomic, readonly, weak) dispatch_source_t physicsTimer;
 
 @end
 
@@ -63,16 +63,7 @@
     if ( timerInitialized ) {
         dispatch_source_cancel(timer_);
         dispatch_resume(timer_);  
-        dispatch_release(timer_);
     }
-    
-    // release the queue
-    dispatch_release(queue_);
-    
-    // release the energy object
-    
-    // release the physics object
-    
 }
 
 

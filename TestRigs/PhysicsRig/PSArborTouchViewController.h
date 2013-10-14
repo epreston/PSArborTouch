@@ -63,31 +63,31 @@
     UILabel *_countLabel;
 }
 
-@property (nonatomic, retain) IBOutlet UILabel *maxLabel;
-@property (nonatomic, retain) IBOutlet UILabel *meanLabel;
-@property (nonatomic, retain) IBOutlet UILabel *countLabel;
-@property (nonatomic, retain) IBOutlet UILabel *sumLabel;
+@property (nonatomic, strong) IBOutlet UILabel *maxLabel;
+@property (nonatomic, strong) IBOutlet UILabel *meanLabel;
+@property (nonatomic, strong) IBOutlet UILabel *countLabel;
+@property (nonatomic, strong) IBOutlet UILabel *sumLabel;
 
-@property (nonatomic, retain) IBOutlet UILabel *p1Name;
-@property (nonatomic, retain) IBOutlet UILabel *p1Mass;
-@property (nonatomic, retain) IBOutlet UILabel *p1Position;
-@property (nonatomic, retain) IBOutlet UILabel *p1Fixed;
+@property (nonatomic, strong) IBOutlet UILabel *p1Name;
+@property (nonatomic, strong) IBOutlet UILabel *p1Mass;
+@property (nonatomic, strong) IBOutlet UILabel *p1Position;
+@property (nonatomic, strong) IBOutlet UILabel *p1Fixed;
 
-@property (nonatomic, retain) IBOutlet UILabel *p2Name;
-@property (nonatomic, retain) IBOutlet UILabel *p2Mass;
-@property (nonatomic, retain) IBOutlet UILabel *p2Position;
-@property (nonatomic, retain) IBOutlet UILabel *p2Fixed;
+@property (nonatomic, strong) IBOutlet UILabel *p2Name;
+@property (nonatomic, strong) IBOutlet UILabel *p2Mass;
+@property (nonatomic, strong) IBOutlet UILabel *p2Position;
+@property (nonatomic, strong) IBOutlet UILabel *p2Fixed;
 
-@property (nonatomic, retain) IBOutlet UIView *particleView1;
-@property (nonatomic, retain) IBOutlet UIView *particleView2;
-@property (nonatomic, retain) IBOutlet UIView *particleView3;
-@property (nonatomic, retain) IBOutlet UIView *particleView4;
+@property (nonatomic, strong) IBOutlet UIView *particleView1;
+@property (nonatomic, strong) IBOutlet UIView *particleView2;
+@property (nonatomic, strong) IBOutlet UIView *particleView3;
+@property (nonatomic, strong) IBOutlet UIView *particleView4;
 
-@property (nonatomic, retain) IBOutlet UILabel *statusLabel;
-@property (nonatomic, retain) IBOutlet UILabel *counterLabel;
+@property (nonatomic, strong) IBOutlet UILabel *statusLabel;
+@property (nonatomic, strong) IBOutlet UILabel *counterLabel;
 
-@property (nonatomic, retain) IBOutlet UISwitch *barnesHutSwitch;
+@property (nonatomic, strong) IBOutlet UISwitch *barnesHutSwitch;
 
-@property (nonatomic, retain) IBOutlet ATPhysicsDebugView *viewPort;
+@property (nonatomic, strong) IBOutlet ATPhysicsDebugView *viewPort;
 
 @end

@@ -29,12 +29,6 @@
 }
 
 
-- (void) dealloc
-{
-    [_physics release];
-    
-    [super dealloc];
-}
 
 
 - (CGSize) sizeToScreen:(CGSize)s 

@@ -19,7 +19,7 @@
     BOOL _debugDrawing;
 }
 
-@property (nonatomic, retain) ATPhysics *physics;
+@property (nonatomic, strong) ATPhysics *physics;
 @property (nonatomic, assign, getter=isDebugDrawing) BOOL debugDrawing;
 
 @end

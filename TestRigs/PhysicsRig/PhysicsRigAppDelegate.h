@@ -14,7 +14,7 @@
 
 @interface PhysicsRigAppDelegate : NSObject <UIApplicationDelegate>
 
-@property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic, retain) IBOutlet PSArborTouchViewController *viewController;
+@property (nonatomic, strong) IBOutlet UIWindow *window;
+@property (nonatomic, strong) IBOutlet PSArborTouchViewController *viewController;
 
 @end
