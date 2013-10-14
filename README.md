@@ -16,7 +16,7 @@ This distribution contains several examples that demonstrate the features of PSA
 
 _This library is functional but it is still a work in progress, see [issues](https://github.com/epreston/PSArborTouch/issues) and [milestones](https://github.com/epreston/PSArborTouch/issues/milestones)_
 
-PSArborTouch is a drop in solution that uses a GCD to keep the main application loop free and responsive.
+PSArborTouch is a drop in solution that uses a GCD to keep the main application loop free and responsive.  Those looking for a reference counted implementation should look for a "Non ARC 1.0" branch.
 
 This project follows the [SemVer](http://semver.org/) standard. The API may change in backwards-incompatible ways before the 1.0 release.
 
