@@ -434,6 +434,7 @@
 		4F4DA1B71439E41700AAB205 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Welcome/Welcome-Prefix.pch";
 				INFOPLIST_FILE = "Welcome/Welcome-Info.plist";
@@ -446,6 +447,7 @@
 		4F4DA1B81439E41700AAB205 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Welcome/Welcome-Prefix.pch";
 				INFOPLIST_FILE = "Welcome/Welcome-Info.plist";

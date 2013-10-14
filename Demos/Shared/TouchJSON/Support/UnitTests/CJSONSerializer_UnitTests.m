@@ -81,7 +81,7 @@
     NSString *jsonEquivalent = @"{\"a\":\"line\\nbreak\"}";
     NSDictionary *dictionary = [NSDictionary dictionaryWithObject:@"line\nbreak" forKey:@"a"];
     id theObject = [[CJSONSerializer serializer] serializeObject:dictionary error:nil];
-    NSString *resultString = [[[NSString alloc] initWithData:theObject encoding:NSUTF8StringEncoding] autorelease];
+    NSString *resultString = [[NSString alloc] initWithData:theObject encoding:NSUTF8StringEncoding];
     STAssertEqualObjects(resultString, jsonEquivalent, nil);
     }
 
@@ -90,7 +90,7 @@
     NSString *jsonEquivalent = @"{\"a\":\"carriage\\rreturn\"}";
     NSDictionary *dictionary = [NSDictionary dictionaryWithObject:@"carriage\rreturn" forKey:@"a"];
     id theObject = [[CJSONSerializer serializer] serializeObject:dictionary error:nil];
-    NSString *resultString = [[[NSString alloc] initWithData:theObject encoding:NSUTF8StringEncoding] autorelease];
+    NSString *resultString = [[NSString alloc] initWithData:theObject encoding:NSUTF8StringEncoding];
     STAssertEqualObjects(resultString, jsonEquivalent, nil);
     }
 
@@ -99,7 +99,7 @@
     NSString *jsonEquivalent = @"{\"a\":\"tab\\there\"}";
     NSDictionary *dictionary = [NSDictionary dictionaryWithObject:@"tab\there" forKey:@"a"];
     id theObject = [[CJSONSerializer serializer] serializeObject:dictionary error:nil];
-    NSString *resultString = [[[NSString alloc] initWithData:theObject encoding:NSUTF8StringEncoding] autorelease];
+    NSString *resultString = [[NSString alloc] initWithData:theObject encoding:NSUTF8StringEncoding];
     STAssertEqualObjects(resultString, jsonEquivalent, nil);
     }
 
@@ -108,7 +108,7 @@
     NSString *jsonEquivalent = @"{\"a\":\"formfeed\\fhere\"}";
     NSDictionary *dictionary = [NSDictionary dictionaryWithObject:@"formfeed\fhere" forKey:@"a"];
     id theObject = [[CJSONSerializer serializer] serializeObject:dictionary error:nil];
-    NSString *resultString = [[[NSString alloc] initWithData:theObject encoding:NSUTF8StringEncoding] autorelease];
+    NSString *resultString = [[NSString alloc] initWithData:theObject encoding:NSUTF8StringEncoding];
     STAssertEqualObjects(resultString, jsonEquivalent, nil);
     }
 
@@ -117,7 +117,7 @@
     NSString *jsonEquivalent = @"{\"a\":\"backspace\\bhere\"}";
     NSDictionary *dictionary = [NSDictionary dictionaryWithObject:@"backspace\bhere" forKey:@"a"];
     id theObject = [[CJSONSerializer serializer] serializeObject:dictionary error:nil];
-    NSString *resultString = [[[NSString alloc] initWithData:theObject encoding:NSUTF8StringEncoding] autorelease];
+    NSString *resultString = [[NSString alloc] initWithData:theObject encoding:NSUTF8StringEncoding];
     STAssertEqualObjects(resultString, jsonEquivalent, nil);
     }
 
@@ -126,7 +126,7 @@
     NSString *jsonEquivalent = @"{\"a\":\"double\\\"quote\"}";
     NSDictionary *dictionary = [NSDictionary dictionaryWithObject:@"double\"quote" forKey:@"a"];
     id theObject = [[CJSONSerializer serializer] serializeObject:dictionary error:nil];
-    NSString *resultString = [[[NSString alloc] initWithData:theObject encoding:NSUTF8StringEncoding] autorelease];
+    NSString *resultString = [[NSString alloc] initWithData:theObject encoding:NSUTF8StringEncoding];
     STAssertEqualObjects(resultString, jsonEquivalent, nil);
     }
 
@@ -135,7 +135,27 @@
     NSString *jsonEquivalent = @"{\"a\":\"back\\\\slash\"}";
     NSDictionary *dictionary = [NSDictionary dictionaryWithObject:@"back\\slash" forKey:@"a"];
     id theObject = [[CJSONSerializer serializer] serializeObject:dictionary error:nil];
-    NSString *resultString = [[[NSString alloc] initWithData:theObject encoding:NSUTF8StringEncoding] autorelease];
+    NSString *resultString = [[NSString alloc] initWithData:theObject encoding:NSUTF8StringEncoding];
+    STAssertEqualObjects(resultString, jsonEquivalent, nil);
+    }
+
+- (void)testSlashInStrings
+    {
+    NSString *jsonEquivalent = @"{\"a\":\"slash/slash\"}";
+    NSDictionary *dictionary = [NSDictionary dictionaryWithObject:@"slash/slash" forKey:@"a"];
+    id theObject = [[CJSONSerializer serializer] serializeObject:dictionary error:nil];
+    NSString *resultString = [[NSString alloc] initWithData:theObject encoding:NSUTF8StringEncoding];
+    STAssertEqualObjects(resultString, jsonEquivalent, nil);
+    }
+
+- (void)testEscapedSlashInStrings
+    {
+    NSString *jsonEquivalent = @"{\"a\":\"slash\\/slash\"}";
+    NSDictionary *dictionary = [NSDictionary dictionaryWithObject:@"slash/slash" forKey:@"a"];
+    CJSONSerializer *theSerializer = [CJSONSerializer serializer];
+    theSerializer.options = kJSONSerializationOptions_EncodeSlashes;
+    id theObject = [theSerializer serializeObject:dictionary error:nil];
+    NSString *resultString = [[NSString alloc] initWithData:theObject encoding:NSUTF8StringEncoding];
     STAssertEqualObjects(resultString, jsonEquivalent, nil);
     }
 
@@ -146,7 +166,7 @@
 //    NSData *theData = [@"\"\u062a\u062d\u064a\u0627 \u0645\u0635\u0631!\"" dataUsingEncoding:NSUTF8StringEncoding];
     NSString *theString = [[CJSONDeserializer deserializer] deserialize:theData error:&theError];
     theData = [[CJSONSerializer serializer] serializeObject:theString error:&theError];
-    theString = [[[NSString alloc] initWithData:theData encoding:NSUTF8StringEncoding] autorelease];
+    theString = [[NSString alloc] initWithData:theData encoding:NSUTF8StringEncoding];
     STAssertNotNil(theString, @"fail");
     }
 
@@ -156,7 +176,7 @@
     NSData *theData = [@"\"\u062a\u062d\u064a\u0627 \u0645\u0635\u0631!\"" dataUsingEncoding:NSUTF8StringEncoding];
     NSString *theString = [[CJSONDeserializer deserializer] deserialize:theData error:&theError];
     theData = [[CJSONSerializer serializer] serializeObject:theString error:&theError];
-    theString = [[[NSString alloc] initWithData:theData encoding:NSUTF8StringEncoding] autorelease];
+    theString = [[NSString alloc] initWithData:theData encoding:NSUTF8StringEncoding];
     STAssertNotNil(theString, @"fail");
     }
 
@@ -166,7 +186,7 @@
     NSData *theData = [@"\"@janl \u24b6\u24c1\u24cc\u24b6\u24ce\u24c8 \u24cc\u24b6\u24ce\u24c8 \u24c9\u24c4 \u24be\u24c2\u24c5\u24c7\u24c4\u24cb\u24ba, \u24c9\u24bd\u24c4\u24ca\u24bc\u24bd\"" dataUsingEncoding:NSUTF8StringEncoding];
     NSString *theString = [[CJSONDeserializer deserializer] deserialize:theData error:&theError];
     theData = [[CJSONSerializer serializer] serializeObject:theString error:&theError];
-    theString = [[[NSString alloc] initWithData:theData encoding:NSUTF8StringEncoding] autorelease];
+    theString = [[NSString alloc] initWithData:theData encoding:NSUTF8StringEncoding];
     STAssertNotNil(theString, @"fail");
     }
 

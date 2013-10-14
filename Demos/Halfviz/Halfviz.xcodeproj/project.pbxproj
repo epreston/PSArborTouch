@@ -543,6 +543,7 @@
 		4F4DA00C1439DCBC00AAB205 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Halfviz/Halfviz-Prefix.pch";
 				INFOPLIST_FILE = "Halfviz/Halfviz-Info.plist";
@@ -555,6 +556,7 @@
 		4F4DA00D1439DCBC00AAB205 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Halfviz/Halfviz-Prefix.pch";
 				INFOPLIST_FILE = "Halfviz/Halfviz-Info.plist";

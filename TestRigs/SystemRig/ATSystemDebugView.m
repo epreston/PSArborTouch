@@ -46,12 +46,6 @@
 }
 
 
-- (void) dealloc
-{
-    [system_ release];
-    
-    [super dealloc];
-}
 
 - (void) layoutSubviews
 {

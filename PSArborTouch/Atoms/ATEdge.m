@@ -32,7 +32,7 @@ static NSInteger nextEdgeIndex_ = -1;
 {
     self = [super init];
     if (self) {
-        index_     = [@(nextEdgeIndex_--) retain];
+        index_     = @(nextEdgeIndex_--);
         source_ = nil;
         target_ = nil;
         length_ = 1.0;
@@ -45,8 +45,8 @@ static NSInteger nextEdgeIndex_ = -1;
 {
     self = [self init];
     if (self) {
-        source_ = [source retain];
-        target_ = [target retain];
+        source_ = source;
+        target_ = target;
         length_ = length;
     }
     return self;
@@ -56,24 +56,13 @@ static NSInteger nextEdgeIndex_ = -1;
 {
     self = [self init];
     if (self) {
-        source_ = [source retain];
-        target_ = [target retain];
-        data_   = [data retain];
+        source_ = source;
+        target_ = target;
+        data_   = data;
     }
     return self;
 }
 
-- (void) dealloc
-{
-    [data_ release];
-    
-    [source_ release];
-    [target_ release];
-    
-    [index_ release];
-    
-    [super dealloc];
-}
 
 
 #pragma mark - Geometry
@@ -107,11 +96,11 @@ static NSInteger nextEdgeIndex_ = -1;
 {
     self = [super init];
     if (self) {
-        source_ = [[decoder decodeObjectForKey:@"source"] retain];
-        target_ = [[decoder decodeObjectForKey:@"target"] retain];
+        source_ = [decoder decodeObjectForKey:@"source"];
+        target_ = [decoder decodeObjectForKey:@"target"];
         length_ = [decoder decodeFloatForKey:@"length"];
-        index_  = [[decoder decodeObjectForKey:@"index"] retain];
-        data_   = [[decoder decodeObjectForKey:@"data"] retain];
+        index_  = [decoder decodeObjectForKey:@"index"];
+        data_   = [decoder decodeObjectForKey:@"data"];
         
         
         nextEdgeIndex_  = MIN(nextEdgeIndex_, ([index_ integerValue] - 1));

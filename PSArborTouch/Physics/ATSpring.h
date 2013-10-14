@@ -17,8 +17,8 @@
     CGFloat     stiffness_;
 }
 
-@property (nonatomic, readonly, retain) ATParticle *point1;
-@property (nonatomic, readonly, retain) ATParticle *point2;
+@property (nonatomic, readonly, strong) ATParticle *point1;
+@property (nonatomic, readonly, strong) ATParticle *point2;
 
 @property (nonatomic, assign) CGFloat stiffness;
 

@@ -24,6 +24,6 @@
     ATKernelDebugView *_debugView;
 }
 
-@property (nonatomic, retain) IBOutlet ATKernelDebugView *debugView;
+@property (nonatomic, strong) IBOutlet ATKernelDebugView *debugView;
 
 @end

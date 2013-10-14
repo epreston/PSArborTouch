@@ -458,6 +458,7 @@
 		4FA4D6DE14302355003958B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SystemRig/SystemRig-Prefix.pch";
 				INFOPLIST_FILE = "SystemRig/SystemRig-Info.plist";
@@ -469,6 +470,7 @@
 		4FA4D6DF14302355003958B3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SystemRig/SystemRig-Prefix.pch";
 				INFOPLIST_FILE = "SystemRig/SystemRig-Info.plist";

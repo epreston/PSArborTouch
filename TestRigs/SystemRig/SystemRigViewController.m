@@ -28,7 +28,7 @@
 {
     [super viewDidLoad];
     
-    system_ = [[[ATSystem alloc] init] retain];
+    system_ = [[ATSystem alloc] init];
     
     system_.viewBounds = self.view.bounds;
     system_.viewPadding = UIEdgeInsetsMake(20.0, 20.0, 20.0, 20.0);
@@ -61,23 +61,15 @@
     [panGesture setMaximumNumberOfTouches:2];
     [panGesture setDelegate:self];
     [self.debugView addGestureRecognizer:panGesture];
-    [panGesture release];
 }
 
 - (void)viewDidUnload
 {
     [self setDebugView:nil];
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
     
-    [system_ release];
 }
 
-- (void)dealloc {
-    [debugView_ release];
-    [super dealloc];
-}
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {

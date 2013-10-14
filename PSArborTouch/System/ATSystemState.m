@@ -47,24 +47,15 @@
 {
     self = [super init];
     if (self) {
-        nodes_      = [[NSMutableDictionary dictionaryWithCapacity:32] retain];      
-        edges_      = [[NSMutableDictionary dictionaryWithCapacity:32] retain];      
-        adjacency_  = [[NSMutableDictionary dictionaryWithCapacity:32] retain];             
-        names_      = [[NSMutableDictionary dictionaryWithCapacity:32] retain];
+        nodes_      = [NSMutableDictionary dictionaryWithCapacity:32];      
+        edges_      = [NSMutableDictionary dictionaryWithCapacity:32];      
+        adjacency_  = [NSMutableDictionary dictionaryWithCapacity:32];             
+        names_      = [NSMutableDictionary dictionaryWithCapacity:32];
     }
     
     return self;
 }
 
-- (void) dealloc
-{
-    [adjacency_ release];
-    [edges_ release];
-    [names_ release];
-    [nodes_ release];
-    
-    [super dealloc];
-}
 
 #pragma mark - Nodes
 
@@ -193,10 +184,10 @@
 {
     self = [super init];
     if (self) {
-        nodes_      = [[decoder decodeObjectForKey:@"nodes"] retain];
-        edges_      = [[decoder decodeObjectForKey:@"edges"] retain];
-        adjacency_  = [[decoder decodeObjectForKey:@"adjacency"] retain];
-        names_      = [[decoder decodeObjectForKey:@"names"] retain];
+        nodes_      = [decoder decodeObjectForKey:@"nodes"];
+        edges_      = [decoder decodeObjectForKey:@"edges"];
+        adjacency_  = [decoder decodeObjectForKey:@"adjacency"];
+        names_      = [decoder decodeObjectForKey:@"names"];
     }
     return self;
 }

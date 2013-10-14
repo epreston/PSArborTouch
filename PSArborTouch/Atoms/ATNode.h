@@ -27,9 +27,9 @@
 @property (nonatomic, assign) CGPoint position;
 @property (nonatomic, assign, getter=isFixed) BOOL fixed;
 
-@property (nonatomic, readonly, retain) NSNumber *index;
+@property (nonatomic, readonly, strong) NSNumber *index;
 
-@property (nonatomic, retain) NSMutableDictionary *userData;
+@property (nonatomic, strong) NSMutableDictionary *userData;
 
 - (id) init;
 

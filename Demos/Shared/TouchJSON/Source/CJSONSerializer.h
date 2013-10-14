@@ -29,8 +29,16 @@
 
 #import <Foundation/Foundation.h>
 
+enum {
+    kJSONSerializationOptions_EncodeSlashes = 0x01,
+};
+typedef NSUInteger EJSONSerializationOptions;
+
+
 @interface CJSONSerializer : NSObject {
 }
+
+@property (readwrite, nonatomic, assign) EJSONSerializationOptions options;
 
 + (CJSONSerializer *)serializer;
 
@@ -47,7 +55,9 @@
 
 @end
 
+extern NSString *const kJSONSerializerErrorDomain /* = @"CJSONSerializerErrorDomain" */;
+
 typedef enum {
     CJSONSerializerErrorCouldNotSerializeDataType = -1,
-    CJSONSerializerErrorCouldNotSerializeObject = -1
+    CJSONSerializerErrorCouldNotSerializeObject = -2,
 } CJSONSerializerError;

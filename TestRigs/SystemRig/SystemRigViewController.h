@@ -21,6 +21,6 @@
     ATSystemDebugView *debugView_;
 }
 
-@property (nonatomic, retain) IBOutlet ATSystemDebugView *debugView;
+@property (nonatomic, strong) IBOutlet ATSystemDebugView *debugView;
 
 @end

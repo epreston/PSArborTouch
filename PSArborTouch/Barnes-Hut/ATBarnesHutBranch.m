@@ -52,15 +52,6 @@
     return self;
 }
 
-- (void) dealloc
-{
-    [ne_ release];
-    [nw_ release];
-    [se_ release];
-    [sw_ release];
-    
-    [super dealloc];
-}
 
 
 #pragma mark - Internal Interface

@@ -40,7 +40,7 @@ typedef enum {
 {
     self = [super init];
     if (self) {
-        branches_       = [[NSMutableArray arrayWithCapacity:32] retain];
+        branches_       = [NSMutableArray arrayWithCapacity:32];
         branchCounter_  = 0;
         root_           = nil;
         bounds_         = CGRectZero;
@@ -49,13 +49,6 @@ typedef enum {
     return self;
 }
 
-- (void) dealloc
-{
-    [branches_ release];
-    [root_ release];
-    
-    [super dealloc];
-}
 
 
 #pragma mark - Public Methods
@@ -355,7 +348,7 @@ typedef enum {
     ATBarnesHutBranch *branch = nil;
     
     if ( branches_.count == 0 || branchCounter_ > (branches_.count -1) ) {
-        branch = [[[ATBarnesHutBranch alloc] init] autorelease];
+        branch = [[ATBarnesHutBranch alloc] init];
         [branches_ addObject:branch];
     } else {
         branch = branches_[branchCounter_];

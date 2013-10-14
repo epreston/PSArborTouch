@@ -12,8 +12,8 @@
 
 @interface SimpleAppDelegate : NSObject <UIApplicationDelegate>
 
-@property (nonatomic, retain) IBOutlet UIWindow *window;
+@property (nonatomic, strong) IBOutlet UIWindow *window;
 
-@property (nonatomic, retain) IBOutlet SimpleViewController *viewController;
+@property (nonatomic, strong) IBOutlet SimpleViewController *viewController;
 
 @end

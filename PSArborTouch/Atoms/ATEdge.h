@@ -23,13 +23,13 @@
     NSMutableDictionary *data_;
 }
 
-@property (nonatomic, readonly, retain) ATNode *source;
-@property (nonatomic, readonly, retain) ATNode *target;
+@property (nonatomic, readonly, strong) ATNode *source;
+@property (nonatomic, readonly, strong) ATNode *target;
 @property (nonatomic, assign) CGFloat length;
 
-@property (nonatomic, readonly, retain) NSNumber *index;
+@property (nonatomic, readonly, strong) NSNumber *index;
 
-@property (nonatomic, retain) NSMutableDictionary *userData;
+@property (nonatomic, strong) NSMutableDictionary *userData;
 
 - (id) init;
 
