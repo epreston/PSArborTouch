@@ -31,65 +31,58 @@
 
 #import "CJSONSerializer.h"
 #import "CJSONDeserializer.h"
-#import "CJSONScanner.h"
 
-static void test(void);
-static void test_repeated_array(void);
-static void test_twitter_public_timeline(void);
-
+static id test(NSData *inData);
+static void test_files(void);
 
 int main(int argc, char **argv)
-	{
-	#pragma unused(argc, argv)
-
-	NSAutoreleasePool *theAutoreleasePool = [[NSAutoreleasePool alloc] init];
-
-//  test();
-//    test_twitter_public_timeline();
-     test_repeated_array();
-
-	[theAutoreleasePool release];
-	//
-	return(0);
-	}
-
-
-static void test(void)
     {
+    #pragma unused(argc, argv)
+
+    NSString *theString = @"<XML>";
+    NSData *theData = [theString dataUsingEncoding:NSUTF32StringEncoding];
+    CJSONDeserializer *theDeserializer = [CJSONDeserializer deserializer];
+    theDeserializer.options |= kJSONDeserializationOptions_AllowFragments;
     NSError *theError = NULL;
-    NSData *theData = [@"{(\n)}" dataUsingEncoding:NSUTF8StringEncoding];
-//    NSData *theData = [@"\"\u062a\u062d\u064a\u0627 \u0645\u0635\u0631!\"" dataUsingEncoding:NSUTF8StringEncoding];
-    NSString *theString = [[CJSONDeserializer deserializer] deserialize:theData error:&theError];
-    theData = [[CJSONSerializer serializer] serializeObject:theString error:&theError];
-    theString = [[[NSString alloc] initWithData:theData encoding:NSUTF8StringEncoding] autorelease];
-    NSLog(@"%@", theString);
+    id theDeseralizedValue = [theDeserializer deserialize:theData error:&theError];
+    NSLog(@"%@ %@", theDeseralizedValue, theError);
+
+    test_files();
+
+    return(0);
     }
 
-
-static void test_repeated_array(void)
+static void test_files(void)
     {
-    NSString* a = @"a";
-    NSArray* array = [NSArray arrayWithObjects:a, @"b", a, nil];
+    NSDirectoryEnumerator *theEnumerator = [[NSFileManager defaultManager] enumeratorAtURL:[NSURL fileURLWithPath:@"Test Data"] includingPropertiesForKeys:NULL options:0 errorHandler:NULL];
+    for (NSURL *theURL in theEnumerator)
+        {
+        NSLog(@"%@ ********************************", [theURL lastPathComponent]);
+        NSData *theData = [NSData dataWithContentsOfURL:theURL];
 
-    NSError *theError = NULL;
-    NSData *theData = [[CJSONSerializer serializer] serializeObject:array error:&theError];
-    NSString *theString = [[[NSString alloc] initWithData:theData encoding:NSUTF8StringEncoding] autorelease];
-    NSLog(@"%@", theString);
-
+        test(theData);
+        }
     }
 
-static void test_twitter_public_timeline(void)
-	{
+static id test(NSData *inData)
+    {
     NSError *theError = NULL;
-    NSData *inputData = [NSData dataWithContentsOfFile:@"Test Data/atomicbird.json"];
-    NSLog(@"Input data: %ld", inputData.length);
-    id json = [[CJSONDeserializer deserializer] deserialize:inputData error:&theError];
-    NSLog(@"JSON Object: %@ %p (Error: %@)", [json class], json, theError);
-    NSData *jsonData = [[CJSONSerializer serializer] serializeObject:json error:&theError];
-    NSLog(@"%@", jsonData);
-    
-    NSLog(@"JSON data: %ld  (Error: %@)", jsonData.length, theError);
-    NSString *jsonString = [[[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding] autorelease];
-    NSLog(@"JSON string: %ld", jsonString.length);
-    NSLog(@"> %@", jsonString);
-	}
+//    NSString *theString = @"\"\\uD83D\\uDCA9\"";
+//    NSData *theData = [theString dataUsingEncoding:NSUTF8StringEncoding];
+    CJSONDeserializer *theDeserializer = [CJSONDeserializer deserializer];
+    theDeserializer.options |= kJSONDeserializationOptions_AllowFragments;
+    id theResult = [theDeserializer deserialize:inData error:&theError];
+    if (theResult == NULL)
+        {
+        NSLog(@"ERROR: %@", theError);
+        return(NULL);
+        }
+    id theExpectedResult = [NSJSONSerialization JSONObjectWithData:inData options:NSJSONReadingAllowFragments error:NULL];
+    if ([theResult isEqual:theExpectedResult] == NO)
+        {
+        NSLog(@"TouchJSON and NSJSON* results differ");
+        NSLog(@"TouchJSON: (%@) %@", NSStringFromClass([theResult class]), theResult);
+        NSLog(@"NSJSON*: (%@) %@", NSStringFromClass([theExpectedResult class]), theExpectedResult);
+        }
+    return(theResult);
+    }

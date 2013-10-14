@@ -30,7 +30,7 @@ static NSInteger nextNodeIndex_ = 1;
 {
     self = [super init];
     if (self) {
-        index_      = [@(nextNodeIndex_++) retain];
+        index_      = @(nextNodeIndex_++);
         name_       = nil;
         mass_       = 1.0;
         position_   = CGPointZero;
@@ -57,20 +57,11 @@ static NSInteger nextNodeIndex_ = 1;
     self = [self init];
     if (self) {
         name_ = [name copy];
-        data_ = [data retain];
+        data_ = data;
     }
     return self;
 }
 
-- (void) dealloc
-{
-    [data_ release];
-    
-    [name_ release];
-    [index_ release];
-    
-    [super dealloc];
-}
 
 
 #pragma mark - Internal Interface
@@ -92,12 +83,12 @@ static NSInteger nextNodeIndex_ = 1;
 {
     self = [super init];
     if (self) {
-        name_       = [[decoder decodeObjectForKey:@"name"] retain];
+        name_       = [decoder decodeObjectForKey:@"name"];
         mass_       = [decoder decodeFloatForKey:@"mass"];
         position_   = [decoder decodeCGPointForKey:@"position"];
         fixed_      = [decoder decodeBoolForKey:@"fixed"];
-        index_      = [[decoder decodeObjectForKey:@"index"] retain];
-        data_       = [[decoder decodeObjectForKey:@"data"] retain];
+        index_      = [decoder decodeObjectForKey:@"index"];
+        data_       = [decoder decodeObjectForKey:@"data"];
         
         nextNodeIndex_  = MAX(nextNodeIndex_, ([index_ integerValue] + 1));
     }

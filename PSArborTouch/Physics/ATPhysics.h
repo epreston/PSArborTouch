@@ -39,13 +39,13 @@
     CGFloat     theta_;
 }
 
-@property (nonatomic, readonly, retain) ATBarnesHutTree *bhTree;
+@property (nonatomic, readonly, strong) ATBarnesHutTree *bhTree;
 
-@property (nonatomic, readonly, retain) NSArray *particles;
+@property (nonatomic, readonly, strong) NSArray *particles;
 - (void) addParticle:(ATParticle *)particle;
 - (void) removeParticle:(ATParticle *)particle;
 
-@property (nonatomic, readonly, retain) NSArray *springs;
+@property (nonatomic, readonly, strong) NSArray *springs;
 - (void) addSpring:(ATSpring *)spring;
 - (void) removeSpring:(ATSpring *)spring;
 

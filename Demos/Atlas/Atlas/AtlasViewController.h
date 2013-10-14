@@ -21,6 +21,6 @@
     AtlasCanvasView *canvas_;
 }
 
-@property (nonatomic, retain) IBOutlet AtlasCanvasView *canvas;
+@property (nonatomic, strong) IBOutlet AtlasCanvasView *canvas;
 
 @end

@@ -46,7 +46,7 @@ typedef enum {
 
 #pragma mark - System State Management
 
-@property (nonatomic, retain) ATSystemState *state;
+@property (nonatomic, strong) ATSystemState *state;
 
 // Changes to your copy do not take effect on the system until you pass them back
 @property (nonatomic, copy) ATSystemParams *parameters;

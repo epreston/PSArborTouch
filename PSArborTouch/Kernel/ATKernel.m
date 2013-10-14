@@ -41,11 +41,11 @@
         queue_      = nil;
         paused_     = NO;
         running_    = NO;
-        physics_    = [[[ATPhysics alloc] initWithDeltaTime:0.02 
+        physics_    = [[ATPhysics alloc] initWithDeltaTime:0.02 
                                                stiffness:1000.0 
                                                repulsion:600.0 
-                                                friction:0.5] retain];
-        lastEnergy_ = [[[ATEnergy alloc] init] retain];
+                                                friction:0.5];
+        lastEnergy_ = [[ATEnergy alloc] init];
         lastBounds_ = CGRectMake(-1.0, -1.0, 2.0, 2.0);
     }
     return self;
@@ -70,12 +70,9 @@
     dispatch_release(queue_);
     
     // release the energy object
-    [lastEnergy_ release];
     
     // release the physics object
-    [physics_ release];
     
-    [super dealloc];
 }
 
 

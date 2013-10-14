@@ -31,17 +31,20 @@
 
 #import "JSONRepresentation.h"
 
+NSString *const kJSONSerializerErrorDomain = @"CJSONSerializerErrorDomain";
+
+
 static NSData *kNULL = NULL;
 static NSData *kFalse = NULL;
 static NSData *kTrue = NULL;
 
 @implementation CJSONSerializer
 
+@synthesize options;
+
 + (void)initialize
     {
-    NSAutoreleasePool *thePool = [[NSAutoreleasePool alloc] init];
-
-    if (self == [CJSONSerializer class])
+    @autoreleasepool
         {
         if (kNULL == NULL)
             kNULL = [[NSData alloc] initWithBytesNoCopy:(void *)"null" length:4 freeWhenDone:NO];
@@ -49,14 +52,12 @@ static NSData *kTrue = NULL;
             kFalse = [[NSData alloc] initWithBytesNoCopy:(void *)"false" length:5 freeWhenDone:NO];
         if (kTrue == NULL)
             kTrue = [[NSData alloc] initWithBytesNoCopy:(void *)"true" length:4 freeWhenDone:NO];
-
-        [thePool release];
         }
     }
 
 + (CJSONSerializer *)serializer
     {
-    return([[[self alloc] init] autorelease]);
+    return([[self alloc] init]);
     }
     
 - (BOOL)isValidJSONObject:(id)inObject
@@ -121,8 +122,21 @@ static NSData *kTrue = NULL;
         }
     else if ([inObject isKindOfClass:[NSData class]])
         {
-        NSString *theString = [[[NSString alloc] initWithData:inObject encoding:NSUTF8StringEncoding] autorelease];
-        theResult = [self serializeString:theString error:outError];
+        NSString *theString = [[NSString alloc] initWithData:inObject encoding:NSUTF8StringEncoding];
+        if (theString == NULL)
+            {
+            if (outError)
+                {
+                NSDictionary *theUserInfo = [NSDictionary dictionaryWithObjectsAndKeys:
+                    [NSString stringWithFormat:@"Cannot serialize data of type '%@'", NSStringFromClass([inObject class])], NSLocalizedDescriptionKey,
+                    NULL];
+                *outError = [NSError errorWithDomain:kJSONSerializerErrorDomain code:CJSONSerializerErrorCouldNotSerializeDataType userInfo:theUserInfo];
+                }
+            }
+        else
+            {
+            theResult = [self serializeString:theString error:outError];
+            }
         }
     else if ([inObject respondsToSelector:@selector(JSONDataRepresentation)])
         {
@@ -135,7 +149,7 @@ static NSData *kTrue = NULL;
             NSDictionary *theUserInfo = [NSDictionary dictionaryWithObjectsAndKeys:
                 [NSString stringWithFormat:@"Cannot serialize data of type '%@'", NSStringFromClass([inObject class])], NSLocalizedDescriptionKey,
                 NULL];
-            *outError = [NSError errorWithDomain:@"TODO_DOMAIN" code:CJSONSerializerErrorCouldNotSerializeDataType userInfo:theUserInfo];
+            *outError = [NSError errorWithDomain:kJSONSerializerErrorDomain code:CJSONSerializerErrorCouldNotSerializeDataType userInfo:theUserInfo];
             }
         return(NULL);
         }
@@ -146,7 +160,7 @@ static NSData *kTrue = NULL;
             NSDictionary *theUserInfo = [NSDictionary dictionaryWithObjectsAndKeys:
                 [NSString stringWithFormat:@"Could not serialize object '%@'", inObject], NSLocalizedDescriptionKey,
                 NULL];
-            *outError = [NSError errorWithDomain:@"TODO_DOMAIN" code:CJSONSerializerErrorCouldNotSerializeObject userInfo:theUserInfo];
+            *outError = [NSError errorWithDomain:kJSONSerializerErrorDomain code:CJSONSerializerErrorCouldNotSerializeObject userInfo:theUserInfo];
             }
         return(NULL);
         }
@@ -163,7 +177,7 @@ static NSData *kTrue = NULL;
     {
     #pragma unused (outError)
     NSData *theResult = NULL;
-    switch (CFNumberGetType((CFNumberRef)inNumber))
+    switch (CFNumberGetType((__bridge CFNumberRef)inNumber))
         {
         case kCFNumberCharType:
             {
@@ -227,8 +241,15 @@ static NSData *kTrue = NULL;
                 break;
             case '/':
                 {
-                *OUT++ = '\\';
-                *OUT++ = '/';
+                if (self.options & kJSONSerializationOptions_EncodeSlashes)
+                    {
+                    *OUT++ = '\\';
+                    *OUT++ = '/';
+                    }
+                else
+                    {
+                    *OUT++ = *IN;
+                    }
                 }
                 break;
             case '\b':

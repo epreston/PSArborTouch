@@ -32,12 +32,12 @@
     ATEnergy           *lastEnergy_;
     CGRect              lastBounds_;
     
-    id                  delegate_;      // UPDATE THIS ! = id <protocol> delegate_;
+    id                  __unsafe_unretained delegate_;      // UPDATE THIS ! = id <protocol> delegate_;
 }
 
 #pragma mark - Rendering
 
-@property (nonatomic, assign) id delegate;
+@property (nonatomic, unsafe_unretained) id delegate;
 - (BOOL) updateViewport;
 
 #pragma mark - Simulation Control
@@ -48,7 +48,7 @@
 
 #pragma mark - Debug Physics Properties
 
-@property (nonatomic, readonly, retain) ATPhysics *physics;
+@property (nonatomic, readonly, strong) ATPhysics *physics;
 
 #pragma mark - Cached Physics Properties
 

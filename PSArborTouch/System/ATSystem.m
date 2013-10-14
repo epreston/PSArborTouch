@@ -33,7 +33,6 @@
 - (void) setParameters:(ATSystemParams *)parameters
 {
     if (parameters_ != parameters) {
-        [parameters_ release];
         parameters_ = [parameters copy];
 
     }
@@ -45,8 +44,8 @@
 {
     self = [super init];
     if (self) {
-        state_          = [[[ATSystemState alloc] init] retain];
-        parameters_     = [[[ATSystemParams alloc] init] retain];
+        state_          = [[ATSystemState alloc] init];
+        parameters_     = [[ATSystemParams alloc] init];
         viewBounds_     = CGRectZero;
         viewPadding_    = UIEdgeInsetsZero;
         viewTweenStep_  = 0.04;
@@ -59,19 +58,12 @@
 {
     self = [self init];
     if (self) {
-        state_      = [state retain];
-        parameters_ = [parameters retain];
+        state_      = state;
+        parameters_ = parameters;
     }
     return self;
 }
 
-- (void) dealloc
-{
-    [state_ release];
-    [parameters_ release];
-    
-    [super dealloc];
-}
 
 
 #pragma mark - Tween Debugging
@@ -308,7 +300,7 @@
         
         [self addParticle:node];
         
-        return [node autorelease];
+        return node;
     }
 }
 
@@ -413,7 +405,7 @@
     // Add a new spring to represent the edge in the simulation
     [self addSpring:edge];
     
-    return [edge autorelease];
+    return edge;
 }
 
 - (void) removeEdge:(ATEdge *)edge 

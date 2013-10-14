@@ -49,12 +49,12 @@
 {
     self = [super init];
     if (self) {
-        activeParticles_ = [[NSMutableArray arrayWithCapacity:32] retain];
-        activeSprings_  = [[NSMutableArray arrayWithCapacity:32] retain];
-        freeParticles_  = [[NSMutableArray arrayWithCapacity:32] retain];
-        particles_      = [[NSMutableArray arrayWithCapacity:32] retain];
-        springs_        = [[NSMutableArray arrayWithCapacity:32] retain];
-        energy_         = [[[ATEnergy alloc] init] retain];
+        activeParticles_ = [NSMutableArray arrayWithCapacity:32];
+        activeSprings_  = [NSMutableArray arrayWithCapacity:32];
+        freeParticles_  = [NSMutableArray arrayWithCapacity:32];
+        particles_      = [NSMutableArray arrayWithCapacity:32];
+        springs_        = [NSMutableArray arrayWithCapacity:32];
+        energy_         = [[ATEnergy alloc] init];
         bounds_         = CGRectMake(-1.0, -1.0, 2.0, 2.0);
         speedLimit_     = 1000;
         deltaTime_      = 0.02;
@@ -63,7 +63,7 @@
         friction_       = 0.3;
         gravity_        = NO;
         theta_          = 0.4;
-        bhTree_         = [[[ATBarnesHutTree alloc] init] retain];
+        bhTree_         = [[ATBarnesHutTree alloc] init];
     }
     return self;
 }
@@ -83,18 +83,6 @@
     return self;
 }
 
-- (void) dealloc
-{
-    [bhTree_ release];
-    [activeParticles_ release];
-    [activeSprings_ release];
-    [freeParticles_ release];
-    [particles_ release];
-    [springs_ release];
-    [energy_ release];
-    
-    [super dealloc];
-}
 
 
 - (void) addParticle:(ATParticle *)particle

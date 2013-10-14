@@ -26,10 +26,10 @@
 @property (nonatomic, assign) CGFloat mass;
 @property (nonatomic, assign) CGPoint position;
 
-@property (nonatomic, retain) id ne;
-@property (nonatomic, retain) id nw;
-@property (nonatomic, retain) id se;
-@property (nonatomic, retain) id sw;
+@property (nonatomic, strong) id ne;
+@property (nonatomic, strong) id nw;
+@property (nonatomic, strong) id se;
+@property (nonatomic, strong) id sw;
 
 - (id) init;
 

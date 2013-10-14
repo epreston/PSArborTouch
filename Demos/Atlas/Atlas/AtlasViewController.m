@@ -37,7 +37,7 @@
     [super viewDidLoad];
     
     // Create our particle system
-    system_ = [[[ATSystem alloc] init] retain];
+    system_ = [[ATSystem alloc] init];
     
     // Configure simulation parameters, (take a copy, modify it, update the system when done.)
     ATSystemParams *params = system_.parameters;
@@ -82,7 +82,6 @@
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
     
-    [system_ release];
 }
 
 - (void)didReceiveMemoryWarning
@@ -93,10 +92,6 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
-- (void)dealloc {
-    [canvas_ release];
-    [super dealloc];
-}
 
 - (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
@@ -139,25 +134,15 @@
                     
                 }];
                 
-                // Comment out the code above to see this example.
-                // Instead of loading the nodes, lets just load the edges and have the system construct
-                // the nodes when it finds they have not been previously defined.  Not the optimal way to 
-                // go about things but easy.
                 
                 NSDictionary *edges = theObject[@"edges"];
                 
-                // Lets see how the system handles concurrent graph loading (NSEnumerationConcurrent)
-                // The simulation should handle this correctly.
-                [edges enumerateKeysAndObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(id key, id obj, BOOL *stop) {
+                [edges enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
                     
                     NSString *source = key;
                     NSDictionary *targets = obj;
                     
-                    // How about an extra measure of concurrency within the concurrency.
-                    [targets enumerateKeysAndObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(id key, id obj, BOOL *stop) {
-                        
-                        // DEBUG: Enable to see the concurrency in all its glory
-//                        NSLog(@"Source %@ -> %@", source, key);
+                    [targets enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
                         
                         // Create the edge, and by proxy, create the nodes
                         [system_ addEdgeFromNode:source toNode:key withData:nil];
@@ -250,12 +235,10 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
     [panGesture setMaximumNumberOfTouches:2];
     [panGesture setDelegate:self];
     [canvas addGestureRecognizer:panGesture];
-    [panGesture release];
     
     UILongPressGestureRecognizer *longPressGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self 
                                                                                                    action:@selector(showLongTouchMenu:)];
     [canvas addGestureRecognizer:longPressGesture];
-    [longPressGesture release];
 }
 
 - (void) showLongTouchMenu:(UILongPressGestureRecognizer *)gestureRecognizer
@@ -274,7 +257,6 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
         [menuController setMenuVisible:YES animated:YES];
         
 //        [resetMenuItem release];
-        [debugMenuItem release];
     }
 }
 
