@@ -37,7 +37,7 @@
     [super viewDidLoad];
     
     // Create our particle system
-    system_ = [[[ATSystem alloc] init] retain];
+    system_ = [[ATSystem alloc] init];
     
     // Configure simulation parameters, (take a copy, modify it, update the system when done.)
     ATSystemParams *params = system_.parameters;
@@ -82,7 +82,6 @@
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
     
-    [system_ release];
 }
 
 - (void)didReceiveMemoryWarning
@@ -93,10 +92,6 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
-- (void)dealloc {
-    [canvas_ release];
-    [super dealloc];
-}
 
 - (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
@@ -250,12 +245,10 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
     [panGesture setMaximumNumberOfTouches:2];
     [panGesture setDelegate:self];
     [canvas addGestureRecognizer:panGesture];
-    [panGesture release];
     
     UILongPressGestureRecognizer *longPressGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self 
                                                                                                    action:@selector(showLongTouchMenu:)];
     [canvas addGestureRecognizer:longPressGesture];
-    [longPressGesture release];
 }
 
 - (void) showLongTouchMenu:(UILongPressGestureRecognizer *)gestureRecognizer
@@ -274,7 +267,6 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
         [menuController setMenuVisible:YES animated:YES];
         
         //        [resetMenuItem release];
-        [debugMenuItem release];
     }
 }
 
@@ -312,7 +304,7 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
         default:
             node.fixed = NO;
             
-            [node setTempMass:100.0];
+            //[node mas setTempMass:100.0];
             
             break;
     }

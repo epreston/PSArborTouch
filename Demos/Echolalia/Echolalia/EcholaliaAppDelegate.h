@@ -12,8 +12,8 @@
 
 @interface EcholaliaAppDelegate : NSObject <UIApplicationDelegate>
 
-@property (nonatomic, retain) IBOutlet UIWindow *window;
+@property (nonatomic, strong) IBOutlet UIWindow *window;
 
-@property (nonatomic, retain) IBOutlet EcholaliaViewController *viewController;
+@property (nonatomic, strong) IBOutlet EcholaliaViewController *viewController;
 
 @end

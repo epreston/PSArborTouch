@@ -69,12 +69,9 @@
 		4F4DA1551439E38D00AAB205 /* r17pu46-r.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F4DA1311439E38D00AAB205 /* r17pu46-r.json */; };
 		4F4DA1561439E38D00AAB205 /* r17pu46.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F4DA1321439E38D00AAB205 /* r17pu46.json */; };
 		4F5469631441BC4F006A260F /* EcholaliaCanvasView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5469621441BC4F006A260F /* EcholaliaCanvasView.m */; };
-		4F54697E1441BEE4006A260F /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5469671441BEE4006A260F /* CDataScanner.m */; };
-		4F5469831441BEE4006A260F /* CDataScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5469731441BEE4006A260F /* CDataScanner_Extensions.m */; };
-		4F5469841441BEE4006A260F /* NSDictionary_JSONExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5469751441BEE4006A260F /* NSDictionary_JSONExtensions.m */; };
-		4F5469851441BEE4006A260F /* CJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5469781441BEE4006A260F /* CJSONDeserializer.m */; };
-		4F5469861441BEE4006A260F /* CJSONScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F54697A1441BEE4006A260F /* CJSONScanner.m */; };
-		4F5469871441BEE4006A260F /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F54697C1441BEE4006A260F /* CJSONSerializer.m */; };
+		4F70F7AD180B9EDA0034A304 /* CJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F70F7A7180B9EDA0034A304 /* CJSONDeserializer.m */; };
+		4F70F7AE180B9EDA0034A304 /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F70F7A9180B9EDA0034A304 /* CJSONSerializer.m */; };
+		4F70F7AF180B9EDA0034A304 /* NSDictionary_JSONExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F70F7AC180B9EDA0034A304 /* NSDictionary_JSONExtensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -160,20 +157,14 @@
 		4F4DA1321439E38D00AAB205 /* r17pu46.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = r17pu46.json; sourceTree = "<group>"; };
 		4F5469611441BC4F006A260F /* EcholaliaCanvasView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EcholaliaCanvasView.h; sourceTree = "<group>"; };
 		4F5469621441BC4F006A260F /* EcholaliaCanvasView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EcholaliaCanvasView.m; sourceTree = "<group>"; };
-		4F5469661441BEE4006A260F /* CDataScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner.h; sourceTree = "<group>"; };
-		4F5469671441BEE4006A260F /* CDataScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDataScanner.m; sourceTree = "<group>"; };
-		4F5469721441BEE4006A260F /* CDataScanner_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner_Extensions.h; sourceTree = "<group>"; };
-		4F5469731441BEE4006A260F /* CDataScanner_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDataScanner_Extensions.m; sourceTree = "<group>"; };
-		4F5469741441BEE4006A260F /* NSDictionary_JSONExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDictionary_JSONExtensions.h; sourceTree = "<group>"; };
-		4F5469751441BEE4006A260F /* NSDictionary_JSONExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionary_JSONExtensions.m; sourceTree = "<group>"; };
-		4F5469771441BEE4006A260F /* CJSONDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONDeserializer.h; sourceTree = "<group>"; };
-		4F5469781441BEE4006A260F /* CJSONDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONDeserializer.m; sourceTree = "<group>"; };
-		4F5469791441BEE4006A260F /* CJSONScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONScanner.h; sourceTree = "<group>"; };
-		4F54697A1441BEE4006A260F /* CJSONScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONScanner.m; sourceTree = "<group>"; };
-		4F54697B1441BEE4006A260F /* CJSONSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerializer.h; sourceTree = "<group>"; };
-		4F54697C1441BEE4006A260F /* CJSONSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerializer.m; sourceTree = "<group>"; };
-		4F54697D1441BEE4006A260F /* JSONRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONRepresentation.h; sourceTree = "<group>"; };
 		4F5469881441BFDB006A260F /* PSArborTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSArborTouch.h; sourceTree = "<group>"; };
+		4F70F7A6180B9EDA0034A304 /* CJSONDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONDeserializer.h; sourceTree = "<group>"; };
+		4F70F7A7180B9EDA0034A304 /* CJSONDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONDeserializer.m; sourceTree = "<group>"; };
+		4F70F7A8180B9EDA0034A304 /* CJSONSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerializer.h; sourceTree = "<group>"; };
+		4F70F7A9180B9EDA0034A304 /* CJSONSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerializer.m; sourceTree = "<group>"; };
+		4F70F7AA180B9EDA0034A304 /* JSONRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONRepresentation.h; sourceTree = "<group>"; };
+		4F70F7AB180B9EDA0034A304 /* NSDictionary_JSONExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDictionary_JSONExtensions.h; sourceTree = "<group>"; };
+		4F70F7AC180B9EDA0034A304 /* NSDictionary_JSONExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionary_JSONExtensions.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -421,38 +412,16 @@
 		4F5469651441BEE4006A260F /* TouchJSON */ = {
 			isa = PBXGroup;
 			children = (
-				4F5469661441BEE4006A260F /* CDataScanner.h */,
-				4F5469671441BEE4006A260F /* CDataScanner.m */,
-				4F5469711441BEE4006A260F /* Extensions */,
-				4F5469761441BEE4006A260F /* JSON */,
+				4F70F7A6180B9EDA0034A304 /* CJSONDeserializer.h */,
+				4F70F7A7180B9EDA0034A304 /* CJSONDeserializer.m */,
+				4F70F7A8180B9EDA0034A304 /* CJSONSerializer.h */,
+				4F70F7A9180B9EDA0034A304 /* CJSONSerializer.m */,
+				4F70F7AA180B9EDA0034A304 /* JSONRepresentation.h */,
+				4F70F7AB180B9EDA0034A304 /* NSDictionary_JSONExtensions.h */,
+				4F70F7AC180B9EDA0034A304 /* NSDictionary_JSONExtensions.m */,
 			);
 			name = TouchJSON;
 			path = ../../Shared/TouchJSON/Source;
-			sourceTree = "<group>";
-		};
-		4F5469711441BEE4006A260F /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				4F5469721441BEE4006A260F /* CDataScanner_Extensions.h */,
-				4F5469731441BEE4006A260F /* CDataScanner_Extensions.m */,
-				4F5469741441BEE4006A260F /* NSDictionary_JSONExtensions.h */,
-				4F5469751441BEE4006A260F /* NSDictionary_JSONExtensions.m */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		4F5469761441BEE4006A260F /* JSON */ = {
-			isa = PBXGroup;
-			children = (
-				4F5469771441BEE4006A260F /* CJSONDeserializer.h */,
-				4F5469781441BEE4006A260F /* CJSONDeserializer.m */,
-				4F5469791441BEE4006A260F /* CJSONScanner.h */,
-				4F54697A1441BEE4006A260F /* CJSONScanner.m */,
-				4F54697B1441BEE4006A260F /* CJSONSerializer.h */,
-				4F54697C1441BEE4006A260F /* CJSONSerializer.m */,
-				4F54697D1441BEE4006A260F /* JSONRepresentation.h */,
-			);
-			path = JSON;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -559,11 +528,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F70F7AD180B9EDA0034A304 /* CJSONDeserializer.m in Sources */,
 				4F4DA05C1439DDD400AAB205 /* main.m in Sources */,
 				4F4DA0601439DDD400AAB205 /* EcholaliaAppDelegate.m in Sources */,
 				4F4DA0661439DDD400AAB205 /* EcholaliaViewController.m in Sources */,
 				4F4DA0921439DDDF00AAB205 /* ATEdge.m in Sources */,
 				4F4DA0931439DDDF00AAB205 /* ATNode.m in Sources */,
+				4F70F7AF180B9EDA0034A304 /* NSDictionary_JSONExtensions.m in Sources */,
 				4F4DA0941439DDDF00AAB205 /* ATBarnesHutBranch.m in Sources */,
 				4F4DA0951439DDDF00AAB205 /* ATBarnesHutTree.m in Sources */,
 				4F4DA0961439DDDF00AAB205 /* ATKernel.m in Sources */,
@@ -573,14 +544,9 @@
 				4F4DA09A1439DDDF00AAB205 /* ATSpring.m in Sources */,
 				4F4DA09C1439DDDF00AAB205 /* ATSystem.m in Sources */,
 				4F4DA09D1439DDDF00AAB205 /* ATSystemParams.m in Sources */,
+				4F70F7AE180B9EDA0034A304 /* CJSONSerializer.m in Sources */,
 				4F4DA09E1439DDDF00AAB205 /* ATSystemState.m in Sources */,
 				4F5469631441BC4F006A260F /* EcholaliaCanvasView.m in Sources */,
-				4F54697E1441BEE4006A260F /* CDataScanner.m in Sources */,
-				4F5469831441BEE4006A260F /* CDataScanner_Extensions.m in Sources */,
-				4F5469841441BEE4006A260F /* NSDictionary_JSONExtensions.m in Sources */,
-				4F5469851441BEE4006A260F /* CJSONDeserializer.m in Sources */,
-				4F5469861441BEE4006A260F /* CJSONScanner.m in Sources */,
-				4F5469871441BEE4006A260F /* CJSONSerializer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,6 +628,7 @@
 		4F4DA06D1439DDD400AAB205 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Echolalia/Echolalia-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -675,6 +642,7 @@
 		4F4DA06E1439DDD400AAB205 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Echolalia/Echolalia-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;

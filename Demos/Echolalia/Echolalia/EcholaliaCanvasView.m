@@ -47,13 +47,6 @@
     return self;
 }
 
-- (void) dealloc
-{
-    [font_ release];
-    [system_ release];
-    
-    [super dealloc];
-}
 
 - (void) layoutSubviews
 {

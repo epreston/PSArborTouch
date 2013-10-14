@@ -21,6 +21,6 @@
     EcholaliaCanvasView *canvas_;
 }
 
-@property (nonatomic, retain) IBOutlet EcholaliaCanvasView *canvas;
+@property (nonatomic, strong) IBOutlet EcholaliaCanvasView *canvas;
 
 @end
