@@ -25,7 +25,6 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
-
 - (void) viewDidLoad
 {
     [super viewDidLoad];
@@ -81,14 +80,10 @@
     [_kernel addSpring:_spring5];
 }
 
-
 - (void) viewDidUnload
 {
     [self setDebugView:nil];
     [super viewDidUnload];
-
-    
-    
 }
 
 - (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
