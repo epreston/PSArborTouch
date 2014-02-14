@@ -1,0 +1,12 @@
+language: objective-c
+xcode_project: PSArborTouch.xcodeproj
+xcode_scheme: PSArborTouch
+xcode_sdk: iphonesimulator
+
+before_install:
+  - git submodule update --init --recursive
+
+# whitelist
+branches:
+  only:
+    - master
