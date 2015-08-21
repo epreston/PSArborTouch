@@ -33,17 +33,6 @@
 @implementation ATSystemDebugView
 
 
-- (instancetype) initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-    }
-    return self;
-}
-
-
-
 - (void) layoutSubviews
 {
     self.system.viewBounds = self.bounds;
@@ -117,7 +106,6 @@
     return CGSizeMake(sx, sy);
 }
 
-
 - (CGPoint) pointToScreen:(CGPoint)p 
 {
 //    return [self.system toViewPoint:p];
@@ -135,7 +123,6 @@
     return CGPointMake(sx, sy);
 }
 
-
 - (CGRect) scaleRect:(CGRect)rect
 {
     CGRect ret;
@@ -145,7 +132,6 @@
     
     return ret;
 }
-
 
 - (void) drawLineWithContext:(CGContextRef)context from:(CGPoint)from to:(CGPoint)to
 {
@@ -158,7 +144,6 @@
     CGContextStrokePath(context); // do actual stroking
 }
 
-
 - (void) drawOutlineWithContext:(CGContextRef)context andRect:(CGRect)rect
 {
     CGContextBeginPath(context);
@@ -167,7 +152,6 @@
     
     CGContextStrokePath(context); // do actual stroking
 }
-
 
 - (void) recursiveDrawBranches:(ATBarnesHutBranch *)branch inContext:(CGContextRef)context
 {    
@@ -192,7 +176,6 @@
     }
     
 }
-
 
 - (void) drawSpring:(ATSpring *)spring inContext:(CGContextRef)context
 {

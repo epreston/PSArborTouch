@@ -10,10 +10,6 @@
 
 #import "ATSystemRenderer.h"
 
-@class ATKernelDebugView;
-
 @interface KernelRigViewController : UIViewController <ATDebugRendering>
-
-@property (nonatomic, strong) IBOutlet ATKernelDebugView *debugView;
 
 @end

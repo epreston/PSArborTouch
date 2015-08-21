@@ -10,11 +10,6 @@
 
 #import "ATSystemRenderer.h"
 
-@class ATSystem;
-@class ATSystemDebugView;
-
 @interface SystemRigViewController : UIViewController <UIGestureRecognizerDelegate, ATDebugRendering>
-
-@property (nonatomic, strong) IBOutlet ATSystemDebugView *debugView;
 
 @end

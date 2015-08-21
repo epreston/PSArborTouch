@@ -21,20 +21,15 @@
     ATSystem *_system;
 }
 
+@property (nonatomic, strong) IBOutlet ATSystemDebugView *debugView;
+
 @end
+
 
 @implementation SystemRigViewController
 
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
-}
 
-
-- (void)viewDidLoad
+- (void) viewDidLoad
 {
     [super viewDidLoad];
     
@@ -73,15 +68,7 @@
     [self.debugView addGestureRecognizer:panGesture];
 }
 
-- (void)viewDidUnload
-{
-    [self setDebugView:nil];
-    [super viewDidUnload];
-    
-}
-
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+- (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for landscape orientations
     return UIInterfaceOrientationIsLandscape(interfaceOrientation);
@@ -90,19 +77,19 @@
 
 #pragma mark - Interface Actions
 
-- (IBAction)go:(id)sender
+- (IBAction) go:(id)sender
 {
     [_system start:YES];
 }
 
-- (IBAction)add:(id)sender
+- (IBAction) add:(id)sender
 {
     [_system addEdgeFromNode:@"a" toNode:@"e" withData:nil];
     
     [self go:nil];
 }
 
-- (IBAction)remove:(id)sender
+- (IBAction) remove:(id)sender
 {
     [_system removeNode:@"e"];
     

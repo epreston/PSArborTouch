@@ -13,18 +13,51 @@
 #import "ATSpring.h"
 #import "ATParticle.h"
 
+
+@interface ATPhysicsDebugView ()
+
+- (CGSize) sizeToScreen:(CGSize)s;
+- (CGPoint) pointToScreen:(CGPoint)p;
+- (CGRect) scaleRect:(CGRect)rect;
+- (void) drawLineWithContext:(CGContextRef)context from:(CGPoint)from to:(CGPoint)to;
+- (void) drawOutlineWithContext:(CGContextRef)context andRect:(CGRect)rect;
+- (void) recursiveDrawBranches:(ATBarnesHutBranch *)branch inContext:(CGContextRef)context;
+- (void) drawSpring:(ATSpring *)spring inContext:(CGContextRef)context;
+- (void) drawParticle:(ATParticle *)particle inContext:(CGContextRef)context;
+
+@end
+
+
 @implementation ATPhysicsDebugView
 
 
-- (id) initWithFrame:(CGRect)frame
+- (void) drawRect:(CGRect)rect
 {
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
+    if ( self.physics ) {
+        
+        CGContextRef context = UIGraphicsGetCurrentContext();
+        
+        if (self.isDebugDrawing) {
+            CGContextSetRGBStrokeColor(context, 1.0, 1.0, 0.0, 1.0); // yellow line
+            CGContextSetLineWidth(context, 3.0);
+            
+            // Drawing code for the barnes-hut trees
+            ATBarnesHutBranch *root = self.physics.bhTree.root;
+            [self recursiveDrawBranches:root inContext:context];
+        }
+        
+        CGContextSetRGBStrokeColor(context, 0.0, 0.0, 0.0, 0.5); // black line
+        CGContextSetLineWidth(context, 2.0);
+        
+        // Drawing code for springs
+        for (ATSpring *spring in self.physics.springs) {
+            [self drawSpring:spring inContext:context];
+        }
     }
-    return self;
 }
 
+
+#pragma mark - Internal Interface
 
 - (CGSize) sizeToScreen:(CGSize)s 
 {
@@ -38,7 +71,6 @@
     
     return CGSizeMake(sx, sy);
 }
-
 
 - (CGPoint) pointToScreen:(CGPoint)p 
 {
@@ -56,7 +88,6 @@
     return CGPointMake(sx, sy);
 }
 
-
 - (CGRect) scaleRect:(CGRect)rect
 {
     CGRect ret;
@@ -66,7 +97,6 @@
     
     return ret;
 }
-
 
 - (void) drawLineWithContext:(CGContextRef)context from:(CGPoint)from to:(CGPoint)to
 {
@@ -79,7 +109,6 @@
     CGContextStrokePath(context); // do actual stroking
 }
 
-
 - (void) drawOutlineWithContext:(CGContextRef)context andRect:(CGRect)rect
 {
     CGContextBeginPath(context);
@@ -88,7 +117,6 @@
     
     CGContextStrokePath(context); // do actual stroking
 }
-
 
 - (void) recursiveDrawBranches:(ATBarnesHutBranch *)branch inContext:(CGContextRef)context
 {
@@ -123,7 +151,6 @@
     
 }
 
-
 - (void) drawSpring:(ATSpring *)spring inContext:(CGContextRef)context
 {
     
@@ -133,30 +160,19 @@
     
 }
 
-
-- (void) drawRect:(CGRect)rect
+- (void) drawParticle:(ATParticle *)particle inContext:(CGContextRef)context
 {
-    if ( self.physics ) {
-        
-        CGContextRef context = UIGraphicsGetCurrentContext(); 
-        
-        if (self.isDebugDrawing) {
-            CGContextSetRGBStrokeColor(context, 1.0, 1.0, 0.0, 1.0); // yellow line
-            CGContextSetLineWidth(context, 3.0);
-            
-            // Drawing code for the barnes-hut trees
-            ATBarnesHutBranch *root = self.physics.bhTree.root;
-            [self recursiveDrawBranches:root inContext:context];
-        }
-        
-        CGContextSetRGBStrokeColor(context, 0.0, 0.0, 0.0, 0.5); // black line
-        CGContextSetLineWidth(context, 2.0);
-        
-        // Drawing code for springs
-        for (ATSpring *spring in self.physics.springs) {
-            [self drawSpring:spring inContext:context];            
-        }
-    }
+    // Translate the particle position to screen coordinates
+    CGPoint pOrigin = [self pointToScreen:particle.position];
+    
+    // Create an empty rect at particle center
+    CGRect strokeRect = CGRectMake(pOrigin.x, pOrigin.y, 0.0, 0.0);
+    
+    // Expand the rect around the center
+    strokeRect = CGRectInset(strokeRect, -5.0, -5.0);
+    
+    // Draw the rect
+    CGContextStrokeRect(context, strokeRect);
 }
 
 

@@ -31,16 +31,6 @@
 @implementation ATKernelDebugView
 
 
-- (instancetype) initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-    }
-    return self;
-}
-
-
 - (void) drawRect:(CGRect)rect
 {
     if ( self.physics ) {

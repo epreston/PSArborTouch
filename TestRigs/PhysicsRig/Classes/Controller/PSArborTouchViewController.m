@@ -14,6 +14,8 @@
 #import "ATParticle.h"
 #import "ATEnergy.h"
 
+#import <dispatch/dispatch.h>
+
 #import <QuartzCore/QuartzCore.h>
 
 // Interval in seconds: make sure this is more than 0
@@ -21,6 +23,55 @@
 
 
 @interface PSArborTouchViewController ()
+{
+    
+@private
+    ATPhysics   *_integrator;
+    ATParticle  *_particle1;
+    ATParticle  *_particle2;
+    ATParticle  *_particle3;
+    ATParticle  *_particle4;
+    ATSpring    *_spring1;
+    ATSpring    *_spring2;
+    ATSpring    *_spring3;
+    ATSpring    *_spring4;
+    ATSpring    *_spring5;
+    
+    
+    dispatch_source_t   _timer;
+    NSInteger           _counter;
+    BOOL                _running;
+    
+    UIView *_pieceForReset;
+    
+}
+
+@property (nonatomic, strong) IBOutlet UILabel *maxLabel;
+@property (nonatomic, strong) IBOutlet UILabel *meanLabel;
+@property (nonatomic, strong) IBOutlet UILabel *countLabel;
+@property (nonatomic, strong) IBOutlet UILabel *sumLabel;
+
+@property (nonatomic, strong) IBOutlet UILabel *p1Name;
+@property (nonatomic, strong) IBOutlet UILabel *p1Mass;
+@property (nonatomic, strong) IBOutlet UILabel *p1Position;
+@property (nonatomic, strong) IBOutlet UILabel *p1Fixed;
+
+@property (nonatomic, strong) IBOutlet UILabel *p2Name;
+@property (nonatomic, strong) IBOutlet UILabel *p2Mass;
+@property (nonatomic, strong) IBOutlet UILabel *p2Position;
+@property (nonatomic, strong) IBOutlet UILabel *p2Fixed;
+
+@property (nonatomic, strong) IBOutlet UIView *particleView1;
+@property (nonatomic, strong) IBOutlet UIView *particleView2;
+@property (nonatomic, strong) IBOutlet UIView *particleView3;
+@property (nonatomic, strong) IBOutlet UIView *particleView4;
+
+@property (nonatomic, strong) IBOutlet UILabel *statusLabel;
+@property (nonatomic, strong) IBOutlet UILabel *counterLabel;
+
+@property (nonatomic, strong) IBOutlet UISwitch *barnesHutSwitch;
+
+@property (nonatomic, strong) IBOutlet ATPhysicsDebugView *viewPort;
 
 - (IBAction) start:(id)sender;
 - (IBAction) stop:(id)sender;
@@ -106,56 +157,22 @@
 {
     // Depricated in iOS 6.0  -  This method is never called.
     
+    // This code remains until the best place for it is found or testing shows
+    // it is not required.
     BOOL timerInitialized = (_timer != nil);
     if ( timerInitialized ) {
         dispatch_source_cancel(_timer);
         dispatch_resume(_timer);  
     }
     
-    [self setSumLabel:nil];
-    [self setMaxLabel:nil];
-    [self setMeanLabel:nil];
-    [self setCountLabel:nil];
-    [self setP1Name:nil];
-    [self setP1Mass:nil];
-    [self setP1Position:nil];
-    [self setP1Fixed:nil];
-    [self setP2Name:nil];
-    [self setP2Mass:nil];
-    [self setP2Position:nil];
-    [self setP2Fixed:nil];
-    [self setParticleView1:nil];
-    [self setParticleView2:nil];
-    [self setViewPort:nil];
-    [self setParticleView3:nil];
-    [self setStatusLabel:nil];
-    [self setCounterLabel:nil];
-    [self setParticleView4:nil];
-    [self setBarnesHutSwitch:nil];
-    
-    
-    
     [super viewDidUnload];
 }
-
-
-
 
 - (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for portrait orientations
     return UIInterfaceOrientationIsPortrait(interfaceOrientation);
 }
-
-
-- (void) didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
-}
-
 
 - (IBAction) start:(id)sender 
 {
@@ -206,7 +223,6 @@
     }
 }
 
-
 - (IBAction) stop:(id)sender 
 {
 //    NSLog(@"Stop button pressed.");
@@ -219,7 +235,6 @@
         dispatch_suspend(_timer);
     }
 }
-
 
 - (IBAction) reset:(id)sender
 {
@@ -238,7 +253,6 @@
     _particle4.position = pos;
 }
 
-
 - (IBAction) changeIntegrationMode:(id)sender 
 {
     if (self.barnesHutSwitch.isOn) {
@@ -252,14 +266,12 @@
     [self start:nil];
 }
 
-
 - (IBAction) doPhysicsUpdate:(id)sender 
 {
     self.statusLabel.text = @"STEPPING";
     
     [self stepPhysics];
 }
-
 
 - (void) stepPhysics
 {   
@@ -295,7 +307,6 @@
     [_viewPort setNeedsDisplay];
 }
 
-
 - (CGPoint) fromScreen:(CGPoint)p 
 {
     CGSize size = self.viewPort.bounds.size;
@@ -310,7 +321,6 @@
     
     return CGPointMake(sx, sy);
 }
-
 
 - (CGPoint) toScreen:(CGPoint)p 
 {
@@ -328,12 +338,7 @@
 }
 
 
-
-
-
-#pragma mark -         ZOMG SAMPLE CODE        -
-#pragma mark === Setting up and tearing down ===
-#pragma mark
+#pragma mark - Setup Gesture Recognizers
 
 // adds a set of gesture recognizers to one of our piece subviews
 - (void) addGestureRecognizersToPiece:(UIView *)piece
@@ -355,9 +360,7 @@
 }
 
 
-#pragma mark -
-#pragma mark === Utility methods  ===
-#pragma mark
+#pragma mark - Utility methods
 
 // scale and rotation transforms are applied relative to the layer's anchor point
 // this method moves a gesture recognizer's view's anchor point between the user's fingers
@@ -385,7 +388,7 @@
         [menuController setTargetRect:CGRectMake(location.x, location.y, 0, 0) inView:[gestureRecognizer view]];
         [menuController setMenuVisible:YES animated:YES];
         
-        pieceForReset = [gestureRecognizer view];
+        _pieceForReset = [gestureRecognizer view];
         
     }
 }
@@ -393,13 +396,13 @@
 // animate back to the default anchor point and transform
 - (void) resetPiece:(UIMenuController *)controller
 {
-    CGPoint locationInSuperview = [pieceForReset convertPoint:CGPointMake(CGRectGetMidX(pieceForReset.bounds), CGRectGetMidY(pieceForReset.bounds)) toView:[pieceForReset superview]];
+    CGPoint locationInSuperview = [_pieceForReset convertPoint:CGPointMake(CGRectGetMidX(_pieceForReset.bounds), CGRectGetMidY(_pieceForReset.bounds)) toView:[_pieceForReset superview]];
     
-    [[pieceForReset layer] setAnchorPoint:CGPointMake(0.5, 0.5)];
-    [pieceForReset setCenter:locationInSuperview];
+    [[_pieceForReset layer] setAnchorPoint:CGPointMake(0.5, 0.5)];
+    [_pieceForReset setCenter:locationInSuperview];
     
     [UIView beginAnimations:nil context:nil];
-    [pieceForReset setTransform:CGAffineTransformIdentity];
+    [_pieceForReset setTransform:CGAffineTransformIdentity];
     [UIView commitAnimations];
 }
 

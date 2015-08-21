@@ -13,7 +13,6 @@
 #import "ATParticle.h"
 
 
-
 @interface KernelRigViewController ()
 {
     
@@ -21,19 +20,13 @@
     ATKernel        *_kernel;
 }
 
+@property (nonatomic, strong) IBOutlet ATKernelDebugView *debugView;
+
 @end
 
 
 @implementation KernelRigViewController
 
-
-- (void) didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
-}
 
 - (void) viewDidLoad
 {
@@ -88,13 +81,6 @@
     
     _spring5 = [[ATSpring alloc] initWithSource:_particle2 target:_particle4 length:1.0];
     [_kernel addSpring:_spring5];
-}
-
-- (void) viewDidUnload
-{
-    [self setDebugView:nil];
-    
-    [super viewDidUnload];
 }
 
 - (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
