@@ -74,7 +74,6 @@
 		4FA224911426D0910078EFB6 /* PSArborTouchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSArborTouchViewController.h; sourceTree = "<group>"; };
 		4FA224921426D0910078EFB6 /* PSArborTouchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSArborTouchViewController.m; sourceTree = "<group>"; };
 		4FA224951426D0910078EFB6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/PSArborTouchViewController.xib; sourceTree = "<group>"; };
-		4FA2249D1426D0910078EFB6 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		4FA224C31426DB850078EFB6 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "../Icon-72.png"; sourceTree = "<group>"; };
 		4FA224C51426DCBA0078EFB6 /* Doxyfile */ = {isa = PBXFileReference; explicitFileType = text.script; fileEncoding = 4; name = Doxyfile; path = ../Doxyfile; sourceTree = SOURCE_ROOT; };
 		4FB1DCA4142971F8007F2487 /* ATPhysicsDebugView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATPhysicsDebugView.h; sourceTree = "<group>"; };
@@ -197,7 +196,6 @@
 				4FA2247C1426D0900078EFB6 /* UIKit.framework */,
 				4FA2247E1426D0900078EFB6 /* Foundation.framework */,
 				4FA224801426D0900078EFB6 /* CoreGraphics.framework */,
-				4FA2249D1426D0910078EFB6 /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
