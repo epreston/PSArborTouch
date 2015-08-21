@@ -3,7 +3,7 @@
 //  PSArborTouch
 //
 //  Created by Ed Preston on 4/10/11.
-//  Copyright 2011 Preston Software. All rights reserved.
+//  Copyright 2015 Preston Software. All rights reserved.
 //
 
 #import "ATSystem.h"
@@ -76,7 +76,7 @@
  
  ## Copyright and License
  
- Copyright 2011 Preston Software.
+ Copyright 2015 Preston Software.
  
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this work except in compliance with the License.
