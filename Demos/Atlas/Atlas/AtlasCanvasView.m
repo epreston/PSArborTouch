@@ -216,8 +216,8 @@
     // Draw the text label
     [particle.name drawInRect:fillRect 
                      withFont:[self font] 
-                lineBreakMode:UILineBreakModeTailTruncation
-                    alignment:UITextAlignmentCenter];
+                lineBreakMode:NSLineBreakByTruncatingTail
+                    alignment:NSTextAlignmentCenter];
     
 }
 
