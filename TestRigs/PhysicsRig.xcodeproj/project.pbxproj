@@ -22,14 +22,13 @@
 		4FA2247D1426D0900078EFB6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FA2247C1426D0900078EFB6 /* UIKit.framework */; };
 		4FA2247F1426D0900078EFB6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FA2247E1426D0900078EFB6 /* Foundation.framework */; };
 		4FA224811426D0900078EFB6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FA224801426D0900078EFB6 /* CoreGraphics.framework */; };
-		4FA224871426D0910078EFB6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4FA224851426D0910078EFB6 /* InfoPlist.strings */; };
 		4FA224891426D0910078EFB6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA224881426D0910078EFB6 /* main.m */; };
 		4FA2248D1426D0910078EFB6 /* PhysicsRigAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA2248C1426D0910078EFB6 /* PhysicsRigAppDelegate.m */; };
-		4FA224901426D0910078EFB6 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FA2248E1426D0910078EFB6 /* MainWindow.xib */; };
 		4FA224931426D0910078EFB6 /* PSArborTouchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA224921426D0910078EFB6 /* PSArborTouchViewController.m */; };
-		4FA224961426D0910078EFB6 /* PSArborTouchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FA224941426D0910078EFB6 /* PSArborTouchViewController.xib */; };
 		4FA224C41426DB850078EFB6 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FA224C31426DB850078EFB6 /* Icon-72.png */; };
 		4FB1DCA6142971F8007F2487 /* ATPhysicsDebugView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FB1DCA5142971F8007F2487 /* ATPhysicsDebugView.m */; };
+		4FD1F4221B8736DA00DDB0D2 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FD1F4201B8736DA00DDB0D2 /* MainWindow.xib */; };
+		4FD1F4231B8736DA00DDB0D2 /* PSArborTouchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FD1F4211B8736DA00DDB0D2 /* PSArborTouchViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,19 +64,17 @@
 		4FA2247E1426D0900078EFB6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4FA224801426D0900078EFB6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		4FA224841426D0910078EFB6 /* PhysicsRig-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PhysicsRig-Info.plist"; sourceTree = "<group>"; };
-		4FA224861426D0910078EFB6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4FA224881426D0910078EFB6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4FA2248A1426D0910078EFB6 /* PhysicsRig-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PhysicsRig-Prefix.pch"; sourceTree = "<group>"; };
+		4FA2248A1426D0910078EFB6 /* SharedTarget.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SharedTarget.pch; sourceTree = "<group>"; };
 		4FA2248B1426D0910078EFB6 /* PhysicsRigAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhysicsRigAppDelegate.h; sourceTree = "<group>"; };
 		4FA2248C1426D0910078EFB6 /* PhysicsRigAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhysicsRigAppDelegate.m; sourceTree = "<group>"; };
-		4FA2248F1426D0910078EFB6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
 		4FA224911426D0910078EFB6 /* PSArborTouchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSArborTouchViewController.h; sourceTree = "<group>"; };
 		4FA224921426D0910078EFB6 /* PSArborTouchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSArborTouchViewController.m; sourceTree = "<group>"; };
-		4FA224951426D0910078EFB6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/PSArborTouchViewController.xib; sourceTree = "<group>"; };
-		4FA224C31426DB850078EFB6 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "../Icon-72.png"; sourceTree = "<group>"; };
-		4FA224C51426DCBA0078EFB6 /* Doxyfile */ = {isa = PBXFileReference; explicitFileType = text.script; fileEncoding = 4; name = Doxyfile; path = ../Doxyfile; sourceTree = SOURCE_ROOT; };
+		4FA224C31426DB850078EFB6 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
 		4FB1DCA4142971F8007F2487 /* ATPhysicsDebugView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATPhysicsDebugView.h; sourceTree = "<group>"; };
 		4FB1DCA5142971F8007F2487 /* ATPhysicsDebugView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATPhysicsDebugView.m; sourceTree = "<group>"; };
+		4FD1F4201B8736DA00DDB0D2 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		4FD1F4211B8736DA00DDB0D2 /* PSArborTouchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PSArborTouchViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +96,8 @@
 			children = (
 				4FA2248B1426D0910078EFB6 /* PhysicsRigAppDelegate.h */,
 				4FA2248C1426D0910078EFB6 /* PhysicsRigAppDelegate.m */,
-				4FA2248E1426D0910078EFB6 /* MainWindow.xib */,
 			);
-			name = AppDelegate;
+			path = AppDelegate;
 			sourceTree = "<group>";
 		};
 		4F98C7261426F61600EA18F3 /* Atoms */ = {
@@ -175,8 +171,9 @@
 		4FA2246D1426D0900078EFB6 = {
 			isa = PBXGroup;
 			children = (
-				4FA224821426D0900078EFB6 /* PhysicsRig */,
 				4FA224C21426D9A70078EFB6 /* PSArborTouch */,
+				4FA224821426D0900078EFB6 /* PhysicsRig */,
+				4FD1F41C1B87356E00DDB0D2 /* Shared */,
 				4FA2247B1426D0900078EFB6 /* Frameworks */,
 				4FA224791426D0900078EFB6 /* Products */,
 			);
@@ -203,25 +200,11 @@
 		4FA224821426D0900078EFB6 /* PhysicsRig */ = {
 			isa = PBXGroup;
 			children = (
-				4FA224C11426D9350078EFB6 /* Controller */,
-				4FA224C01426D92F0078EFB6 /* View */,
-				4FA224BF1426D9180078EFB6 /* Model */,
-				4FA224831426D0910078EFB6 /* Supporting Files */,
+				4FD1F4171B87311000DDB0D2 /* Classes */,
+				4FD1F4191B87322B00DDB0D2 /* Interface */,
+				4FD1F41B1B87325100DDB0D2 /* Target */,
 			);
 			path = PhysicsRig;
-			sourceTree = "<group>";
-		};
-		4FA224831426D0910078EFB6 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				4FA224C51426DCBA0078EFB6 /* Doxyfile */,
-				4FA224C31426DB850078EFB6 /* Icon-72.png */,
-				4FA224841426D0910078EFB6 /* PhysicsRig-Info.plist */,
-				4FA224851426D0910078EFB6 /* InfoPlist.strings */,
-				4FA224881426D0910078EFB6 /* main.m */,
-				4FA2248A1426D0910078EFB6 /* PhysicsRig-Prefix.pch */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		4FA224BF1426D9180078EFB6 /* Model */ = {
@@ -229,6 +212,7 @@
 			children = (
 			);
 			name = Model;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		4FA224C01426D92F0078EFB6 /* View */ = {
@@ -237,7 +221,7 @@
 				4FB1DCA4142971F8007F2487 /* ATPhysicsDebugView.h */,
 				4FB1DCA5142971F8007F2487 /* ATPhysicsDebugView.m */,
 			);
-			name = View;
+			path = View;
 			sourceTree = "<group>";
 		};
 		4FA224C11426D9350078EFB6 /* Controller */ = {
@@ -246,9 +230,8 @@
 				4F30BDB0142AD86400B52956 /* AppDelegate */,
 				4FA224911426D0910078EFB6 /* PSArborTouchViewController.h */,
 				4FA224921426D0910078EFB6 /* PSArborTouchViewController.m */,
-				4FA224941426D0910078EFB6 /* PSArborTouchViewController.xib */,
 			);
-			name = Controller;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		4FA224C21426D9A70078EFB6 /* PSArborTouch */ = {
@@ -266,24 +249,76 @@
 			path = ../PSArborTouch;
 			sourceTree = "<group>";
 		};
-/* End PBXGroup section */
-
-/* Begin PBXLegacyTarget section */
-		4FA224BB1426D7CA0078EFB6 /* Documentation */ = {
-			isa = PBXLegacyTarget;
-			buildArgumentsString = "";
-			buildConfigurationList = 4FA224BC1426D7CA0078EFB6 /* Build configuration list for PBXLegacyTarget "Documentation" */;
-			buildPhases = (
+		4FD1F4171B87311000DDB0D2 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4FA224C11426D9350078EFB6 /* Controller */,
+				4FA224C01426D92F0078EFB6 /* View */,
+				4FA224BF1426D9180078EFB6 /* Model */,
 			);
-			buildToolPath = /usr/local/bin/doxygen;
-			buildWorkingDirectory = ../;
-			dependencies = (
-			);
-			name = Documentation;
-			passBuildSettingsInEnvironment = 0;
-			productName = Documentation;
+			path = Classes;
+			sourceTree = "<group>";
 		};
-/* End PBXLegacyTarget section */
+		4FD1F4191B87322B00DDB0D2 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				4FD1F4201B8736DA00DDB0D2 /* MainWindow.xib */,
+				4FD1F4211B8736DA00DDB0D2 /* PSArborTouchViewController.xib */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		4FD1F41A1B87323700DDB0D2 /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				4FA224C31426DB850078EFB6 /* Icon-72.png */,
+			);
+			path = Graphics;
+			sourceTree = "<group>";
+		};
+		4FD1F41B1B87325100DDB0D2 /* Target */ = {
+			isa = PBXGroup;
+			children = (
+				4FA224841426D0910078EFB6 /* PhysicsRig-Info.plist */,
+				4FA224881426D0910078EFB6 /* main.m */,
+			);
+			path = Target;
+			sourceTree = "<group>";
+		};
+		4FD1F41C1B87356E00DDB0D2 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				4FD1F41F1B87365E00DDB0D2 /* Classes */,
+				4FD1F41A1B87323700DDB0D2 /* Graphics */,
+				4FD1F41D1B87359800DDB0D2 /* Interface */,
+				4FD1F41E1B87364F00DDB0D2 /* Target */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		4FD1F41D1B87359800DDB0D2 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		4FD1F41E1B87364F00DDB0D2 /* Target */ = {
+			isa = PBXGroup;
+			children = (
+				4FA2248A1426D0910078EFB6 /* SharedTarget.pch */,
+			);
+			path = Target;
+			sourceTree = "<group>";
+		};
+		4FD1F41F1B87365E00DDB0D2 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
 		4FA224771426D0900078EFB6 /* PhysicsRig */ = {
@@ -325,7 +360,6 @@
 			projectRoot = "";
 			targets = (
 				4FA224771426D0900078EFB6 /* PhysicsRig */,
-				4FA224BB1426D7CA0078EFB6 /* Documentation */,
 			);
 		};
 /* End PBXProject section */
@@ -335,9 +369,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FA224871426D0910078EFB6 /* InfoPlist.strings in Resources */,
-				4FA224901426D0910078EFB6 /* MainWindow.xib in Resources */,
-				4FA224961426D0910078EFB6 /* PSArborTouchViewController.xib in Resources */,
+				4FD1F4221B8736DA00DDB0D2 /* MainWindow.xib in Resources */,
+				4FD1F4231B8736DA00DDB0D2 /* PSArborTouchViewController.xib in Resources */,
 				4FA224C41426DB850078EFB6 /* Icon-72.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -369,33 +402,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		4FA224851426D0910078EFB6 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4FA224861426D0910078EFB6 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		4FA2248E1426D0910078EFB6 /* MainWindow.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4FA2248F1426D0910078EFB6 /* en */,
-			);
-			name = MainWindow.xib;
-			sourceTree = "<group>";
-		};
-		4FA224941426D0910078EFB6 /* PSArborTouchViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4FA224951426D0910078EFB6 /* en */,
-			);
-			name = PSArborTouchViewController.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		4FA224AE1426D0910078EFB6 /* Debug */ = {
@@ -458,11 +464,13 @@
 		4FA224B11426D0910078EFB6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PhysicsRig/PhysicsRig-Prefix.pch";
-				INFOPLIST_FILE = "PhysicsRig/PhysicsRig-Info.plist";
+				GCC_PREFIX_HEADER = Shared/Target/SharedTarget.pch;
+				INFOPLIST_FILE = "$(SRCROOT)/PhysicsRig/Target/PhysicsRig-Info.plist";
 				PRODUCT_NAME = PhysicsRig;
 				WRAPPER_EXTENSION = app;
 			};
@@ -471,27 +479,15 @@
 		4FA224B21426D0910078EFB6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PhysicsRig/PhysicsRig-Prefix.pch";
-				INFOPLIST_FILE = "PhysicsRig/PhysicsRig-Info.plist";
+				GCC_PREFIX_HEADER = Shared/Target/SharedTarget.pch;
+				INFOPLIST_FILE = "$(SRCROOT)/PhysicsRig/Target/PhysicsRig-Info.plist";
 				PRODUCT_NAME = PhysicsRig;
 				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		4FA224BD1426D7CA0078EFB6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		4FA224BE1426D7CA0078EFB6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -512,15 +508,6 @@
 			buildConfigurations = (
 				4FA224B11426D0910078EFB6 /* Debug */,
 				4FA224B21426D0910078EFB6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4FA224BC1426D7CA0078EFB6 /* Build configuration list for PBXLegacyTarget "Documentation" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4FA224BD1426D7CA0078EFB6 /* Debug */,
-				4FA224BE1426D7CA0078EFB6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

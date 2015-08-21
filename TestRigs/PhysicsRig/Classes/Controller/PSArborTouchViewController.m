@@ -3,7 +3,7 @@
 //  PSArborTouch - Physics Test / Debug Rig
 //
 //  Created by Ed Preston on 19/09/11.
-//  Copyright 2011 Preston Software. All rights reserved.
+//  Copyright 2015 Preston Software. All rights reserved.
 //
 
 #import "PSArborTouchViewController.h"
@@ -38,27 +38,6 @@
 
 
 @implementation PSArborTouchViewController
-
-@synthesize maxLabel = _maxLabel;
-@synthesize meanLabel = _meanLabel;
-@synthesize countLabel = _countLabel;
-@synthesize sumLabel = _sumLabel;
-@synthesize p1Name = _p1Name;
-@synthesize p1Mass = _p1Mass;
-@synthesize p1Position = _p1Position;
-@synthesize p1Fixed = _p1Fixed;
-@synthesize p2Name = _p2Name;
-@synthesize p2Mass = _p2Mass;
-@synthesize p2Position = _p2Position;
-@synthesize p2Fixed = _p2Fixed;
-@synthesize viewPort = _viewPort;
-@synthesize particleView1 = _particleView1;
-@synthesize particleView2 = _particleView2;
-@synthesize particleView3 = _particleView3;
-@synthesize particleView4 = _particleView4;
-@synthesize statusLabel = _statusLabel;
-@synthesize counterLabel = _counterLabel;
-@synthesize barnesHutSwitch = _barnesHutSwitch;
 
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
@@ -125,6 +104,7 @@
 
 - (void) viewDidUnload
 {
+    // Depricated in iOS 6.0  -  This method is never called.
     
     BOOL timerInitialized = (_timer != nil);
     if ( timerInitialized ) {
@@ -152,10 +132,10 @@
     [self setCounterLabel:nil];
     [self setParticleView4:nil];
     [self setBarnesHutSwitch:nil];
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
     
+    
+    
+    [super viewDidUnload];
 }
 
 

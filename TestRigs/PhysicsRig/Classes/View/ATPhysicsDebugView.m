@@ -3,7 +3,7 @@
 //  PSArborTouch - Physics Test / Debug Rig
 //
 //  Created by Ed Preston on 21/09/11.
-//  Copyright 2011 Preston Software. All rights reserved.
+//  Copyright 2015 Preston Software. All rights reserved.
 //
 
 #import "ATPhysicsDebugView.h"
@@ -15,9 +15,6 @@
 
 @implementation ATPhysicsDebugView
 
-@synthesize physics = _physics;
-@synthesize debugDrawing = _debugDrawing;
-
 
 - (id) initWithFrame:(CGRect)frame
 {
@@ -27,8 +24,6 @@
     }
     return self;
 }
-
-
 
 
 - (CGSize) sizeToScreen:(CGSize)s 

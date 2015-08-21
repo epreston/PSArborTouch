@@ -1,5 +1,5 @@
 //
-// Prefix header for all source files of the 'KernelRig' target in the 'KernelRig' project
+// Prefix header for all source files of the projects which reference it.
 //
 
 #import <Availability.h>

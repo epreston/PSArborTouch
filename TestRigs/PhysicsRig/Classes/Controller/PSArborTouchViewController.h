@@ -3,7 +3,7 @@
 //  PSArborTouch - Physics Test / Debug Rig
 //
 //  Created by Ed Preston on 19/09/11.
-//  Copyright 2011 Preston Software. All rights reserved.
+//  Copyright 2015 Preston Software. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -40,27 +40,6 @@
     
     UIView *pieceForReset;
     
-    
-    UILabel *_sumLabel;
-    UILabel *_p1Name;
-    UILabel *_p1Mass;
-    UILabel *_p1Position;
-    UILabel *_p1Fixed;
-    UILabel *_p2Name;
-    UILabel *_p2Mass;
-    UILabel *_p2Position;
-    UILabel *_p2Fixed;
-    ATPhysicsDebugView *_viewPort;
-    UIView *_particleView1;
-    UIView *_particleView2;
-    UIView *_particleView3;
-    UIView *_particleView4;
-    UILabel *_statusLabel;
-    UILabel *_counterLabel;
-    UISwitch *_barnesHutSwitch;
-    UILabel *_maxLabel;
-    UILabel *_meanLabel;
-    UILabel *_countLabel;
 }
 
 @property (nonatomic, strong) IBOutlet UILabel *maxLabel;

@@ -48,7 +48,6 @@
 		4F9FB5CF142AB0480032AF67 /* KernelRig-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KernelRig-Info.plist"; sourceTree = "<group>"; };
 		4F9FB5D1142AB0480032AF67 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4F9FB5D3142AB0480032AF67 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4F9FB5D5142AB0480032AF67 /* KernelRig-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KernelRig-Prefix.pch"; sourceTree = "<group>"; };
 		4F9FB5D6142AB0480032AF67 /* KernelRigAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KernelRigAppDelegate.h; sourceTree = "<group>"; };
 		4F9FB5D7142AB0480032AF67 /* KernelRigAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KernelRigAppDelegate.m; sourceTree = "<group>"; };
 		4F9FB5DA142AB0480032AF67 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
@@ -72,12 +71,12 @@
 		4F9FB607142AB0D50032AF67 /* ATGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATGeometry.h; sourceTree = "<group>"; };
 		4F9FB60B142AB0D50032AF67 /* ATSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATSystem.h; sourceTree = "<group>"; };
 		4F9FB60C142AB0D50032AF67 /* ATSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATSystem.m; sourceTree = "<group>"; };
-		4F9FB61E142AB13A0032AF67 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "../Icon-72.png"; sourceTree = "<group>"; };
+		4F9FB61E142AB13A0032AF67 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
 		4F9FB636142ABA1B0032AF67 /* ATKernel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATKernel.h; sourceTree = "<group>"; };
 		4F9FB637142ABA1B0032AF67 /* ATKernel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATKernel.m; sourceTree = "<group>"; };
 		4FA4D68A142CD4BD003958B3 /* ATKernelDebugView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATKernelDebugView.h; sourceTree = "<group>"; };
 		4FA4D68B142CD4BD003958B3 /* ATKernelDebugView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATKernelDebugView.m; sourceTree = "<group>"; };
-		4FA4D6F214302705003958B3 /* Doxyfile */ = {isa = PBXFileReference; explicitFileType = text.script; name = Doxyfile; path = ../../Doxyfile; sourceTree = "<group>"; };
+		4FD1F4291B873CC800DDB0D2 /* SharedTarget.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedTarget.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +96,9 @@
 		4F9FB5B8142AB0480032AF67 = {
 			isa = PBXGroup;
 			children = (
-				4F9FB5CD142AB0480032AF67 /* KernelRig */,
 				4F9FB5F3142AB0D50032AF67 /* PSArborTouch */,
+				4F9FB5CD142AB0480032AF67 /* KernelRig */,
+				4FD1F4241B873BC600DDB0D2 /* Shared */,
 				4F9FB5C6142AB0480032AF67 /* Frameworks */,
 				4F9FB5C4142AB0480032AF67 /* Products */,
 			);
@@ -136,12 +136,9 @@
 		4F9FB5CE142AB0480032AF67 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4FA4D6F214302705003958B3 /* Doxyfile */,
-				4F9FB61E142AB13A0032AF67 /* Icon-72.png */,
 				4F9FB5CF142AB0480032AF67 /* KernelRig-Info.plist */,
 				4F9FB5D0142AB0480032AF67 /* InfoPlist.strings */,
 				4F9FB5D3142AB0480032AF67 /* main.m */,
-				4F9FB5D5142AB0480032AF67 /* KernelRig-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -266,24 +263,48 @@
 			name = AppDelegate;
 			sourceTree = "<group>";
 		};
-/* End PBXGroup section */
-
-/* Begin PBXLegacyTarget section */
-		4F9FB629142AB2880032AF67 /* Documentation */ = {
-			isa = PBXLegacyTarget;
-			buildArgumentsString = "";
-			buildConfigurationList = 4F9FB62A142AB2880032AF67 /* Build configuration list for PBXLegacyTarget "Documentation" */;
-			buildPhases = (
+		4FD1F4241B873BC600DDB0D2 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				4FD1F4251B873C4700DDB0D2 /* Classes */,
+				4FD1F4261B873C5300DDB0D2 /* Graphics */,
+				4FD1F4271B873C5A00DDB0D2 /* Interface */,
+				4FD1F4281B873C6100DDB0D2 /* Target */,
 			);
-			buildToolPath = /usr/local/bin/doxygen;
-			buildWorkingDirectory = ../;
-			dependencies = (
-			);
-			name = Documentation;
-			passBuildSettingsInEnvironment = 1;
-			productName = Documentation;
+			path = Shared;
+			sourceTree = "<group>";
 		};
-/* End PBXLegacyTarget section */
+		4FD1F4251B873C4700DDB0D2 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		4FD1F4261B873C5300DDB0D2 /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				4F9FB61E142AB13A0032AF67 /* Icon-72.png */,
+			);
+			path = Graphics;
+			sourceTree = "<group>";
+		};
+		4FD1F4271B873C5A00DDB0D2 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		4FD1F4281B873C6100DDB0D2 /* Target */ = {
+			isa = PBXGroup;
+			children = (
+				4FD1F4291B873CC800DDB0D2 /* SharedTarget.pch */,
+			);
+			path = Target;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
 		4F9FB5C2142AB0480032AF67 /* KernelRig */ = {
@@ -325,7 +346,6 @@
 			projectRoot = "";
 			targets = (
 				4F9FB5C2142AB0480032AF67 /* KernelRig */,
-				4F9FB629142AB2880032AF67 /* Documentation */,
 			);
 		};
 /* End PBXProject section */
@@ -457,10 +477,12 @@
 		4F9FB5E5142AB0480032AF67 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "KernelRig/KernelRig-Prefix.pch";
+				GCC_PREFIX_HEADER = Shared/Target/SharedTarget.pch;
 				INFOPLIST_FILE = "KernelRig/KernelRig-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -470,29 +492,15 @@
 		4F9FB5E6142AB0480032AF67 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "KernelRig/KernelRig-Prefix.pch";
+				GCC_PREFIX_HEADER = Shared/Target/SharedTarget.pch;
 				INFOPLIST_FILE = "KernelRig/KernelRig-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		4F9FB62B142AB2880032AF67 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DEBUGGING_SYMBOLS = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		4F9FB62C142AB2880032AF67 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -513,15 +521,6 @@
 			buildConfigurations = (
 				4F9FB5E5142AB0480032AF67 /* Debug */,
 				4F9FB5E6142AB0480032AF67 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4F9FB62A142AB2880032AF67 /* Build configuration list for PBXLegacyTarget "Documentation" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4F9FB62B142AB2880032AF67 /* Debug */,
-				4F9FB62C142AB2880032AF67 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
