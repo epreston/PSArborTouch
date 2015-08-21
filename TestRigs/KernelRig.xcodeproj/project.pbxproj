@@ -13,12 +13,8 @@
 		4F9FB5C8142AB0480032AF67 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F9FB5C7142AB0480032AF67 /* UIKit.framework */; };
 		4F9FB5CA142AB0480032AF67 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F9FB5C9142AB0480032AF67 /* Foundation.framework */; };
 		4F9FB5CC142AB0480032AF67 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F9FB5CB142AB0480032AF67 /* CoreGraphics.framework */; };
-		4F9FB5D2142AB0480032AF67 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4F9FB5D0142AB0480032AF67 /* InfoPlist.strings */; };
 		4F9FB5D4142AB0480032AF67 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9FB5D3142AB0480032AF67 /* main.m */; };
-		4F9FB5D8142AB0480032AF67 /* KernelRigAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9FB5D7142AB0480032AF67 /* KernelRigAppDelegate.m */; };
-		4F9FB5DB142AB0480032AF67 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F9FB5D9142AB0480032AF67 /* MainWindow.xib */; };
 		4F9FB5DE142AB0480032AF67 /* KernelRigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9FB5DD142AB0480032AF67 /* KernelRigViewController.m */; };
-		4F9FB5E1142AB0480032AF67 /* KernelRigViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F9FB5DF142AB0480032AF67 /* KernelRigViewController.xib */; };
 		4F9FB60F142AB0D50032AF67 /* ATEdge.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9FB5F6142AB0D50032AF67 /* ATEdge.m */; };
 		4F9FB610142AB0D50032AF67 /* ATNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9FB5F8142AB0D50032AF67 /* ATNode.m */; };
 		4F9FB611142AB0D50032AF67 /* ATBarnesHutBranch.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9FB5FB142AB0D50032AF67 /* ATBarnesHutBranch.m */; };
@@ -30,6 +26,9 @@
 		4F9FB61F142AB13A0032AF67 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F9FB61E142AB13A0032AF67 /* Icon-72.png */; };
 		4F9FB638142ABA1B0032AF67 /* ATKernel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9FB637142ABA1B0032AF67 /* ATKernel.m */; };
 		4FA4D68C142CD4BD003958B3 /* ATKernelDebugView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA4D68B142CD4BD003958B3 /* ATKernelDebugView.m */; };
+		4FD1F44D1B874A7F00DDB0D2 /* KernelRigViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FD1F44B1B874A7F00DDB0D2 /* KernelRigViewController.xib */; };
+		4FD1F44E1B874A7F00DDB0D2 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FD1F44C1B874A7F00DDB0D2 /* MainWindow.xib */; };
+		4FD1F4531B874B1D00DDB0D2 /* KernelRigAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FD1F4521B874B1D00DDB0D2 /* KernelRigAppDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,14 +45,9 @@
 		4F9FB5C9142AB0480032AF67 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4F9FB5CB142AB0480032AF67 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		4F9FB5CF142AB0480032AF67 /* KernelRig-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KernelRig-Info.plist"; sourceTree = "<group>"; };
-		4F9FB5D1142AB0480032AF67 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4F9FB5D3142AB0480032AF67 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4F9FB5D6142AB0480032AF67 /* KernelRigAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KernelRigAppDelegate.h; sourceTree = "<group>"; };
-		4F9FB5D7142AB0480032AF67 /* KernelRigAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KernelRigAppDelegate.m; sourceTree = "<group>"; };
-		4F9FB5DA142AB0480032AF67 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		4F9FB5DC142AB0480032AF67 /* KernelRigViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KernelRigViewController.h; sourceTree = "<group>"; };
-		4F9FB5DD142AB0480032AF67 /* KernelRigViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KernelRigViewController.m; sourceTree = "<group>"; };
-		4F9FB5E0142AB0480032AF67 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/KernelRigViewController.xib; sourceTree = "<group>"; };
+		4F9FB5DC142AB0480032AF67 /* KernelRigViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = KernelRigViewController.h; path = Controller/KernelRigViewController.h; sourceTree = "<group>"; };
+		4F9FB5DD142AB0480032AF67 /* KernelRigViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = KernelRigViewController.m; path = Controller/KernelRigViewController.m; sourceTree = "<group>"; };
 		4F9FB5F5142AB0D50032AF67 /* ATEdge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATEdge.h; sourceTree = "<group>"; };
 		4F9FB5F6142AB0D50032AF67 /* ATEdge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATEdge.m; sourceTree = "<group>"; };
 		4F9FB5F7142AB0D50032AF67 /* ATNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATNode.h; sourceTree = "<group>"; };
@@ -77,6 +71,10 @@
 		4FA4D68A142CD4BD003958B3 /* ATKernelDebugView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATKernelDebugView.h; sourceTree = "<group>"; };
 		4FA4D68B142CD4BD003958B3 /* ATKernelDebugView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATKernelDebugView.m; sourceTree = "<group>"; };
 		4FD1F4291B873CC800DDB0D2 /* SharedTarget.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedTarget.pch; sourceTree = "<group>"; };
+		4FD1F44B1B874A7F00DDB0D2 /* KernelRigViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KernelRigViewController.xib; sourceTree = "<group>"; };
+		4FD1F44C1B874A7F00DDB0D2 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		4FD1F4511B874B1D00DDB0D2 /* KernelRigAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KernelRigAppDelegate.h; sourceTree = "<group>"; };
+		4FD1F4521B874B1D00DDB0D2 /* KernelRigAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KernelRigAppDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,22 +123,11 @@
 		4F9FB5CD142AB0480032AF67 /* KernelRig */ = {
 			isa = PBXGroup;
 			children = (
-				4F9FB626142AB2340032AF67 /* Controller */,
-				4F9FB628142AB23D0032AF67 /* View */,
-				4F9FB627142AB2390032AF67 /* Model */,
-				4F9FB5CE142AB0480032AF67 /* Supporting Files */,
+				4FD1F4461B874A5E00DDB0D2 /* Classes */,
+				4FD1F44A1B874A7F00DDB0D2 /* Interface */,
+				4FD1F44F1B874AA400DDB0D2 /* Target */,
 			);
 			path = KernelRig;
-			sourceTree = "<group>";
-		};
-		4F9FB5CE142AB0480032AF67 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				4F9FB5CF142AB0480032AF67 /* KernelRig-Info.plist */,
-				4F9FB5D0142AB0480032AF67 /* InfoPlist.strings */,
-				4F9FB5D3142AB0480032AF67 /* main.m */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		4F9FB5F3142AB0D50032AF67 /* PSArborTouch */ = {
@@ -226,43 +213,6 @@
 			path = System;
 			sourceTree = "<group>";
 		};
-		4F9FB626142AB2340032AF67 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				4FA4D680142CCB03003958B3 /* AppDelegate */,
-				4F9FB5DC142AB0480032AF67 /* KernelRigViewController.h */,
-				4F9FB5DD142AB0480032AF67 /* KernelRigViewController.m */,
-				4F9FB5DF142AB0480032AF67 /* KernelRigViewController.xib */,
-			);
-			name = Controller;
-			sourceTree = "<group>";
-		};
-		4F9FB627142AB2390032AF67 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
-		4F9FB628142AB23D0032AF67 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				4FA4D68A142CD4BD003958B3 /* ATKernelDebugView.h */,
-				4FA4D68B142CD4BD003958B3 /* ATKernelDebugView.m */,
-			);
-			name = View;
-			sourceTree = "<group>";
-		};
-		4FA4D680142CCB03003958B3 /* AppDelegate */ = {
-			isa = PBXGroup;
-			children = (
-				4F9FB5D6142AB0480032AF67 /* KernelRigAppDelegate.h */,
-				4F9FB5D7142AB0480032AF67 /* KernelRigAppDelegate.m */,
-				4F9FB5D9142AB0480032AF67 /* MainWindow.xib */,
-			);
-			name = AppDelegate;
-			sourceTree = "<group>";
-		};
 		4FD1F4241B873BC600DDB0D2 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,6 +227,9 @@
 		4FD1F4251B873C4700DDB0D2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				4FD1F4431B874A0500DDB0D2 /* Controller */,
+				4FD1F4441B874A0500DDB0D2 /* Model */,
+				4FD1F4451B874A0500DDB0D2 /* View */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -302,6 +255,90 @@
 				4FD1F4291B873CC800DDB0D2 /* SharedTarget.pch */,
 			);
 			path = Target;
+			sourceTree = "<group>";
+		};
+		4FD1F4431B874A0500DDB0D2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4FD1F4441B874A0500DDB0D2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4FD1F4451B874A0500DDB0D2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4FD1F4461B874A5E00DDB0D2 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4FD1F4471B874A5E00DDB0D2 /* Controller */,
+				4F9FB5DC142AB0480032AF67 /* KernelRigViewController.h */,
+				4F9FB5DD142AB0480032AF67 /* KernelRigViewController.m */,
+				4FD1F4491B874A5E00DDB0D2 /* View */,
+				4FD1F4481B874A5E00DDB0D2 /* Model */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		4FD1F4471B874A5E00DDB0D2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4FD1F4501B874B1D00DDB0D2 /* AppDelegate */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4FD1F4481B874A5E00DDB0D2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4FD1F4491B874A5E00DDB0D2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4FA4D68A142CD4BD003958B3 /* ATKernelDebugView.h */,
+				4FA4D68B142CD4BD003958B3 /* ATKernelDebugView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4FD1F44A1B874A7F00DDB0D2 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				4FD1F44B1B874A7F00DDB0D2 /* KernelRigViewController.xib */,
+				4FD1F44C1B874A7F00DDB0D2 /* MainWindow.xib */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		4FD1F44F1B874AA400DDB0D2 /* Target */ = {
+			isa = PBXGroup;
+			children = (
+				4F9FB5CF142AB0480032AF67 /* KernelRig-Info.plist */,
+				4F9FB5D3142AB0480032AF67 /* main.m */,
+			);
+			path = Target;
+			sourceTree = "<group>";
+		};
+		4FD1F4501B874B1D00DDB0D2 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				4FD1F4511B874B1D00DDB0D2 /* KernelRigAppDelegate.h */,
+				4FD1F4521B874B1D00DDB0D2 /* KernelRigAppDelegate.m */,
+			);
+			path = AppDelegate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,9 +392,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F9FB5D2142AB0480032AF67 /* InfoPlist.strings in Resources */,
-				4F9FB5DB142AB0480032AF67 /* MainWindow.xib in Resources */,
-				4F9FB5E1142AB0480032AF67 /* KernelRigViewController.xib in Resources */,
+				4FD1F44E1B874A7F00DDB0D2 /* MainWindow.xib in Resources */,
+				4FD1F44D1B874A7F00DDB0D2 /* KernelRigViewController.xib in Resources */,
 				4F9FB61F142AB13A0032AF67 /* Icon-72.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -370,7 +406,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F9FB5D4142AB0480032AF67 /* main.m in Sources */,
-				4F9FB5D8142AB0480032AF67 /* KernelRigAppDelegate.m in Sources */,
 				4F9FB5DE142AB0480032AF67 /* KernelRigViewController.m in Sources */,
 				4F9FB60F142AB0D50032AF67 /* ATEdge.m in Sources */,
 				4F9FB610142AB0D50032AF67 /* ATNode.m in Sources */,
@@ -381,6 +416,7 @@
 				4F9FB615142AB0D50032AF67 /* ATSpring.m in Sources */,
 				4F9FB617142AB0D50032AF67 /* ATSystem.m in Sources */,
 				4F9FB638142ABA1B0032AF67 /* ATKernel.m in Sources */,
+				4FD1F4531B874B1D00DDB0D2 /* KernelRigAppDelegate.m in Sources */,
 				4FA4D68C142CD4BD003958B3 /* ATKernelDebugView.m in Sources */,
 				4F320C431435AA1E004783DB /* ATSystemParams.m in Sources */,
 				4F320C441435AA1E004783DB /* ATSystemState.m in Sources */,
@@ -389,33 +425,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		4F9FB5D0142AB0480032AF67 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4F9FB5D1142AB0480032AF67 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		4F9FB5D9142AB0480032AF67 /* MainWindow.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4F9FB5DA142AB0480032AF67 /* en */,
-			);
-			name = MainWindow.xib;
-			sourceTree = "<group>";
-		};
-		4F9FB5DF142AB0480032AF67 /* KernelRigViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4F9FB5E0142AB0480032AF67 /* en */,
-			);
-			name = KernelRigViewController.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		4F9FB5E2142AB0480032AF67 /* Debug */ = {
@@ -483,7 +492,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Shared/Target/SharedTarget.pch;
-				INFOPLIST_FILE = "KernelRig/KernelRig-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/KernelRig/Target/KernelRig-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -498,7 +507,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Shared/Target/SharedTarget.pch;
-				INFOPLIST_FILE = "KernelRig/KernelRig-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/KernelRig/Target/KernelRig-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

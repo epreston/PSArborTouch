@@ -3,7 +3,7 @@
 //  KernelRig - Kernel Test / Debug Rig
 //
 //  Created by Ed Preston on 22/09/11.
-//  Copyright 2011 Preston Software. All rights reserved.
+//  Copyright 2015 Preston Software. All rights reserved.
 //
 
 #import "KernelRigViewController.h"
@@ -13,9 +13,19 @@
 #import "ATParticle.h"
 
 
+
+@interface KernelRigViewController ()
+{
+    
+@private
+    ATKernel        *_kernel;
+}
+
+@end
+
+
 @implementation KernelRigViewController
 
-@synthesize debugView = _debugView;
 
 - (void) didReceiveMemoryWarning
 {
@@ -83,6 +93,7 @@
 - (void) viewDidUnload
 {
     [self setDebugView:nil];
+    
     [super viewDidUnload];
 }
 
