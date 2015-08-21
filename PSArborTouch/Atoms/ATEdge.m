@@ -3,7 +3,7 @@
 //  PSArborTouch
 //
 //  Created by Ed Preston on 19/09/11.
-//  Copyright 2011 Preston Software. All rights reserved.
+//  Copyright 2015 Preston Software. All rights reserved.
 //
 
 #import "ATEdge.h"
@@ -12,7 +12,7 @@
 #import "ATGeometry.h"
 
 // Edges have negative indexes, Nodes have positive indexes,
-static NSInteger nextEdgeIndex_ = -1;
+static NSInteger _nextEdgeIndex = -1;
 
 
 @interface ATEdge ()
@@ -22,21 +22,16 @@ static NSInteger nextEdgeIndex_ = -1;
 
 @implementation ATEdge
 
-@synthesize index       = index_;
-@synthesize source      = source_;
-@synthesize target      = target_;
-@synthesize length      = length_;
-@synthesize userData    = data_;
 
 - (id) init
 {
     self = [super init];
     if (self) {
-        index_     = @(nextEdgeIndex_--);
-        source_ = nil;
-        target_ = nil;
-        length_ = 1.0;
-        data_   = nil;
+        _index      = @(_nextEdgeIndex--);
+        _source     = nil;
+        _target     = nil;
+        _length     = 1.0;
+        _userData   = nil;
     }
     return self;
 }
@@ -45,9 +40,9 @@ static NSInteger nextEdgeIndex_ = -1;
 {
     self = [self init];
     if (self) {
-        source_ = source;
-        target_ = target;
-        length_ = length;
+        _source = source;
+        _target = target;
+        _length = length;
     }
     return self;
 }
@@ -56,9 +51,9 @@ static NSInteger nextEdgeIndex_ = -1;
 {
     self = [self init];
     if (self) {
-        source_ = source;
-        target_ = target;
-        data_   = data;
+        _source     = source;
+        _target     = target;
+        _userData   = data;
     }
     return self;
 }
@@ -85,25 +80,25 @@ static NSInteger nextEdgeIndex_ = -1;
 
 - (void)encodeWithCoder:(NSCoder *)encoder 
 {
-    [encoder encodeObject:source_ forKey:@"source"];
-    [encoder encodeObject:target_ forKey:@"target"];
-    [encoder encodeFloat:length_ forKey:@"length"];
-    [encoder encodeObject:index_ forKey:@"index"];
-    [encoder encodeObject:data_ forKey:@"data"];
+    [encoder encodeObject:_source forKey:@"source"];
+    [encoder encodeObject:_target forKey:@"target"];
+    [encoder encodeFloat:_length forKey:@"length"];
+    [encoder encodeObject:_index forKey:@"index"];
+    [encoder encodeObject:_userData forKey:@"data"];
 }
 
 - (id)initWithCoder:(NSCoder *)decoder 
 {
     self = [super init];
     if (self) {
-        source_ = [decoder decodeObjectForKey:@"source"];
-        target_ = [decoder decodeObjectForKey:@"target"];
-        length_ = [decoder decodeFloatForKey:@"length"];
-        index_  = [decoder decodeObjectForKey:@"index"];
-        data_   = [decoder decodeObjectForKey:@"data"];
+        _source     = [decoder decodeObjectForKey:@"source"];
+        _target     = [decoder decodeObjectForKey:@"target"];
+        _length     = [decoder decodeFloatForKey:@"length"];
+        _index      = [decoder decodeObjectForKey:@"index"];
+        _userData   = [decoder decodeObjectForKey:@"data"];
         
         
-        nextEdgeIndex_  = MIN(nextEdgeIndex_, ([index_ integerValue] - 1));
+        _nextEdgeIndex  = MIN(_nextEdgeIndex, ([_index integerValue] - 1));
     }
         
     return self;
