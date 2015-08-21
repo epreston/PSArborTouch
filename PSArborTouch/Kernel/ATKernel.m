@@ -22,8 +22,8 @@
 
 @interface ATKernel ()
 
-@property (nonatomic, readonly, weak) dispatch_queue_t physicsQueue;
-@property (nonatomic, readonly, weak) dispatch_source_t physicsTimer;
+@property (nonatomic, readonly) dispatch_queue_t physicsQueue;
+@property (nonatomic, readonly) dispatch_source_t physicsTimer;
 
 @end
 
