@@ -6,7 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SystemRigViewController">
             <connections>
-                <outlet property="debugView_" destination="2" id="11"/>
+                <outlet property="_debugView" destination="2" id="Xy2-Ho-9RU"/>
                 <outlet property="view" destination="2" id="3"/>
             </connections>
         </placeholder>

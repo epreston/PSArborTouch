@@ -3,17 +3,27 @@
 //  SystemRig - System Test / Debug Rig
 //
 //  Created by Ed Preston on 26/09/11.
-//  Copyright 2011 Preston Software. All rights reserved.
+//  Copyright 2015 Preston Software. All rights reserved.
 //
 
 #import "SystemRigViewController.h"
+
 #import "ATSystemDebugView.h"
 #import "ATSystem.h"
 #import "ATPhysics.h"
 #import "ATNode.h"
 
+
+@interface SystemRigViewController ()
+{
+    
+@private
+    ATSystem *_system;
+}
+
+@end
+
 @implementation SystemRigViewController
-@synthesize debugView = debugView_;
 
 - (void)didReceiveMemoryWarning
 {
@@ -28,21 +38,21 @@
 {
     [super viewDidLoad];
     
-    system_ = [[ATSystem alloc] init];
+    _system = [[ATSystem alloc] init];
     
-    system_.viewBounds = self.view.bounds;
-    system_.viewPadding = UIEdgeInsetsMake(20.0, 20.0, 20.0, 20.0);
-    system_.delegate = self;
+    _system.viewBounds = self.view.bounds;
+    _system.viewPadding = UIEdgeInsetsMake(20.0, 20.0, 20.0, 20.0);
+    _system.delegate = self;
 //    system.physics.theta = 0.0;
     
-    self.debugView.system = system_;
+    self.debugView.system = _system;
     self.debugView.debugDrawing = YES;
     
     // add some nodes to the graph and watch it go...
-    [system_ addEdgeFromNode:@"a" toNode:@"b" withData:nil];
-    [system_ addEdgeFromNode:@"a" toNode:@"c" withData:nil];
-    [system_ addEdgeFromNode:@"a" toNode:@"d" withData:nil];
-    [system_ addEdgeFromNode:@"a" toNode:@"e" withData:nil];
+    [_system addEdgeFromNode:@"a" toNode:@"b" withData:nil];
+    [_system addEdgeFromNode:@"a" toNode:@"c" withData:nil];
+    [_system addEdgeFromNode:@"a" toNode:@"d" withData:nil];
+    [_system addEdgeFromNode:@"a" toNode:@"e" withData:nil];
     
 //    [system addEdge:@"e" toTarget:@"f" andData:nil];
 //    [system addEdge:@"e" toTarget:@"g" andData:nil];
@@ -82,19 +92,19 @@
 
 - (IBAction)go:(id)sender
 {
-    [system_ start:YES];
+    [_system start:YES];
 }
 
 - (IBAction)add:(id)sender
 {
-    [system_ addEdgeFromNode:@"a" toNode:@"e" withData:nil];
+    [_system addEdgeFromNode:@"a" toNode:@"e" withData:nil];
     
     [self go:nil];
 }
 
 - (IBAction)remove:(id)sender
 {
-    [system_ removeNode:@"e"];
+    [_system removeNode:@"e"];
     
     [self go:nil];
 }
@@ -130,14 +140,14 @@
         
         CGPoint translation = [gestureRecognizer translationInView:piece];
         
-        ATNode *node = [system_ nearestNodeToPoint:translation withinRadius:500.0];
+        ATNode *node = [_system nearestNodeToPoint:translation withinRadius:500.0];
         
 //        translation = [self fromScreen:translation];
         
         if (node) {
             node.position = CGPointMake(node.position.x + translation.x, node.position.y + translation.y);
             
-            [system_ start:YES];
+            [_system start:YES];
         }
         
 //        [piece setCenter:CGPointMake([piece center].x + translation.x, [piece center].y + translation.y)];

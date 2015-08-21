@@ -3,7 +3,7 @@
 //  SystemRig - System Test / Debug Rig
 //
 //  Created by Ed Preston on 1/10/11.
-//  Copyright 2011 Preston Software. All rights reserved.
+//  Copyright 2015 Preston Software. All rights reserved.
 //
 
 #import "ATSystemDebugView.h"
@@ -32,11 +32,8 @@
 
 @implementation ATSystemDebugView
 
-@synthesize system = system_;
-@synthesize debugDrawing = debugDrawing_;
 
-
-- (id) initWithFrame:(CGRect)frame
+- (instancetype) initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {

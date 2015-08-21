@@ -13,12 +13,9 @@
 		4FA4D6C114302355003958B3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FA4D6C014302355003958B3 /* UIKit.framework */; };
 		4FA4D6C314302355003958B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FA4D6C214302355003958B3 /* Foundation.framework */; };
 		4FA4D6C514302355003958B3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FA4D6C414302355003958B3 /* CoreGraphics.framework */; };
-		4FA4D6CB14302355003958B3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4FA4D6C914302355003958B3 /* InfoPlist.strings */; };
 		4FA4D6CD14302355003958B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA4D6CC14302355003958B3 /* main.m */; };
 		4FA4D6D114302355003958B3 /* SystemRigAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA4D6D014302355003958B3 /* SystemRigAppDelegate.m */; };
-		4FA4D6D414302355003958B3 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FA4D6D214302355003958B3 /* MainWindow.xib */; };
 		4FA4D6D714302355003958B3 /* SystemRigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA4D6D614302355003958B3 /* SystemRigViewController.m */; };
-		4FA4D6DA14302355003958B3 /* SystemRigViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FA4D6D814302355003958B3 /* SystemRigViewController.xib */; };
 		4FA4D71B14302969003958B3 /* ATEdge.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA4D70014302969003958B3 /* ATEdge.m */; };
 		4FA4D71C14302969003958B3 /* ATNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA4D70214302969003958B3 /* ATNode.m */; };
 		4FA4D71D14302969003958B3 /* ATBarnesHutBranch.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA4D70514302969003958B3 /* ATBarnesHutBranch.m */; };
@@ -30,6 +27,8 @@
 		4FA4D72414302969003958B3 /* ATSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA4D71814302969003958B3 /* ATSystem.m */; };
 		4FA4D72514302969003958B3 /* ATEnergy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA4D71A14302969003958B3 /* ATEnergy.m */; };
 		4FD1F4371B873F1900DDB0D2 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FD1F4331B873F1900DDB0D2 /* Icon-72.png */; };
+		4FD1F4411B8744D600DDB0D2 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FD1F43F1B8744D600DDB0D2 /* MainWindow.xib */; };
+		4FD1F4421B8744D600DDB0D2 /* SystemRigViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FD1F4401B8744D600DDB0D2 /* SystemRigViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,15 +45,11 @@
 		4FA4D6C214302355003958B3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4FA4D6C414302355003958B3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		4FA4D6C814302355003958B3 /* SystemRig-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SystemRig-Info.plist"; sourceTree = "<group>"; };
-		4FA4D6CA14302355003958B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4FA4D6CC14302355003958B3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4FA4D6CF14302355003958B3 /* SystemRigAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SystemRigAppDelegate.h; sourceTree = "<group>"; };
 		4FA4D6D014302355003958B3 /* SystemRigAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SystemRigAppDelegate.m; sourceTree = "<group>"; };
-		4FA4D6D314302355003958B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
 		4FA4D6D514302355003958B3 /* SystemRigViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SystemRigViewController.h; sourceTree = "<group>"; };
 		4FA4D6D614302355003958B3 /* SystemRigViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SystemRigViewController.m; sourceTree = "<group>"; };
-		4FA4D6D914302355003958B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SystemRigViewController.xib; sourceTree = "<group>"; };
-		4FA4D6EA143024EE003958B3 /* Doxyfile */ = {isa = PBXFileReference; explicitFileType = text.script; name = Doxyfile; path = ../../Doxyfile; sourceTree = "<group>"; };
 		4FA4D6FF14302969003958B3 /* ATEdge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATEdge.h; sourceTree = "<group>"; };
 		4FA4D70014302969003958B3 /* ATEdge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATEdge.m; sourceTree = "<group>"; };
 		4FA4D70114302969003958B3 /* ATNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATNode.h; sourceTree = "<group>"; };
@@ -78,6 +73,8 @@
 		4FA4D71A14302969003958B3 /* ATEnergy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATEnergy.m; sourceTree = "<group>"; };
 		4FD1F4331B873F1900DDB0D2 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
 		4FD1F4361B873F1900DDB0D2 /* SharedTarget.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedTarget.pch; sourceTree = "<group>"; };
+		4FD1F43F1B8744D600DDB0D2 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		4FD1F4401B8744D600DDB0D2 /* SystemRigViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SystemRigViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,23 +123,11 @@
 		4FA4D6C614302355003958B3 /* SystemRig */ = {
 			isa = PBXGroup;
 			children = (
-				4FA4D6E41430236D003958B3 /* Controller */,
-				4FA4D6E514302376003958B3 /* View */,
-				4FA4D6E61430237A003958B3 /* Model */,
-				4FA4D6C714302355003958B3 /* Supporting Files */,
+				4FD1F4381B8743CE00DDB0D2 /* Classes */,
+				4FD1F4391B8743D800DDB0D2 /* Interface */,
+				4FD1F43A1B8743E400DDB0D2 /* Target */,
 			);
 			path = SystemRig;
-			sourceTree = "<group>";
-		};
-		4FA4D6C714302355003958B3 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				4FA4D6EA143024EE003958B3 /* Doxyfile */,
-				4FA4D6C814302355003958B3 /* SystemRig-Info.plist */,
-				4FA4D6C914302355003958B3 /* InfoPlist.strings */,
-				4FA4D6CC14302355003958B3 /* main.m */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		4FA4D6E41430236D003958B3 /* Controller */ = {
@@ -151,9 +136,8 @@
 				4FA4D6E71430239B003958B3 /* AppDelegate */,
 				4FA4D6D514302355003958B3 /* SystemRigViewController.h */,
 				4FA4D6D614302355003958B3 /* SystemRigViewController.m */,
-				4FA4D6D814302355003958B3 /* SystemRigViewController.xib */,
 			);
-			name = Controller;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		4FA4D6E514302376003958B3 /* View */ = {
@@ -162,14 +146,14 @@
 				4F320C6014360B46004783DB /* ATSystemDebugView.h */,
 				4F320C6114360B46004783DB /* ATSystemDebugView.m */,
 			);
-			name = View;
+			path = View;
 			sourceTree = "<group>";
 		};
 		4FA4D6E61430237A003958B3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		4FA4D6E71430239B003958B3 /* AppDelegate */ = {
@@ -177,9 +161,8 @@
 			children = (
 				4FA4D6CF14302355003958B3 /* SystemRigAppDelegate.h */,
 				4FA4D6D014302355003958B3 /* SystemRigAppDelegate.m */,
-				4FA4D6D214302355003958B3 /* MainWindow.xib */,
 			);
-			name = AppDelegate;
+			path = AppDelegate;
 			sourceTree = "<group>";
 		};
 		4FA4D6FD14302968003958B3 /* PSArborTouch */ = {
@@ -330,6 +313,34 @@
 			path = Target;
 			sourceTree = "<group>";
 		};
+		4FD1F4381B8743CE00DDB0D2 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4FA4D6E41430236D003958B3 /* Controller */,
+				4FA4D6E514302376003958B3 /* View */,
+				4FA4D6E61430237A003958B3 /* Model */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		4FD1F4391B8743D800DDB0D2 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				4FD1F43F1B8744D600DDB0D2 /* MainWindow.xib */,
+				4FD1F4401B8744D600DDB0D2 /* SystemRigViewController.xib */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		4FD1F43A1B8743E400DDB0D2 /* Target */ = {
+			isa = PBXGroup;
+			children = (
+				4FA4D6C814302355003958B3 /* SystemRig-Info.plist */,
+				4FA4D6CC14302355003958B3 /* main.m */,
+			);
+			path = Target;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -381,10 +392,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FA4D6CB14302355003958B3 /* InfoPlist.strings in Resources */,
+				4FD1F4421B8744D600DDB0D2 /* SystemRigViewController.xib in Resources */,
+				4FD1F4411B8744D600DDB0D2 /* MainWindow.xib in Resources */,
 				4FD1F4371B873F1900DDB0D2 /* Icon-72.png in Resources */,
-				4FA4D6D414302355003958B3 /* MainWindow.xib in Resources */,
-				4FA4D6DA14302355003958B3 /* SystemRigViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,33 +425,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		4FA4D6C914302355003958B3 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4FA4D6CA14302355003958B3 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		4FA4D6D214302355003958B3 /* MainWindow.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4FA4D6D314302355003958B3 /* en */,
-			);
-			name = MainWindow.xib;
-			sourceTree = "<group>";
-		};
-		4FA4D6D814302355003958B3 /* SystemRigViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4FA4D6D914302355003958B3 /* en */,
-			);
-			name = SystemRigViewController.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		4FA4D6DB14302355003958B3 /* Debug */ = {
@@ -511,7 +494,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Shared/Target/SharedTarget.pch;
-				INFOPLIST_FILE = "SystemRig/SystemRig-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/SystemRig/Target/SystemRig-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -525,7 +508,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Shared/Target/SharedTarget.pch;
-				INFOPLIST_FILE = "SystemRig/SystemRig-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/SystemRig/Target/SystemRig-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
