@@ -12,7 +12,6 @@
 
 @interface ATEdge : NSObject <NSCoding>
 
-
 @property (nonatomic, readonly, strong) ATNode *source;
 @property (nonatomic, readonly, strong) ATNode *target;
 @property (nonatomic, assign) CGFloat length;
@@ -22,13 +21,13 @@
 @property (nonatomic, strong) NSMutableDictionary *userData;
 
 
-- (id) initWithSource:(ATNode *)source 
-               target:(ATNode *)target 
-               length:(CGFloat)length;
+- (instancetype) initWithSource:(ATNode *)source
+                         target:(ATNode *)target
+                         length:(CGFloat)length;
 
-- (id) initWithSource:(ATNode *)source
-               target:(ATNode *)target
-             userData:(NSMutableDictionary *)data;
+- (instancetype) initWithSource:(ATNode *)source
+                         target:(ATNode *)target
+                       userData:(NSMutableDictionary *)data;
 
 - (CGFloat) distanceToNode:(ATNode *)node;
 

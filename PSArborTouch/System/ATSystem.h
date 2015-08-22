@@ -3,7 +3,7 @@
 //  PSArborTouch
 //
 //  Created by Ed Preston on 19/09/11.
-//  Copyright 2011 Preston Software. All rights reserved.
+//  Copyright 2015 Preston Software. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -23,20 +23,7 @@ typedef enum {
 @class ATEdge;
 
 @interface ATSystem : ATKernel
-{
-    
-@private
-    CGRect              viewBounds_;
-    UIEdgeInsets        viewPadding_;
-    ATViewConversion    viewMode_;
-    
-    CGFloat             viewTweenStep_;
-    CGRect              tweenBoundsCurrent_;
-    CGRect              tweenBoundsTarget_;
-    
-    ATSystemState       *state_;
-    ATSystemParams      *parameters_;
-}
+
 
 #pragma mark - Tween Debugging
 
@@ -51,8 +38,8 @@ typedef enum {
 // Changes to your copy do not take effect on the system until you pass them back
 @property (nonatomic, copy) ATSystemParams *parameters;
 
-- (id)init;
-- (id)initWithState:(ATSystemState *)state parameters:(ATSystemParams *)parameters;
+- (instancetype) initWithState:(ATSystemState *)state
+                    parameters:(ATSystemParams *)parameters;
 
 
 #pragma mark - Viewport Management

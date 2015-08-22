@@ -3,7 +3,7 @@
 //  PSArborTouch
 //
 //  Created by Ed Preston on 19/09/11.
-//  Copyright 2011 Preston Software. All rights reserved.
+//  Copyright 2015 Preston Software. All rights reserved.
 //
 
 #import "ATBarnesHutTree.h"
@@ -13,6 +13,12 @@
 
 
 @interface ATBarnesHutTree ()
+{
+    
+@private
+    NSMutableArray     *_branches;
+    NSUInteger          _branchCounter;
+}
 
 typedef enum {
     BHLocationUD = 0,
@@ -32,19 +38,15 @@ typedef enum {
 
 @implementation ATBarnesHutTree
 
-@synthesize root = root_;
-@synthesize bounds = bounds_;
-@synthesize theta = theta_;
-
-- (id) init
+- (instancetype) init
 {
     self = [super init];
     if (self) {
-        branches_       = [NSMutableArray arrayWithCapacity:32];
-        branchCounter_  = 0;
-        root_           = nil;
-        bounds_         = CGRectZero;
-        theta_          = 0.4;
+        _branches       = [NSMutableArray arrayWithCapacity:32];
+        _branchCounter  = 0;
+        _root           = nil;
+        _bounds         = CGRectZero;
+        _theta          = 0.4;
     }
     return self;
 }
@@ -55,12 +57,12 @@ typedef enum {
 
 - (void) updateWithBounds:(CGRect)bounds theta:(CGFloat)theta 
 {
-    bounds_         = bounds;
-    theta_          = theta;
+    _bounds         = bounds;
+    _theta          = theta;
     
-    branchCounter_  = 0;
-    root_           = [self _dequeueBranch];
-    root_.bounds    = bounds;
+    _branchCounter  = 0;
+    _root           = [self _dequeueBranch];
+    _root.bounds    = bounds;
 }
 
 - (void) insertParticle:(ATParticle *)newParticle 
@@ -70,7 +72,7 @@ typedef enum {
     if (newParticle == nil) return;
     
     // add a particle to the tree, starting at the current _root and working down
-    ATBarnesHutBranch *node = root_;
+    ATBarnesHutBranch *node = _root;
     
     NSMutableArray* queue = [NSMutableArray arrayWithCapacity:32];
         
@@ -205,7 +207,7 @@ typedef enum {
     // the specified repulsion to the particle
     
     NSMutableArray* queue = [NSMutableArray arrayWithCapacity:32];
-    [queue addObject:root_];
+    [queue addObject:_root];
     
     while ([queue count] != 0) {
         
@@ -236,7 +238,7 @@ typedef enum {
             CGFloat dist = CGPointMagnitude(CGPointSubtract(particle.position, CGPointDivideFloat(nodeBranch.position, nodeBranch.mass)));
             CGFloat size = sqrtf( CGRectGetWidth(nodeBranch.bounds) * CGRectGetHeight(nodeBranch.bounds) );
             
-            if ( (size / dist) > theta_ ) { // i.e., s/d > Θ
+            if ( (size / dist) > _theta ) { // i.e., s/d > Θ
                 // open the quad and recurse
                 if (nodeBranch.ne != nil) [queue addObject:nodeBranch.ne];
                 if (nodeBranch.nw != nil) [queue addObject:nodeBranch.nw];
@@ -347,11 +349,11 @@ typedef enum {
     // Recycle the tree nodes between iterations, nodes are owned by the branches array
     ATBarnesHutBranch *branch = nil;
     
-    if ( branches_.count == 0 || branchCounter_ > (branches_.count -1) ) {
+    if ( _branches.count == 0 || _branchCounter > (_branches.count -1) ) {
         branch = [[ATBarnesHutBranch alloc] init];
-        [branches_ addObject:branch];
+        [_branches addObject:branch];
     } else {
-        branch = branches_[branchCounter_];
+        branch = _branches[_branchCounter];
         branch.ne = nil;
         branch.nw = nil;
         branch.se = nil;
@@ -363,7 +365,7 @@ typedef enum {
     
 //    NSLog(@"Branch count:%u", _branches.count);
     
-    branchCounter_++;
+    _branchCounter++;
 
     // DEBUG for a graph of 4 nodes
 //    if (branchCounter_ > 6) {

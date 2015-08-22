@@ -10,7 +10,6 @@
 
 @interface ATNode : NSObject <NSCoding>
 
-
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, assign) CGFloat mass;
 @property (nonatomic, assign) CGPoint position;
@@ -20,14 +19,12 @@
 
 @property (nonatomic, strong) NSMutableDictionary *userData;
 
+- (instancetype) initWithName:(NSString *)name
+                         mass:(CGFloat)mass
+                     position:(CGPoint)position
+                        fixed:(BOOL)fixed;
 
-
-- (id) initWithName:(NSString *)name 
-               mass:(CGFloat)mass 
-           position:(CGPoint)position 
-              fixed:(BOOL)fixed;
-
-- (id) initWithName:(NSString *)name 
-           userData:(NSMutableDictionary *)data;
+- (instancetype) initWithName:(NSString *)name
+                     userData:(NSMutableDictionary *)data;
 
 @end

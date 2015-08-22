@@ -3,7 +3,7 @@
 //  PSArborTouch
 //
 //  Created by Ed Preston on 19/09/11.
-//  Copyright 2011 Preston Software. All rights reserved.
+//  Copyright 2015 Preston Software. All rights reserved.
 //
 
 #import "ATSpring.h"
@@ -17,23 +17,21 @@
 
 @implementation ATSpring
 
-@synthesize stiffness = stiffness_;
-
-- (id) init
+- (instancetype) init
 {
     self = [super init];
     if (self) {
-        stiffness_ = 1000.0;
+        _stiffness = 1000.0;
     }
     return self;
 }
 
-- (ATParticle *)point1
+- (ATParticle *) point1
 {
     return (ATParticle *)self.source; 
 }
 
-- (ATParticle *)point2
+- (ATParticle *) point2
 {
     return (ATParticle *)self.target; 
 }

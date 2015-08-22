@@ -3,7 +3,7 @@
 //  PSArborTouch
 //
 //  Created by Ed Preston on 19/09/11.
-//  Copyright 2011 Preston Software. All rights reserved.
+//  Copyright 2015 Preston Software. All rights reserved.
 //
 
 #import "ATEnergy.h"
@@ -16,19 +16,14 @@
 
 @implementation ATEnergy
 
-@synthesize sum     = sum_;
-@synthesize max     = max_;
-@synthesize mean    = mean_;
-@synthesize count   = count_;
-
-- (id) init
+- (instancetype) init
 {
     self = [super init];
     if (self) {
-        sum_    = 0.0;
-        max_    = 0.0;
-        mean_   = 0.0;
-        count_  = 0;
+        _sum    = 0.0;
+        _max    = 0.0;
+        _mean   = 0.0;
+        _count  = 0;
     }
     return self;
 }
@@ -36,14 +31,15 @@
 
 #pragma mark - NSCopying
 
-- (id)copyWithZone:(NSZone *)zone
+- (id) copyWithZone:(NSZone *)zone
 {
-    id theCopy = [[[self class] allocWithZone:zone] init];  // use designated initializer
+    // use designated initializer
+    id theCopy = [[[self class] allocWithZone:zone] init];
     
-    [theCopy setSum:sum_];
-    [theCopy setMax:max_];
-    [theCopy setMean:mean_];
-    [theCopy setCount:count_];
+    [theCopy setSum:_sum];
+    [theCopy setMax:_max];
+    [theCopy setMean:_mean];
+    [theCopy setCount:_count];
     
     return theCopy;
 }

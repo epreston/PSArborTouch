@@ -3,7 +3,7 @@
 //  PSArborTouch
 //
 //  Created by Ed Preston on 30/09/11.
-//  Copyright 2011 Preston Software. All rights reserved.
+//  Copyright 2015 Preston Software. All rights reserved.
 //
 
 #import "ATSystemState.h"
@@ -13,7 +13,19 @@
 
 
 @interface ATSystemState ()
-
+{
+    
+@private
+    //    *nodes;      // lookup based on node _id's from the worker
+    //    *edges;      // likewise
+    //    *adjacency;  // NSMutableDictionary (_id of source) -> NSMutableDictionary (_id of target) -> Edge
+    //    *names;      // lookup table based on 'name' field in data objects
+    
+    NSMutableDictionary *_nodes;
+    NSMutableDictionary *_edges;
+    NSMutableDictionary *_adjacency;
+    NSMutableDictionary *_names;
+}
 @end
 
 
@@ -22,35 +34,35 @@
 //@synthesize nodes       = nodes_;
 - (NSArray *) nodes
 {
-    return [nodes_ allValues];
+    return [_nodes allValues];
 }
 
 //@synthesize edges       = edges_;
 - (NSArray *) edges
 {
-    return [edges_ allValues];
+    return [_edges allValues];
 }
 
 //@synthesize adjacency   = adjacency_;
 - (NSArray *) adjacency
 {
-    return [adjacency_ allValues]; 
+    return [_adjacency allValues]; 
 }
 
 //@synthesize names       = names_;
 - (NSArray *) names
 {
-    return [names_ allValues]; 
+    return [_names allValues]; 
 }
 
-- (id) init
+- (instancetype) init
 {
     self = [super init];
     if (self) {
-        nodes_      = [NSMutableDictionary dictionaryWithCapacity:32];      
-        edges_      = [NSMutableDictionary dictionaryWithCapacity:32];      
-        adjacency_  = [NSMutableDictionary dictionaryWithCapacity:32];             
-        names_      = [NSMutableDictionary dictionaryWithCapacity:32];
+        _nodes      = [NSMutableDictionary dictionaryWithCapacity:32];      
+        _edges      = [NSMutableDictionary dictionaryWithCapacity:32];      
+        _adjacency  = [NSMutableDictionary dictionaryWithCapacity:32];             
+        _names      = [NSMutableDictionary dictionaryWithCapacity:32];
     }
     
     return self;
@@ -65,7 +77,7 @@
     NSParameterAssert(NodesObject != nil);
     
     if (NodesObject == nil || Key == nil) return;
-    nodes_[Key] = NodesObject;
+    _nodes[Key] = NodesObject;
 }
 
 - (void) removeNodesObjectForKey:(NSNumber *)Key
@@ -73,7 +85,7 @@
     NSParameterAssert(Key != nil);
     
     if (Key == nil) return;
-    [nodes_ removeObjectForKey:Key];
+    [_nodes removeObjectForKey:Key];
 }
 
 - (ATNode *) getNodesObjectForKey:(NSNumber *)Key
@@ -81,8 +93,9 @@
     NSParameterAssert(Key != nil);
     
     if (Key == nil) return nil;
-    return nodes_[Key];
+    return _nodes[Key];
 }
+
 
 #pragma mark - Edges
 
@@ -92,7 +105,7 @@
     NSParameterAssert(EdgesObject != nil);
     
     if (EdgesObject == nil || Key == nil) return;
-    edges_[Key] = EdgesObject;
+    _edges[Key] = EdgesObject;
 }
 
 - (void) removeEdgesObjectForKey:(NSNumber *)Key
@@ -100,7 +113,7 @@
     NSParameterAssert(Key != nil);
     
     if (Key == nil) return;
-    [edges_ removeObjectForKey:Key];
+    [_edges removeObjectForKey:Key];
 }
 
 - (ATEdge *) getEdgesObjectForKey:(NSNumber *)Key
@@ -108,7 +121,7 @@
     NSParameterAssert(Key != nil);
     
     if (Key == nil) return nil;
-    return edges_[Key];
+    return _edges[Key];
 }
 
 
@@ -120,7 +133,7 @@
     NSParameterAssert(AdjacencyObject != nil);
     
     if (AdjacencyObject == nil || Key == nil) return;
-    adjacency_[Key] = AdjacencyObject;
+    _adjacency[Key] = AdjacencyObject;
 }
 
 - (void) removeAdjacencyObjectForKey:(NSNumber *)Key
@@ -128,7 +141,7 @@
     NSParameterAssert(Key != nil);
     
     if (Key == nil) return;
-    [adjacency_ removeObjectForKey:Key];
+    [_adjacency removeObjectForKey:Key];
 }
 
 - (NSMutableDictionary *) getAdjacencyObjectForKey:(NSNumber *)Key
@@ -136,7 +149,7 @@
     NSParameterAssert(Key != nil);
     
     if (Key == nil) return nil;
-    return adjacency_[Key];
+    return _adjacency[Key];
 }
 
 
@@ -148,7 +161,7 @@
     NSParameterAssert(NamesObject != nil);
     
     if (NamesObject == nil || Key == nil) return;
-    names_[Key] = NamesObject;
+    _names[Key] = NamesObject;
 }
 
 - (void) removeNamesObjectForKey:(NSString *)Key
@@ -156,7 +169,7 @@
     NSParameterAssert(Key != nil);
     
     if (Key == nil) return;
-    [names_ removeObjectForKey:Key];
+    [_names removeObjectForKey:Key];
 }
 
 - (ATNode *) getNamesObjectForKey:(NSString *)Key
@@ -164,30 +177,28 @@
     NSParameterAssert(Key != nil);
     
     if (Key == nil) return nil;
-    return names_[Key];
+    return _names[Key];
 }
-
 
 
 #pragma mark - Keyed Archiving
 
-
 - (void) encodeWithCoder:(NSCoder *)encoder 
 {
-    [encoder encodeObject:nodes_ forKey:@"nodes"];
-    [encoder encodeObject:edges_ forKey:@"edges"];
-    [encoder encodeObject:adjacency_ forKey:@"adjacency"];
-    [encoder encodeObject:names_ forKey:@"names"];
+    [encoder encodeObject:_nodes forKey:@"nodes"];
+    [encoder encodeObject:_edges forKey:@"edges"];
+    [encoder encodeObject:_adjacency forKey:@"adjacency"];
+    [encoder encodeObject:_names forKey:@"names"];
 }
 
 - (id) initWithCoder:(NSCoder *)decoder 
 {
     self = [super init];
     if (self) {
-        nodes_      = [decoder decodeObjectForKey:@"nodes"];
-        edges_      = [decoder decodeObjectForKey:@"edges"];
-        adjacency_  = [decoder decodeObjectForKey:@"adjacency"];
-        names_      = [decoder decodeObjectForKey:@"names"];
+        _nodes      = [decoder decodeObjectForKey:@"nodes"];
+        _edges      = [decoder decodeObjectForKey:@"edges"];
+        _adjacency  = [decoder decodeObjectForKey:@"adjacency"];
+        _names      = [decoder decodeObjectForKey:@"names"];
     }
     return self;
 }

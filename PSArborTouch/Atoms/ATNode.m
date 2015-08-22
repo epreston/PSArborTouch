@@ -20,7 +20,7 @@ static NSInteger _nextNodeIndex = 1;
 @implementation ATNode
 
 
-- (id) init
+- (instancetype) init
 {
     self = [super init];
     if (self) {
@@ -34,7 +34,7 @@ static NSInteger _nextNodeIndex = 1;
     return self;
 }
 
-- (id) initWithName:(NSString *)name mass:(CGFloat)mass position:(CGPoint)position fixed:(BOOL)fixed 
+- (instancetype) initWithName:(NSString *)name mass:(CGFloat)mass position:(CGPoint)position fixed:(BOOL)fixed
 {
     self = [self init];
     if (self) {
@@ -46,8 +46,10 @@ static NSInteger _nextNodeIndex = 1;
     return self;
 }
 
-- (id) initWithName:(NSString *)name userData:(NSMutableDictionary *)data 
+- (instancetype) initWithName:(NSString *)name userData:(NSMutableDictionary *)data
 {
+    // TODO: This method should be reviewed. Does not produce a useable object.
+    // Is this a general user data store or keyed archiving style object creation?
     self = [self init];
     if (self) {
         _name       = [name copy];

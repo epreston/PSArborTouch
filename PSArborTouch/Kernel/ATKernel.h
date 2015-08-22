@@ -3,12 +3,10 @@
 //  PSArborTouch
 //
 //  Created by Ed Preston on 22/09/11.
-//  Copyright 2011 Preston Software. All rights reserved.
+//  Copyright 2015 Preston Software. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-
-#import <dispatch/dispatch.h>
 
 @class ATPhysics;
 @class ATParticle;
@@ -18,22 +16,7 @@
 @class ATSystemParams;
 
 @interface ATKernel : NSObject
-{
 
-@private
-    dispatch_source_t   timer_;
-    dispatch_queue_t    queue_;
-    
-    BOOL                paused_;
-    BOOL                running_;
-    
-    ATPhysics          *physics_;
-    
-    ATEnergy           *lastEnergy_;
-    CGRect              lastBounds_;
-    
-    id                  __unsafe_unretained delegate_;      // UPDATE THIS ! = id <protocol> delegate_;
-}
 
 #pragma mark - Rendering
 
@@ -51,6 +34,8 @@
 @property (nonatomic, readonly, strong) ATPhysics *physics;
 
 #pragma mark - Cached Physics Properties
+// We cache certain properties to provide information while the physics
+// simulation is running.
 
 @property (nonatomic, readonly, copy) ATEnergy *simulationEnergy;
 @property (nonatomic, readonly, assign) CGRect simulationBounds;

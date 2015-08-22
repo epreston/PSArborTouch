@@ -23,7 +23,7 @@ static NSInteger _nextEdgeIndex = -1;
 @implementation ATEdge
 
 
-- (id) init
+- (instancetype) init
 {
     self = [super init];
     if (self) {
@@ -36,7 +36,7 @@ static NSInteger _nextEdgeIndex = -1;
     return self;
 }
 
-- (id) initWithSource:(ATNode *)source target:(ATNode *)target length:(CGFloat)length 
+- (instancetype) initWithSource:(ATNode *)source target:(ATNode *)target length:(CGFloat)length
 {
     self = [self init];
     if (self) {
@@ -47,8 +47,9 @@ static NSInteger _nextEdgeIndex = -1;
     return self;
 }
 
-- (id) initWithSource:(ATNode *)source target:(ATNode *)target userData:(NSMutableDictionary *)data 
+- (instancetype) initWithSource:(ATNode *)source target:(ATNode *)target userData:(NSMutableDictionary *)data
 {
+    // TODO: Review this method, does it make sense that length is excluded ?
     self = [self init];
     if (self) {
         _source     = source;
@@ -78,7 +79,7 @@ static NSInteger _nextEdgeIndex = -1;
 
 #pragma mark - Keyed Archiving
 
-- (void)encodeWithCoder:(NSCoder *)encoder 
+- (void) encodeWithCoder:(NSCoder *)encoder
 {
     [encoder encodeObject:_source forKey:@"source"];
     [encoder encodeObject:_target forKey:@"target"];
@@ -87,7 +88,7 @@ static NSInteger _nextEdgeIndex = -1;
     [encoder encodeObject:_userData forKey:@"data"];
 }
 
-- (id)initWithCoder:(NSCoder *)decoder 
+- (id) initWithCoder:(NSCoder *)decoder
 {
     self = [super init];
     if (self) {

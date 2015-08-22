@@ -3,7 +3,7 @@
 //  PSArborTouch
 //
 //  Created by Ed Preston on 19/09/11.
-//  Copyright 2011 Preston Software. All rights reserved.
+//  Copyright 2015 Preston Software. All rights reserved.
 //
 
 #import "ATParticle.h"
@@ -17,32 +17,27 @@
 
 @implementation ATParticle
 
-@synthesize velocity    = velocity_;
-@synthesize force       = force_;
-@synthesize tempMass    = tempMass_;
-@synthesize connections = connections_;
-
-- (id) init
+- (instancetype) init
 {
     self = [super init];
     if (self) {
-        velocity_       = CGPointZero;
-        force_          = CGPointZero;
-        tempMass_       = 0.0;
-        connections_    = 0;
+        _velocity       = CGPointZero;
+        _force          = CGPointZero;
+        _tempMass       = 0.0;
+        _connections    = 0;
     }
     return self;
 }
 
-- (id) initWithVelocity:(CGPoint)velocity 
-                  force:(CGPoint)force 
-               tempMass:(CGFloat)tempMass 
+- (instancetype) initWithVelocity:(CGPoint)velocity
+                            force:(CGPoint)force
+                         tempMass:(CGFloat)tempMass 
 {
     self = [self init];
     if (self) {
-        velocity_   = velocity;
-        force_      = force;
-        tempMass_   = tempMass;
+        _velocity   = velocity;
+        _force      = force;
+        _tempMass   = tempMass;
     }
     return self;
 }

@@ -3,7 +3,7 @@
 //  PSArborTouch
 //
 //  Created by Ed Preston on 19/09/11.
-//  Copyright 2011 Preston Software. All rights reserved.
+//  Copyright 2015 Preston Software. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -14,30 +14,6 @@
 @class ATSpring;
 
 @interface ATPhysics : NSObject
-{
-    
-@private
-    ATBarnesHutTree *bhTree_;
-    NSMutableArray  *activeParticles_;
-    NSMutableArray  *activeSprings_;
-    NSMutableArray  *freeParticles_;
-    
-    NSMutableArray  *particles_;
-    NSMutableArray  *springs_;
-    
-    ATEnergy        *energy_;
-    CGRect           bounds_;
-    
-    CGFloat     speedLimit_;
-    
-    CGFloat     deltaTime_;
-    CGFloat     stiffness_;
-    CGFloat     repulsion_;
-    CGFloat     friction_;
-    
-    BOOL        gravity_;
-    CGFloat     theta_;
-}
 
 @property (nonatomic, readonly, strong) ATBarnesHutTree *bhTree;
 
@@ -62,13 +38,10 @@
 @property (nonatomic, assign) BOOL gravity;
 @property (nonatomic, assign) CGFloat theta;
 
-
-- (id)init;
-
-- (id)initWithDeltaTime:(CGFloat)deltaTime 
-              stiffness:(CGFloat)stiffness 
-              repulsion:(CGFloat)repulsion 
-               friction:(CGFloat)friction;
+- (instancetype) initWithDeltaTime:(CGFloat)deltaTime
+                         stiffness:(CGFloat)stiffness
+                         repulsion:(CGFloat)repulsion
+                          friction:(CGFloat)friction;
 
 - (BOOL) update;
 

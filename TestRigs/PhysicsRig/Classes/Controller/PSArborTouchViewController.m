@@ -413,9 +413,7 @@
 }
 
 
-#pragma mark -
-#pragma mark === Touch handling  ===
-#pragma mark
+#pragma mark - Touch handling
 
 // shift the piece's center by the pan amount
 // reset the gesture recognizer's translation to {0, 0} after applying so the next callback is a delta from the current position

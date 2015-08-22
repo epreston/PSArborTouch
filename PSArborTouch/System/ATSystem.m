@@ -3,7 +3,7 @@
 //  PSArborTouch
 //
 //  Created by Ed Preston on 19/09/11.
-//  Copyright 2011 Preston Software. All rights reserved.
+//  Copyright 2015 Preston Software. All rights reserved.
 //
 
 #import "ATSystem.h"
@@ -27,64 +27,49 @@
 
 @implementation ATSystem
 
-@synthesize state = state_;
-@synthesize parameters = parameters_;
-
 - (void) setParameters:(ATSystemParams *)parameters
 {
-    if (parameters_ != parameters) {
-        parameters_ = [parameters copy];
+    if (_parameters != parameters) {
+        _parameters = [parameters copy];
 
     }
     
-    [self updateSimulation:parameters_];
+    [self updateSimulation:_parameters];
 }
 
-- (id) init
+- (instancetype) init
 {
     self = [super init];
     if (self) {
-        state_          = [[ATSystemState alloc] init];
-        parameters_     = [[ATSystemParams alloc] init];
-        viewBounds_     = CGRectZero;
-        viewPadding_    = UIEdgeInsetsZero;
-        viewTweenStep_  = 0.04;
-        viewMode_       = ATViewConversionScale;
+        _state          = [[ATSystemState alloc] init];
+        _parameters     = [[ATSystemParams alloc] init];
+        _viewBounds     = CGRectZero;
+        _viewPadding    = UIEdgeInsetsZero;
+        _viewTweenStep  = 0.04;
+        _viewMode       = ATViewConversionScale;
     }
     return self;
 }
 
-- (id) initWithState:(ATSystemState *)state parameters:(ATSystemParams *)parameters 
+- (instancetype) initWithState:(ATSystemState *)state parameters:(ATSystemParams *)parameters
 {
     self = [self init];
     if (self) {
-        state_      = state;
-        parameters_ = parameters;
+        _state      = state;
+        _parameters = parameters;
     }
     return self;
 }
-
-
-
-#pragma mark - Tween Debugging
-
-@synthesize tweenBoundsCurrent = tweenBoundsCurrent_;
-@synthesize tweenBoundsTarget = tweenBoundsTarget_;
 
 
 #pragma mark - Viewport Management / Translation
 
-@synthesize viewBounds      = viewBounds_;
 
 - (void) setViewBounds:(CGRect)viewBounds
 {
-    viewBounds_ = viewBounds;
+    _viewBounds = viewBounds;
     [self updateViewport];
 }
-
-@synthesize viewPadding     = viewPadding_;
-@synthesize viewTweenStep   = viewTweenStep_;
-@synthesize viewMode        = viewMode_;
 
 
 #pragma mark - Viewport Translation
@@ -113,15 +98,15 @@
 {
     // Return the size in the physics coordinate system if we dont have a screen size or current
     // viewport bounds.
-    if ( CGRectIsEmpty(viewBounds_) || CGRectIsEmpty(tweenBoundsCurrent_) ) {
+    if ( CGRectIsEmpty(_viewBounds) || CGRectIsEmpty(_tweenBoundsCurrent) ) {
         return physicsSize;
     }
     
     CGRect  fromBounds = [self translationBounds];
     
     // UIEdgeInsetsInsetRect
-    CGFloat adjustedScreenWidth     = CGRectGetWidth(viewBounds_)  - (viewPadding_.left + viewPadding_.right);
-    CGFloat adjustedScreenHeight    = CGRectGetHeight(viewBounds_) - (viewPadding_.top  + viewPadding_.bottom);
+    CGFloat adjustedScreenWidth     = CGRectGetWidth(_viewBounds)  - (_viewPadding.left + _viewPadding.right);
+    CGFloat adjustedScreenHeight    = CGRectGetHeight(_viewBounds) - (_viewPadding.top  + _viewPadding.bottom);
     
     
     CGFloat scaleX = physicsSize.width  / CGRectGetWidth(fromBounds);
@@ -150,15 +135,15 @@
 {
     // Return the point in the physics coordinate system if we dont have a screen size or current
     // viewport bounds.
-    if ( CGRectIsEmpty(viewBounds_) || CGRectIsEmpty(tweenBoundsCurrent_) ) {
+    if ( CGRectIsEmpty(_viewBounds) || CGRectIsEmpty(_tweenBoundsCurrent) ) {
         return physicsPoint;
     }
     
     CGRect  fromBounds = [self translationBounds];
     
     // UIEdgeInsetsInsetRect
-    CGFloat adjustedScreenWidth     = CGRectGetWidth(viewBounds_)  - (viewPadding_.left + viewPadding_.right);
-    CGFloat adjustedScreenHeight    = CGRectGetHeight(viewBounds_) - (viewPadding_.top  + viewPadding_.bottom);
+    CGFloat adjustedScreenWidth     = CGRectGetWidth(_viewBounds)  - (_viewPadding.left + _viewPadding.right);
+    CGFloat adjustedScreenHeight    = CGRectGetHeight(_viewBounds) - (_viewPadding.top  + _viewPadding.bottom);
     
     CGFloat scaleX = (physicsPoint.x - fromBounds.origin.x) / CGRectGetWidth(fromBounds);
     CGFloat scaleY = (physicsPoint.y - fromBounds.origin.y) / CGRectGetHeight(fromBounds);
@@ -169,8 +154,8 @@
     if (self.viewMode == ATViewConversionScale) {
         CGFloat uniformScale = MIN(adjustedScreenWidth, adjustedScreenHeight);
         
-        sx = scaleX * uniformScale + viewPadding_.right;
-        sy = scaleY * uniformScale + viewPadding_.top;
+        sx = scaleX * uniformScale + _viewPadding.right;
+        sy = scaleY * uniformScale + _viewPadding.top;
         
         // center
         sx += (adjustedScreenWidth  - uniformScale) / 2;
@@ -178,34 +163,35 @@
         
     } else { // Stretch
         
-        sx = scaleX * adjustedScreenWidth  + viewPadding_.right;
-        sy = scaleY * adjustedScreenHeight + viewPadding_.top;
+        sx = scaleX * adjustedScreenWidth  + _viewPadding.right;
+        sy = scaleY * adjustedScreenHeight + _viewPadding.top;
     }
     
     return CGPointMake(sx, sy);
 }
+
 // TODO: This is ugly
 - (CGPoint) fromViewPoint:(CGPoint)viewPoint
 {
     // Return the point in the screen coordinate system if we dont have a screen size.
-    if ( CGRectIsEmpty(viewBounds_) || CGRectIsEmpty(tweenBoundsCurrent_) ) {
+    if ( CGRectIsEmpty(_viewBounds) || CGRectIsEmpty(_tweenBoundsCurrent) ) {
         return viewPoint;
     }
     
     CGRect  toBounds = [self translationBounds];
     
     // UIEdgeInsetsInsetRect
-    CGFloat adjustedScreenWidth     = CGRectGetWidth(viewBounds_)  - (viewPadding_.left + viewPadding_.right);
-    CGFloat adjustedScreenHeight    = CGRectGetHeight(viewBounds_) - (viewPadding_.top  + viewPadding_.bottom);
+    CGFloat adjustedScreenWidth     = CGRectGetWidth(_viewBounds)  - (_viewPadding.left + _viewPadding.right);
+    CGFloat adjustedScreenHeight    = CGRectGetHeight(_viewBounds) - (_viewPadding.top  + _viewPadding.bottom);
     
-    CGFloat scaleX = (viewPoint.x - viewPadding_.right) / adjustedScreenWidth;
-    CGFloat scaleY = (viewPoint.y - viewPadding_.top)   / adjustedScreenHeight;
+    CGFloat scaleX = (viewPoint.x - _viewPadding.right) / adjustedScreenWidth;
+    CGFloat scaleY = (viewPoint.y - _viewPadding.top)   / adjustedScreenHeight;
     
     if (self.viewMode == ATViewConversionScale) {
         CGFloat uniformScale = MIN(adjustedScreenWidth, adjustedScreenHeight);
         
-        scaleX = (viewPoint.x - ((adjustedScreenWidth  - uniformScale) / 2) - viewPadding_.right) / uniformScale;
-        scaleY = (viewPoint.y - ((adjustedScreenHeight - uniformScale) / 2) - viewPadding_.top)   / uniformScale;
+        scaleX = (viewPoint.x - ((adjustedScreenWidth  - uniformScale) / 2) - _viewPadding.right) / uniformScale;
+        scaleY = (viewPoint.y - ((adjustedScreenHeight - uniformScale) / 2) - _viewPadding.top)   / uniformScale;
     }
         
     CGFloat px = scaleX * CGRectGetWidth(toBounds)  + toBounds.origin.x;
@@ -221,7 +207,7 @@
     
     // if view bounds has been specified, presume viewPoint is in screen pixel
     // units and convert it back to the physics engine coordinates
-    if ( CGRectIsEmpty(viewBounds_) == NO ) {
+    if ( CGRectIsEmpty(_viewBounds) == NO ) {
         translatedPoint = [self fromViewPoint:viewPoint];
     } else {
         translatedPoint = viewPoint;
@@ -257,7 +243,7 @@
         
         // if view bounds has been specified, presume viewPoint is in screen pixel
         // units and convert the closest node to view space for comparison
-        if ( CGRectIsEmpty(viewBounds_) == NO ) {
+        if ( CGRectIsEmpty(_viewBounds) == NO ) {
             translatedNodePoint = [self toViewPoint:closestNode.position];
         } else {
             translatedNodePoint = closestNode.position;
@@ -547,40 +533,40 @@
     // set to 0 the bounding box will remain stationary after being initially set 
     
     // Return NO if we dont have a screen size.
-    if ( CGRectIsEmpty(viewBounds_) ) {
+    if ( CGRectIsEmpty(_viewBounds) ) {
         return NO;
     }
     
     // Ensure the view bounds rect has a minimum size
-    tweenBoundsTarget_ = [self ensureRect:self.simulationBounds minimumDimentions:4.0];
+    _tweenBoundsTarget = [self ensureRect:self.simulationBounds minimumDimentions:4.0];
     
     
     // Configure the current viewport bounds
-    if ( CGRectIsEmpty(tweenBoundsCurrent_) ) {
+    if ( CGRectIsEmpty(_tweenBoundsCurrent) ) {
         if ([self.state.nodes count] == 0) return NO;
-        tweenBoundsCurrent_ = tweenBoundsTarget_;
+        _tweenBoundsCurrent = _tweenBoundsTarget;
         return YES;
     }
     
     // If we are not tweening, then no need to calculate. Avoid endless viewport update.
-    if (viewTweenStep_ <= 0.0) return NO;
+    if (_viewTweenStep <= 0.0) return NO;
     
     // Move the current viewport bounds closer to the true box containing all the nodes.
-    CGRect newBounds = [self tweenRect:tweenBoundsCurrent_ 
-                                toRect:tweenBoundsTarget_ 
-                                 delta:viewTweenStep_];
+    CGRect newBounds = [self tweenRect:_tweenBoundsCurrent 
+                                toRect:_tweenBoundsTarget 
+                                 delta:_viewTweenStep];
     
     
     // calculate the difference
-    CGFloat newX = CGRectGetWidth(tweenBoundsCurrent_)  - CGRectGetWidth(newBounds);
-    CGFloat newY = CGRectGetHeight(tweenBoundsCurrent_) - CGRectGetHeight(newBounds);
+    CGFloat newX = CGRectGetWidth(_tweenBoundsCurrent)  - CGRectGetWidth(newBounds);
+    CGFloat newY = CGRectGetHeight(_tweenBoundsCurrent) - CGRectGetHeight(newBounds);
     CGPoint sizeDiff = CGPointMake(newX, newY);
-    CGPoint diff = CGPointMake(CGPointDistance(tweenBoundsCurrent_.origin, newBounds.origin), 
+    CGPoint diff = CGPointMake(CGPointDistance(_tweenBoundsCurrent.origin, newBounds.origin), 
                                CGPointMagnitude(sizeDiff));
     
     // return YES if we're still approaching the target, NO if we're ‘close enough’
-    if (diff.x * CGRectGetWidth(viewBounds_) > 1.0 || diff.y * CGRectGetHeight(viewBounds_) > 1.0 ){
-        tweenBoundsCurrent_ = newBounds;
+    if (diff.x * CGRectGetWidth(_viewBounds) > 1.0 || diff.y * CGRectGetHeight(_viewBounds) > 1.0 ){
+        _tweenBoundsCurrent = newBounds;
         return YES;
     } else {
         return NO;        
