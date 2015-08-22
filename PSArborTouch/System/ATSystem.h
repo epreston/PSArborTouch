@@ -11,10 +11,10 @@
 #import "ATKernel.h"
 
 
-typedef enum {
+typedef NS_ENUM(NSInteger, ATViewConversion) {
     ATViewConversionStretch = 0,    // stretch the simulation coordinates to match view aspect
     ATViewConversionScale,          // scale the simluation coordinates to best fit view
-} ATViewConversion;
+};
 
 
 @class ATSystemState;

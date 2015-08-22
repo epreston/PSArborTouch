@@ -20,13 +20,13 @@
     NSUInteger          _branchCounter;
 }
 
-typedef enum {
+typedef NS_ENUM(NSInteger, BHLocation) {
     BHLocationUD = 0,
     BHLocationNW,
     BHLocationNE,
     BHLocationSE,
     BHLocationSW,
-} BHLocation;
+};
 
 - (BHLocation) _whichQuad:(ATParticle *)particle ofBranch:(ATBarnesHutBranch *)branch;
 - (void) _setQuad:(BHLocation)location ofBranch:(ATBarnesHutBranch *)branch withObject:(id)object;
