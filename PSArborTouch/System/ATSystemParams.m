@@ -63,7 +63,7 @@
     [encoder encodeFloat:_timeout forKey:@"timeout"];
 }
 
-- (id) initWithCoder:(NSCoder *)decoder 
+- (instancetype) initWithCoder:(NSCoder *)decoder 
 {
     self = [super init];
     if (self) {

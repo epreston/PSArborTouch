@@ -191,7 +191,7 @@
     [encoder encodeObject:_names forKey:@"names"];
 }
 
-- (id) initWithCoder:(NSCoder *)decoder 
+- (instancetype) initWithCoder:(NSCoder *)decoder 
 {
     self = [super init];
     if (self) {

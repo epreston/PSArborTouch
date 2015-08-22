@@ -19,7 +19,6 @@ static NSInteger _nextNodeIndex = 1;
 
 @implementation ATNode
 
-
 - (instancetype) init
 {
     self = [super init];
@@ -59,10 +58,6 @@ static NSInteger _nextNodeIndex = 1;
 }
 
 
-
-#pragma mark - Internal Interface
-
-
 #pragma mark - Keyed Archiving
 
 - (void) encodeWithCoder:(NSCoder *)encoder 
@@ -75,7 +70,7 @@ static NSInteger _nextNodeIndex = 1;
     [encoder encodeObject:_userData forKey:@"data"];
 }
 
-- (id) initWithCoder:(NSCoder *)decoder 
+- (instancetype) initWithCoder:(NSCoder *)decoder 
 {
     self = [super init];
     if (self) {

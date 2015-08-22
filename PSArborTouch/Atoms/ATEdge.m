@@ -22,7 +22,6 @@ static NSInteger _nextEdgeIndex = -1;
 
 @implementation ATEdge
 
-
 - (instancetype) init
 {
     self = [super init];
@@ -60,7 +59,6 @@ static NSInteger _nextEdgeIndex = -1;
 }
 
 
-
 #pragma mark - Geometry
 
 - (CGFloat) distanceToNode:(ATNode *)node
@@ -74,9 +72,6 @@ static NSInteger _nextEdgeIndex = -1;
 }
 
 
-#pragma mark - Internal Interface
-
-
 #pragma mark - Keyed Archiving
 
 - (void) encodeWithCoder:(NSCoder *)encoder
@@ -88,7 +83,7 @@ static NSInteger _nextEdgeIndex = -1;
     [encoder encodeObject:_userData forKey:@"data"];
 }
 
-- (id) initWithCoder:(NSCoder *)decoder
+- (instancetype) initWithCoder:(NSCoder *)decoder
 {
     self = [super init];
     if (self) {
