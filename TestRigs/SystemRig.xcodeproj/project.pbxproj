@@ -367,7 +367,7 @@
 		4FA4D6B314302355003958B3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Preston Software";
 			};
 			buildConfigurationList = 4FA4D6B614302355003958B3 /* Build configuration list for PBXProject "SystemRig" */;
@@ -439,6 +439,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -495,6 +496,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Shared/Target/SharedTarget.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/SystemRig/Target/SystemRig-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.prestonsoft.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -509,6 +511,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Shared/Target/SharedTarget.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/SystemRig/Target/SystemRig-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.prestonsoft.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
